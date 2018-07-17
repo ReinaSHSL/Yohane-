@@ -1,0 +1,8 @@
+.metadata
+.settings
+apache-maven-3.5.4
+lib
+target
+ISSUE_TEMPLATE
+.project
+.classpath
