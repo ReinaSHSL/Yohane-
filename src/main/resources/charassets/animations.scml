@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11">
+    <folder id="0">
+        <file id="0" name="body.png" width="73" height="78" pivot_x="0" pivot_y="1"/>
+        <file id="1" name="arm2.png" width="42" height="60" pivot_x="0" pivot_y="1"/>
+        <file id="2" name="arm1.png" width="63" height="67" pivot_x="0" pivot_y="1"/>
+        <file id="3" name="head.png" width="74" height="105" pivot_x="0" pivot_y="1"/>
+        <file id="4" name="leg2.png" width="27" height="81" pivot_x="0" pivot_y="1"/>
+        <file id="5" name="skirt.png" width="93" height="54" pivot_x="0" pivot_y="1"/>
+        <file id="6" name="leg1.png" width="29" height="84" pivot_x="0" pivot_y="1"/>
+    </folder>
+    <entity id="0" name="entity_000">
+        <animation id="0" name="NewAnimation" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="2" key="0" z_index="0"/>
+                    <object_ref id="1" timeline="4" key="0" z_index="1"/>
+                    <object_ref id="2" timeline="6" key="0" z_index="2"/>
+                    <object_ref id="3" timeline="5" key="0" z_index="3"/>
+                    <object_ref id="4" timeline="0" key="0" z_index="4"/>
+                    <object_ref id="5" timeline="1" key="0" z_index="5"/>
+                    <object_ref id="6" timeline="3" key="0" z_index="6"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="body">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-32.127115" y="182.385636" scale_x="0.96" scale_y="0.96"/>
+                </key>
+            </timeline>
+            <timeline id="1" name="arm2">
+                <key id="0" spin="0">
+                    <object folder="0" file="1" x="-33.571359" y="152.976801" scale_x="0.96" scale_y="0.96"/>
+                </key>
+            </timeline>
+            <timeline id="2" name="arm1">
+                <key id="0" spin="0">
+                    <object folder="0" file="2" x="26.948104" y="169.871751" scale_x="0.96" scale_y="0.96"/>
+                </key>
+            </timeline>
+            <timeline id="3" name="head">
+                <key id="0" spin="0">
+                    <object folder="0" file="3" x="-32.02061" y="227.222235" scale_x="0.96" scale_y="0.96"/>
+                </key>
+            </timeline>
+            <timeline id="4" name="leg2">
+                <key id="0" spin="0">
+                    <object folder="0" file="4" x="-19.953134" y="74.916987" scale_x="0.96" scale_y="0.96"/>
+                </key>
+            </timeline>
+            <timeline id="5" name="skirt">
+                <key id="0" spin="0">
+                    <object folder="0" file="5" x="-39.868677" y="119.27166" scale_x="0.96" scale_y="0.96"/>
+                </key>
+            </timeline>
+            <timeline id="6" name="leg1">
+                <key id="0" spin="0">
+                    <object folder="0" file="6" x="4.124326" y="79.830305" scale_x="0.96" scale_y="0.96"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
