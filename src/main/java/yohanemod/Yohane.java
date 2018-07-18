@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import yohanemod.YohaneEnum;
+import yohanemod.relics.AngelWings;
 
 public class Yohane extends CustomPlayer {
 	public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
@@ -45,22 +46,24 @@ public class Yohane extends CustomPlayer {
 
 	public static ArrayList<String> getStartingDeck() { // starting deck 'nuff said
 		ArrayList<String> retVal = new ArrayList<>();
-		/*retVal.add("MyCard0");
-		retVal.add("MyCard0");
-		retVal.add("MyCard0");
-		retVal.add("MyCard0");
-		retVal.add("MyCard1");
-		retVal.add("MyCard1");
-		retVal.add("MyCard1");
-		retVal.add("MyCard1");
+		retVal.add("Strike_Grey");
+		retVal.add("Strike_Grey");
+		retVal.add("Strike_Grey");
+		retVal.add("Strike_Grey");
+        retVal.add("Strike_Grey");
+		retVal.add("Defend_Grey");
+		retVal.add("Defend_Grey");
+		retVal.add("Defend_Grey");
+		retVal.add("Defend_Grey");
+		/*retVal.add("MyCard1");
 		retVal.add("MyCard2");*/
 		return retVal;
 	}
 	
 	public static ArrayList<String> getStartingRelics() { // starting relics - also simple
 		ArrayList<String> retVal = new ArrayList<>();
-		/*retVal.add("MyRelic");
-		UnlockTracker.markRelicAsSeen("MyRelic");*/
+		retVal.add("AngelWings");
+		UnlockTracker.markRelicAsSeen("AngelWings");
 		return retVal;
 	}
 

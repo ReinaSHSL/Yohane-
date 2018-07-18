@@ -2,34 +2,27 @@ package yohanemod;
 
 import java.nio.charset.StandardCharsets;
 
+import com.badlogic.gdx.Gdx;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.core.Settings.GameLanguage;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import basemod.BaseMod;
-import basemod.ModLabel;
-import basemod.ModPanel;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
-import basemod.interfaces.SetUnlocksSubscriber;
+import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import yohanemod.cards.*;
+import yohanemod.relics.*;
+
 
 @SpireInitializer
-public class YohaneMod implements EditCharactersSubscriber{
+public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber{
 	
 	private static final String MODNAME = "Yohane!";
     private static final String AUTHOR = "Reina";
@@ -61,13 +54,34 @@ public class YohaneMod implements EditCharactersSubscriber{
 	public static void initialize() {
 		YohaneMod mod = new YohaneMod();
 	}
+
+	@Override
+        public void receiveEditStrings() {
+            String relicStrings = Gdx.files.internal("localization/Yohane-RelicStrings-eng.json").readString(
+                    String.valueOf(StandardCharsets.UTF_8));
+            BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
+            String powerStrings = Gdx.files.internal("localization/Yohane-PowerStrings-eng.json").readString(
+                    String.valueOf(StandardCharsets.UTF_8));
+            BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
+        }
 	
 	 @Override
 		public void receiveEditCharacters() {
-			BaseMod.addCharacter(Yohane.class, "Yohane", "uwu",
+			BaseMod.addCharacter(Yohane.class, "the Fallen Angel", "uwu",
 					AbstractCardEnum.GREY.toString(), "Yohane",
 					Yohane_Button , Yohane_Portrait,
 					YohaneEnum.FallenAngel.toString());
 		}
-	
+
+	 @Override
+	 	public void receiveEditCards() {
+		BaseMod.addCard(new Strike_Grey());
+		BaseMod.addCard(new Defend_Grey());
+	 }
+
+    @Override
+    public void receiveEditRelics() {
+        BaseMod.addRelicToCustomPool(new AngelWings(), AbstractCardEnum.GREY.toString());
+    }
+
 }
