@@ -9,15 +9,18 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import yohanemod.AbstractCardEnum;
+import yohanemod.powers.FallenEnergy;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
 public class Strike_Grey extends CustomCard {
     public static final String ID = "Strike_Grey";
     public static final String NAME = "Strike";
-    public static final String DESCRIPTION = "Deal !D! damage.";
+    public static final String DESCRIPTION = "Deal !D! Damage. NL Gain !M! Fallen Energy.";
     public static final String IMG_PATH = "cards/Strike_Grey.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 6;
     private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int FALLEN_ENERGY = 2;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.BASIC;
     private static final CardTarget target = CardTarget.ENEMY;
@@ -29,6 +32,7 @@ public class Strike_Grey extends CustomCard {
                 target, POOL);
 
         this.baseDamage = ATTACK_DMG;
+        this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }
 
     @Override

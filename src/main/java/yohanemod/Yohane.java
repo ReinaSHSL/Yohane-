@@ -44,7 +44,7 @@ public class Yohane extends CustomPlayer {
 		}
 	}
 
-	public static ArrayList<String> getStartingDeck() { // starting deck 'nuff said
+	public static ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
 		retVal.add("Strike_Grey");
 		retVal.add("Strike_Grey");
@@ -55,12 +55,12 @@ public class Yohane extends CustomPlayer {
 		retVal.add("Defend_Grey");
 		retVal.add("Defend_Grey");
 		retVal.add("Defend_Grey");
-		/*retVal.add("MyCard1");
-		retVal.add("MyCard2");*/
+		retVal.add("Descent");
+		retVal.add("Well_Laid_Ambush");
 		return retVal;
 	}
 	
-	public static ArrayList<String> getStartingRelics() { // starting relics - also simple
+	public static ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
 		retVal.add("AngelWings");
 		UnlockTracker.markRelicAsSeen("AngelWings");

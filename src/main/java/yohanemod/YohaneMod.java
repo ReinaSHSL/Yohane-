@@ -77,6 +77,11 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 	 	public void receiveEditCards() {
 		BaseMod.addCard(new Strike_Grey());
 		BaseMod.addCard(new Defend_Grey());
+		BaseMod.addCard(new Descent());
+		BaseMod.addCard(new Well_Laid_Ambush());
+		BaseMod.addCard(new Allure_of_Darkness());
+		BaseMod.addCard(new Misfortune());
+		BaseMod.addCard(new In_This_Unstable_World());
 	 }
 
     @Override

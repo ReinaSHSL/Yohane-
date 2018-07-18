@@ -2,6 +2,6 @@
   "AngelWings": {
     "NAME": "Angel Wings",
     "FLAVOR": "The source of your dark energy.",
-    "DESCRIPTIONS": ["Gain #b2 #yFallen #yEnergy per turn."]
+    "DESCRIPTIONS": ["Start with #b5 #yFallen #yEnergy."]
   }
 }
