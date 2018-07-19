@@ -36,12 +36,14 @@ public class StrawberryTrapperPower extends AbstractPower{
         //flash();
         this.fontScale = 8.0F;
         this.amount += stackAmount;
+        this.hpLoss += 40;
     }
 
     public void updateDescription()
-    {
-        this.description = (DESCRIPTIONS[0]);
-    }
+        {
+            this.description = (DESCRIPTIONS[0] + this.hpLoss + DESCRIPTIONS[1]);
+        }
+
 
     public static Texture getStrawberryTrapperTexture() {
         return new Texture("powers/StrawberryTrapper.png");

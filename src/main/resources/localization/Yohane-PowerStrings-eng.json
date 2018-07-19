@@ -10,8 +10,16 @@
   "StrawberryTrapper": {
     "NAME": "Strawberry Trapper",
     "DESCRIPTIONS": [
-      "Lose 40 Health at the end of your turns."
+      "Lose ",
+      " Health at the end of your turns."
+    ]
+  },
+
+  "ShadowGate": {
+    "NAME": "Shadow Gate",
+    "DESCRIPTIONS": [
+      "Draw ",
+      " card(s). Lose this power if Fallen Energy falls to 0."
     ]
   }
-
 }

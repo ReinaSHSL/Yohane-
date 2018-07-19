@@ -22,6 +22,7 @@ public class FallenEnergy extends AbstractPower {
         this.priority = 0;
         updateDescription();
         this.img = getDarkEnergyPowerTexture();
+        this.canGoNegative = true;
     }
 
     public void stackPower(int stackAmount)

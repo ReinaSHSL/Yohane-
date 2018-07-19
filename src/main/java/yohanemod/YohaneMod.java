@@ -90,6 +90,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Strawberry_Trapper());
 		BaseMod.addCard(new Energy_Change());
 		BaseMod.addCard(new Livestream_Donation());
+		BaseMod.addCard(new Shadow_Gate());
 	 }
 
     @Override
