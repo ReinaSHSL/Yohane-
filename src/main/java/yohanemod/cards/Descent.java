@@ -16,8 +16,8 @@ import yohanemod.powers.FallenEnergy;
 public class Descent extends CustomCard {
     public static final String ID = "Descent";
     public static final String NAME = "Descent";
-    public static final String DESCRIPTION = "Lose 6 Fallen Energy. NL Apply !M! Vulnerable.";
-    public static final String UPGRADED_DESCRIPTION = "Lose 3 Fallen Energy. NL Apply !M! Vulnerable.";
+    public static final String DESCRIPTION = "Pay 6 Fallen Energy. NL Apply !M! Vulnerable.";
+    public static final String UPGRADED_DESCRIPTION = "Pay 3 Fallen Energy. NL Apply !M! Vulnerable.";
     public static final String IMG_PATH = "cards/Descent.png";
     private static final int COST = 0;
     private static final int ATTACK_DMG = -9;

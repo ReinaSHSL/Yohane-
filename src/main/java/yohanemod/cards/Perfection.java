@@ -13,49 +13,46 @@ import yohanemod.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
-public class Well_Laid_Ambush extends CustomCard{
-    public static final String ID = "Well_Laid_Ambush";
-    public static final String NAME = "Well Laid Ambush";
-    public static final String DESCRIPTION = "Pay 4 Fallen Energy. NL Deal !D! Damage. NL Retain.";
-    public static final String IMG_PATH = "cards/Well_Laid_Ambush.png";
-    private static final int COST = 0;
-    private static final int ATTACK_DMG = 5;
-    private static final int UPGRADE_PLUS_DMG = 2;
+public class Perfection extends CustomCard {
+    public static final String ID = "Perfection";
+    public static final String NAME = "Perfection";
+    public static final String DESCRIPTION = "Lose all Fallen Energy. NL Deal damage equal to lost Fallen Energy.";
+    public static final String IMG_PATH = "cards/Perfection.png";
+    private static final int COST = 2;
     private static final int POOL = 1;
-    private static final CardRarity rarity = CardRarity.BASIC;
+    private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.ENEMY;
 
-    public Well_Laid_Ambush() {
+
+    public Perfection() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.GREY, rarity,
                 target, POOL);
-        this.damage = this.baseDamage = ATTACK_DMG;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= 4)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, m, new FallenEnergy(p, 0), -4));
+        if (p.hasPower("FallenEnergy")  && p.getPower("FallenEnergy").amount >= 1 ){
+            final int FALLENENERGY = p.getPower("FallenEnergy").amount;
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -FALLENENERGY));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                    new DamageInfo(p, FALLENENERGY, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
         }
-        this.retain = true;
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Well_Laid_Ambush();
+        return new Perfection();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.upgradeBaseCost(1);
         }
     }
-
 }

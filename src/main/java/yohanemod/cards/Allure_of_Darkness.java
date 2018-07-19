@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 public class Allure_of_Darkness extends CustomCard{
     public static final String ID = "Allure_of_Darkness";
     public static final String NAME = "Allure of Darkness";
-    public static final String DESCRIPTION = "Lose 2 Fallen Energy. NL Draw 2 Cards. NL Exhaust a card from your hand.";
+    public static final String DESCRIPTION = "Pay 2 Fallen Energy. NL Draw 2 Cards. NL Exhaust a card from your hand.";
     public static final String UPGRADED_DESCRIPTION = "Draw 2 Cards. NL Exhaust a card from your hand.";
     public static final String IMG_PATH = "cards/Allure_of_Darkness.png";
     private static final int COST = 0;

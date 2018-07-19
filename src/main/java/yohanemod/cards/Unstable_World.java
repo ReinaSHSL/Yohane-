@@ -1,10 +1,8 @@
 package yohanemod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,13 +12,13 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import yohanemod.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import yohanemod.actions.AddCardUsedToHand;
 
-public class In_This_Unstable_World extends CustomCard{
 
-    public static final String ID = "In_This_Unstable_World";
-    public static final String NAME = "In This Unstable World";
-    public static final String DESCRIPTION = "Deal !D! Damage. NL Lose !M! Fallen Energy. NL Using this card does not discard it.";
+public class Unstable_World extends CustomCard{
+
+    public static final String ID = "Unstable_World";
+    public static final String NAME = "Unstable World";
+    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! Damage. NL Add a copy of this card to your hand. NL Exhaust.";
     public static final String IMG_PATH = "cards/In_This_Unstable_World.png";
     private static final int COST = 0;
     private static final int ATTACK_DMG = 3;
@@ -31,7 +29,7 @@ public class In_This_Unstable_World extends CustomCard{
     private static final CardTarget target = CardTarget.ALL_ENEMY;
 
 
-    public In_This_Unstable_World() {
+    public Unstable_World() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.GREY, rarity,
                 target, POOL);
@@ -48,7 +46,8 @@ public class In_This_Unstable_World extends CustomCard{
             AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(p,
                     this.multiDamage, this.damageTypeForTurn, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
-            AbstractDungeon.actionManager.addToBottom(new AddCardUsedToHand(this));
+            AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(makeStatEquivalentCopy()));
+            this.exhaust = true;
         }  else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
         }
@@ -56,7 +55,7 @@ public class In_This_Unstable_World extends CustomCard{
 
     @Override
     public AbstractCard makeCopy() {
-        return new In_This_Unstable_World();
+        return new Unstable_World();
     }
 
     @Override

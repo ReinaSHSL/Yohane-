@@ -81,7 +81,10 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Well_Laid_Ambush());
 		BaseMod.addCard(new Allure_of_Darkness());
 		BaseMod.addCard(new Misfortune());
-		BaseMod.addCard(new In_This_Unstable_World());
+		BaseMod.addCard(new Unstable_World());
+		BaseMod.addCard(new Perfection());
+		BaseMod.addCard(new Dark_Rest());
+		BaseMod.addCard(new Fallen_Rain());
 	 }
 
     @Override
