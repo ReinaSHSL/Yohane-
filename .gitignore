@@ -5,4 +5,5 @@ lib
 target
 ISSUE_TEMPLATE
 .project
-.classpath
+.classpathrigh
+.idea

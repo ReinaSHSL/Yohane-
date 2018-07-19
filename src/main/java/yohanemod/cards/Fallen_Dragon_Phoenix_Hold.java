@@ -1,18 +1,16 @@
 package yohanemod.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.AbstractCardEnum;
-import yohanemod.powers.FallenEnergy;
 import basemod.abstracts.CustomCard;
 
 public class Fallen_Dragon_Phoenix_Hold extends CustomCard {
     public static final String ID = "Fallen_Dragon_Phoenix_Hold";
-    public static final String NAME = "Fallen Dragon Phoenix Hold";
+    public static final String NAME = "Phoenix Hold";
     public static final String DESCRIPTION = "Enemy loses !M! Strength for the rest of the turn. NL Exhaust.";
     public static final String IMG_PATH = "cards/Fallen_Dragon_Phoenix_Hold.png";
     private static final int COST = 3;

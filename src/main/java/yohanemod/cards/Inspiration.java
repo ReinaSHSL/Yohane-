@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
 public class Inspiration extends CustomCard {
     public static final String ID = "Inspiration";
-    public static final String NAME = "Fallen Rain";
+    public static final String NAME = "Inspiration";
     public static final String DESCRIPTION = "Deal !D! Damage. NL Gain !M! Fallen Energy. NL Gain Blur.";
     public static final String IMG_PATH = "cards/Inspiration.png";
     private static final int COST = 1;
