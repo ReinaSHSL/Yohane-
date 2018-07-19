@@ -13,11 +13,11 @@ import yohanemod.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
-public class Fallen_Rain extends CustomCard {
-    public static final String ID = "Fallen_Rain";
+public class Inspiration extends CustomCard {
+    public static final String ID = "Inspiration";
     public static final String NAME = "Fallen Rain";
     public static final String DESCRIPTION = "Deal !D! Damage. NL Gain !M! Fallen Energy. NL Gain Blur.";
-    public static final String IMG_PATH = "cards/Fallen_Rain.png";
+    public static final String IMG_PATH = "cards/Inspiration.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;
     private static final int UPGRADE_PLUS_DMG = 2;
@@ -25,7 +25,7 @@ public class Fallen_Rain extends CustomCard {
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.BASIC;
     private static final CardTarget target = CardTarget.ENEMY;
-    public Fallen_Rain() {
+    public Inspiration() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.GREY, rarity,
                 target, POOL);
@@ -45,7 +45,7 @@ public class Fallen_Rain extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Fallen_Rain();
+        return new Inspiration();
     }
 
     @Override

@@ -67,7 +67,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 	
 	 @Override
 		public void receiveEditCharacters() {
-			BaseMod.addCharacter(Yohane.class, "the Fallen Angel", "uwu",
+			BaseMod.addCharacter(Yohane.class, "The Fallen Angel", "uwu",
 					AbstractCardEnum.GREY.toString(), "Yohane",
 					Yohane_Button , Yohane_Portrait,
 					YohaneEnum.FallenAngel.toString());
@@ -84,7 +84,8 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Unstable_World());
 		BaseMod.addCard(new Perfection());
 		BaseMod.addCard(new Dark_Rest());
-		BaseMod.addCard(new Fallen_Rain());
+		BaseMod.addCard(new Inspiration());
+		BaseMod.addCard(new Fallen_Dragon_Phoenix_Hold());
 	 }
 
     @Override
