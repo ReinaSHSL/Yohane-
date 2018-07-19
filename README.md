@@ -9,7 +9,7 @@ tba
 tba
 
 ### Compatibility ###
-This Mod makes no changes to the base game other than adding **The Servant**. In other words, it should be compatible with other Mods.
+tbd
 
 ## New Mechanics ##
 * **Fallen Energy**
@@ -29,7 +29,7 @@ This Mod makes no changes to the base game other than adding **The Servant**. In
     * For Windows, run `MTS.cmd`.
     * For Linux, run `MTS.sh`.
     * Or run `ModTheSpire.jar` with Java 8.
-2. Select `BaseMod` and `StS-BlackRuse`.
+2. Select `BaseMod` and `Yohane!`.
 3. Press 'Play'.
 
 ## Wiki ##
