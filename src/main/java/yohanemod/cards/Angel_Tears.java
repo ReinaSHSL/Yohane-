@@ -21,7 +21,7 @@ public class Angel_Tears extends CustomCard{
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int WEAK_AMT = 2;
     private static final int POOL = 1;
-    private static final CardRarity rarity = CardRarity.BASIC;
+    private static final CardRarity rarity = CardRarity.COMMON;
     private static final CardTarget target = CardTarget.ENEMY;
     public Angel_Tears() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,

@@ -5,5 +5,13 @@
       "You have ",
       " #yFallen #yEnergy. NL Lose one #yFallen #yEnergy per turn."
     ]
+  },
+
+  "StrawberryTrapper": {
+    "NAME": "Strawberry Trapper",
+    "DESCRIPTIONS": [
+      "Lose 40 Health at the end of your turns."
+    ]
   }
+
 }
