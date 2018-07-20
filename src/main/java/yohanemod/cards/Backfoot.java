@@ -15,11 +15,11 @@ public class Backfoot extends CustomCard{
     public static final String ID = "Backfoot";
     public static final String NAME = "Backfoot";
     public static final String DESCRIPTION = "Gain !B! Block. NL Lose !M! Fallen Energy.";
-    public static final String IMG_PATH = "cards/Defend_Grey.png";
+    public static final String IMG_PATH = "cards/Backfoot.png";
     private static final int COST = 1;
     private static final int BLOCK_AMOUNT = 10;
     private static final int UPGRADE_BLOCK_DMG = 4;
-    private static final int FALLEN_ENERGY = 10;
+    private static final int FALLEN_ENERGY = 6;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.COMMON;
     private static final CardTarget target = CardTarget.SELF;

@@ -19,7 +19,7 @@
     "NAME": "Shadow Gate",
     "DESCRIPTIONS": [
       "Draw ",
-      " card(s). Removed if Fallen Energy falls to 0."
+      " card(s). Removed if Fallen Energy is 0."
     ]
   },
 

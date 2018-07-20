@@ -14,7 +14,7 @@ import yohanemod.powers.FlightPlayerPower;
 public class Take_Flight extends CustomCard {
     public static final String ID = "Take_Flight";
     public static final String NAME = "Take Flight!";
-    public static final String DESCRIPTION = "Gain Flight. NL Lose !M! Fallen at the end of your turns. Removes if Fallen Energy drops to 0.";
+    public static final String DESCRIPTION = "Gain Flight. NL Lose !M! Fallen at the end of your turn. Removed if Fallen Energy drops to 0.";
     public static final String IMG_PATH = "cards/Take_Flight.png";
     private static final int COST = 2;
     private static final int POOL = 1;

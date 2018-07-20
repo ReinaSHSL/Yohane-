@@ -14,8 +14,8 @@ import yohanemod.powers.ShadowGatePower;
 public class Shadow_Gate extends CustomCard{
     public static final String ID = "Shadow_Gate";
     public static final String NAME = "Shadow Gate";
-    public static final String DESCRIPTION = "Draw !M! card and lose 8 Fallen Energy when a card is played. NL Removes if Fallen Energy drops to 0.";
-    public static final String UPGRADED_DESCRIPTION = "Draw !M! cards and lose 8 Fallen Energy when a card is played. NL Removes if Fallen Energy drops to 0.";
+    public static final String DESCRIPTION = "Draw !M! card and lose 8 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
+    public static final String UPGRADED_DESCRIPTION = "Draw !M! cards and lose 8 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
     public static final String IMG_PATH = "cards/Shadow_Gate.png";
     private static final int COST = 3;
     private static final int POOL = 1;
