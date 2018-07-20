@@ -8,32 +8,29 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import yohanemod.powers.ImagineBreakerPower;
 import yohanemod.AbstractCardEnum;
-import yohanemod.powers.ShadowGatePower;
 
-public class Shadow_Gate extends CustomCard{
-    public static final String ID = "Shadow_Gate";
-    public static final String NAME = "Shadow Gate";
-    public static final String DESCRIPTION = "Draw !M! card and lose 8 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
-    public static final String UPGRADED_DESCRIPTION = "Draw !M! cards and lose 8 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
-    public static final String IMG_PATH = "cards/Shadow_Gate.png";
-    private static final int COST = 3;
+public class Imagine_Breaker extends CustomCard{
+    public static final String ID = "Imagine_Breaker";
+    public static final String NAME = "Imagine Breaker";
+    public static final String DESCRIPTION = "At the end of your turn, lose all Fallen Energy. NL Gain the same amount of Block.";
+    public static final String IMG_PATH = "cards/Imagine_Breaker.png";
+    private static final int COST = 2;
     private static final int POOL = 1;
-    private static final int DRAW = 1;
-    private static final CardRarity rarity = CardRarity.RARE;
+    private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.SELF;
 
-    public Shadow_Gate() {
+    public Imagine_Breaker() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.GREY,
                 rarity, target, POOL);
-        this.magicNumber = this.baseMagicNumber = DRAW;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower("FallenEnergy")) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowGatePower(p, this.magicNumber), this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ImagineBreakerPower(p,1)));
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
         }
@@ -41,16 +38,17 @@ public class Shadow_Gate extends CustomCard{
 
     @Override
     public AbstractCard makeCopy() {
-        return new Shadow_Gate();
+        return new Imagine_Breaker();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = UPGRADED_DESCRIPTION;
-            this.upgradeMagicNumber(1);
-            initializeDescription();
+            this.upgradeBaseCost(1);
         }
     }
+
 }
+
+

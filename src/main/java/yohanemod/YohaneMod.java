@@ -97,6 +97,8 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Take_Flight());
 		BaseMod.addCard(new Backfoot());
 		BaseMod.addCard(new Dark_Shield());
+		BaseMod.addCard(new Imagine_Breaker());
+		BaseMod.addCard(new Gluttony());
 	 }
 
     @Override

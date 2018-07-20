@@ -11,7 +11,7 @@
     "NAME": "Strawberry Trapper",
     "DESCRIPTIONS": [
       "Lose ",
-      " Health at the end of your turns."
+      " Health at the end of your turn."
     ]
   },
 
@@ -29,6 +29,13 @@
       "Reduce #yAttack damage taken by #b50%. Removed if dealt #yAttack damage #b",
       " time in one turn. Removed if Fallen Energy is 0.",
       " times in one turn. Removed if Fallen Energy is 0."
+    ]
+  },
+
+  "ImagineBreakerPower": {
+    "NAME": "Imagine Breaker",
+    "DESCRIPTIONS": [
+      "Lose ALL Fallen Energy at the end of your turn. Gain equal Block."
     ]
   }
 }
