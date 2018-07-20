@@ -91,6 +91,10 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Energy_Change());
 		BaseMod.addCard(new Livestream_Donation());
 		BaseMod.addCard(new Shadow_Gate());
+		BaseMod.addCard(new Reckless_Greed());
+		BaseMod.addCard(new Prideful_Crash());
+		BaseMod.addCard(new Sloth());
+		BaseMod.addCard(new Take_Flight());
 	 }
 
     @Override

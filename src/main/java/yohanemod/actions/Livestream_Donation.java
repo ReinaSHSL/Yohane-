@@ -1,63 +1,24 @@
 package yohanemod.actions;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 
 public class Livestream_Donation extends com.megacrit.cardcrawl.actions.AbstractGameAction {
 
-    private AbstractCard cardToMake;
-    private boolean randomSpot;
-    private boolean cardOffset;
-    private boolean upgraded;
+    private int divideAmount;
 
-    public Livestream_Donation (AbstractCard card, int amount, boolean randomSpot, boolean cardOffset, boolean upgraded) {
-        com.megacrit.cardcrawl.unlock.UnlockTracker.markCardAsSeen(card.cardID);
-        setValues(this.target, this.source, amount);
-        this.actionType = com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType.CARD_MANIPULATION;
-        this.duration = 0.5F;
-        this.cardToMake = card;
-        this.randomSpot = randomSpot;
-        this.cardOffset = cardOffset;
-        this.upgraded = upgraded;
+    public Livestream_Donation (AbstractCreature target, int divideAmountNum) {
+        this.target = target;
+        this.duration = Settings.ACTION_DUR_FAST;
+        this.divideAmount = divideAmountNum;
     }
 
-    public void update () {
-        if (!upgraded) {
-            if (this.duration == 0.5F) {
-                if (this.amount < 6) {
-                    for (int i = 0; i < this.amount; i++) {
-                        AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, this.randomSpot, this.cardOffset));
-                    }
-                } else {
-                    for (int i = 0; i < this.amount; i++) {
-                        AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, this.randomSpot));
-                    }
-                }
-                this.duration -= com.badlogic.gdx.Gdx.graphics.getDeltaTime();
-            }
-            tickDuration();
-        } else {
-            if (this.duration == 0.5F) {
-                if (this.amount < 6) {
-                    for (int i = 0; i < this.amount; i++) {
-                        AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
-                        c.upgrade();
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, this.randomSpot, this.cardOffset));
-                    }
-                } else {
-                    for (int i = 0; i < this.amount; i++) {
-                        AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
-                        c.upgrade();
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, this.randomSpot));
-                    }
-                }
-                this.duration -= com.badlogic.gdx.Gdx.graphics.getDeltaTime();
-            }
-            tickDuration();
+    public void update() {
+        if (this.duration == Settings.ACTION_DUR_FAST) {
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.target, com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.drawPile.size() / this.divideAmount));
         }
+        tickDuration();
     }
 }
