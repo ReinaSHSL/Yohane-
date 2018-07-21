@@ -14,7 +14,7 @@ import yohanemod.AbstractCardEnum;
 public class Strawberry_Trapper extends CustomCard{
     public static final String ID = "Strawberry_Trapper";
     public static final String NAME = "Strawberry Trapper";
-    public static final String DESCRIPTION = "Gain !M! Strength. NL Draw !D! Card. NL At the end of your turn, lose 40 Health.";
+    public static final String DESCRIPTION = "Gain !M! Strength. NL Draw !D! Card. NL At the end of your turn, lose 40 HP.";
     public static final String UPGRADED_DESCRIPTION = "Gain !M! Strength. NL Draw !D! Cards. NL At the end of your turn, lose 40 Health.";
     public static final String IMG_PATH = "cards/Strawberry_Trapper.png";
     private static final int ATTACK_DMG = 1;

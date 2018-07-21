@@ -12,21 +12,21 @@
 			<artifactId>slaythespire</artifactId>
 			<version>014</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/lib/desktop-1.0.jar</systemPath>
+			<systemPath>C:/Users/Junior/Desktop/STSMods/lib/desktop-1.0.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>basemod</groupId>
 			<artifactId>basemod</artifactId>
 			<version>1.5.2</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/lib/BaseMod.jar</systemPath>
+			<systemPath>C:\Users/Junior/Desktop/STSMods/lib/BaseMod.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>modthespire</groupId>
 			<artifactId>modthespire</artifactId>
 			<version>1.5.2</version>
 			<scope>system</scope>
-			<systemPath>${basedir}/lib/ModTheSpire.jar</systemPath>
+			<systemPath>C:\Users/Junior/Desktop/STSMods/lib/ModTheSpire.jar</systemPath>
 		</dependency>
 	</dependencies>
 	

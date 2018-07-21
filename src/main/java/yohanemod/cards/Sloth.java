@@ -15,7 +15,7 @@ public class Sloth extends CustomCard{
     public static final String NAME = "Sloth";
     public static final String DESCRIPTION = "Heal !M! HP. NL Apply Entangle to self. NL Exhaust.";
     public static final String IMG_PATH = "cards/Sloth.png";
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int POOL = 1;
     private static final int HEAL = 5;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
