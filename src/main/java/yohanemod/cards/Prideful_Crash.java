@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 public class Prideful_Crash extends CustomCard{
     public static final String ID = "Prideful_Crash";
     public static final String NAME = "Prideful Crash";
-    public static final String DESCRIPTION = "Deal !D! Damage. NL Gain !M! Fallen Energy. Apply !B! Vulnerable to self.";
+    public static final String DESCRIPTION = "Deal !D! damage. NL Gain !M! Fallen Energy. Apply !B! Vulnerable to self.";
     public static final String IMG_PATH = "cards/Prideful_Crash.png";
     private static final int COST = 3;
     private static final int FALLEN_ENERGY = 20;

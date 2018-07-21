@@ -15,7 +15,7 @@ import yohanemod.AbstractCardEnum;
 public class Ice_Cream_Assault extends CustomCard{
     public static final String ID = "Ice_Cream_Assault";
     public static final String NAME = "Ice Cream Assault";
-    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! Damage. NL Apply Slow until the end of the turn.";
+    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! damage. NL Apply Slow until the end of the turn.";
     public static final String IMG_PATH = "cards/Ice_Cream_Assault.png";
     private static final int DAMAGE_AMT = 3;
     private static final int UPGRADE_DAMAGE = 3;

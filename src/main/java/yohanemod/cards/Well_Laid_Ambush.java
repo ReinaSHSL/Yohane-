@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 public class Well_Laid_Ambush extends CustomCard{
     public static final String ID = "Well_Laid_Ambush";
     public static final String NAME = "Well Laid Ambush";
-    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! Damage. NL Retain.";
+    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! damage. NL Retain.";
     public static final String IMG_PATH = "cards/Well_Laid_Ambush.png";
     private static final int COST = 0;
     private static final int ATTACK_DMG = 5;

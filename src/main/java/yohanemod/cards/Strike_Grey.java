@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 public class Strike_Grey extends CustomCard {
     public static final String ID = "Strike_Grey";
     public static final String NAME = "Strike";
-    public static final String DESCRIPTION = "Deal !D! Damage. NL Gain !M! Fallen Energy.";
+    public static final String DESCRIPTION = "Deal !D! damage. NL Gain !M! Fallen Energy.";
     public static final String IMG_PATH = "cards/Strike_Grey.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 6;

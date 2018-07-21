@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 public class Angel_Tears extends CustomCard{
     public static final String ID = "Angel_Tears";
     public static final String NAME = "Angel Tears";
-    public static final String DESCRIPTION = "Deal !D! Damage. NL Apply !M! Weak. NL Gain 8 Fallen Energy.";
+    public static final String DESCRIPTION = "Deal !D! damage. NL Apply !M! Weak. NL Gain 8 Fallen Energy.";
     public static final String IMG_PATH = "cards/Angel_Tears.png";
     private static final int COST = 2;
     private static final int ATTACK_DMG = 10;

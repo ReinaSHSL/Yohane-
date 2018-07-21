@@ -18,7 +18,7 @@ public class Unstable_World extends CustomCard{
 
     public static final String ID = "Unstable_World";
     public static final String NAME = "Unstable World";
-    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! Damage to all enemies. NL Add a copy of this card to your hand. NL Exhaust.";
+    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! damage to all enemies. NL Add a copy of this card to your hand. NL Exhaust.";
     public static final String IMG_PATH = "cards/In_This_Unstable_World.png";
     private static final int COST = 0;
     private static final int ATTACK_DMG = 3;
