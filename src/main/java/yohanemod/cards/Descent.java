@@ -16,12 +16,12 @@ import yohanemod.powers.FallenEnergy;
 public class Descent extends CustomCard {
     public static final String ID = "Descent";
     public static final String NAME = "Descent";
-    public static final String DESCRIPTION = "Pay !D! Fallen Energy. NL Apply !M! Vulnerable.";
+    public static final String DESCRIPTION = "Pay !D! Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
     public static final String IMG_PATH = "cards/Descent.png";
     private static final int COST = 0;
-    private static final int FALLEN_ENERGY = 5;
+    private static final int FALLEN_ENERGY = 3;
     private static final int UPGRADE_PLUS_DMG = -3;
-    private static final int VULNERABLE_AMT = 2;
+    private static final int VULNERABLE_AMT = 3;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.BASIC;
@@ -43,6 +43,7 @@ public class Descent extends CustomCard {
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
         }
+        this.exhaust = true;
     }
 
     @Override

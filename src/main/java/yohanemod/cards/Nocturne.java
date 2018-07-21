@@ -13,7 +13,7 @@ import yohanemod.AbstractCardEnum;
 
 public class Nocturne extends CustomCard {
     public static final String ID = "Nocturne";
-    public static final String NAME = "Nocturne!";
+    public static final String NAME = "Lailaps!";
     public static final String DESCRIPTION = "Gain !B! Block. NL Apply !M! Vulnerable.";
     public static final String IMG_PATH = "cards/Nocturne.png";
     private static final int COST = 2;

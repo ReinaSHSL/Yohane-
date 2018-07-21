@@ -32,6 +32,7 @@ public class Well_Laid_Ambush extends CustomCard{
                 target, POOL);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
+        this.retain = true;
     }
 
     @Override
@@ -44,7 +45,6 @@ public class Well_Laid_Ambush extends CustomCard{
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
         }
-        this.retain = true;
     }
 
     @Override

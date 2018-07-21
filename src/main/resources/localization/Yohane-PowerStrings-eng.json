@@ -44,7 +44,7 @@
       "For each card played this turn, ",
       " takes #b10% more damage from #yAttacks.",
       " (Take #b",
-      "% more damage. Removed at the end of the turn.)"
+      "% more damage.)  Removed at the end of the turn."
     ]
   }
 }
