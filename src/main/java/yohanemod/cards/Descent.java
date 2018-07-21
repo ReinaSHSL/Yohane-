@@ -19,7 +19,7 @@ public class Descent extends CustomCard {
     public static final String DESCRIPTION = "Pay !D! Fallen Energy. NL Apply !M! Vulnerable.";
     public static final String IMG_PATH = "cards/Descent.png";
     private static final int COST = 0;
-    private static final int ATTACK_DMG = 9;
+    private static final int FALLEN_ENERGY = 5;
     private static final int UPGRADE_PLUS_DMG = -3;
     private static final int VULNERABLE_AMT = 2;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
@@ -31,7 +31,7 @@ public class Descent extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL,
                 AbstractCardEnum.GREY, rarity,
                 target, POOL);
-        this.damage = this.baseDamage = ATTACK_DMG;
+        this.damage = this.baseDamage = FALLEN_ENERGY;
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
     }
 

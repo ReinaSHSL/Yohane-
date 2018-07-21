@@ -25,7 +25,7 @@ import yohanemod.relics.AngelWings;
 public class Yohane extends CustomPlayer {
 	public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
 	public static final String YOHANE_SHOULDER_2 = "charasssets/shoulder2.png"; // campfire pose
-    public static final String YOHANE_SHOULDER_1 = "charassets/shoulder1.png"; // another campfire pose
+    public static final String YOHANE_SHOULDER_1 = "charassets/shoulder.png"; // another campfire pose
 	public static final String YOHANE_CORPSE = "charassets/corpse.png"; // dead corpse
 
 	public Yohane (String name, PlayerClass setClass) {
@@ -33,10 +33,8 @@ public class Yohane extends CustomPlayer {
 		
 		this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
 		this.dialogY = (this.drawY + 220.0F * Settings.scale); // you can just copy these values
-		
-		initializeClass(null, YOHANE_SHOULDER_2, // required call to load textures and setup energy/loadout
-				YOHANE_SHOULDER_1,
-				YOHANE_CORPSE, 
+
+		initializeClass(null, "charassets/shoulder2.png", "charassets/shoulder.png", "charassets/corpse.png",
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
 		
 		if (Settings.dailyModsEnabled() && DailyMods.cardMods.get("Diverse")) {

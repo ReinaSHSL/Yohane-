@@ -24,6 +24,7 @@ public class StrawberryTrapperPower extends AbstractPower{
         updateDescription();
         this.img = getStrawberryTrapperTexture();
         this.canGoNegative = true;
+        this.type = AbstractPower.PowerType.DEBUFF;
     }
 
     public void atEndOfTurn(boolean isPlayer) {
