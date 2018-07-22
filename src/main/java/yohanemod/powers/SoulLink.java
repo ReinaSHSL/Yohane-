@@ -41,12 +41,6 @@ public class SoulLink extends AbstractPower{
         return damageAmount;
     }
 
-    public void onSpecificTrigger(AbstractPower debuff)
-           {
-               this.powerToApply = debuff;
-               AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(this.owner, this.owner, this.powerToApply));
-           }
-
     public void updateDescription()
     {
         this.description = (DESCRIPTIONS[0]);
