@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
 
 public class SoulLink extends AbstractPower{
@@ -15,6 +17,7 @@ public class SoulLink extends AbstractPower{
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private DamageInfo soulLink;
+    private AbstractPower soulLinkPower;
 
     public SoulLink(AbstractPlayer p, int damage) {
         this.name = NAME;
@@ -36,6 +39,13 @@ public class SoulLink extends AbstractPower{
                     this.soulLink, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
         }
         return damageAmount;
+    }
+
+    public void onApplyPower(final AbstractPower power, final AbstractCreature target, final AbstractCreature source) {
+        this.soulLinkPower = power;
+        if(soulLinkPower.type == PowerType.DEBUFF) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, this.soulLinkPower, this.soulLinkPower.amount));
+        }
     }
 
     public void updateDescription()

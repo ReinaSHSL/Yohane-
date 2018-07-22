@@ -55,7 +55,7 @@ public class Ruby extends AbstractFriendlyMonster {
 
         target = AbstractDungeon.getRandomMonster();
 
-        tempInfo.add(new ChooseActionInfo("Attack", "Deal 2 damage to all enemies.", () -> {
+        tempInfo.add(new ChooseActionInfo("Attack", "Deal 2 damage to ALL enemies.", () -> {
            ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
            float[] tmp = new float[m.size()];
            for (int i = 0; i < tmp.length; i++) {
