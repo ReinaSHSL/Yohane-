@@ -46,5 +46,11 @@
       " (Take #b",
       "% more damage.)  Removed at the end of the turn."
     ]
+  },
+  "SoulLink": {
+    "NAME": "Soul Link",
+    "DESCRIPTIONS": [
+      "All damage and debuffs taken by this summon are also taken by Yohane."
+    ]
   }
 }

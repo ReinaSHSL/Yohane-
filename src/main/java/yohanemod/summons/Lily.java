@@ -9,6 +9,9 @@ import cards.MonsterCard;
 import java.util.ArrayList;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.powers.WeakPower;
+
 
 public class Lily extends AbstractFriendlyMonster {
     public static String NAME = "Lily";
@@ -50,6 +53,10 @@ public class Lily extends AbstractFriendlyMonster {
         tempInfo.add(new ChooseActionInfo("Attack", "Deal 5 damage.", () -> {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
                     new DamageInfo(AbstractDungeon.player, 5, DamageInfo.DamageType.NORMAL)));
+        }));
+        tempInfo.add(new ChooseActionInfo("Debuff", "Apply 1 weaken.", () -> {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target,AbstractDungeon.player,
+                    new WeakPower(AbstractDungeon.player, 1, false), 1));
         }));
 
         return tempInfo;
