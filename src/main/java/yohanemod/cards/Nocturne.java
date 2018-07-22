@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 
 public class Nocturne extends CustomCard {
     public static final String ID = "Nocturne";

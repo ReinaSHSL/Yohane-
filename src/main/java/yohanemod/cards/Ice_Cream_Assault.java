@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.IceCreamSlow;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 
 public class Ice_Cream_Assault extends CustomCard{
     public static final String ID = "Ice_Cream_Assault";

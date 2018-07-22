@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 
 import basemod.abstracts.CustomCard;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
 public class Backfoot extends CustomCard{

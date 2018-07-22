@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 
 import basemod.abstracts.CustomCard;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
 public class Descent extends CustomCard {

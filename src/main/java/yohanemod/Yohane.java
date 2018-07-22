@@ -2,31 +2,19 @@ package yohanemod;
 
 import java.util.ArrayList;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.MathUtils;
-import com.esotericsoftware.spine.AnimationState;
-import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.characters.Defect;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.daily.DailyMods;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import yohanemod.YohaneEnum;
-import yohanemod.relics.AngelWings;
+import yohanemod.patches.YohaneEnum;
+import characters.CustomCharSelectInfo;
+import characters.AbstractPlayerWithMinions;
 
-public class Yohane extends CustomPlayer {
+public class Yohane extends AbstractPlayerWithMinions {
 	public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
-	public static final String YOHANE_SHOULDER_2 = "charasssets/shoulder2.png"; // campfire pose
-    public static final String YOHANE_SHOULDER_1 = "charassets/shoulder.png"; // another campfire pose
-	public static final String YOHANE_CORPSE = "charassets/corpse.png"; // dead corpse
 
 	public Yohane (String name, PlayerClass setClass) {
 		super(name, setClass, null, null, null, new SpriterAnimation("charassets/animations.scml"));
@@ -65,10 +53,23 @@ public class Yohane extends CustomPlayer {
 		return retVal;
 	}
 
-	public static CharSelectInfo getLoadout() { // the rest of the character loadout so includes your character select screen info plus hp and starting gold
-		return new CharSelectInfo("Yohane", "A fallen angel from Japan who has descended upon the Spire. NL Uses dark magic and idol techniques.",
-				70, 70, 0, 99, 5,
-			YohaneEnum.FallenAngel	, getStartingRelics(), getStartingDeck(), false);
-	}
+    public static CharSelectInfo getLoadout() {
+
+        CharSelectInfo info = new CustomCharSelectInfo(
+                "Yohane",
+                "A fallen angel from Japan. NL Uses dark magic and idol techniques.",
+                70, //currentHP
+                70, //maxHP
+                0,  //maxOrbs
+                2,  //maxMinions
+                99, //gold
+                5,  //cardDraw
+                YohaneEnum.FallenAngel,
+                getStartingRelics(),
+                getStartingDeck(),
+                false);
+
+        return info;
+    }
 	
 }

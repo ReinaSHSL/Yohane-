@@ -28,6 +28,13 @@
 			<scope>system</scope>
 			<systemPath>C:\Users/Junior/Desktop/STSMods/lib/ModTheSpire.jar</systemPath>
 		</dependency>
+		<dependency>
+			<groupId>stsfriendlyminions</groupId>
+			<artifactId>stsfriendlyminions</artifactId>
+			<version>0.0.1</version>
+			<scope>system</scope>
+			<systemPath>C:\Users/Junior/Desktop/STSMods/lib/FriendlyMinions.jar</systemPath>
+		</dependency>
 	</dependencies>
 	
 	<properties>

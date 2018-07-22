@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import yohanemod.powers.StrawberryTrapperPower;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 
 public class Strawberry_Trapper extends CustomCard{
     public static final String ID = "Strawberry_Trapper";

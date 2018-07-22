@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.powers.EntanglePower;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 
 public class Sloth extends CustomCard{
     public static final String ID = "Sloth";

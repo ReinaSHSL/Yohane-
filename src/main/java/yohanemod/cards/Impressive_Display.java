@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import yohanemod.powers.FallenEnergy;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 
 public class Impressive_Display extends CustomCard{
     public static final String ID = "Impressive_Display";

@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.cards.curses.Clumsy;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 
 public class Miracle_Wave extends CustomCard{
     public static final String ID = "Miracle_Wave";

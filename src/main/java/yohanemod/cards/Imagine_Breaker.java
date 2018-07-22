@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import yohanemod.powers.ImagineBreakerPower;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 
 public class Imagine_Breaker extends CustomCard{
     public static final String ID = "Imagine_Breaker";

@@ -7,8 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import yohanemod.powers.StrawberryTrapperPower;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FlightPlayerPower;
 
 public class Take_Flight extends CustomCard {

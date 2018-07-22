@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 

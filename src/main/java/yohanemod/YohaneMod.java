@@ -2,23 +2,25 @@ package yohanemod;
 
 import java.nio.charset.StandardCharsets;
 
+import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 
 import basemod.BaseMod;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import yohanemod.cards.*;
+import yohanemod.patches.AbstractCardEnum;
+import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.*;
+
+import characters.AbstractPlayerWithMinions;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import helpers.BasePlayerMinionHelper;
 
 
 @SpireInitializer
@@ -107,6 +109,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Impressive_Display());
 		BaseMod.addCard(new Runaway_Umbrella());
 		BaseMod.addCard(new Miracle_Wave());
+		BaseMod.addCard(new Little_Demon_Lily());
 	 }
 
     @Override

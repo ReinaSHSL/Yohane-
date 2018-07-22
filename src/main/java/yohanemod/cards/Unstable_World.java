@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import yohanemod.AbstractCardEnum;
+import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
