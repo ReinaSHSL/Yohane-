@@ -14,7 +14,7 @@ import yohanemod.powers.FallenEnergy;
 
 public class Shark_Summon extends CustomCard {
     public static final String ID = "Shark_Summon";
-    public static final String NAME = "Shark Summon";
+    public static final String NAME = "Shark Guard";
     public static final String DESCRIPTION = "Deal !D! damage. NL Lose 1/4 Fallen Energy. NL Gain equal Thorns. ";
     public static final String IMG_PATH = "cards/Shark_Summon.png";
     private static final int DAMAGE_AMT = 5;

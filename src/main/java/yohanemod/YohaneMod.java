@@ -21,11 +21,14 @@ import yohanemod.cards.*;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 
 @SpireInitializer
-public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber {
+public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, EditStringsSubscriber  {
+    public static final Logger logger = LogManager.getLogger(YohaneMod.class.getName());
 	
 	private static final String MODNAME = "Yohane!";
     private static final String AUTHOR = "Reina";
@@ -78,20 +81,14 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 
     @Override
     public void receiveEditKeywords() {
-        final String[] FallenEnergy = {"Fallen Energy"};
+        logger.info("begin editing keywords");
+        final String[] FallenEnergy = {"fallen energy, fallen"};
         BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Lose one every turn. Paying Fallen Energy means you can't go below zero, losing means you can.");
-        final String[] Summon = {"Summon"};
-        BaseMod.addKeyword(Summon,"Summon an ally to help you battle. You cannot summon more than one of the same kind of ally.");
-        final String[] Lily = {"Lily"};
-        BaseMod.addKeyword(Lily,"A Little Demon with 10 HP and can either deal 4 damage to a random energy, or give you 8 Fallen Energy.");
-        final String[] Blur = {"Blur"};
-        BaseMod.addKeyword(Blur,"Retain block to your next turn.");
-        final String[] Thorns = {"Thorns"};
-        BaseMod.addKeyword(Thorns,"Whenever you're attacked, deal damage equal to how many thorns you have.");
-        final String[] Flight = {"Flight"};
-        BaseMod.addKeyword(Flight,"All incoming damage is halved. Removed if hit 3 times in the same turn.");
-        final String[] Entangle = {"Entangle"};
-        BaseMod.addKeyword(Entangle,"Cannot play attack cards.");
+        final String[] Summon = {"summon"};
+        BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of ally.");
+        final String[] Lily = {"lily"};
+        BaseMod.addKeyword(Lily,"A Little Demon with 10 HP and can either deal 4 damage to a random enemy, or give you 8 Fallen Energy.");
+        logger.info("finish editing keywords");
     }
 
 	 @Override
