@@ -129,6 +129,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Runaway_Umbrella());
 		BaseMod.addCard(new Miracle_Wave());
 		BaseMod.addCard(new Little_Demon_Lily());
+		BaseMod.addCard(new Mijuku_Dreamer());
 	 }
 
     @Override
