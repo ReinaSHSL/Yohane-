@@ -71,6 +71,4 @@ public class Yohane extends AbstractPlayerWithMinions {
 
         return info;
     }
-
-	
 }
