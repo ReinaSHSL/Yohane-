@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import characters.AbstractPlayerWithMinions;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import yohanemod.summons.Lily;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import yohanemod.powers.SoulLink;
@@ -19,7 +18,7 @@ public class Little_Demon_Lily extends CustomCard {
     public static final String NAME = "Little Demon Lily";
     public static final String DESCRIPTION = "Summon 1 Lily.";
     public static final String IMG_PATH = "cards/Little_Demon_Lily.png";
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.SELF;
@@ -33,6 +32,8 @@ public class Little_Demon_Lily extends CustomCard {
     //Can't be upgraded
     @Override
     public void upgrade() {
+        this.upgradeName();
+        this.upgradeBaseCost(0);
 
     }
 

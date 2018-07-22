@@ -8,6 +8,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
+import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
+import basemod.interfaces.EditStringsSubscriber;
 
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -17,14 +22,10 @@ import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.*;
 
-import characters.AbstractPlayerWithMinions;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import helpers.BasePlayerMinionHelper;
 
 
 @SpireInitializer
-public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber{
+public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditStringsSubscriber, EditKeywordsSubscriber {
 	
 	private static final String MODNAME = "Yohane!";
     private static final String AUTHOR = "Reina";
@@ -69,11 +70,29 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 	
 	 @Override
 		public void receiveEditCharacters() {
-			BaseMod.addCharacter(Yohane.class, "The Fallen Angel", "uwu",
+			BaseMod.addCharacter(Yohane.class,  "The Fallen Angel", "uwu",
 					AbstractCardEnum.GREY.toString(), "Yohane",
 					Yohane_Button , Yohane_Portrait,
 					YohaneEnum.FallenAngel.toString());
 		}
+
+    @Override
+    public void receiveEditKeywords() {
+        final String[] FallenEnergy = {"Fallen Energy"};
+        BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Lose one every turn. Paying Fallen Energy means you can't go below zero, losing means you can.");
+        final String[] Summon = {"Summon"};
+        BaseMod.addKeyword(Summon,"Summon an ally to help you battle. You cannot summon more than one of the same kind of ally.");
+        final String[] Lily = {"Lily"};
+        BaseMod.addKeyword(Lily,"A Little Demon with 10 HP and can either deal 4 damage to a random energy, or give you 8 Fallen Energy.");
+        final String[] Blur = {"Blur"};
+        BaseMod.addKeyword(Blur,"Retain block to your next turn.");
+        final String[] Thorns = {"Thorns"};
+        BaseMod.addKeyword(Thorns,"Whenever you're attacked, deal damage equal to how many thorns you have.");
+        final String[] Flight = {"Flight"};
+        BaseMod.addKeyword(Flight,"All incoming damage is halved. Removed if hit 3 times in the same turn.");
+        final String[] Entangle = {"Entangle"};
+        BaseMod.addKeyword(Entangle,"Cannot play attack cards.");
+    }
 
 	 @Override
 	 	public void receiveEditCards() {
@@ -116,5 +135,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     public void receiveEditRelics() {
         BaseMod.addRelicToCustomPool(new AngelWings(), AbstractCardEnum.GREY.toString());
     }
+
 
 }

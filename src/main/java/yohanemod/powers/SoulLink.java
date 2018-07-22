@@ -1,14 +1,12 @@
 package yohanemod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 
 public class SoulLink extends AbstractPower{
@@ -17,7 +15,6 @@ public class SoulLink extends AbstractPower{
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private DamageInfo soulLink;
-    private AbstractPower powerToApply;
 
     public SoulLink(AbstractPlayer p, int damage) {
         this.name = NAME;

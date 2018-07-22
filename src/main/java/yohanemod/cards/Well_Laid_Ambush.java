@@ -48,6 +48,12 @@ public class Well_Laid_Ambush extends CustomCard{
     }
 
     @Override
+    public void applyPowers(){
+        super.applyPowers();
+        this.retain = true;
+    }
+
+    @Override
     public AbstractCard makeCopy() {
         return new Well_Laid_Ambush();
     }

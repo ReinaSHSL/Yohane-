@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import yohanemod.powers.FallenEnergy;
 
 
 public class Lily extends AbstractFriendlyMonster {
@@ -21,7 +21,7 @@ public class Lily extends AbstractFriendlyMonster {
     private AbstractMonster target;
 
     public Lily() {
-        super(NAME, ID, 20,
+        super(NAME, ID, 10,
                 null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -700.0F, 0);
 
     }
@@ -50,13 +50,12 @@ public class Lily extends AbstractFriendlyMonster {
 
         target = AbstractDungeon.getRandomMonster();
 
-        tempInfo.add(new ChooseActionInfo("Attack", "Deal 5 damage.", () -> {
+        tempInfo.add(new ChooseActionInfo("Attack", "Deal 4 damage to a random enemy.", () -> {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
-                    new DamageInfo(AbstractDungeon.player, 5, DamageInfo.DamageType.NORMAL)));
+                    new DamageInfo(AbstractDungeon.player, 4, DamageInfo.DamageType.NORMAL)));
         }));
-        tempInfo.add(new ChooseActionInfo("Debuff", "Apply 1 weaken.", () -> {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target,AbstractDungeon.player,
-                    new WeakPower(AbstractDungeon.player, 1, false), 1));
+        tempInfo.add(new ChooseActionInfo("Debuff", "Gain 8 Fallen Energy", () -> {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, 8), 8));
         }));
 
         return tempInfo;
