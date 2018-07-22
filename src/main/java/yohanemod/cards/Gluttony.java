@@ -32,7 +32,8 @@ public class Gluttony extends CustomCard {
     {
         int count = AbstractDungeon.player.hand.size();
         for (int i = 0; i < count; i++) {
-             AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.ExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, true, true));
+             AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.ExhaustAction(AbstractDungeon.player, AbstractDungeon.player,
+                     1, true, true));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), this.magicNumber));
         }
     }
