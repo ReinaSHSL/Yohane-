@@ -53,7 +53,7 @@ public class Little_Demon_Lily extends CustomCard {
                     AbstractMonster Lily = player.minions.monsters.get(0);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, abstractPlayer, new SoulLink(player,1), 1));
                 } else {
-                    if (player.minions.monsters.get(0).id == "Lily") {
+                    if (player.minions.monsters.get(0).id.equals("Lily")) {
                         AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "Lily is already summoned!", 1.0F, 2.0F));
                     } else {
                         player.addMinion(new Lily());
