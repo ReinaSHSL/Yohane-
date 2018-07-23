@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import yohanemod.powers.FallenEnergy;
+import com.megacrit.cardcrawl.core.Settings;
 
 
 public class Lily extends AbstractFriendlyMonster {
@@ -22,7 +23,7 @@ public class Lily extends AbstractFriendlyMonster {
 
     public Lily() {
         super(NAME, ID, 15,
-                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -700.0F, 0);
+                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -700.0F * Settings.scale, 0);
 
     }
 
@@ -52,7 +53,7 @@ public class Lily extends AbstractFriendlyMonster {
 
         tempInfo.add(new ChooseActionInfo("Attack", "Deal 4 damage to a random enemy.", () -> {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
-                    new DamageInfo(AbstractDungeon.player, 4, DamageInfo.DamageType.NORMAL)));
+                    new DamageInfo(this, 4, DamageInfo.DamageType.NORMAL)));
         }));
         tempInfo.add(new ChooseActionInfo("Charge", "Gain 8 Fallen Energy", () -> {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, 8), 8));

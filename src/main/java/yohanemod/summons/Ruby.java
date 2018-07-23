@@ -13,6 +13,7 @@ import actions.ChooseActionInfo;
 import cards.MonsterCard;
 import java.util.ArrayList;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.Settings;
 
 public class Ruby extends AbstractFriendlyMonster {
     public static String NAME = "Ruby";
@@ -27,7 +28,7 @@ public class Ruby extends AbstractFriendlyMonster {
 
     public Ruby() {
         super(NAME, ID, 12,
-                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", -1150.0F, 0);
+                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", -1150.0F * Settings.scale, 0);
 
 
     }

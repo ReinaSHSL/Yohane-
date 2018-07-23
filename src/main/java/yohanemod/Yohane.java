@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import yohanemod.patches.YohaneEnum;
 import characters.CustomCharSelectInfo;
 import characters.AbstractPlayerWithMinions;
-import basemod.abstracts.CustomPlayer;
 
 public class Yohane extends AbstractPlayerWithMinions {
 	public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
