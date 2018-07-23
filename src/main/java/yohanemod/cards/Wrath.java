@@ -20,7 +20,7 @@ public class Wrath extends CustomCard {
     private static final int DAMAGE = 2;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int WEAK_AMT = 2;
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
     private static final AbstractCard.CardTarget target = CardTarget.ALL_ENEMY;

@@ -32,7 +32,7 @@ public class Imagine_Breaker extends CustomCard{
         if (p.hasPower("FallenEnergy")) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ImagineBreakerPower(p,1)));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }
     }
 

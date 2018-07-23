@@ -29,7 +29,6 @@ public class Little_Demon_Ruby extends CustomCard {
                 rarity, target, POOL);
     }
 
-    //Can't be upgraded
     @Override
     public void upgrade() {
         this.upgradeName();

@@ -13,10 +13,9 @@ import yohanemod.powers.FallenEnergy;
 public class Dark_Rest extends CustomCard{
     public static final String ID = "Dark_Rest";
     public static final String NAME = "Dark Rest";
-    public static final String DESCRIPTION = "Apply !M! Weak. NL Gain !D! Fallen Energy.";
+    public static final String DESCRIPTION = "Apply !M! Weak. NL Gain 4 Fallen Energy.";
+    public static final String UPGRADED_DESCRIPTION = "Apply !M! Weak. NL Gain 8 Fallen Energy.";
     public static final int WEAK_AMT = 1;
-    public static final int ATTACK_DMG = 4;
-    public static final int UPGRADE_PLUS_DMG = 4;
     public static final String IMG_PATH = "cards/Dark_Rest.png";
     private static final int COST = 1;
     private static final int POOL = 1;
@@ -28,7 +27,6 @@ public class Dark_Rest extends CustomCard{
                 CardType.SKILL, AbstractCardEnum.GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
-        this.damage = this.baseDamage = ATTACK_DMG;
     }
 
     @Override
@@ -48,7 +46,8 @@ public class Dark_Rest extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
+            this.rawDescription =UPGRADED_DESCRIPTION;
+            this.initializeDescription();
             this.upgradeMagicNumber(1);
         }
     }

@@ -19,7 +19,7 @@ public class Mijuku_Dreamer extends CustomCard {
     public static final String NAME = "Mijuku Dreamer";
     public static final String DESCRIPTION = "Gain !M! Strength for every Summon you have. NL Exhaust";
     public static final String IMG_PATH = "cards/Mijuku_Dreamer.png";
-    private static final int STRENGTH_AMT = 1;
+    private static final int STRENGTH_AMT = 2;
     private static final int COST = 1;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.UNCOMMON;

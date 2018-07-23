@@ -24,13 +24,16 @@ public class Fallen_Dragon_Phoenix_Hold extends CustomCard {
                 AbstractCard.CardType.SKILL, AbstractCardEnum.GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = STRENGTH_LOSS;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new com.megacrit.cardcrawl.powers.StrengthPower(m, -this.magicNumber), -this.magicNumber));
-        this.exhaust = true;
+        if ((m != null) && (!m.hasPower("Artifact"))) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new com.megacrit.cardcrawl.powers.GainStrengthPower(m, this.magicNumber), this.magicNumber));
+        }
     }
 
     @Override

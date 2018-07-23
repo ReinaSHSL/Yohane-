@@ -20,7 +20,7 @@ public class Strawberry_Trapper extends CustomCard{
     private static final int ATTACK_DMG = 1;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int STR_AMOUNT = 10;
-    private static final int COST = 3;
+    private static final int COST = 1;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;

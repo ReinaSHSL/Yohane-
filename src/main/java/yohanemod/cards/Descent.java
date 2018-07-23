@@ -16,12 +16,12 @@ import yohanemod.powers.FallenEnergy;
 public class Descent extends CustomCard {
     public static final String ID = "Descent";
     public static final String NAME = "Descent";
-    public static final String DESCRIPTION = "Pay !D! Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
+    public static final String DESCRIPTION = "Pay 6 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
+    public static final String UPGRADED_DESCRIPTION = "Pay 3 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
     public static final String IMG_PATH = "cards/Descent.png";
     private static final int COST = 0;
-    private static final int FALLEN_ENERGY = 3;
-    private static final int UPGRADE_PLUS_DMG = -3;
-    private static final int VULNERABLE_AMT = 3;
+    private static final int FALLEN_ENERGY = 6;
+    private static final int VULNERABLE_AMT = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.BASIC;
@@ -31,19 +31,27 @@ public class Descent extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL,
                 AbstractCardEnum.GREY, rarity,
                 target, POOL);
-        this.damage = this.baseDamage = FALLEN_ENERGY;
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= this.damage)) {
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -this.damage));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+        if (!this.upgraded) {
+            if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= FALLEN_ENERGY)) {
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -FALLEN_ENERGY));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            } else {
+                AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
+            }
         } else {
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
+            if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= FALLEN_ENERGY - 3)) {
+                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -FALLEN_ENERGY - 3));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            } else {
+                AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
+            }
         }
-        this.exhaust = true;
     }
 
     @Override
@@ -55,8 +63,9 @@ public class Descent extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
             this.upgradeMagicNumber(UPGRADE_PLUS_VULNERABLE);
+            this.rawDescription = UPGRADED_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

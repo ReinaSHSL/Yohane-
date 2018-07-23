@@ -12,13 +12,16 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import yohanemod.patches.YohaneEnum;
 import characters.CustomCharSelectInfo;
 import characters.AbstractPlayerWithMinions;
+import basemod.abstracts.CustomPlayer;
 
 public class Yohane extends AbstractPlayerWithMinions {
 	public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
+    public CustomCharSelectInfo getInfo() {
+        return (CustomCharSelectInfo) getLoadout ();
+    }
 
-	public Yohane (String name, PlayerClass setClass) {
-		super(name, setClass, null, null, null, new SpriterAnimation("charassets/animations.scml"));
-		
+    public Yohane (String name, PlayerClass setClass) {
+        super(name, setClass, null, null, null, new SpriterAnimation("charassets/animations.scml"));
 		this.dialogX = (this.drawX + 0.0F * Settings.scale); // set location for text bubbles
 		this.dialogY = (this.drawY + 220.0F * Settings.scale); // you can just copy these values
 
@@ -29,6 +32,7 @@ public class Yohane extends AbstractPlayerWithMinions {
 			this.masterMaxOrbs = 1;
 		}
 	}
+
 
 	public static ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
@@ -55,7 +59,7 @@ public class Yohane extends AbstractPlayerWithMinions {
 
     public static CharSelectInfo getLoadout() {
 
-        CharSelectInfo info = new CustomCharSelectInfo(
+        CharSelectInfo info = new CustomCharSelectInfo (
                 "Yohane",
                 "A fallen angel from Japan. NL Uses dark magic and idol techniques.",
                 70, //currentHP
@@ -68,7 +72,7 @@ public class Yohane extends AbstractPlayerWithMinions {
                 getStartingRelics(),
                 getStartingDeck(),
                 false);
-
         return info;
     }
+
 }

@@ -17,7 +17,7 @@ public class Angel_Tears extends CustomCard{
     public static final String DESCRIPTION = "Deal !D! damage. NL Apply !M! Weak. NL Gain 8 Fallen Energy.";
     public static final String IMG_PATH = "cards/Angel_Tears.png";
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 10;
+    private static final int ATTACK_DMG = 12;
     private static final int UPGRADE_PLUS_DMG = 2;
     private static final int WEAK_AMT = 2;
     private static final int POOL = 1;

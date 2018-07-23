@@ -15,7 +15,8 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 public class Livestream_Donation extends CustomCard{
     public static final String ID = "Livestream_Donation";
     public static final String NAME = "Livestream Donation";
-    public static final String DESCRIPTION = "Gain !D! Fallen Energy. NL Draw a card for every !M! cards in your draw pile.";
+    public static final String DESCRIPTION = "Gain 4 Fallen Energy. NL Draw a card for every !M! cards in your draw pile.";
+    public static final String UPGRADED_DESCRIPTION = "Gain 6 Fallen Energy. NL Draw a card for every !M! cards in your draw pile.";
     public static final String IMG_PATH = "cards/Livestream_Donation.png";
     private static final int COST = 1;
     private static final int FALLEN_ENERGY = 4;
@@ -28,17 +29,24 @@ public class Livestream_Donation extends CustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.GREY,
                 rarity, target, POOL);
-        this.damage = this.baseDamage = FALLEN_ENERGY;
         this.magicNumber = this.baseMagicNumber = DRAW;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.damage), this.damage));
-            AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Livestream_Donation(p, this.magicNumber));
+            if (!this.upgraded) {
+                    AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+                            new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                            AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, FALLEN_ENERGY), FALLEN_ENERGY));
+                    AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Livestream_Donation(p, this.magicNumber));
+                } else {
+                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+                        new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, FALLEN_ENERGY+2), FALLEN_ENERGY+2));
+                AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Livestream_Donation(p, this.magicNumber));
+                }
     }
 
     @Override
@@ -50,8 +58,9 @@ public class Livestream_Donation extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(2);
             this.upgradeMagicNumber(-1);
+            this.rawDescription = UPGRADED_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 

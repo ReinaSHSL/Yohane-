@@ -37,9 +37,9 @@ public class Ice_Cream_Assault extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower("FallenEnergy") && p.getPower("FallenEnergy").amount >= this.magicNumber) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, -this.magicNumber), -this.magicNumber));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new IceCreamSlow(m,1), 1));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(m, p, new IceCreamSlow(m,1), 1));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }
     }
 

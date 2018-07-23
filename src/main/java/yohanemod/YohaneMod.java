@@ -82,7 +82,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     @Override
     public void receiveEditKeywords() {
         logger.info("begin editing keywords");
-        final String[] FallenEnergy = {"fallen energy, fallen"};
+        final String[] FallenEnergy = {"fallen"};
         BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Lose one every turn. Paying Fallen Energy means you can't go below zero, losing means you can.");
         final String[] Summon = {"summon"};
         BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of ally.");

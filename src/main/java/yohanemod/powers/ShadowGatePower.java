@@ -30,7 +30,7 @@ public class ShadowGatePower extends AbstractPower{
         }
 
         public void onUseCard(AbstractCard card, UseCardAction action) {
-            final int FallenLoss = this.amount*8;
+            final int FallenLoss = this.amount*5;
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, this.amount));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FallenEnergy(owner, -FallenLoss), -FallenLoss));
             if (this.owner.getPower("FallenEnergy").amount - FallenLoss <= 0) {

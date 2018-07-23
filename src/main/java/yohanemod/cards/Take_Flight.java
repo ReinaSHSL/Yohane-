@@ -17,7 +17,7 @@ public class Take_Flight extends CustomCard {
     public static final String IMG_PATH = "cards/Take_Flight.png";
     private static final int COST = 2;
     private static final int POOL = 1;
-    private static final int FALLEN_ENERGY = 15;
+    private static final int FALLEN_ENERGY = 12;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;
 

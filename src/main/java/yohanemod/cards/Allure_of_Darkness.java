@@ -37,7 +37,7 @@ public class Allure_of_Darkness extends CustomCard{
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
                 AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, 1, false));
             } else {
-                AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
+                AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
             }
         } else {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));

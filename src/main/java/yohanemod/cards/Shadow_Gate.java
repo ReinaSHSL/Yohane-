@@ -14,10 +14,10 @@ import yohanemod.powers.ShadowGatePower;
 public class Shadow_Gate extends CustomCard{
     public static final String ID = "Shadow_Gate";
     public static final String NAME = "Shadow Gate";
-    public static final String DESCRIPTION = "Draw !M! card and lose 8 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
-    public static final String UPGRADED_DESCRIPTION = "Draw !M! cards and lose 8 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
+    public static final String DESCRIPTION = "Draw !M! card and lose 5 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
+    public static final String UPGRADED_DESCRIPTION = "Draw !M! cards and lose 5 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
     public static final String IMG_PATH = "cards/Shadow_Gate.png";
-    private static final int COST = 3;
+    private static final int COST = 2;
     private static final int POOL = 1;
     private static final int DRAW = 1;
     private static final CardRarity rarity = CardRarity.RARE;
@@ -35,7 +35,7 @@ public class Shadow_Gate extends CustomCard{
         if (p.hasPower("FallenEnergy")) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowGatePower(p, this.magicNumber), this.magicNumber));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }
     }
 

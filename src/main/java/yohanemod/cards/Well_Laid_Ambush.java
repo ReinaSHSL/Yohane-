@@ -43,7 +43,7 @@ public class Well_Laid_Ambush extends CustomCard{
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I have no Fallen Energy!", 1.0F, 2.0F));
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }
     }
 
