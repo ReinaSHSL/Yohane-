@@ -130,6 +130,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Little_Demon_Lily());
 		BaseMod.addCard(new Mijuku_Dreamer());
 		BaseMod.addCard(new Little_Demon_Ruby());
+		BaseMod.addCard(new Guilty_Kiss());
 	 }
 
     @Override

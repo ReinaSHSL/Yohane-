@@ -20,7 +20,7 @@ public class Miracle_Wave extends CustomCard{
     public static final String DESCRIPTION = "Deal !D! damage. NL Add an Injury to your deck.";
     public static final String UPGRADED_DESCRIPTION = "Deal !D! damage. NL Add a Clumsy to your deck.";
     public static final String IMG_PATH = "cards/Miracle_Wave.png";
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DAMAGE_AMT = 10;
     private static final int DAMAGE_UPGRADE = 2;
     private static final int POOL = 1;
@@ -29,7 +29,7 @@ public class Miracle_Wave extends CustomCard{
 
     public Miracle_Wave() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.ATTACK, AbstractCardEnum.GREY,
                 rarity, target, POOL);
         this.damage = this.baseDamage = DAMAGE_AMT;
 

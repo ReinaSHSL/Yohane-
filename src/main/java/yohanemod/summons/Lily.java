@@ -1,5 +1,7 @@
 package yohanemod.summons;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import monsters.AbstractFriendlyMonster;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -23,8 +25,7 @@ public class Lily extends AbstractFriendlyMonster {
 
     public Lily() {
         super(NAME, ID, 15,
-                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -700.0F * Settings.scale, 0);
-
+                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -700F * Settings.scale, 0);
     }
 
     @Override

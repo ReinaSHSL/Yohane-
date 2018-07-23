@@ -14,7 +14,7 @@ import yohanemod.powers.FallenEnergy;
 public class Energy_Change extends CustomCard {
     public static final String ID = "Energy_Change";
     public static final String NAME = "Energy Change";
-    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Gain 1 Energy.";
+    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Gain [G].";
     public static final String IMG_PATH = "cards/Energy_Change.png";
     private static final int COST = 0;
     private static final int FALLEN_ENERGY = 4;
