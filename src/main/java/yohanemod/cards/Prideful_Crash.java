@@ -23,7 +23,7 @@ public class Prideful_Crash extends CustomCard{
     private static final int FALLEN_ENERGY_UPGRADE = 10;
     private static final int VULNERABLE_AMT = 3;
     private static final int VULNERABLE_AMT_UPGRADE = 1;
-    private static final int DAMAGE_AMOUNT = 30;
+    private static final int DAMAGE_AMOUNT = 40;
     private static final int DAMAGE_AMOUNT_UPGRADE = 8;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.RARE;

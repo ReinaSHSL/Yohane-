@@ -1,8 +1,10 @@
 package yohanemod.powers;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
@@ -13,21 +15,22 @@ public class FallenEnergy extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
+
     public FallenEnergy(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = amount;
-        this.priority = 0;
         updateDescription();
         this.img = getDarkEnergyPowerTexture();
-        this.canGoNegative = true;
-        this.isTurnBased = false;
+    }
+
+    public void atStartOfTurn () {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FallenEnergy(owner, 2), 2));
     }
 
     public void stackPower(int stackAmount)
     {
-        //flash();
         this.fontScale = 8.0F;
         this.amount += stackAmount;
     }

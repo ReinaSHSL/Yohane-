@@ -1,7 +1,5 @@
 package yohanemod.summons;
 
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import monsters.AbstractFriendlyMonster;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -19,13 +17,16 @@ import com.megacrit.cardcrawl.core.Settings;
 public class Lily extends AbstractFriendlyMonster {
     public static String NAME = "Lily";
     public static String ID = "Lily";
+    public int upgradeCount;
     private ArrayList<ChooseActionInfo> moveInfo;
     private boolean hasAttacked = false;
     private AbstractMonster target;
 
+
     public Lily() {
         super(NAME, ID, 15,
-                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -700F * Settings.scale, 0);
+                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -850F * Settings.scale, 0);
+
     }
 
     @Override
@@ -48,18 +49,22 @@ public class Lily extends AbstractFriendlyMonster {
 
     //Create possible moves for the monster
     private ArrayList<ChooseActionInfo> makeMoves(){
+        if (this.getPower("LilyStrength").amount != 0) {
+            upgradeCount = this.getPower("RubyStrength").amount;
+        }
+        int attackDamage = (4 + upgradeCount * 2);
+        int chargeAmount = (6 + upgradeCount);
         ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
-
         target = AbstractDungeon.getRandomMonster();
-
-        tempInfo.add(new ChooseActionInfo("Attack", "Deal 4 damage to a random enemy.", () -> {
+        String attackDesc = String.format("Deal %d damage to a random enemy.", attackDamage);
+        String chargeDesc = String.format("Gain %d Fallen Energy.", chargeAmount);
+        tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
-                    new DamageInfo(this, 4, DamageInfo.DamageType.NORMAL)));
+                    new DamageInfo(this, attackDamage, DamageInfo.DamageType.NORMAL)));
         }));
-        tempInfo.add(new ChooseActionInfo("Charge", "Gain 6 Fallen Energy", () -> {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, 6), 6));
+        tempInfo.add(new ChooseActionInfo("Charge", chargeDesc, () -> {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, chargeAmount), chargeAmount));
         }));
-
         return tempInfo;
     }
 

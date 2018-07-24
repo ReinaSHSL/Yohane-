@@ -13,7 +13,7 @@ import yohanemod.patches.AbstractCardEnum;
 public class Misfortune extends CustomCard{
     public static final String ID = "Misfortune";
     public static final String NAME = "Misfortune";
-    public static final String DESCRIPTION = "Apply !M! Vulnerable to self. NL Gain 1 Strength.";
+    public static final String DESCRIPTION = "Apply !M! Vulnerable to self. NL Gain 2 Strength.";
     public static final String IMG_PATH = "cards/Misfortune.png";
     private static final int COST = 1;
     private static final int VULNERABLE_AMT = 2;
@@ -32,7 +32,7 @@ public class Misfortune extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m)
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, this.magicNumber, false), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new com.megacrit.cardcrawl.powers.StrengthPower(p, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new com.megacrit.cardcrawl.powers.StrengthPower(p, 2), 2));
     }
 
     @Override

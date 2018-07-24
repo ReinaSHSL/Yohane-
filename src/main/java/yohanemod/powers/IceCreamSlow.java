@@ -56,12 +56,12 @@ public class IceCreamSlow extends AbstractPower {
              return damage;
            }
 
-    public void stackPower(int stackAmount)
-    {
+        public void stackPower(int stackAmount)
+        {
 
-        this.fontScale = 8.0F;
-        this.amount += stackAmount;
-    }
+            this.fontScale = 8.0F;
+            this.amount += stackAmount;
+        }
 
     public static Texture getIceCreamSlowTexture() {
         return new Texture("powers/IceCreamSlow.png");

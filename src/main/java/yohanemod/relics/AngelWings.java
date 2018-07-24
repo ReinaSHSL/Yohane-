@@ -20,7 +20,7 @@ public class AngelWings extends CustomRelic {
     }
 
     @Override
-    public void atTurnStart()
+    public void atBattleStart()
      {
          AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, FALLEN_ENERGY)));
      }

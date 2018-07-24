@@ -1,8 +1,10 @@
 package yohanemod.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -36,6 +38,9 @@ public class Ice_Cream_Assault extends CustomCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower("FallenEnergy") && p.getPower("FallenEnergy").amount >= this.magicNumber) {
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, -this.magicNumber), -this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new IceCreamSlow(m,0), 0));
         } else {

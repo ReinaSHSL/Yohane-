@@ -3,7 +3,7 @@
     "NAME": "Fallen Energy",
     "DESCRIPTIONS": [
       "You have ",
-      " #yFallen #yEnergy."
+      " #yFallen #yEnergy. Gain 2 per turn. Paying Fallen Energy means you must possess enough. Losing can be played regardless of Fallen Energy count."
     ]
   },
 
@@ -58,6 +58,22 @@
     "DESCRIPTIONS": [
       "The next ",
       " 0 cost cards are played twice."
+    ]
+  },
+  "LilyStrength": {
+    "NAME": "Powered Up Lily!",
+    "DESCRIPTIONS": [
+      "Attacking does ",
+      " damage. Charging gives you ",
+      " Fallen Energy."
+    ]
+  },
+  "RubyStrength": {
+    "NAME": "Ganbaruby!",
+    "DESCRIPTIONS": [
+      "Attacking does ",
+      " damage. Blocking Yohane gives ",
+      " #yBlock."
     ]
   }
 }

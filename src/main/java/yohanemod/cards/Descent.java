@@ -16,11 +16,11 @@ import yohanemod.powers.FallenEnergy;
 public class Descent extends CustomCard {
     public static final String ID = "Descent";
     public static final String NAME = "Descent";
-    public static final String DESCRIPTION = "Pay 6 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
-    public static final String UPGRADED_DESCRIPTION = "Pay 3 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
+    public static final String DESCRIPTION = "Pay 4 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
+    public static final String UPGRADED_DESCRIPTION = "Pay 4 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
     public static final String IMG_PATH = "cards/Descent.png";
     private static final int COST = 0;
-    private static final int FALLEN_ENERGY = 6;
+    private static final int FALLEN_ENERGY = 4;
     private static final int VULNERABLE_AMT = 1;
     private static final int UPGRADE_PLUS_VULNERABLE = 1;
     private static final int POOL = 1;
@@ -37,20 +37,11 @@ public class Descent extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.upgraded) {
-            if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= FALLEN_ENERGY)) {
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -FALLEN_ENERGY));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-            } else {
-                AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
-            }
+        if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= FALLEN_ENERGY)) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -FALLEN_ENERGY));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         } else {
-            if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= FALLEN_ENERGY - 3)) {
-                AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -FALLEN_ENERGY - 3));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-            } else {
-                AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
-            }
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }
     }
 
