@@ -15,6 +15,7 @@ public class Go_All_Out extends CustomCard{
     public static final String ID = "Go_All_Out";
     public static final String NAME = "Go All Out";
     public static final String DESCRIPTION = "Exhaust ALL skills everywhere. NL Draw 2. NL Gain !M! Fallen Energy for each card Exhausted.";
+    public static final String UPDATED_DESCRIPTION = "Exhaust ALL skills everywhere. NL Draw 2. NL Gain !M! Fallen Energy for each card Exhausted. NL Innate.";
     public static final String IMG_PATH = "cards/Go_All_Out.png";
     private static final int FALLEN_ENERGY = 5;
     private static final int COST = 2;
@@ -64,7 +65,9 @@ public class Go_All_Out extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber('2');
+            this.isInnate = true;
+            this.rawDescription = UPDATED_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     

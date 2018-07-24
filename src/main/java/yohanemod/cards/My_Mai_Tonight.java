@@ -33,6 +33,7 @@ public class My_Mai_Tonight extends CustomCard {
                 target, POOL);
         this.damage = this.baseDamage = DAMAGE_AMT;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
+        this.exhaust = true;
     }
 
     @Override
