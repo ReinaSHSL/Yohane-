@@ -52,5 +52,12 @@
     "DESCRIPTIONS": [
       "All damage and debuffs taken by this summon are also taken by Yohane."
     ]
+  },
+  "SchwarzSechsPower": {
+    "NAME": "Schwarz Sechs",
+    "DESCRIPTIONS": [
+      "The next ",
+      " 0 cost cards are played twice."
+    ]
   }
 }

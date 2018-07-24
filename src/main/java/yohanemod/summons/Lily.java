@@ -56,8 +56,8 @@ public class Lily extends AbstractFriendlyMonster {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
                     new DamageInfo(this, 4, DamageInfo.DamageType.NORMAL)));
         }));
-        tempInfo.add(new ChooseActionInfo("Charge", "Gain 8 Fallen Energy", () -> {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, 8), 8));
+        tempInfo.add(new ChooseActionInfo("Charge", "Gain 6 Fallen Energy", () -> {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, 6), 6));
         }));
 
         return tempInfo;

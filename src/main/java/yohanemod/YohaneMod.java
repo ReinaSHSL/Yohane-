@@ -131,6 +131,12 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Mijuku_Dreamer());
 		BaseMod.addCard(new Little_Demon_Ruby());
 		BaseMod.addCard(new Guilty_Kiss());
+		BaseMod.addCard(new Hell_Zone());
+		BaseMod.addCard(new Introspection());
+		BaseMod.addCard(new Silence());
+		BaseMod.addCard(new Schwarz_Sechs());
+		BaseMod.addCard(new Go_All_Out());
+		BaseMod.addCard(new My_Mai_Tonight());
 	 }
 
     @Override

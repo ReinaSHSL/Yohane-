@@ -13,7 +13,7 @@ import yohanemod.patches.AbstractCardEnum;
 public class Guilty_Kiss extends CustomCard {
     public static final String ID = "Guilty_Kiss";
     public static final String NAME = "Guilty Kiss";
-    public static final String DESCRIPTION = "If [G] was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times. ";
+    public static final String DESCRIPTION = "If only [G]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times. ";
     public static final String IMG_PATH = "cards/Guilty_Kiss.png";
     private static final int DAMAGE_AMT = 9;
     private static final int UPGRADE_DAMAGE = 3;

@@ -19,7 +19,7 @@ public class Runaway_Umbrella extends CustomCard {
     public static final String IMG_PATH = "cards/Runaway_Umbrella.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 12;
-    private static final int UPGRADE_PLUS_DMG = 6;
+    private static final int UPGRADE_PLUS_DMG = 3;
     private static final int FALLEN_ENERGY = 6;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.COMMON;

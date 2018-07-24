@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 public class Kowareyasuki extends CustomCard {
     public static final String ID = "Kowareyasuki";
     public static final String NAME = "Kowareyasuki";
-    public static final String DESCRIPTION = "Innate. NL Apply !M! Weak to all enemies.";
+    public static final String DESCRIPTION = "Innate. NL Apply !M! Weak to all enemies. NL Exhaust.";
     public static final String IMG_PATH = "cards/Kowareyasuki.png";
     private static final int COST = 0;
     private static final int WEAK_AMT = 1;
@@ -27,6 +27,7 @@ public class Kowareyasuki extends CustomCard {
                 rarity, target, POOL);
         this.isInnate = true;
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
+        this.exhaust = true;
     }
 
     @Override
