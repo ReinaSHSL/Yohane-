@@ -16,7 +16,7 @@ import yohanemod.powers.FallenEnergy;
 public class Excitement extends CustomCard {
     public static final String ID = "Excitement";
     public static final String NAME = "Excitement";
-    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal damage equal to half your fallen Energy.";
+    public static final String DESCRIPTION = "Deal damage equal to half your fallen Energy. NL Pay !M! Fallen Energy.";
     public static final String IMG_PATH = "cards/Excitement.png";
     private static final int COST = 0;
     private static final int FALLEN_ENERGY = 4;
@@ -35,10 +35,10 @@ public class Excitement extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount > this.magicNumber)) {
             int damageToDeal = (p.getPower("FallenEnergy").amount/2);
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, damageToDeal, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -this.magicNumber));
 
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));

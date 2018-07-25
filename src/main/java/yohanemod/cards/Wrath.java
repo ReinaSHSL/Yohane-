@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 public class Wrath extends CustomCard {
     public static final String ID = "Wrath";
     public static final String NAME = "Wrath";
-    public static final String DESCRIPTION = "Deal !D! damage 5 times. NL Apply !M! Weak to self.";
+    public static final String DESCRIPTION = "Deal !D! damage to ALL enemies 5 times. NL Apply !M! Weak to self.";
     public static final String IMG_PATH = "cards/Wrath.png";
     private static final int DAMAGE = 2;
     private static final int UPGRADE_PLUS_DMG = 1;

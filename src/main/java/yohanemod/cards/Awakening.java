@@ -37,7 +37,7 @@ public class Awakening extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, -this.magicNumber), -this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.
                 DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Cleanse(p, 99));
+        //todo
     }
 
     @Override

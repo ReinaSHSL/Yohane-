@@ -20,7 +20,7 @@ public class Livestream_Donation extends CustomCard{
     public static final String IMG_PATH = "cards/Livestream_Donation.png";
     private static final int COST = 1;
     private static final int FALLEN_ENERGY = 4;
-    private static final int DRAW = 5;
+    private static final int DRAW = 4;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.COMMON;
     private static final CardTarget target = CardTarget.SELF;
