@@ -18,11 +18,11 @@ public class Shark_Summon extends CustomCard {
     public static final String NAME = "Shark Guard";
     public static final String DESCRIPTION = "Gain !B! Block. NL Lose 1/4 Fallen Energy. NL Gain equal Thorns. ";
     public static final String IMG_PATH = "cards/Shark_Summon.png";
-    private static final int DAMAGE_AMT = 8;
-    private static final int DAMAGE_UPGRADE = 3;
+    private static final int DAMAGE_AMT = 12;
+    private static final int DAMAGE_UPGRADE = 4;
     private static final int COST = 2;
     private static final int POOL = 1;
-    private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
+    private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.UNCOMMON;
     private static final AbstractCard.CardTarget target = AbstractCard.CardTarget.SELF;
 
     public Shark_Summon() {

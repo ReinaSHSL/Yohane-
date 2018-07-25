@@ -21,7 +21,7 @@ public class Little_Demon_Ruby extends CustomCard {
     public static final String IMG_PATH = "cards/Little_Demon_Ruby.png";
     private static final int COST = 1;
     private static final int POOL = 1;
-    private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.UNCOMMON;
+    private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
     private static final AbstractCard.CardTarget target = AbstractCard.CardTarget.SELF;
 
     public Little_Demon_Ruby() {
@@ -49,8 +49,6 @@ public class Little_Demon_Ruby extends CustomCard {
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
                 player.addMinion(new yohanemod.summons.Ruby());
-                AbstractMonster ruby0 = player.minions.monsters.get(0);
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0, abstractPlayer, new SoulLink(player, 0), 1));
             } else if (summonCount == 1) {
                 if (player.minions.monsters.get(0).id.equals("Ruby")) {
                     //Upgrade
@@ -60,8 +58,6 @@ public class Little_Demon_Ruby extends CustomCard {
                 } else {
                     //No Upgrade
                     player.addMinion(new yohanemod.summons.Ruby());
-                    AbstractMonster ruby0NoUpgrade = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0NoUpgrade, abstractPlayer, new SoulLink(player, 0), 1));
                 }
             } else if (summonCount == 2) {
                 if (player.minions.monsters.get(0).id.equals("Ruby")) {

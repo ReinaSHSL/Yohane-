@@ -19,7 +19,7 @@ public class Little_Demon_Lily extends CustomCard {
     public static final String IMG_PATH = "cards/Little_Demon_Lily.png";
     private static final int COST = 1;
     private static final int POOL = 1;
-    private static final CardRarity rarity = CardRarity.UNCOMMON;
+    private static final CardRarity rarity = CardRarity.COMMON;
     private static final CardTarget target = CardTarget.SELF;
 
     public Little_Demon_Lily() {
@@ -47,8 +47,6 @@ public class Little_Demon_Lily extends CustomCard {
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
                 player.addMinion(new yohanemod.summons.Lily());
-                AbstractMonster lily0 = player.minions.monsters.get(0);
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0, abstractPlayer, new SoulLink(player, 0), 1));
             } else if (summonCount == 1) {
                 if (player.minions.monsters.get(0).id.equals("Lily")) {
                     //Upgrade
@@ -58,8 +56,6 @@ public class Little_Demon_Lily extends CustomCard {
                 } else {
                     //No Upgrade
                     player.addMinion(new yohanemod.summons.Lily());
-                    AbstractMonster lily0NoUpgrade = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0NoUpgrade, abstractPlayer, new SoulLink(player, 0), 1));
                 }
             } else if (summonCount == 2) {
                 if (player.minions.monsters.get(0).id.equals("Lily")) {

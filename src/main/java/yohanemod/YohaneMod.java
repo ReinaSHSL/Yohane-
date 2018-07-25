@@ -83,7 +83,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     public void receiveEditKeywords() {
         logger.info("begin editing keywords");
         final String[] FallenEnergy = {"fallen"};
-        BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Paying Fallen Energy means you must possess enough. Losing can be played regardless of Fallen Energy count.");
+        BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Cards which say pay means you must possess enough Fallen Energy. Cards which say lose can be played regardless of Fallen Energy count.");
         final String[] Summon = {"summon"};
         BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of ally.");
         final String[] Lily = {"lily"};
@@ -139,6 +139,11 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Schwarz_Sechs());
 		BaseMod.addCard(new Go_All_Out());
 		BaseMod.addCard(new My_Mai_Tonight());
+		BaseMod.addCard(new Excitement());
+		BaseMod.addCard(new Awakening());
+		BaseMod.addCard(new Counter());
+		BaseMod.addCard(new Grand_Entrance());
+		BaseMod.addCard(new One_Two());
 	 }
 
     @Override

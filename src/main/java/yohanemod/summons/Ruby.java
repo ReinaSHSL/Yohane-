@@ -14,7 +14,6 @@ import cards.MonsterCard;
 import java.util.ArrayList;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class Ruby extends AbstractFriendlyMonster {
     public static String NAME = "Ruby";
@@ -29,9 +28,7 @@ public class Ruby extends AbstractFriendlyMonster {
 
     public Ruby() {
         super(NAME, ID, 12,
-                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", -1350.0F * Settings.scale, 0);
-
-
+                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", -1150.0F, 0);
     }
 
     @Override
@@ -54,7 +51,7 @@ public class Ruby extends AbstractFriendlyMonster {
 
     private ArrayList<ChooseActionInfo> makeMoves(){
         ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
-        if (this.getPower("RubyStrength").amount != 0) {
+        if (this.hasPower("RubyStrength") && this.getPower("RubyStrength").amount != 0) {
             upgradeCount = this.getPower("RubyStrength").amount;
         }
         float attackDamage = (2 + upgradeCount);

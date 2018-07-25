@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import yohanemod.powers.FallenEnergy;
-import com.megacrit.cardcrawl.core.Settings;
 
 
 public class Lily extends AbstractFriendlyMonster {
@@ -25,7 +24,7 @@ public class Lily extends AbstractFriendlyMonster {
 
     public Lily() {
         super(NAME, ID, 15,
-                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -850F * Settings.scale, 0);
+                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -750F, 0);
 
     }
 
@@ -49,8 +48,8 @@ public class Lily extends AbstractFriendlyMonster {
 
     //Create possible moves for the monster
     private ArrayList<ChooseActionInfo> makeMoves(){
-        if (this.getPower("LilyStrength").amount != 0) {
-            upgradeCount = this.getPower("RubyStrength").amount;
+        if (this.hasPower("LilyStrength") && this.getPower("LilyStrength").amount != 0) {
+            upgradeCount = this.getPower("LilyStrength").amount;
         }
         int attackDamage = (4 + upgradeCount * 2);
         int chargeAmount = (6 + upgradeCount);

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.powers.TimeDilationPower;
 import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.IceCreamSlow;
 import yohanemod.patches.AbstractCardEnum;

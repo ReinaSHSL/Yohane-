@@ -61,8 +61,8 @@ public class Yohane extends AbstractPlayerWithMinions {
         CharSelectInfo info = new CustomCharSelectInfo (
                 "Yohane",
                 "A fallen angel from Japan. NL Uses dark magic and idol techniques.",
-                70, //currentHP
-                70, //maxHP
+                60, //currentHP
+                60, //maxHP
                 0,  //maxOrbs
                 2,  //maxMinions
                 99, //gold
