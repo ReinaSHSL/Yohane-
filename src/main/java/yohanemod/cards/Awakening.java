@@ -1,5 +1,7 @@
 package yohanemod.cards;
 
+import characters.AbstractPlayerWithMinions;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,11 +12,12 @@ import basemod.abstracts.CustomCard;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import yohanemod.powers.LilyStrength;
 
 public class Awakening extends CustomCard {
     public static final String ID = "Awakening";
     public static final String NAME = "Awakening";
-    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! damage NL Remove all Debuffs from self.";
+    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! damage NL Evolve all Summons.";
     public static final String IMG_PATH = "cards/Awakening.png";
     private static final int COST = 0;
     private static final int DAMAGE_AMT = 8;
@@ -37,7 +40,40 @@ public class Awakening extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, -this.magicNumber), -this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.
                 DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        //todo
+        if (p instanceof AbstractPlayerWithMinions) {
+            AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
+            String summon0 = player.minions.monsters.get(0).id;
+            String summon1 = player.minions.monsters.get(1).id;
+            switch (summon0) {
+                case "Lily":
+                    AbstractMonster Lily = player.minions.monsters.get(0);
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, 1), 1));
+                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
+                    break;
+                case "Ruby":
+                    AbstractMonster Ruby = player.minions.monsters.get(0);
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new LilyStrength(player, 1), 1));
+                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
+                    break;
+                default:
+                    break;
+            }
+            switch (summon1) {
+                case "Lily":
+                    AbstractMonster Lily = player.minions.monsters.get(1);
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, 1), 1));
+                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
+                    break;
+                case "Ruby":
+                    AbstractMonster Ruby = player.minions.monsters.get(1);
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new LilyStrength(player, 1), 1));
+                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 
     @Override

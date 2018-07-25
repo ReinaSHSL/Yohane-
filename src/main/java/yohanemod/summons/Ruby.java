@@ -92,7 +92,7 @@ public class Ruby extends AbstractFriendlyMonster {
         tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.SFXAction("ATTACK_HEAVY"));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(this, new CleaveEffect(), 0.1F));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(AbstractDungeon.player,
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(this,
                     multiDamage, DamageInfo.DamageType.NORMAL, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
         }));
         tempInfo.add(new ChooseActionInfo("Defend", blockDesc, () -> {

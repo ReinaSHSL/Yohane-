@@ -84,7 +84,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         logger.info("begin editing keywords");
         final String[] FallenEnergy = {"fallen"};
         BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Cards which say pay means you must possess enough Fallen Energy. Cards which say lose can be played regardless of Fallen Energy count.");
-        final String[] Summon = {"summon"};
+        final String[] Summon = {"summon, summons"};
         BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of ally.");
         final String[] Lily = {"lily"};
         BaseMod.addKeyword(Lily,"A Little Demon with 15 HP and can either deal 4 damage to a random enemy, or give you 8 Fallen Energy.");
