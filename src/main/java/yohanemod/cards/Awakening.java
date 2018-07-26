@@ -13,6 +13,7 @@ import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import yohanemod.powers.LilyStrength;
+import yohanemod.powers.RubyStrength;
 
 public class Awakening extends CustomCard {
     public static final String ID = "Awakening";
@@ -37,43 +38,48 @@ public class Awakening extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, -this.magicNumber), -this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.
-                DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        if (p instanceof AbstractPlayerWithMinions) {
-            AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
-            String summon0 = player.minions.monsters.get(0).id;
-            String summon1 = player.minions.monsters.get(1).id;
-            switch (summon0) {
-                case "Lily":
-                    AbstractMonster Lily = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
-                    break;
-                case "Ruby":
-                    AbstractMonster Ruby = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new LilyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
-                    break;
-                default:
-                    break;
+        if (p.hasPower("FallenEnergy") && p.getPower("FallenEnergy").amount > this.magicNumber) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, -this.magicNumber), -this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.
+                    DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+            if (p instanceof AbstractPlayerWithMinions) {
+                AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
+                if (player.minions.monsters.size() != 0) {
+                    String summon0 = player.minions.monsters.get(0).id;
+                    String summon1 = player.minions.monsters.get(1).id;
+                    switch (summon0) {
+                        case "Lily":
+                            AbstractMonster Lily = player.minions.monsters.get(0);
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, 1), 1));
+                            com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
+                            break;
+                        case "Ruby":
+                            AbstractMonster Ruby = player.minions.monsters.get(0);
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(player, 1), 1));
+                            com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
+                            break;
+                        default:
+                            break;
+                    }
+                    switch (summon1) {
+                        case "Lily":
+                            AbstractMonster Lily = player.minions.monsters.get(1);
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, 1), 1));
+                            com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
+                            break;
+                        case "Ruby":
+                            AbstractMonster Ruby = player.minions.monsters.get(1);
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(player, 1), 1));
+                            com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
+                            break;
+                        default:
+                            break;
+                    }
+                }
             }
-            switch (summon1) {
-                case "Lily":
-                    AbstractMonster Lily = player.minions.monsters.get(1);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
-                    break;
-                case "Ruby":
-                    AbstractMonster Ruby = player.minions.monsters.get(1);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new LilyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
-                    break;
-                default:
-                    break;
-            }
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }
-
     }
 
     @Override

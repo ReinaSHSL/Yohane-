@@ -1,20 +1,20 @@
 package yohanemod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-
 import basemod.abstracts.CustomCard;
 import yohanemod.patches.AbstractCardEnum;
-import yohanemod.powers.FallenEnergy;
+
 
 public class Introspection extends CustomCard {
     public static final String ID = "Introspection";
     public static final String NAME = "Introspection";
-    public static final String DESCRIPTION = "Gain !B! Block. NL Remove all debuffs.";
+    public static final String DESCRIPTION = "Gain !B! Block. NL Remove all debuffs. NL Exhaust all Curses.";
     public static final String IMG_PATH = "cards/Introspection.png";
     private static final int BLOCK_AMOUNT = 10;
     private static final int UPGRADE_BLOCK_DMG = 4;
@@ -31,10 +31,24 @@ public class Introspection extends CustomCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m)
-    {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Cleanse(p, 99));
+        for (AbstractCard c : p.drawPile.group) {
+            if (c.type == CardType.CURSE) {
+                AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, p.drawPile));
+            }
+        }
+        for (AbstractCard c : p.discardPile.group) {
+            if (c.type == CardType.CURSE) {
+                AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, p.discardPile));
+            }
+        }
+        for (AbstractCard c : p.hand.group) {
+            if (c.type == CardType.CURSE) {
+                AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, p.hand));
+            }
+        }
     }
 
     @Override

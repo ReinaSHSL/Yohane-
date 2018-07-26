@@ -39,7 +39,6 @@ public class Grand_Entrance extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(p,
                 this.multiDamage, this.damageTypeForTurn, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(makeStatEquivalentCopy()));
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
     }
 

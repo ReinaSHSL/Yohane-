@@ -42,7 +42,7 @@ public class One_Two extends CustomCard {
                         new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             } else if (minions.monsters.size() > 0){
-                for (int i = 0; i < minions.monsters.size(); i++) {
+                for (int i = -1; i < minions.monsters.size(); i++) {
                     AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                             new DamageInfo(p, this.damage, this.damageTypeForTurn),
                             AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
