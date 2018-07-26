@@ -76,12 +76,14 @@
       " #yBlock."
     ]
   },
-  "stslib:Stunned": {
-    "NAME": "Stunned",
+
+  "Yohane:NoFallenFlightPlayer": {
+    "NAME": "Flight",
     "DESCRIPTIONS": [
-      "Does nothing for #b",
-      " turn.",
-      " turns."
+      "Reduce #yAttack damage taken by #b50%. Removed if dealt #yAttack damage #b",
+      " time in one turn.",
+      " times in one turn."
     ]
   }
+
 }

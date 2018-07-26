@@ -16,7 +16,7 @@ import yohanemod.patches.AbstractCardEnum;
 
 public class One_Two extends CustomCard {
     public static final String ID = "One_Two";
-    public static final String NAME = "One~ Two~";
+    public static final String NAME = "One Two";
     public static final String DESCRIPTION = "Deal !D! damage. NL Deal an additional !D! damage for every Summon.";
     public static final String IMG_PATH = "cards/One_Two.png";
     private static final int COST = 1;

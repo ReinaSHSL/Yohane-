@@ -14,7 +14,7 @@ import yohanemod.powers.FallenEnergy;
 public class Cursed_Strike extends CustomCard {
     public static final String ID = "Cursed_Strike";
     public static final String NAME = "Cursed Strike";
-    public static final String DESCRIPTION = "Deal !D! damage for each Curse in your draw pile. NL Gain !M! Fallen Energy for each Curse in your draw pile.";
+    public static final String DESCRIPTION = "Deal !D! damage and gain !M! Fallen Energy for each Curse in your draw pile.";
     public static final String IMG_PATH = "cards/Cursed_Strike.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;
@@ -37,10 +37,28 @@ public class Cursed_Strike extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         for (AbstractCard c : p.drawPile.group) {
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
+            if (c.type == CardType.CURSE) {
+                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+                        new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
+            }
+        }
+        for (AbstractCard c : p.discardPile.group) {
+            if (c.type == CardType.CURSE) {
+                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+                        new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
+            }
+        }
+        for (AbstractCard c : p.hand.group) {
+            if (c.type == CardType.CURSE) {
+                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
+                        new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
+            }
         }
     }
 

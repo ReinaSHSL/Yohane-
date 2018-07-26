@@ -148,7 +148,8 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new One_Two());
 		BaseMod.addCard(new Cursed_Strike());
 		BaseMod.addCard(new Feather_Curse());
-		BaseMod.addCard(new Dragon_Hold());
+		BaseMod.addCard(new Envious());
+		BaseMod.addCard(new Feather());
 	 }
 
     @Override
