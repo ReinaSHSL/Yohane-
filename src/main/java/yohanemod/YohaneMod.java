@@ -93,7 +93,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         final String[] Evolves = {"evolves"};
         BaseMod.addKeyword(Evolves,"Strengthen a summon, dependant on the summon, and heal them for 5 HP.");
         final String[] feather = {"feather"};
-        BaseMod.addKeyword(Evolves,"A curse that exhausts your entire hand at the end of the turn.");
+        BaseMod.addKeyword(Evolves,"A Curse which exhausts your entire hand at the end of the turn.");
         logger.info("finish editing keywords");
     }
 
@@ -150,6 +150,9 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Feather_Curse());
 		BaseMod.addCard(new Envious());
 		BaseMod.addCard(new Feather());
+		BaseMod.addCard(new Hakodate());
+		BaseMod.addCard(new Little_Demon_Recruit());
+		BaseMod.addCard(new Modore());
 	 }
 
     @Override

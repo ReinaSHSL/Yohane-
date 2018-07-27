@@ -16,7 +16,7 @@ public class Introspection extends CustomCard {
     public static final String NAME = "Introspection";
     public static final String DESCRIPTION = "Gain !B! Block. NL Remove all debuffs. NL Exhaust all Curses.";
     public static final String IMG_PATH = "cards/Introspection.png";
-    private static final int BLOCK_AMOUNT = 10;
+    private static final int BLOCK_AMOUNT = 8;
     private static final int UPGRADE_BLOCK_DMG = 4;
     private static final int COST = 1;
     private static final int POOL = 1;

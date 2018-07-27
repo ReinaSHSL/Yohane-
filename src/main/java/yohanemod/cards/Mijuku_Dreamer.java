@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 public class Mijuku_Dreamer extends CustomCard {
     public static final String ID = "Mijuku_Dreamer";
     public static final String NAME = "Mijuku Dreamer";
-    public static final String DESCRIPTION = "Gain !M! Strength for every Summon you have. NL Exhaust";
+    public static final String DESCRIPTION = "For each of your Summons, gain !M! Strength. NL Exhaust";
     public static final String IMG_PATH = "cards/Mijuku_Dreamer.png";
     private static final int STRENGTH_AMT = 2;
     private static final int COST = 1;
