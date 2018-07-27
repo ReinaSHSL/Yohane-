@@ -28,7 +28,7 @@ public class SummonFromDeckToHand extends AbstractGameAction {
 
             while(var5.hasNext()) {
                 AbstractCard c = (AbstractCard)var5.next();
-                if (c.rawDescription.contains("Summon")) {
+                if (c.rawDescription.contains("Summon") || c.rawDescription.contains("Summons")) {
                     tmp.addToRandomSpot(c);
                 }
             }

@@ -13,8 +13,8 @@ import java.util.Iterator;
 public class Little_Demon_Recruit extends CustomCard {
     public static final String ID = "Little_Demon_Recruit";
     public static final String NAME = "Little Demon Recruit";
-    public static final String DESCRIPTION = "Add !M! card that Summons from your draw pile to your hand. NL Exhaust";
-    public static final String UPGRADED_DESCRIPTION = "Add !M! cards that Summons from your draw pile to your hand. NL Exhaust";
+    public static final String DESCRIPTION = "Add !M! card that says Summon or Summons from your draw pile to your hand. NL Exhaust";
+    public static final String UPGRADED_DESCRIPTION = "Add !M! cards that says Summon or Summons from your draw pile to your hand. NL Exhaust";
     public static final String[] EXTENDED_DESCRIPTION = {"I have no Little Demons"};
     public static final String IMG_PATH = "cards/Little_Demon_Recruit.png";
     private static final int ADD = 1;
@@ -47,7 +47,7 @@ public class Little_Demon_Recruit extends CustomCard {
 
             while(var5.hasNext()) {
                 AbstractCard c = (AbstractCard)var5.next();
-                if (c.rawDescription.contains("Summon")) {
+                if (c.rawDescription.contains("Summon") || c.rawDescription.contains("Summons")) {
                     hasSummon = true;
                 }
             }

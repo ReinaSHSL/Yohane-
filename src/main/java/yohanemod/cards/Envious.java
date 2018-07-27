@@ -28,7 +28,7 @@ public class Envious extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.GREY, rarity,
                 target, POOL);
-        this.baseDamage = ATTACK_DMG;
+        this.damage = this.baseDamage = ATTACK_DMG;
         this.exhaust = true;
     }
 
