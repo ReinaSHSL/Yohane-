@@ -156,6 +156,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Little_Demon_Support());
 		BaseMod.addCard(new Feather_Storm());
 		BaseMod.addCard(new Feather_Tap());
+		BaseMod.addCard(new Retaliation());
 	 }
 
     @Override

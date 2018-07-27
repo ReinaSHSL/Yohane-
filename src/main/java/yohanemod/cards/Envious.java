@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.NoFallenLossFlightPower;
 
@@ -39,9 +40,12 @@ public class Envious extends CustomCard {
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         for (AbstractPower powersToCopy : m.powers) {
             if (powersToCopy.ID == "FlightPower") {
-                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new NoFallenLossFlightPower(p, 3), powersToCopy.amount));
+                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new NoFallenLossFlightPower(p, powersToCopy.amount), powersToCopy.amount));
             }
-            if (powersToCopy.ID != "FlightPower") {
+            if (powersToCopy.ID == "IntangiblePower") {
+                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new IntangiblePlayerPower(p, powersToCopy.amount), powersToCopy.amount));
+            }
+            if (powersToCopy.ID != "FlightPower" && powersToCopy.ID != "IntangiblePower") {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, powersToCopy, powersToCopy.amount));
             }
         }
