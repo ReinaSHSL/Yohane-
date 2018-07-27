@@ -3,6 +3,7 @@ package yohanemod.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
@@ -16,9 +17,9 @@ import yohanemod.patches.AbstractCardEnum;
 public class Silence extends CustomCard {
     public static final String ID = "Silence";
     public static final String NAME = "Silence";
-    public static final String DESCRIPTION = "If the enemy intends to attack, deal !D! damage. NL Otherwise, draw !M! cards and gain [G].";
+    public static final String DESCRIPTION = "If the enemy intends to attack, deal !D! damage.";
     public static final String IMG_PATH = "cards/Silence.png";
-    private static final int DAMAGE_AMT = 15;
+    private static final int DAMAGE_AMT = 17;
     private static final int UPGRADED_DMG = 5;
     private static final int DRAW = 2;
     private static final int COST = 2;
@@ -44,11 +45,9 @@ public class Silence extends CustomCard {
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         } else {
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
-            com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(1));
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "This enemy does not intend to attack!", 1.0F, 2.0F));
         }
-
-        }
+    }
 
     @Override
     public AbstractCard makeCopy() {

@@ -12,7 +12,7 @@ import yohanemod.patches.AbstractCardEnum;
 public class Modore extends CustomCard {
     public static final String ID = "Modore";
     public static final String NAME = "Modore!";
-    public static final String DESCRIPTION = "Deal !D! damage for every Exhausted card. NL Exhaust";
+    public static final String DESCRIPTION = "Deal !D! damage for every Exhausted card. NL Exhaust.";
     public static final String IMG_PATH = "cards/Modore.png";
     private static final int DAMAGE_AMT = 3;
     private static final int COST = 1;

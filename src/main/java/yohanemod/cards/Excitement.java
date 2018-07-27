@@ -16,7 +16,7 @@ import yohanemod.powers.FallenEnergy;
 public class Excitement extends CustomCard {
     public static final String ID = "Excitement";
     public static final String NAME = "Excitement";
-    public static final String DESCRIPTION = "Deal damage equal to half your fallen Energy. NL Pay !M! Fallen Energy.";
+    public static final String DESCRIPTION = "Deal damage equal to half your Fallen Energy. NL Pay !M! Fallen Energy.";
     public static final String IMG_PATH = "cards/Excitement.png";
     private static final int COST = 0;
     private static final int FALLEN_ENERGY = 4;

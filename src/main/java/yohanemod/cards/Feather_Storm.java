@@ -20,10 +20,10 @@ import java.util.ArrayList;
 public class Feather_Storm extends CustomCard {
     public static final String ID = "Feather_Storm";
     public static final String NAME = "Feather Storm";
-    public static final String DESCRIPTION = "Exhaust ALL Feathers from everywhere. Deal !D! damage to ALL enemies for each.";
+    public static final String DESCRIPTION = "Exhaust ALL Feathers from everywhere. NL Deal !D! damage to ALL enemies for each.";
     public static final String IMG_PATH = "cards/Feather_Storm.png";
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 9;
+    private static final int ATTACK_DMG = 7;
     private static final int UPGRADE_PLUS_DMG = 4;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.UNCOMMON;

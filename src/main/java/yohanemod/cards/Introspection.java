@@ -14,7 +14,7 @@ import yohanemod.patches.AbstractCardEnum;
 public class Introspection extends CustomCard {
     public static final String ID = "Introspection";
     public static final String NAME = "Introspection";
-    public static final String DESCRIPTION = "Gain !B! Block. NL Remove all debuffs. NL Exhaust all Curses.";
+    public static final String DESCRIPTION = "Gain !B! Block. NL Remove all Debuffs. NL Exhaust all Curses.";
     public static final String IMG_PATH = "cards/Introspection.png";
     private static final int BLOCK_AMOUNT = 8;
     private static final int UPGRADE_BLOCK_DMG = 4;

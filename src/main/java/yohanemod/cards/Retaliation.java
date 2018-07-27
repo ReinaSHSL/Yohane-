@@ -8,10 +8,8 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
-import yohanemod.powers.NoFallenLossFlightPower;
 
 public class Retaliation extends CustomCard {
     public static final String ID = "Retaliation";
@@ -19,7 +17,7 @@ public class Retaliation extends CustomCard {
     public static final String DESCRIPTION = "Deal !D! damage. NL If you have received damage this combat, deal !D! damage. NL Gain !M! Fallen Energy.";
     public static final String IMG_PATH = "cards/Retaliation.png";
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 11;
+    private static final int ATTACK_DMG = 10;
     private static final int UPGRADE_PLUS_DMG = 3;
     private static final int FALLEN_ENERGY = 6;
     private static final int POOL = 1;

@@ -15,7 +15,7 @@ import yohanemod.powers.NoFallenLossFlightPower;
 public class Envious extends CustomCard {
     public static final String ID = "Envious";
     public static final String NAME = "Envious";
-    public static final String DESCRIPTION = "Deal !D! damage. NL Copy all enemy buffs and debuffs. NL Exhaust.";
+    public static final String DESCRIPTION = "Deal !D! damage. NL Copy all enemy Buffs and Debuffs. NL Exhaust.";
     public static final String IMG_PATH = "cards/Envious.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;

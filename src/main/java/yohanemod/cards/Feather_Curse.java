@@ -13,10 +13,10 @@ import yohanemod.patches.AbstractCardEnum;
 public class Feather_Curse extends CustomCard {
     public static final String ID = "Feather_Curse";
     public static final String NAME = "Feather Curse";
-    public static final String DESCRIPTION = "Exhaust a card in your hand. NL Deal !D! damage. NL Add a Feather to your draw pile.";
+    public static final String DESCRIPTION = "Exhaust a card in your hand. NL Deal !D! damage. NL Add 2 Feathers to your draw pile.";
     public static final String IMG_PATH = "cards/Feather_Curse.png";
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 9;
+    private static final int ATTACK_DMG = 10;
     private static final int UPGRADE_PLUS_DMG = 3;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.UNCOMMON;
@@ -38,7 +38,7 @@ public class Feather_Curse extends CustomCard {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction(new
-                yohanemod.cards.Feather(), 1, true, false));
+                yohanemod.cards.Feather(), 2, true, false));
     }
 
 

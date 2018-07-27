@@ -19,9 +19,9 @@ public class Well_Laid_Ambush extends CustomCard{
     public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! damage. NL Retain.";
     public static final String IMG_PATH = "cards/Well_Laid_Ambush.png";
     private static final int COST = 0;
-    private static final int ATTACK_DMG = 5;
-    private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int FALLEN_ENERGY = 2;
+    private static final int ATTACK_DMG = 12;
+    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int FALLEN_ENERGY = 12;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.BASIC;
     private static final CardTarget target = CardTarget.ENEMY;

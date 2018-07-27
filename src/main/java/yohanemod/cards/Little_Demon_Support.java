@@ -3,7 +3,6 @@ package yohanemod.cards;
 import basemod.abstracts.CustomCard;
 import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +12,7 @@ import yohanemod.patches.AbstractCardEnum;
 
 public class Little_Demon_Support extends CustomCard {
     public static final String ID = "Little_Demon_Support";
-    public static final String NAME = "Little Demon Ruby";
+    public static final String NAME = "Little Demon Support";
     public static final String DESCRIPTION = "Each Summon gains !B! Block.";
     public static final String IMG_PATH = "cards/Little_Demon_Support.png";
     private static final int BLOCK_AMT = 10;

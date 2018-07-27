@@ -16,7 +16,7 @@ public class Feather_Tap extends CustomCard {
     public static final String DESCRIPTION = "Deal !D! damage. NL Add a Feather to your hand.";
     public static final String IMG_PATH = "cards/Feather_Tap.png";
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 10;
+    private static final int ATTACK_DMG = 9;
     private static final int UPGRADE_PLUS_DMG = 4;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.UNCOMMON;

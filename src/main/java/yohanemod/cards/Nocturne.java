@@ -14,7 +14,7 @@ import yohanemod.patches.AbstractCardEnum;
 public class Nocturne extends CustomCard {
     public static final String ID = "Nocturne";
     public static final String NAME = "Lailaps!";
-    public static final String DESCRIPTION = "Gain !B! Block. NL Apply !M! Vulnerable.";
+    public static final String DESCRIPTION = " Apply !M! Vulnerable. NL Gain !B! Block.";
     public static final String IMG_PATH = "cards/Nocturne.png";
     private static final int COST = 2;
     private static final int VULNERABLE_AMT = 2;
@@ -34,8 +34,8 @@ public class Nocturne extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
     }
 
     @Override

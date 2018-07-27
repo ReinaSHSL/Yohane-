@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
-public class StrawberryTrapperPower extends AbstractPower{
+public class StrawberryTrapperPower extends AbstractPower {
     public static final String POWER_ID = "StrawberryTrapper";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -37,6 +37,10 @@ public class StrawberryTrapperPower extends AbstractPower{
         this.fontScale = 8.0F;
         this.amount += stackAmount;
         this.hpLoss += 40;
+    }
+
+    public void onShuffle() {
+
     }
 
     public void updateDescription()
