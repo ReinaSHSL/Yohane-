@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.ShadowGatePower;
 
 public class Shadow_Gate extends CustomCard{
@@ -32,7 +33,7 @@ public class Shadow_Gate extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower("FallenEnergy")) {
+        if (p.hasPower(FallenEnergy.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowGatePower(p, this.magicNumber), this.magicNumber));
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));

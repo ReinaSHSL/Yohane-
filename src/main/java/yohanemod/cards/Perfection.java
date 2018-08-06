@@ -32,8 +32,8 @@ public class Perfection extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower("FallenEnergy")  && p.getPower("FallenEnergy").amount >= 1 ){
-            final int FALLENENERGY = p.getPower("FallenEnergy").amount;
+        if (p.hasPower(FallenEnergy.POWER_ID)  && p.getPower(FallenEnergy.POWER_ID).amount >= 1 ){
+            final int FALLENENERGY = p.getPower(FallenEnergy.POWER_ID).amount;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -FALLENENERGY));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, FALLENENERGY, this.damageTypeForTurn),

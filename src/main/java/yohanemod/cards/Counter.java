@@ -35,7 +35,7 @@ public class Counter extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-        if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= this.magicNumber)) {
+        if ((p.hasPower(FallenEnergy.POWER_ID)) && (p.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber)) {
             if ((m != null) && ((m.intent ==
                     AbstractMonster.Intent.ATTACK) || (m.intent == AbstractMonster.Intent.ATTACK_BUFF)
                     || (m.intent == AbstractMonster.Intent.ATTACK_DEBUFF) || (m.intent == AbstractMonster.Intent.ATTACK_DEFEND))) {

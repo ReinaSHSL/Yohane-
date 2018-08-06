@@ -37,7 +37,7 @@ public class Descent extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= FALLEN_ENERGY)) {
+        if ((p.hasPower(FallenEnergy.POWER_ID)) && (p.getPower(FallenEnergy.POWER_ID).amount >= FALLEN_ENERGY)) {
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -FALLEN_ENERGY));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         } else {

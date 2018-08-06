@@ -31,8 +31,8 @@ public class Dark_Shield extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-        if (p.hasPower("FallenEnergy") && p.getPower("FallenEnergy").amount > 0) {
-            int FallenCost = p.getPower("FallenEnergy").amount / 2;
+        if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount > 0) {
+            int FallenCost = p.getPower(FallenEnergy.POWER_ID).amount / 2;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, -FallenCost), -FallenCost));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, FallenCost));
         } else {

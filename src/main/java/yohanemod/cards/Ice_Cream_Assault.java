@@ -37,7 +37,7 @@ public class Ice_Cream_Assault extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower("FallenEnergy") && p.getPower("FallenEnergy").amount >= this.magicNumber) {
+        if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));

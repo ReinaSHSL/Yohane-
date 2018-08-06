@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
+import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.ImagineBreakerPower;
 import yohanemod.patches.AbstractCardEnum;
 
@@ -29,7 +30,7 @@ public class Imagine_Breaker extends CustomCard{
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower("FallenEnergy")) {
+        if (p.hasPower(FallenEnergy.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ImagineBreakerPower(p,1)));
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));

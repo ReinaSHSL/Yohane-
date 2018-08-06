@@ -35,8 +35,8 @@ public class Shark_Summon extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-        if (p.hasPower("FallenEnergy") && p.getPower("FallenEnergy").amount >= 4) {
-            int ThornsAmount = p.getPower("FallenEnergy").amount / 4;
+        if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount >= 4) {
+            int ThornsAmount = p.getPower(FallenEnergy.POWER_ID).amount / 4;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, -ThornsAmount), -ThornsAmount));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ThornsPower(p, ThornsAmount), ThornsAmount));

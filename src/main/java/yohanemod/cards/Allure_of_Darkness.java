@@ -32,7 +32,7 @@ public class Allure_of_Darkness extends CustomCard{
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!this.upgraded){
-            if ((p.hasPower("FallenEnergy")) && (p.getPower("FallenEnergy").amount >= 2)) {
+            if ((p.hasPower(FallenEnergy.POWER_ID)) && (p.getPower(FallenEnergy.POWER_ID).amount >= 2)) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -2));
                 AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
                 AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, 1, false));

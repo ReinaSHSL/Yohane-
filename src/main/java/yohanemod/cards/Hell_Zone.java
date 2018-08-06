@@ -46,8 +46,8 @@ public class Hell_Zone extends CustomCard{
 
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-        if (p.hasPower("FallenEnergy") && (p.getPower("FallenEnergy").amount > 1)) {
-            float damage = p.getPower("FallenEnergy").amount/2;
+        if (p.hasPower(FallenEnergy.POWER_ID) && (p.getPower(FallenEnergy.POWER_ID).amount > 1)) {
+            float damage = p.getPower(FallenEnergy.POWER_ID).amount/2;
             ArrayList<AbstractMonster> mo = AbstractDungeon.getCurrRoom().monsters.monsters;
             float[] tmp = new float[mo.size()];
             for (int i = 0; i < tmp.length; i++) {
