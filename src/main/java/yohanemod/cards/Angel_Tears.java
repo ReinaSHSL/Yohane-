@@ -3,7 +3,9 @@ package yohanemod.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -12,9 +14,10 @@ import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
 public class Angel_Tears extends CustomCard{
-    public static final String ID = "Angel_Tears";
-    public static final String NAME = "Angel Tears";
-    public static final String DESCRIPTION = "Deal !D! damage. NL Apply !M! Weak. NL Gain 8 Fallen Energy.";
+    public static final String ID = "Yohane:Angel_Tears";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Angel_Tears.png";
     private static final int COST = 2;
     private static final int ATTACK_DMG = 12;

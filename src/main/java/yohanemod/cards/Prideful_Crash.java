@@ -4,7 +4,9 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -14,10 +16,11 @@ import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
 public class Prideful_Crash extends CustomCard {
-    public static final String ID = "Prideful_Crash";
-    public static final String NAME = "Prideful Crash";
-    public static final String DESCRIPTION = "Deal !D! damage. NL Gain !M! Fallen Energy. Add Pride to hand.";
-    public static final String UPGRADED_DESCRIPTION = "Deal !D! damage. NL Gain !M! Fallen Energy. Add 2 Prides to hand.";
+    public static final String ID = "Yohane:Prideful_Crash";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "cards/Prideful_Crash.png";
     private static final int COST = 3;
     private static final int FALLEN_ENERGY = 20;

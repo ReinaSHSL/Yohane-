@@ -5,16 +5,19 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
 public class Grand_Entrance extends CustomCard {
-    public static final String ID = "Grand_Entrance";
-    public static final String NAME = "Grand Entrance";
-    public static final String DESCRIPTION = "Deal !D! damage to ALL enemies. NL Gain !M! Fallen Energy. NL Innate. NL Exhaust.";
+    public static final String ID = "Yohane:Grand_Entrance";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Grand_Entrance.png";
     private static final int DAMAGE_AMT = 6;
     private static final int FALLEN_ENERGY = 8;

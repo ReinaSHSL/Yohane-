@@ -5,7 +5,9 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -16,9 +18,10 @@ import yohanemod.powers.LilyStrength;
 import yohanemod.powers.RubyStrength;
 
 public class Awakening extends CustomCard {
-    public static final String ID = "Awakening";
-    public static final String NAME = "Awakening";
-    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! damage NL Evolve all Summons.";
+    public static final String ID = "Yohane:Awakening";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Awakening.png";
     private static final int COST = 0;
     private static final int DAMAGE_AMT = 8;

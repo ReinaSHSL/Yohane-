@@ -15,6 +15,7 @@ import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 
 import basemod.BaseMod;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import yohanemod.cards.*;
@@ -69,6 +70,9 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
             String powerStrings = Gdx.files.internal("localization/Yohane-PowerStrings-eng.json").readString(
                     String.valueOf(StandardCharsets.UTF_8));
             BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
+        String cardStrings = Gdx.files.internal("localization/Yohane-Cardstrings-eng.json").readString(
+                String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
         }
 	
 	 @Override

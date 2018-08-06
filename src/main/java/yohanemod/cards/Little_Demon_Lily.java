@@ -5,7 +5,9 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import characters.AbstractPlayerWithMinions;
@@ -13,9 +15,10 @@ import yohanemod.powers.LilyStrength;
 import yohanemod.powers.SoulLink;
 
 public class Little_Demon_Lily extends CustomCard {
-    public static final String ID = "Little_Demon_Lily";
-    public static final String NAME = "Little Demon Lily";
-    public static final String DESCRIPTION = "Summon 1 Lily. NL Playing this card with Lily already on the field Evolves her.";
+    public static final String ID = "Yohane:Little_Demon_Lily";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Little_Demon_Lily.png";
     private static final int COST = 1;
     private static final int POOL = 1;

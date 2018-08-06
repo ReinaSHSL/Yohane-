@@ -35,24 +35,24 @@ public class Yohane extends AbstractPlayerWithMinions {
 
 	public static ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Strike_Grey");
-		retVal.add("Strike_Grey");
-		retVal.add("Strike_Grey");
-		retVal.add("Strike_Grey");
-        retVal.add("Strike_Grey");
-		retVal.add("Defend_Grey");
-		retVal.add("Defend_Grey");
-		retVal.add("Defend_Grey");
-		retVal.add("Defend_Grey");
-		retVal.add("Descent");
-		retVal.add("Well_Laid_Ambush");
+		retVal.add("Yohane:Strike_Grey");
+		retVal.add("Yohane:Strike_Grey");
+		retVal.add("Yohane:Strike_Grey");
+		retVal.add("Yohane:Strike_Grey");
+        retVal.add("Yohane:Strike_Grey");
+		retVal.add("Yohane:Defend_Grey");
+		retVal.add("Yohane:Defend_Grey");
+		retVal.add("Yohane:Defend_Grey");
+		retVal.add("Yohane:Defend_Grey");
+		retVal.add("Yohane:Descent");
+		retVal.add("Yohane:Well_Laid_Ambush");
 		return retVal;
 	}
 	
 	public static ArrayList<String> getStartingRelics() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("AngelWings");
-		UnlockTracker.markRelicAsSeen("AngelWings");
+		retVal.add("Yohane:AngelWings");
+		UnlockTracker.markRelicAsSeen("Yohane:AngelWings");
 		return retVal;
 	}
 

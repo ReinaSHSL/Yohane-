@@ -2,7 +2,9 @@ package yohanemod.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -10,9 +12,10 @@ import yohanemod.patches.AbstractCardEnum;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 
 public class Reckless_Greed extends CustomCard{
-    public static final String ID = "Reckless_Greed";
-    public static final String NAME = "Reckless Greed";
-    public static final String DESCRIPTION = "Draw !D! cards. NL Add !M! copies of this card to your deck.";
+    public static final String ID = "Yohane:Reckless_Greed";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Reckless_Greed.png";
     private static final int DRAW = 2;
     private static final int DUPE = 2;

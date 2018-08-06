@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -15,9 +17,10 @@ import yohanemod.powers.IceCreamSlow;
 import yohanemod.patches.AbstractCardEnum;
 
 public class Ice_Cream_Assault extends CustomCard{
-    public static final String ID = "Ice_Cream_Assault";
-    public static final String NAME = "Ice Cream Assault";
-    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! damage. NL Apply Slow until the end of the turn.";
+    public static final String ID = "Yohane:Ice_Cream_Assault";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Ice_Cream_Assault.png";
     private static final int DAMAGE_AMT = 3;
     private static final int UPGRADE_DAMAGE = 3;

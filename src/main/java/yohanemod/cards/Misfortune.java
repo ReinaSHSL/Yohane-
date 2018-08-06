@@ -3,7 +3,9 @@ package yohanemod.cards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -11,9 +13,10 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import yohanemod.patches.AbstractCardEnum;
 
 public class Misfortune extends CustomCard{
-    public static final String ID = "Misfortune";
-    public static final String NAME = "Misfortune";
-    public static final String DESCRIPTION = "Apply !M! Vulnerable to self. NL Gain 2 Strength.";
+    public static final String ID = "Yohane:Misfortune";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Misfortune.png";
     private static final int COST = 1;
     private static final int VULNERABLE_AMT = 2;

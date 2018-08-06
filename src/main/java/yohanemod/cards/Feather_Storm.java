@@ -9,7 +9,9 @@ import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
@@ -18,9 +20,10 @@ import yohanemod.patches.AbstractCardEnum;
 import java.util.ArrayList;
 
 public class Feather_Storm extends CustomCard {
-    public static final String ID = "Feather_Storm";
-    public static final String NAME = "Feather Storm";
-    public static final String DESCRIPTION = "Exhaust ALL Feathers from everywhere. NL Deal !D! damage to ALL enemies for each.";
+    public static final String ID = "Yohane:Feather_Storm";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Feather_Storm.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 7;

@@ -4,7 +4,9 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -13,10 +15,11 @@ import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
 public class Livestream_Donation extends CustomCard{
-    public static final String ID = "Livestream_Donation";
-    public static final String NAME = "Livestream Donation";
-    public static final String DESCRIPTION = "Gain 4 Fallen Energy. NL Draw a card for every !M! cards in your draw pile.";
-    public static final String UPGRADED_DESCRIPTION = "Gain 6 Fallen Energy. NL Draw a card for every !M! cards in your draw pile.";
+    public static final String ID = "Yohane:Livestream_Donation";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "cards/Livestream_Donation.png";
     private static final int COST = 1;
     private static final int FALLEN_ENERGY = 4;

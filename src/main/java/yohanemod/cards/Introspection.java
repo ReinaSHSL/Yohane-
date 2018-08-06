@@ -4,7 +4,9 @@ package yohanemod.cards;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import basemod.abstracts.CustomCard;
@@ -12,9 +14,10 @@ import yohanemod.patches.AbstractCardEnum;
 
 
 public class Introspection extends CustomCard {
-    public static final String ID = "Introspection";
-    public static final String NAME = "Introspection";
-    public static final String DESCRIPTION = "Gain !B! Block. NL Remove all Debuffs. NL Exhaust all Curses.";
+    public static final String ID = "Yohane:Introspection";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Introspection.png";
     private static final int BLOCK_AMOUNT = 8;
     private static final int UPGRADE_BLOCK_DMG = 4;

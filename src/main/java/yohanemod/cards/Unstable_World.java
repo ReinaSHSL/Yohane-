@@ -4,7 +4,9 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -16,9 +18,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 
 public class Unstable_World extends CustomCard{
 
-    public static final String ID = "Unstable_World";
-    public static final String NAME = "Unstable World";
-    public static final String DESCRIPTION = "Pay !M! Fallen Energy. NL Deal !D! damage to all enemies. NL Add a copy of this card to your hand. NL Exhaust.";
+    public static final String ID = "Yohane:Unstable_World";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/In_This_Unstable_World.png";
     private static final int COST = 0;
     private static final int ATTACK_DMG = 3;

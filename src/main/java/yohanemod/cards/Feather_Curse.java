@@ -6,14 +6,17 @@ import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 
 public class Feather_Curse extends CustomCard {
-    public static final String ID = "Feather_Curse";
-    public static final String NAME = "Feather Curse";
-    public static final String DESCRIPTION = "Exhaust a card in your hand. NL Deal !D! damage. NL Add 2 Feathers to your draw pile.";
+    public static final String ID = "Yohane:Feather_Curse";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Feather_Curse.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 10;

@@ -3,7 +3,9 @@ package yohanemod.cards;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.actions.SummonFromDeckToHand;
 import yohanemod.patches.AbstractCardEnum;
@@ -11,10 +13,11 @@ import yohanemod.patches.AbstractCardEnum;
 import java.util.Iterator;
 
 public class Little_Demon_Recruit extends CustomCard {
-    public static final String ID = "Little_Demon_Recruit";
-    public static final String NAME = "Little Demon Recruit";
-    public static final String DESCRIPTION = "Add !M! card that says Summon or Summons from your draw pile to your hand. NL Exhaust";
-    public static final String UPGRADED_DESCRIPTION = "Add !M! cards that says Summon or Summons from your draw pile to your hand. NL Exhaust";
+    public static final String ID = "Yohane:Little_Demon_Recruit";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = {"I have no Little Demons"};
     public static final String IMG_PATH = "cards/Little_Demon_Recruit.png";
     private static final int ADD = 1;

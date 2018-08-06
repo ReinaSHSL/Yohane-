@@ -3,7 +3,9 @@ package yohanemod.cards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -11,9 +13,10 @@ import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FlightPlayerPower;
 
 public class Take_Flight extends CustomCard {
-    public static final String ID = "Take_Flight";
-    public static final String NAME = "Take Flight!";
-    public static final String DESCRIPTION = "Gain Flight. NL Lose !M! Fallen Energy at the end of your turn. Removed if Fallen Energy drops to 0.";
+    public static final String ID = "Yohane:Take_Flight";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Take_Flight.png";
     private static final int COST = 2;
     private static final int POOL = 1;

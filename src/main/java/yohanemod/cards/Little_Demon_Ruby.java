@@ -5,7 +5,9 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import characters.AbstractPlayerWithMinions;
@@ -15,9 +17,10 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import yohanemod.powers.SoulLink;
 
 public class Little_Demon_Ruby extends CustomCard {
-    public static final String ID = "Little_Demon_Ruby";
-    public static final String NAME = "Little Demon Ruby";
-    public static final String DESCRIPTION = "Summon 1 Ruby. Playing this card with Ruby already on the field Evolves her.";
+    public static final String ID = "Yohane:Little_Demon_Ruby";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Little_Demon_Ruby.png";
     private static final int COST = 1;
     private static final int POOL = 1;

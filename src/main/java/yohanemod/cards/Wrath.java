@@ -4,7 +4,9 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import yohanemod.patches.AbstractCardEnum;
@@ -13,9 +15,10 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 
 
 public class Wrath extends CustomCard {
-    public static final String ID = "Wrath";
-    public static final String NAME = "Wrath";
-    public static final String DESCRIPTION = "Deal !D! damage to ALL enemies 5 times. NL Apply !M! Weak to self.";
+    public static final String ID = "Yohane:Wrath";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Wrath.png";
     private static final int DAMAGE = 2;
     private static final int UPGRADE_PLUS_DMG = 1;

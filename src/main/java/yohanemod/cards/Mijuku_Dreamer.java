@@ -5,7 +5,9 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -15,9 +17,10 @@ import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 
 public class Mijuku_Dreamer extends CustomCard {
-    public static final String ID = "Mijuku_Dreamer";
-    public static final String NAME = "Mijuku Dreamer";
-    public static final String DESCRIPTION = "For each of your Summons, gain !M! Strength. NL Exhaust";
+    public static final String ID = "Yohane:Mijuku_Dreamer";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Mijuku_Dreamer.png";
     private static final int STRENGTH_AMT = 2;
     private static final int COST = 1;

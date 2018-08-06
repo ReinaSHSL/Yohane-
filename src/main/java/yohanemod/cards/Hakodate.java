@@ -7,15 +7,18 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
 public class Hakodate extends CustomCard {
-    public static final String ID = "Hakodate";
-    public static final String NAME = "Hakodate";
-    public static final String DESCRIPTION = "Deal !D! damage. NL Gain !M! Fallen Energy for every Summon.";
+    public static final String ID = "Yohane:Hakodate";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Hakodate.png";
     private static final int COST = 1;
     private static final int ATTACK_DMG = 8;

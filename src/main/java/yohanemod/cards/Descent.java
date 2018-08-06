@@ -3,7 +3,9 @@ package yohanemod.cards;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -14,9 +16,10 @@ import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
 public class Descent extends CustomCard {
-    public static final String ID = "Descent";
-    public static final String NAME = "Descent";
-    public static final String DESCRIPTION = "Pay 2 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
+    public static final String ID = "Yohane:Descent";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = "Pay 2 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
     public static final String IMG_PATH = "cards/Descent.png";
     private static final int COST = 0;

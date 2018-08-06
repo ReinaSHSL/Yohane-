@@ -4,7 +4,9 @@ import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -13,10 +15,11 @@ import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.ShadowGatePower;
 
 public class Shadow_Gate extends CustomCard{
-    public static final String ID = "Shadow_Gate";
-    public static final String NAME = "Shadow Gate";
-    public static final String DESCRIPTION = "Draw !M! card and lose 5 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
-    public static final String UPGRADED_DESCRIPTION = "Draw !M! cards and lose 5 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.";
+    public static final String ID = "Yohane:Shadow_Gate";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "cards/Shadow_Gate.png";
     private static final int COST = 2;
     private static final int POOL = 1;

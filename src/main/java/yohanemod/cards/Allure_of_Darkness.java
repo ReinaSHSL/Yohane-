@@ -5,7 +5,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -14,10 +16,11 @@ import yohanemod.powers.FallenEnergy;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 
 public class Allure_of_Darkness extends CustomCard{
-    public static final String ID = "Allure_of_Darkness";
-    public static final String NAME = "Allure of Darkness";
-    public static final String DESCRIPTION = "Pay 2 Fallen Energy. NL Draw 2 Cards. NL Exhaust a card from your hand.";
-    public static final String UPGRADED_DESCRIPTION = "Draw 2 Cards. NL Exhaust a card from your hand.";
+    public static final String ID = "Yohane:Allure_of_Darkness";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("Yohane:Allure_of_Darkness");
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "cards/Allure_of_Darkness.png";
     private static final int COST = 0;
     private static final int POOL = 1;

@@ -10,7 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class AngelWings extends CustomRelic {
-    public static final String ID = "AngelWings";
+    public static final String ID = "Yohane:AngelWings";
     private static final String IMG = "relics/AngelWings.png";
     private static int FALLEN_ENERGY = 5;
     public static final Logger logger = LogManager.getLogger(AngelWings.class.getName());

@@ -9,18 +9,20 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.AbstractCard.CardType;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 
 public class Silence extends CustomCard {
-    public static final String ID = "Silence";
-    public static final String NAME = "Silence";
-    public static final String DESCRIPTION = "If the enemy intends to attack, deal !D! damage.";
+    public static final String ID = "Yohane:Silence";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Silence.png";
-    private static final int DAMAGE_AMT = 17;
-    private static final int UPGRADED_DMG = 5;
+    private static final int DAMAGE_AMT = 14;
+    private static final int UPGRADED_DMG = 4;
     private static final int DRAW = 2;
     private static final int COST = 2;
     private static final int POOL = 1;

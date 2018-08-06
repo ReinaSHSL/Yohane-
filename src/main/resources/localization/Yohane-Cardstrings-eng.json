@@ -1,0 +1,243 @@
+{
+  "Yohane:Allure_of_Darkness": {
+    "NAME": "Allure Of Darkness",
+    "DESCRIPTION": "Pay 2 Fallen Energy. NL Draw 2 Cards. NL Exhaust a card from your hand.",
+    "UPGRADE_DESCRIPTION": "Draw 2 Cards. NL Exhaust a card from your hand."
+  },
+  "Yohane:Angel_Tears": {
+    "NAME": "Angel Tears",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Gain 8 Fallen Energy."
+  },
+  "Yohane:Awakening": {
+    "NAME":  "Awakening",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage NL Evolve all Summons."
+  },
+  "Yohane:Backfoot": {
+    "NAME": "Backfoot",
+    "DESCRIPTION": "Gain !B! Block. NL Lose !M! Fallen Energy."
+  },
+  "Yohane:Counter": {
+    "NAME": "Counter",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL If the enemy intends to attack, deal !D! damage."
+  },
+  "Yohane:Cursed_Strike": {
+    "NAME":  "Cursed Strike",
+    "DESCRIPTION": "Deal !D! damage and gain !M! Fallen Energy for each Curse in your draw pile."
+  },
+  "Yohane:Dark_Rest": {
+    "NAME": "Dark Rest",
+    "DESCRIPTION": "Apply !M! Weak. NL Gain 4 Fallen Energy.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Weak. NL Gain 8 Fallen Energy."
+  },
+  "Yohane:Dark_Shield": {
+    "NAME": "Dark Shield",
+    "DESCRIPTION": "Pay half of your Fallen Energy. NL Gain the same amount of Block."
+  },
+  "Yohane:Defend_Grey": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block. NL Lose 1 Fallen Energy."
+  },
+  "Yohane:Descent": {
+    "NAME":  "Descent",
+    "DESCRIPTION": "Pay 2 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust."
+  },
+  "Yohane:Energy_Change": {
+    "NAME": "Energy Change",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Gain [G]."
+  },
+  "Yohane:Envious": {
+    "NAME": "Envious",
+    "DESCRIPTION": "Deal !D! damage. NL Copy all enemy Buffs and Debuffs. NL Exhaust."
+  },
+  "Yohane:Excitement": {
+    "NAME":  "Excitement",
+    "DESCRIPTION": "Deal damage equal to half your Fallen Energy. NL Pay !M! Fallen Energy."
+  },
+  "Yohane:Fallen_Dragon_Phoenix_Hold": {
+    "NAME": "Phoenix Hold",
+    "DESCRIPTION": "Enemy loses !M! Strength for the rest of the turn. NL Exhaust."
+  },
+  "Yohane:Feather": {
+    "NAME": "Feather",
+    "DESCRIPTION": "Unplayable. NL Exhaust your hand except for Feathers and cards that say Feather at the end of the turn."
+  },
+  "Yohane:Feather_Curse": {
+    "NAME":  "Feather Curse",
+    "DESCRIPTION": "Exhaust a card in your hand. NL Deal !D! damage. NL Add 2 Feathers to your draw pile."
+  },
+  "Yohane:Feather_Storm": {
+    "NAME": "Feather Storm",
+    "DESCRIPTION": "Exhaust ALL Feathers from everywhere. NL Deal !D! damage to ALL enemies for each."
+  },
+  "Yohane:Feather_Tap": {
+    "NAME": "Feather Tap",
+    "DESCRIPTION":  "Deal !D! damage. NL Add a Feather to your hand."
+  },
+  "Yohane:Gluttony": {
+    "NAME":  "Gluttony",
+    "DESCRIPTION": "Exhaust your entire hand. NL Gain !M! Fallen Energy for each."
+  },
+  "Yohane:Go_All_Out": {
+    "NAME": "Go All Out",
+    "DESCRIPTION": "Exhaust ALL non-attacks, gain !M! Fallen Energy for each. NL Draw 4 cards."
+  },
+  "Yohane:Grand_Entrance": {
+    "NAME": "Grand Entrance",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Gain !M! Fallen Energy. NL Innate. NL Exhaust."
+  },
+  "Yohane:Guilty_Kiss": {
+    "NAME":  "Guilty Kiss",
+    "DESCRIPTION": "If only [G]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times."
+  },
+  "Yohane:Hakodate": {
+    "NAME": "Hakodate",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy for every Summon."
+  },
+  "Yohane:Hell_Zone": {
+    "NAME": "Hell Zone",
+    "DESCRIPTION": "Deal damage equal to half of your Fallen Energy to ALL enemies. NL Exhaust. NL Retain.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to half of your Fallen Energy to ALL enemies. NL Retain."
+  },
+  "Yohane:Ice_Cream_Assault": {
+    "NAME":  "Ice Cream Assault",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL Apply Slow until the end of the turn."
+  },
+  "Yohane:Imagine_Breaker": {
+    "NAME": "Imagine Breaker",
+    "DESCRIPTION": "At the end of your turn, lose all Fallen Energy. NL Gain the same amount of Block."
+  },
+  "Yohane:Impressive_Display": {
+    "NAME": "Impressive Display",
+    "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Gain !M! Fallen Energy."
+  },
+  "Yohane:Inspiration": {
+    "NAME":  "Inspiration",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. NL Gain Blur."
+  },
+  "Yohane:Introspection": {
+    "NAME": "Introspection",
+    "DESCRIPTION": "Gain !B! Block. NL Remove all Debuffs. NL Exhaust all Curses."
+  },
+  "Yohane:Kowareyasuki": {
+    "NAME": "Kowareyasuki",
+    "DESCRIPTION": "Innate. NL Apply !M! Weak to all enemies. NL Exhaust."
+  },
+  "Yohane:Little_Demon_Lily": {
+    "NAME":  "Little Demon Lily",
+    "DESCRIPTION": "Summon 1 Lily. NL Playing this card with Lily already on the field Evolves her."
+  },
+    "Yohane:Little_Demon_Recruit": {
+    "NAME": "Little Demon Recruit",
+    "DESCRIPTION": "Add !M! card that says Summon or Summons from your draw pile to your hand. NL Exhaust",
+    "UPGRADE_DESCRIPTION": "Add !M! cards that says Summon or Summons from your draw pile to your hand. NL Exhaust"
+  },
+  "Yohane:Little_Demon_Ruby": {
+    "NAME": "Little Demon Ruby",
+    "DESCRIPTION": "Summon 1 Ruby. Playing this card with Ruby already on the field Evolves her."
+  },
+  "Yohane:Little_Demon_Support": {
+    "NAME": "Little Demon Support",
+    "DESCRIPTION": "Each Summon gains !B! Block."
+  },
+  "Yohane:Livestream_Donation": {
+    "NAME":  "Livestream Donation",
+    "DESCRIPTION": "Gain 4 Fallen Energy. NL Draw a card for every !M! cards in your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain 6 Fallen Energy. NL Draw a card for every !M! cards in your draw pile."
+  },
+  "Yohane:Mijuku_Dreamer": {
+    "NAME": "Mijuku Dreamer",
+    "DESCRIPTION": "For each of your Summons, gain !M! Strength. NL Exhaust"
+  },
+  "Yohane:Miracle_Wave": {
+    "NAME": "Miracle Wave",
+    "DESCRIPTION": "Deal !D! damage. NL Add an Injury to your deck.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a Clumsy to your deck."
+  },
+  "Yohane:Misfortune": {
+    "NAME":  "Misfortune",
+    "DESCRIPTION": "Apply !M! Vulnerable to self. NL Gain 2 Strength."
+  },
+  "Yohane:Modore": {
+    "NAME": "Modore",
+    "DESCRIPTION": "Deal !D! damage for every Exhausted card. NL Exhaust."
+  },
+  "Yohane:My_Mai_Tonight": {
+    "NAME": "My Mai Tonight",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. NL Next instance of damage is 0. NL Exhaust"
+  },
+  "Yohane:Nocturne": {
+    "NAME":  "Lailapse!",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Gain !B! Block."
+  },
+  "Yohane:One_Two": {
+    "NAME": "One Two",
+    "DESCRIPTION": "Deal !D! damage. NL Deal an additional !D! damage for every Summon."
+  },
+  "Yohane:Perfection": {
+    "NAME": "Perfection",
+    "DESCRIPTION": "Lose all Fallen Energy. NL Deal damage equal to lost Fallen Energy."
+  },
+  "Yohane:Prideful_Crash": {
+    "NAME":  "Prideful Crash",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. Add Pride to hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. Add 2 Prides to hand."
+  },
+  "Yohane:Reckless_Greed": {
+    "NAME": "Reckless Greed",
+    "DESCRIPTION": "Draw !D! cards. NL Add !M! copies of this card to your deck."
+  },
+  "Yohane:Retaliation": {
+    "NAME": "Retaliation",
+    "DESCRIPTION": "Deal !D! damage. NL If you have received damage this combat, deal !D! damage. NL Gain !M! Fallen Energy."
+  },
+  "Yohane:Runaway_Umbrella": {
+    "NAME":  "Runaway Umbrella",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. NL Ethereal."
+  },
+  "Yohane:Schwarz_Sechs": {
+    "NAME": "Schwarz Sechs",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL The next 0 cost card is played twice. NL Fallen Energy is still consumed."
+  },
+  "Yohane:Shadow_Gate": {
+    "NAME": "Shadow Gate",
+    "DESCRIPTION": "Draw !M! card and lose 5 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards and lose 5 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0."
+  },
+  "Yohane:Shark_Summon": {
+    "NAME":  "Shark Guard",
+    "DESCRIPTION": "Gain !B! Block. NL Lose 1/4 Fallen Energy. NL Gain equal Thorns."
+  },
+  "Yohane:Silence": {
+    "NAME": "Silence",
+    "DESCRIPTION": "If the enemy intends to attack, deal !D! damage."
+  },
+  "Yohane:Sloth": {
+    "NAME": "Sloth",
+    "DESCRIPTION": "Heal !M! HP. NL Apply Entangle to self. NL Exhaust."
+  },
+  "Yohane:Strawberry_Trapper": {
+    "NAME":  "Strawberry Trapper",
+    "DESCRIPTION": "Gain !M! Strength. NL Draw 1 Card. NL At the end of your turn, lose 40 HP.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Strength. NL Draw 2 Cards. NL At the end of your turn, lose 40 Health."
+  },
+  "Yohane:Strike_Grey": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy."
+  },
+  "Yohane:Take_Flight": {
+    "NAME": "Take Flight!",
+    "DESCRIPTION": "Gain Flight. NL Lose !M! Fallen Energy at the end of your turn. Removed if Fallen Energy drops to 0."
+  },
+  "Yohane:Unstable_World": {
+    "NAME":  "Unstable World",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage to all enemies. NL Add a copy of this card to your hand. NL Exhaust."
+  },
+  "Yohane:Well_Laid_Ambush": {
+    "NAME": "Well Laid Ambush",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL Retain."
+  },
+  "Yohane:Wrath": {
+    "NAME": "Wrath",
+    "DESCRIPTION":  "Deal !D! damage to ALL enemies 5 times. NL Apply !M! Weak to self."
+  }
+}

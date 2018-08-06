@@ -6,7 +6,9 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -20,10 +22,11 @@ import yohanemod.powers.FallenEnergy;
 import java.util.ArrayList;
 
 public class Hell_Zone extends CustomCard{
-    public static final String ID = "Hell_Zone";
-    public static final String NAME = "Hell Zone";
-    public static final String DESCRIPTION = "Deal damage equal to half of your Fallen Energy to ALL enemies. NL Exhaust. NL Retain.";
-    public static final String UPGRADED_DESCRIPTION = "Deal damage equal to half of your Fallen Energy to ALL enemies. NL Retain.";
+    public static final String ID = "Yohane:Hell_Zone";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "cards/Hell_Zone.png";
     private static final int COST = 2;
     private static final int POOL = 1;

@@ -2,6 +2,8 @@ package yohanemod.cards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import basemod.abstracts.CustomCard;
@@ -11,9 +13,10 @@ import yohanemod.patches.AbstractCardEnum;
 
 
 public class Guilty_Kiss extends CustomCard {
-    public static final String ID = "Guilty_Kiss";
-    public static final String NAME = "Guilty Kiss";
-    public static final String DESCRIPTION = "If only [G]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times. ";
+    public static final String ID = "Yohane:Guilty_Kiss";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Guilty_Kiss.png";
     private static final int DAMAGE_AMT = 8;
     private static final int UPGRADE_DAMAGE = 2;

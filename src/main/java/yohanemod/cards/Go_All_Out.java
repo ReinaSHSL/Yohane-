@@ -5,16 +5,19 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import basemod.abstracts.CustomCard;
 import yohanemod.powers.FallenEnergy;
 
 public class Go_All_Out extends CustomCard{
-    public static final String ID = "Go_All_Out";
-    public static final String NAME = "Go All Out";
-    public static final String DESCRIPTION = "Exhaust ALL non-attacks, gain !M! Fallen Energy for each. NL Draw 4 cards.";
+    public static final String ID = "Yohane:Go_All_Out";
+    private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final String NAME = cardStrings.NAME;
+    public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Go_All_Out.png";
     private static final int FALLEN_ENERGY = 5;
     private static final int COST = 2;
