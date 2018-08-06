@@ -182,7 +182,7 @@
   },
   "Yohane:Reckless_Greed": {
     "NAME": "Reckless Greed",
-    "DESCRIPTION": "Draw !D! cards. NL Add !M! copies of this card to your deck."
+    "DESCRIPTION": "Draw !F! cards. NL Add !F! copies of this card to your deck."
   },
   "Yohane:Retaliation": {
     "NAME": "Retaliation",

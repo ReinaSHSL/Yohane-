@@ -20,7 +20,7 @@ public class Wrath extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Wrath.png";
-    private static final int DAMAGE = 2;
+    private static final int DAMAGE = 3;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int WEAK_AMT = 2;
     private static final int COST = 1;

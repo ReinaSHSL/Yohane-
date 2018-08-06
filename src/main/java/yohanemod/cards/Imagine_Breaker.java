@@ -22,7 +22,7 @@ public class Imagine_Breaker extends CustomCard{
     public static final String IMG_PATH = "cards/Imagine_Breaker.png";
     private static final int COST = 2;
     private static final int POOL = 1;
-    private static final CardRarity rarity = CardRarity.UNCOMMON;
+    private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;
 
     public Imagine_Breaker() {

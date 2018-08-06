@@ -18,7 +18,6 @@ public class Reckless_Greed extends CustomCard{
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Reckless_Greed.png";
     private static final int DRAW = 2;
-    private static final int DUPE = 2;
     private static final int COST = 1;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
@@ -28,17 +27,16 @@ public class Reckless_Greed extends CustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.GREY,
                 rarity, target, POOL);
-        this.damage = this.baseDamage = DRAW;
-        this.magicNumber = this.baseMagicNumber = DUPE;
+        this.misc = DRAW;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
     if(!this.upgraded) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.damage));
-        AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Reckless_Greed(new Reckless_Greed(), this.magicNumber, true, true, false));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.misc));
+        AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Reckless_Greed(new Reckless_Greed(), this.misc, true, true, false));
     } else {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.damage));
-        AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Reckless_Greed(new Reckless_Greed(), this.magicNumber, true, true, true));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.misc));
+        AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Reckless_Greed(new Reckless_Greed(), this.misc, true, true, true));
     }
 
 
@@ -53,8 +51,7 @@ public class Reckless_Greed extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(1);
-            this.upgradeMagicNumber(1);
+            this.misc += 1;
         }
     }
 }

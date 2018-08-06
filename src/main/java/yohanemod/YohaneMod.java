@@ -2,7 +2,6 @@ package yohanemod;
 
 import java.nio.charset.StandardCharsets;
 
-import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 
 import com.badlogic.gdx.graphics.Color;
@@ -19,6 +18,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import yohanemod.cards.*;
+import yohanemod.cards.Deprecated.Shark_Summon;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
@@ -132,7 +132,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addCard(new Wrath());
 		BaseMod.addCard(new Kowareyasuki());
 		BaseMod.addCard(new Nocturne());
-		BaseMod.addCard(new Shark_Summon());
 		BaseMod.addCard(new Ice_Cream_Assault());
 		BaseMod.addCard(new Impressive_Display());
 		BaseMod.addCard(new Runaway_Umbrella());

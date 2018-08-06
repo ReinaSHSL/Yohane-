@@ -27,6 +27,8 @@ public class Prideful_Crash extends CustomCard {
     private static final int FALLEN_ENERGY_UPGRADE = 10;
     private static final int DAMAGE_AMOUNT = 40;
     private static final int DAMAGE_AMOUNT_UPGRADE = 8;
+    private static final int DRAW = 1;
+    private static final int DRAW_UPGRADE = 1;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.ENEMY;
@@ -37,10 +39,10 @@ public class Prideful_Crash extends CustomCard {
                 rarity, target, POOL);
         this.damage = this.baseDamage = DAMAGE_AMOUNT;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
+        this.misc = DRAW;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.upgraded) {
             if (m != null) {
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect(m.hb.cX, m.hb.cY)));
             }
@@ -48,19 +50,7 @@ public class Prideful_Crash extends CustomCard {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(p,
                     this.damage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, this.block, false), this.block));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(new com.megacrit.cardcrawl.cards.curses.Pride(), 1));
-        } else {
-            if (m != null) {
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect(m.hb.cX, m.hb.cY)));
-            }
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.8F));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m, new com.megacrit.cardcrawl.cards.DamageInfo(p,
-                    this.damage, this.damageTypeForTurn), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, this.block, false), this.block));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(new com.megacrit.cardcrawl.cards.curses.Pride(), 2));
-        }
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction(new com.megacrit.cardcrawl.cards.curses.Pride(), this.misc));
     }
 
 
@@ -74,6 +64,8 @@ public class Prideful_Crash extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(DAMAGE_AMOUNT_UPGRADE);
+            this.upgradeMagicNumber(FALLEN_ENERGY_UPGRADE);
+            this.misc += DRAW_UPGRADE;
             this.rawDescription = UPGRADED_DESCRIPTION;
             this.initializeDescription();
         }
