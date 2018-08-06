@@ -20,7 +20,6 @@ public class Descent extends CustomCard {
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADED_DESCRIPTION = "Pay 2 Fallen Energy. NL Apply !M! Vulnerable. NL Exhaust.";
     public static final String IMG_PATH = "cards/Descent.png";
     private static final int COST = 0;
     private static final int FALLEN_ENERGY = 2;
@@ -58,7 +57,6 @@ public class Descent extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(UPGRADE_PLUS_VULNERABLE);
-            this.rawDescription = UPGRADED_DESCRIPTION;
             this.initializeDescription();
         }
     }

@@ -22,6 +22,8 @@ public class Dark_Rest extends CustomCard{
     public static final String IMG_PATH = "cards/Dark_Rest.png";
     private static final int COST = 1;
     private static final int POOL = 1;
+    private static final int FALLEN_ENERGY = 4;
+    private static final int FALLEN_ENERGY_UPGRADE = 4;
     private static final CardRarity rarity = CardRarity.COMMON;
     private static final CardTarget target = CardTarget.ENEMY;
 
@@ -30,6 +32,7 @@ public class Dark_Rest extends CustomCard{
                 CardType.SKILL, AbstractCardEnum.GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
+        this.misc = FALLEN_ENERGY;
     }
 
     @Override
@@ -56,7 +59,7 @@ public class Dark_Rest extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = UPGRADED_DESCRIPTION;
+            this.misc += FALLEN_ENERGY_UPGRADE;
             this.initializeDescription();
             this.upgradeMagicNumber(1);
         }

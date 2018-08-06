@@ -21,6 +21,8 @@ public class Strawberry_Trapper extends CustomCard{
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "cards/Strawberry_Trapper.png";
     private static final int STR_AMOUNT = 10;
+    private static final int DRAW = 1;
+    private static final int DRAW_UPGRADE = 1;
     private static final int COST = 1;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.RARE;
@@ -31,12 +33,13 @@ public class Strawberry_Trapper extends CustomCard{
                 CardType.POWER, AbstractCardEnum.GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = STR_AMOUNT;
+        this.misc = DRAW;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new com.megacrit.cardcrawl.powers.StrengthPower(p, this.magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.damage));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.misc));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrawberryTrapperPower(p,40)));
     }
 
@@ -50,6 +53,7 @@ public class Strawberry_Trapper extends CustomCard{
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(5);
+            this.misc += DRAW_UPGRADE;
             this.rawDescription = UPGRADED_DESCRIPTION;
             initializeDescription();
         }

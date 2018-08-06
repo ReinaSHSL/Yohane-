@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import yohanemod.cards.*;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.*;
 import org.apache.logging.log4j.LogManager;
@@ -103,6 +104,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 
 	 @Override
 	 	public void receiveEditCards() {
+	    BaseMod.addDynamicVariable(new F());
 		BaseMod.addCard(new Strike_Grey());
 		BaseMod.addCard(new Defend_Grey());
 		BaseMod.addCard(new Descent());

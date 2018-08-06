@@ -39,7 +39,7 @@ public class Yohane extends AbstractPlayerWithMinions {
 		retVal.add("Yohane:Strike_Grey");
 		retVal.add("Yohane:Strike_Grey");
 		retVal.add("Yohane:Strike_Grey");
-        retVal.add("Yohane:Strike_Grey");
+		retVal.add("Yohane:Strike_Grey");
 		retVal.add("Yohane:Defend_Grey");
 		retVal.add("Yohane:Defend_Grey");
 		retVal.add("Yohane:Defend_Grey");
