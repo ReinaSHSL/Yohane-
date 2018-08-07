@@ -24,6 +24,7 @@ public class Shadow_Gate extends CustomCard{
     private static final int COST = 2;
     private static final int POOL = 1;
     private static final int DRAW = 1;
+    private static final int FALLEN_ENERGY = 5;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;
 
@@ -32,12 +33,13 @@ public class Shadow_Gate extends CustomCard{
                 CardType.POWER, AbstractCardEnum.GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = DRAW;
+        this.misc = FALLEN_ENERGY;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(FallenEnergy.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowGatePower(p, this.magicNumber), this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShadowGatePower(p, this.magicNumber, this.misc), this.magicNumber));
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }

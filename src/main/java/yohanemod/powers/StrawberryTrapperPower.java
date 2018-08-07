@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
 public class StrawberryTrapperPower extends AbstractPower {
-    public static final String POWER_ID = "StrawberryTrapper";
+    public static final String POWER_ID = "Yohane:StrawberryTrapper";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -23,7 +23,6 @@ public class StrawberryTrapperPower extends AbstractPower {
         this.priority = 0;
         updateDescription();
         this.img = getStrawberryTrapperTexture();
-        this.canGoNegative = true;
         this.type = AbstractPower.PowerType.DEBUFF;
     }
 

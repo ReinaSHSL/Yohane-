@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import characters.AbstractPlayerWithMinions;
 import yohanemod.powers.LilyStrength;
-import yohanemod.powers.SoulLink;
 
 public class Little_Demon_Lily extends CustomCard {
     public static final String ID = "Yohane:Little_Demon_Lily";

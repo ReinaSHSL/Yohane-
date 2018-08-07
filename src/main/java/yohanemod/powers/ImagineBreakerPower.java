@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ImagineBreakerPower extends AbstractPower{
-    public static final String POWER_ID = "ImagineBreakerPower";
+    public static final String POWER_ID = "Yohane:ImagineBreakerPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -26,10 +26,10 @@ public class ImagineBreakerPower extends AbstractPower{
     }
 
     public void atEndOfTurn(boolean isPlayer) {
-        int FallenLoss = this.owner.getPower("FallenEnergy").amount;
-        if (this.owner.getPower("FallenEnergy").amount > 0) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FallenEnergy(owner, -FallenLoss), -FallenLoss));
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, FallenLoss));
+        int FallenLoss = this.owner.getPower(FallenEnergy.POWER_ID).amount;
+        if (this.owner.getPower(FallenEnergy.POWER_ID).amount > 0) {
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new FallenEnergy(owner, -FallenLoss), -FallenLoss));
+            AbstractDungeon.actionManager.addToTop(new GainBlockAction(this.owner, this.owner, FallenLoss));
         }
     }
 

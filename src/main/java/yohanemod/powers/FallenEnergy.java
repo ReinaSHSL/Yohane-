@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 
 public class FallenEnergy extends AbstractPower {
-    public static final String POWER_ID = "FallenEnergy";
+    public static final String POWER_ID = "Yohane:FallenEnergy";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
@@ -23,6 +23,7 @@ public class FallenEnergy extends AbstractPower {
         this.amount = amount;
         updateDescription();
         this.img = getDarkEnergyPowerTexture();
+        this.canGoNegative = false;
     }
 
     public void atStartOfTurn () {

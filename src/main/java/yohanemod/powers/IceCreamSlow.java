@@ -13,14 +13,14 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class IceCreamSlow extends AbstractPower {
-    public static final String POWER_ID = "IceCreamSlow";
+    public static final String POWER_ID = "Yohane:IceCreamSlow";
        private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
        public static final String NAME = powerStrings.NAME;
        public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     
        public IceCreamSlow(AbstractCreature owner, int amount) {
              this.name = NAME;
-             this.ID = "IceCreamSlow";
+             this.ID = "Yohane:IceCreamSlow";
              this.owner = owner;
              this.amount = amount;
              updateDescription();
@@ -30,7 +30,7 @@ public class IceCreamSlow extends AbstractPower {
     
        public void atEndOfRound()
        {
-             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "IceCreamSlow"));
+             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "Yohane:IceCreamSlow"));
            }
     
        public void updateDescription()

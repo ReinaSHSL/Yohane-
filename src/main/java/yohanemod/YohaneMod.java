@@ -97,8 +97,10 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         BaseMod.addKeyword(Ruby,"A Little Demon with 12 HP and can either deal 2 damage to all enemies, or give you 6 Block.");
         final String[] Evolves = {"evolves, evolve"};
         BaseMod.addKeyword(Evolves,"Strengthen a summon, dependant on the summon, and heal them for 5 HP.");
-        final String[] feather = {"feather, feathers"};
-        BaseMod.addKeyword(feather,"A Curse which exhausts your entire hand except for cards that say Feather at the end of the turn.");
+        final String[] Feather = {"feather, feathers"};
+        BaseMod.addKeyword(Feather,"A Curse which exhausts your entire hand except for cards that say Feather at the end of the turn.");
+		final String[] Sin = {"sin"};
+		BaseMod.addKeyword(Sin,"Deal and take extra damage equal to the amount of Sin a monster has. Removed upon being hit.");
         logger.info("finish editing keywords");
     }
 

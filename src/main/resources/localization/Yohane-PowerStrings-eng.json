@@ -1,5 +1,5 @@
 {
-  "FallenEnergy": {
+  "Yohane:FallenEnergy": {
     "NAME": "Fallen Energy",
     "DESCRIPTIONS": [
       "You have ",
@@ -7,7 +7,7 @@
     ]
   },
 
-  "StrawberryTrapper": {
+  "Yohane:StrawberryTrapper": {
     "NAME": "Strawberry Trapper",
     "DESCRIPTIONS": [
       "Lose ",
@@ -15,7 +15,7 @@
     ]
   },
 
-  "ShadowGate": {
+  "Yohane:ShadowGate": {
     "NAME": "Shadow Gate",
     "DESCRIPTIONS": [
       "Draw ",
@@ -32,13 +32,13 @@
     ]
   },
 
-  "ImagineBreakerPower": {
+  "Yohane:ImagineBreakerPower": {
     "NAME": "Imagine Breaker",
     "DESCRIPTIONS": [
       "Lose ALL Fallen Energy at the end of your turn. Gain equal Block."
     ]
   },
-  "IceCreamSlow": {
+  "Yohane:IceCreamSlow": {
     "NAME": "Ice Cream Slow",
     "DESCRIPTIONS": [
       "For each card played this turn, ",
@@ -47,20 +47,20 @@
       "% more damage.)  Removed at the end of the turn."
     ]
   },
-  "SoulLink": {
+  "Yohane:SoulLink": {
     "NAME": "Soul Link",
     "DESCRIPTIONS": [
       "All damage and debuffs taken by this summon are also taken by Yohane."
     ]
   },
-  "SchwarzSechsPower": {
+  "Yohane:SchwarzSechsPower": {
     "NAME": "Schwarz Sechs",
     "DESCRIPTIONS": [
       "The next ",
       " 0 cost cards are played twice."
     ]
   },
-  "LilyStrength": {
+  "Yohane:LilyStrength": {
     "NAME": "Powered Up Lily!",
     "DESCRIPTIONS": [
       "Attacking does ",
@@ -68,7 +68,7 @@
       " Fallen Energy."
     ]
   },
-  "RubyStrength": {
+  "Yohane:RubyStrength": {
     "NAME": "Ganbaruby!",
     "DESCRIPTIONS": [
       "Attacking does ",
@@ -83,6 +83,15 @@
       "Reduce #yAttack damage taken by #b50%. Removed if dealt #yAttack damage #b",
       " time in one turn.",
       " times in one turn."
+    ]
+  },
+
+  "Yohane:Sin": {
+    "NAME": "Sin",
+    "DESCRIPTIONS": [
+      "You will receive ",
+      " extra damage and deal ",
+      " extra damage."
     ]
   }
 

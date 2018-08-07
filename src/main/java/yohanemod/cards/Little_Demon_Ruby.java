@@ -12,9 +12,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import characters.AbstractPlayerWithMinions;
 import yohanemod.powers.RubyStrength;
-import yohanemod.summons.Ruby;
-import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import yohanemod.powers.SoulLink;
 
 public class Little_Demon_Ruby extends CustomCard {
     public static final String ID = "Yohane:Little_Demon_Ruby";

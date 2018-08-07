@@ -1,4 +1,4 @@
-package yohanemod.powers;
+package yohanemod.powers.Deprecated;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.DamageInfo;

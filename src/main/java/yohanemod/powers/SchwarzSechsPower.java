@@ -18,14 +18,14 @@ import java.util.ArrayList;
 
 public class SchwarzSechsPower extends AbstractPower
 {
-    public static final String POWER_ID = "SchwarzSechsPower";
-    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("SchwarzSechsPower");
+    public static final String POWER_ID = "Yohane:SchwarzSechsPower";
+    private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings("Yohane:SchwarzSechsPower");
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public SchwarzSechsPower(AbstractCreature owner, int amount) {
         this.name = NAME;
-        this.ID = "SchwarzSechsPower";
+        this.ID = "Yohane:SchwarzSechsPower";
         this.owner = owner;
         this.amount = amount;
         updateDescription();
@@ -66,7 +66,7 @@ public class SchwarzSechsPower extends AbstractPower
             }
             this.amount -= 1;
             if (this.amount == 0) {
-                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "SchwarzSechsPower"));
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Yohane:SchwarzSechsPower"));
             }
         }
     }
@@ -74,7 +74,7 @@ public class SchwarzSechsPower extends AbstractPower
     public void atEndOfTurn(boolean isPlayer)
     {
         if (isPlayer) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "SchwarzSechsPower"));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Yohane:SchwarzSechsPower"));
         }
     }
 

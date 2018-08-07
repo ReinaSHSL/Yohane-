@@ -22,6 +22,7 @@ public class Allure_of_Darkness extends CustomCard{
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "cards/Allure_of_Darkness.png";
+    private static final int FALLEN_ENERGY = 2;
     private static final int COST = 0;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
@@ -31,20 +32,16 @@ public class Allure_of_Darkness extends CustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL,
                 AbstractCardEnum.GREY, rarity,
                 target, POOL);
+        this.misc = FALLEN_ENERGY;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.upgraded){
-            if ((p.hasPower(FallenEnergy.POWER_ID)) && (p.getPower(FallenEnergy.POWER_ID).amount >= 2)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -2));
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
-                AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, 1, false));
-            } else {
-                AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
-            }
-        } else {
+        if ((p.hasPower(FallenEnergy.POWER_ID)) && (p.getPower(FallenEnergy.POWER_ID).amount >= this.misc)) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -this.misc));
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
             AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, 1, false));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }
     }
 
@@ -57,6 +54,7 @@ public class Allure_of_Darkness extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.misc += -2;
             this.rawDescription = UPGRADED_DESCRIPTION;
             this.initializeDescription();
         }
