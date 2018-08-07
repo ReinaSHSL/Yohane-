@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import characters.AbstractPlayerWithMinions;
 import yohanemod.powers.LilyStrength;
+import yohanemod.summons.Lily;
 
 public class Little_Demon_Lily extends CustomCard {
     public static final String ID = "Yohane:Little_Demon_Lily";
@@ -50,7 +51,7 @@ public class Little_Demon_Lily extends CustomCard {
             if (summonCount == 0) {
                 player.addMinion(new yohanemod.summons.Lily());
             } else if (summonCount == 1) {
-                if (player.minions.monsters.get(0).id.equals("Lily")) {
+                if (player.minions.monsters.get(0).id.equals(Lily.ID)) {
                     //Upgrade
                     AbstractMonster lily0Upgraded = player.minions.monsters.get(0);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0Upgraded, abstractPlayer, new LilyStrength(player, 1), 1));
@@ -60,12 +61,12 @@ public class Little_Demon_Lily extends CustomCard {
                     player.addMinion(new yohanemod.summons.Lily());
                 }
             } else if (summonCount == 2) {
-                if (player.minions.monsters.get(0).id.equals("Lily")) {
+                if (player.minions.monsters.get(0).id.equals(Lily.ID)) {
                     //Upgrade
                     AbstractMonster lily0Upgraded = player.minions.monsters.get(0);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0Upgraded, abstractPlayer, new LilyStrength(player, 1), 1));
                     com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(lily0Upgraded, lily0Upgraded, 5));
-                } else if (player.minions.monsters.get(1).id.equals("Lily")) {
+                } else if (player.minions.monsters.get(1).id.equals(Lily.ID)) {
                     //Upgrade
                     AbstractMonster lily1Upgraded = player.minions.monsters.get(1);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily1Upgraded, abstractPlayer, new LilyStrength(player, 1), 1));

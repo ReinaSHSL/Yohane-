@@ -128,7 +128,8 @@
     "Yohane:Little_Demon_Recruit": {
     "NAME": "Little Demon Recruit",
     "DESCRIPTION": "Add !M! card that say Summon or Summons from your draw pile to your hand. NL Exhaust",
-    "UPGRADE_DESCRIPTION": "Add !M! cards that says Summon or Summons from your draw pile to your hand. NL Exhaust"
+    "UPGRADE_DESCRIPTION": "Add !M! cards that says Summon or Summons from your draw pile to your hand. NL Exhaust",
+      "EXTENDED_DESCRIPTION": ["I have no Little Demons!"]
   },
   "Yohane:Little_Demon_Ruby": {
     "NAME": "Little Demon Ruby",

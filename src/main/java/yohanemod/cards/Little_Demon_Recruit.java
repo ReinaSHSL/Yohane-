@@ -18,7 +18,7 @@ public class Little_Demon_Recruit extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String[] EXTENDED_DESCRIPTION = {"I have no Little Demons"};
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String IMG_PATH = "cards/Little_Demon_Recruit.png";
     private static final int ADD = 1;
     private static final int COST = 0;

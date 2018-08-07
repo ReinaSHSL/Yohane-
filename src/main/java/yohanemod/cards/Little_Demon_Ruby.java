@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import characters.AbstractPlayerWithMinions;
 import yohanemod.powers.RubyStrength;
+import yohanemod.summons.Ruby;
 
 public class Little_Demon_Ruby extends CustomCard {
     public static final String ID = "Yohane:Little_Demon_Ruby";
@@ -50,7 +51,7 @@ public class Little_Demon_Ruby extends CustomCard {
             if (summonCount == 0) {
                 player.addMinion(new yohanemod.summons.Ruby());
             } else if (summonCount == 1) {
-                if (player.minions.monsters.get(0).id.equals("Ruby")) {
+                if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {
                     //Upgrade
                     AbstractMonster ruby0Upgraded = player.minions.monsters.get(0);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0Upgraded, abstractPlayer, new RubyStrength(player, 1), 1));
@@ -60,12 +61,12 @@ public class Little_Demon_Ruby extends CustomCard {
                     player.addMinion(new yohanemod.summons.Ruby());
                 }
             } else if (summonCount == 2) {
-                if (player.minions.monsters.get(0).id.equals("Ruby")) {
+                if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {
                     //Upgrade
                     AbstractMonster ruby0Upgraded = player.minions.monsters.get(0);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0Upgraded, abstractPlayer, new RubyStrength(player, 1), 1));
                     com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(ruby0Upgraded, ruby0Upgraded, 5));
-                } else if (player.minions.monsters.get(1).id.equals("Ruby")) {
+                } else if (player.minions.monsters.get(1).id.equals(Ruby.ID)) {
                     //Upgrade
                     AbstractMonster ruby1Upgraded = player.minions.monsters.get(1);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby1Upgraded, abstractPlayer, new RubyStrength(player, 1), 1));

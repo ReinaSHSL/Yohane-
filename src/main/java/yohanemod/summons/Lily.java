@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import yohanemod.powers.FallenEnergy;
+import yohanemod.powers.LilyStrength;
 
 
 public class Lily extends AbstractFriendlyMonster {
@@ -48,8 +49,8 @@ public class Lily extends AbstractFriendlyMonster {
 
     //Create possible moves for the monster
     private ArrayList<ChooseActionInfo> makeMoves(){
-        if (this.hasPower("LilyStrength") && this.getPower("LilyStrength").amount != 0) {
-            upgradeCount = this.getPower("LilyStrength").amount;
+        if (this.hasPower(LilyStrength.POWER_ID) && this.getPower(LilyStrength.POWER_ID).amount != 0) {
+            upgradeCount = this.getPower(LilyStrength.POWER_ID).amount;
         }
         int attackDamage = (4 + upgradeCount * 2);
         int chargeAmount = (6 + upgradeCount);
@@ -58,6 +59,7 @@ public class Lily extends AbstractFriendlyMonster {
         String attackDesc = String.format("Deal %d damage to a random enemy.", attackDamage);
         String chargeDesc = String.format("Gain %d Fallen Energy.", chargeAmount);
         tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
+            super.applyPowers();
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
                     new DamageInfo(this, attackDamage, DamageInfo.DamageType.NORMAL)));
         }));

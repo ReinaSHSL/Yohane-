@@ -14,6 +14,7 @@ import cards.MonsterCard;
 import java.util.ArrayList;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
+import yohanemod.powers.RubyStrength;
 
 public class Ruby extends AbstractFriendlyMonster {
     public static String NAME = "Ruby";
@@ -51,8 +52,8 @@ public class Ruby extends AbstractFriendlyMonster {
 
     private ArrayList<ChooseActionInfo> makeMoves(){
         ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
-        if (this.hasPower("RubyStrength") && this.getPower("RubyStrength").amount != 0) {
-            upgradeCount = this.getPower("RubyStrength").amount;
+        if (this.hasPower(RubyStrength.POWER_ID) && this.getPower(RubyStrength.POWER_ID).amount != 0) {
+            upgradeCount = this.getPower(RubyStrength.POWER_ID).amount;
         }
         float attackDamage = (2 + upgradeCount);
         int blockAmount = (6 + upgradeCount);
@@ -90,6 +91,7 @@ public class Ruby extends AbstractFriendlyMonster {
         String attackDesc = String.format("Deal %f to ALL enemies.", attackDamage);
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
         tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
+            super.applyPowers();
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.SFXAction("ATTACK_HEAVY"));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(this, new CleaveEffect(), 0.1F));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(this,
@@ -103,6 +105,5 @@ public class Ruby extends AbstractFriendlyMonster {
 
     @Override
     protected void getMove(int i) {
-
     }
 }
