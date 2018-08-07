@@ -51,5 +51,4 @@ public class Sloth extends CustomCard{
             this.upgradeMagicNumber(2);
         }
     }
-
 }

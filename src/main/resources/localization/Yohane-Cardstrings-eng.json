@@ -219,6 +219,10 @@
     "DESCRIPTION": "Gain !M! Strength. NL Draw !F! Card. NL At the end of your turn, lose 40 HP.",
     "UPGRADE_DESCRIPTION": "Gain !M! Strength. NL Draw !F! Cards. NL At the end of your turn, lose 40 Health."
   },
+  "Yohane:Soul_Peek": {
+    "NAME":  "Soul Peek",
+    "DESCRIPTION": "Apply !M! Sin X times."
+  },
   "Yohane:Strike_Grey": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy."

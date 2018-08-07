@@ -34,8 +34,7 @@ public class Guilty_Kiss extends CustomCard {
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
     }
 
-    public void use(AbstractPlayer p, AbstractMonster m)
-           {
+    public void use(AbstractPlayer p, AbstractMonster m) {
              if (this.energyOnUse < EnergyPanel.totalCount) {
                    this.energyOnUse = EnergyPanel.totalCount;
                  }
