@@ -249,7 +249,7 @@
   },
   "Yohane:Stealth_Mode": {
     "NAME":  "Stealth Mode",
-    "DESCRIPTION": "Secret. End of the turn, gain 1 Intangible and Exhaust the draw pile. NL If the draw pile is empty, Exhaust your hand."
+    "DESCRIPTION": "Secret. At the end of the turn, gain 1 Intangible and Exhaust your draw pile. NL If you cannot, Exhaust your hand."
   },
   "Yohane:Strike_Grey": {
     "NAME": "Strike",

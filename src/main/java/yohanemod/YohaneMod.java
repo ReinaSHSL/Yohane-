@@ -5,6 +5,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -19,16 +20,17 @@ import yohanemod.relics.AngelWings;
 
 import java.nio.charset.StandardCharsets;
 
+import static yohanemod.patches.AbstractCardEnum.YOHANE_GREY;
 
 
 @SpireInitializer
-public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, EditStringsSubscriber  {
+public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, EditStringsSubscriber {
     public static final Logger logger = LogManager.getLogger(YohaneMod.class.getName());
-	
-	private static final String MODNAME = "Yohane!";
+
+    private static final String MODNAME = "Yohane!";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Adds Yohane as a playable character.";
-    
+
     private static final Color GREY = CardHelper.getColor(131.0f, 156.0f, 165.0f);
     private static final String ATTACK_GREY = "cardBG/bg_attack_grey.png";
     private static final String SKILL_GREY = "cardBG/bg_skill_grey.png";
@@ -41,16 +43,25 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     private static final String ENERGY_ORB_GREY_PORTRAIT = "cardBGStronk/card_grey_orb.png";
     private static final String Yohane_Portrait = "charstuff/YohaneBG.png";
     private static final String Yohane_Button = "charstuff/YohaneButton.png";
-    
-	public YohaneMod() {
-		//TODO Everything
-		BaseMod.subscribe(this);
-		BaseMod.addColor(AbstractCardEnum.YOHANE_GREY.toString(),
-				GREY, GREY, GREY, GREY, GREY, GREY, GREY,
-				ATTACK_GREY, SKILL_GREY, POWER_GREY, ENERGY_ORB_GREY, 
-				ATTACK_GREY_PORTRAIT, SKILL_GREY_PORTRAIT, POWER_GREY_PORTRAIT,
-				ENERGY_ORB_GREY_PORTRAIT);
-	}
+
+    public YohaneMod() {
+        //TODO Everything
+        BaseMod.subscribe(this);
+        BaseMod.addColor(AbstractCardEnum.YOHANE_GREY.toString(),
+                GREY, GREY, GREY, GREY, GREY, GREY, GREY,
+                ATTACK_GREY, SKILL_GREY, POWER_GREY, ENERGY_ORB_GREY,
+                ATTACK_GREY_PORTRAIT, SKILL_GREY_PORTRAIT, POWER_GREY_PORTRAIT,
+                ENERGY_ORB_GREY_PORTRAIT);
+        AbstractCard.CardColor[] colors = AbstractCard.CardColor.values();
+        for (int icolor = 0; icolor < colors.length; ++icolor) {
+            System.out.println(AbstractCard.CardColor.values()[icolor]);
+            System.out.println(AbstractCard.CardColor.values()[icolor].name());
+            if (icolor > AbstractCard.CardColor.CURSE.ordinal()) {
+                Color color = BaseMod.getTrailVfxColor(AbstractCard.CardColor.values()[icolor].name()).cpy();
+                System.out.println(color);
+            }
+        }
+    }
 
 	public static void initialize() {
 		YohaneMod mod = new YohaneMod();
