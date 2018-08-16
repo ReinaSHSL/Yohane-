@@ -30,7 +30,7 @@ public class Wrath extends CustomCard {
 
     public Wrath() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                AbstractCard.CardType.ATTACK, AbstractCardEnum.GREY,
+                AbstractCard.CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
         this.damage = this.baseDamage = DAMAGE;

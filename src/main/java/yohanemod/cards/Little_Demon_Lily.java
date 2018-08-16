@@ -27,7 +27,7 @@ public class Little_Demon_Lily extends CustomCard {
 
     public Little_Demon_Lily() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
     }
 

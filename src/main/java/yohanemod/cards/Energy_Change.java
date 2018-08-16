@@ -26,7 +26,7 @@ public class Energy_Change extends CustomCard {
 
     public Energy_Change() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
 
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;

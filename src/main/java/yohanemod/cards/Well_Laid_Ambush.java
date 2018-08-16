@@ -30,7 +30,7 @@ public class Well_Laid_Ambush extends CustomCard{
 
     public Well_Laid_Ambush() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-                AbstractCardEnum.GREY, rarity,
+                AbstractCardEnum.YOHANE_GREY, rarity,
                 target, POOL);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;

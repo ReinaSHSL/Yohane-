@@ -28,7 +28,7 @@ public class Grand_Entrance extends CustomCard {
 
     public Grand_Entrance() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                AbstractCard.CardType.ATTACK, AbstractCardEnum.GREY,
+                AbstractCard.CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.damage = this.baseDamage = DAMAGE_AMT;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;

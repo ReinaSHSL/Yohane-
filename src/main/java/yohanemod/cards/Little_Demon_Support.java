@@ -26,7 +26,7 @@ public class Little_Demon_Support extends CustomCard {
 
     public Little_Demon_Support() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                AbstractCard.CardType.SKILL, AbstractCardEnum.GREY,
+                AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.block = this.baseBlock = BLOCK_AMT;
     }

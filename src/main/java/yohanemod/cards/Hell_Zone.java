@@ -31,7 +31,7 @@ public class Hell_Zone extends CustomCard{
 
     public Hell_Zone() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.GREY,
+                CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.exhaust = true;
         this.retain = true;

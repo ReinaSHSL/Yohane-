@@ -28,7 +28,7 @@ public class Perfection extends CustomCard {
 
     public Perfection() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-                AbstractCardEnum.GREY, rarity,
+                AbstractCardEnum.YOHANE_GREY, rarity,
                 target, POOL);
     }
 

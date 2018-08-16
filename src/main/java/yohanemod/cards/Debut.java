@@ -31,7 +31,7 @@ public class Debut extends CustomCard {
 
     public Debut() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                         rarity, target, POOL);
         this.isInnate = true;
         this.exhaust = true;

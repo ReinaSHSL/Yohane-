@@ -30,7 +30,7 @@ public class Cursed_Strike extends CustomCard {
 
     public Cursed_Strike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-                AbstractCardEnum.GREY, rarity,
+                AbstractCardEnum.YOHANE_GREY, rarity,
                 target, POOL);
 
         this.baseDamage = ATTACK_DMG;

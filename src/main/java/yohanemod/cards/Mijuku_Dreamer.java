@@ -27,7 +27,7 @@ public class Mijuku_Dreamer extends CustomCard {
 
     public Mijuku_Dreamer() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = STRENGTH_AMT;
         this.exhaust = true;

@@ -29,7 +29,7 @@ public class Strawberry_Trapper extends CustomCard{
 
     public Strawberry_Trapper() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.GREY,
+                CardType.POWER, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = STR_AMOUNT;
         this.misc = DRAW;

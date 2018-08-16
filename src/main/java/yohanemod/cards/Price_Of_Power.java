@@ -25,7 +25,7 @@ public class Price_Of_Power extends CustomCard implements PostDrawSubscriber {
 
     public Price_Of_Power() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                         rarity, target, POOL);
         this.retain = true;
         this.magicNumber = this.baseMagicNumber = DAMAGE;

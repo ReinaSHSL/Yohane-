@@ -29,7 +29,7 @@ public class Allure_of_Darkness extends CustomCard{
 
     public Allure_of_Darkness() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL,
-                AbstractCardEnum.GREY, rarity,
+                AbstractCardEnum.YOHANE_GREY, rarity,
                 target, POOL);
         this.misc = FALLEN_ENERGY;
     }

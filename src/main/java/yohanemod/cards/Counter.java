@@ -29,7 +29,7 @@ public class Counter extends CustomCard {
 
     public Counter() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.ATTACK, AbstractCardEnum.GREY,
+                CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.damage = this.baseDamage = DAMAGE_AMOUNT;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;

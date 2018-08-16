@@ -30,7 +30,7 @@ public class Livestream_Donation extends CustomCard{
 
     public Livestream_Donation() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = DRAW;
         this.misc = FALLEN_ENERGY;

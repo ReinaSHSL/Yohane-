@@ -28,7 +28,7 @@ public class Nocturne extends CustomCard {
 
     public Nocturne() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
         this.block = this.baseBlock = BLOCK_AMT;

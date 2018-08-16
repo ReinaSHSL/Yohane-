@@ -25,7 +25,7 @@ public class Take_Flight extends CustomCard {
 
     public Take_Flight() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.GREY,
+                CardType.POWER, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
 
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;

@@ -26,7 +26,7 @@ public class Imagine_Breaker extends CustomCard{
 
     public Imagine_Breaker() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.GREY,
+                CardType.POWER, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
     }
 

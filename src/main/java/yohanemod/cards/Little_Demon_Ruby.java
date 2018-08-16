@@ -27,7 +27,7 @@ public class Little_Demon_Ruby extends CustomCard {
 
     public Little_Demon_Ruby() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                AbstractCard.CardType.SKILL, AbstractCardEnum.GREY,
+                AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
     }
 

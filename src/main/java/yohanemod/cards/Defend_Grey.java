@@ -28,7 +28,7 @@ public class Defend_Grey extends CustomCard{
 
     public Defend_Grey() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
         this.block = this.baseBlock = BLOCK_AMOUNT;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;

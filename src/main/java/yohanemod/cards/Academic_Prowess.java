@@ -26,7 +26,7 @@ public class Academic_Prowess extends CustomCard {
 
     public Academic_Prowess() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.SKILL, AbstractCardEnum.GREY,
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                         rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = ENERGY;
         this.misc = CARDS_PLAYED;
