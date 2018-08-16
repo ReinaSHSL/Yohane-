@@ -60,7 +60,11 @@ public class Academic_Prowess extends CustomCard {
 
     @Override
     public void atTurnStart() {
-        com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(this.magicNumber));
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (c.cardID == Academic_Prowess.ID) {
+                com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(this.magicNumber));
+            }
+        }
     }
 
     @Override

@@ -1,5 +1,6 @@
 package yohanemod.cards;
 
+import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.interfaces.PostDrawSubscriber;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,7 +9,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import yohanemod.patches.AbstractCardEnum;
+
+import java.util.ArrayList;
 
 
 public class Price_Of_Power extends CustomCard implements PostDrawSubscriber {
@@ -22,6 +27,8 @@ public class Price_Of_Power extends CustomCard implements PostDrawSubscriber {
     private static final int DAMAGE = 2;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.SELF;
+    public static final Logger logger = LogManager.getLogger(Price_Of_Power.class.getName());
+    private ArrayList<AbstractCard> toRestoreCost = new ArrayList<AbstractCard>();
 
     public Price_Of_Power() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -29,6 +36,7 @@ public class Price_Of_Power extends CustomCard implements PostDrawSubscriber {
                         rarity, target, POOL);
         this.retain = true;
         this.magicNumber = this.baseMagicNumber = DAMAGE;
+        BaseMod.subscribe(this);
     }
 
     @Override
@@ -41,6 +49,7 @@ public class Price_Of_Power extends CustomCard implements PostDrawSubscriber {
     public void receivePostDraw(AbstractCard c) {
             if (c.costForTurn != 0 && !c.isCostModified) {
                 c.modifyCostForTurn(-1);
+                toRestoreCost.add(c);
             }
     }
 
@@ -49,26 +58,28 @@ public class Price_Of_Power extends CustomCard implements PostDrawSubscriber {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.costForTurn != 0 && !c.isCostModified) {
                 c.modifyCostForTurn(-1);
+                toRestoreCost.add(c);
             }
         }
     }
 
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, this.magicNumber));
-        for (AbstractCard ca : AbstractDungeon.player.hand.group) {
-            if (ca.costForTurn != 0 && !ca.isCostModified) {
-                ca.modifyCostForTurn(-1);
-            }
-        }
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.costForTurn != 0 && c.isCostModified) {
-                c.modifyCostForTurn(1);
+        if (toRestoreCost.size() > 0) {
+            for (AbstractCard cardToRestore : toRestoreCost) {
+                if (cardToRestore.costForTurn == 0) {
+                    cardToRestore.costForTurn++;
+                }
+                else {
+                    cardToRestore.modifyCostForTurn(1);
+                }
             }
+            toRestoreCost.clear();
         }
     }
 

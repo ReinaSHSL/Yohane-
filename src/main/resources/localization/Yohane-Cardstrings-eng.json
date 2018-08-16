@@ -247,6 +247,10 @@
     "NAME":  "Soul Peek",
     "DESCRIPTION": "Apply !M! Sin X times."
   },
+  "Yohane:Stealth_Mode": {
+    "NAME":  "Stealth Mode",
+    "DESCRIPTION": "Secret. End of the turn, gain 1 Intangible and Exhaust the draw pile. NL If the draw pile is empty, Exhaust your hand."
+  },
   "Yohane:Strike_Grey": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy."

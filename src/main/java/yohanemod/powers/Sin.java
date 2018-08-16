@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class Sin extends AbstractPower {
+public class    Sin extends AbstractPower {
     public static final String POWER_ID = "Yohane:Sin";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -28,20 +28,18 @@ public class Sin extends AbstractPower {
 
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type == DamageInfo.DamageType.NORMAL) {
-            int sinDamage = this.amount;
             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, AbstractDungeon.player, this.ID));
-            return damageAmount + sinDamage;
         }
         return damageAmount;
     }
 
-    /*
+
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL) {
             return damage + this.amount;
         }
         return damage;
-    }*/
+    }
 
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
             return damage + this.amount;
