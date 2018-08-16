@@ -1,30 +1,23 @@
 package yohanemod;
 
-import java.nio.charset.StandardCharsets;
-
+import basemod.BaseMod;
+import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
-
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-
-import basemod.BaseMod;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import yohanemod.cards.*;
-import yohanemod.cards.Deprecated.Shark_Summon;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
-import yohanemod.relics.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import yohanemod.relics.AngelWings;
+
+import java.nio.charset.StandardCharsets;
 
 
 
@@ -101,6 +94,8 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         BaseMod.addKeyword(Feather,"A Curse which exhausts your entire hand except for cards that say Feather at the end of the turn.");
 		final String[] Sin = {"sin"};
 		BaseMod.addKeyword(Sin,"Deal and take extra damage equal to the amount of Sin a monster has. Removed upon being hit.");
+        final String[] Secret = {"secret"};
+        BaseMod.addKeyword(Secret,"These cards are retained and have effects while in the hand. Discarded upon use.");
         logger.info("finish editing keywords");
     }
 
@@ -138,7 +133,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Impressive_Display());
              BaseMod.addCard(new Inspiration());
              BaseMod.addCard(new Introspection());
-            BaseMod.addCard(new Koi_Ni_Naritai());
+             BaseMod.addCard(new Koi_Ni_Naritai());
              BaseMod.addCard(new Kowareyasuki());
              BaseMod.addCard(new Little_Demon_Lily());
              BaseMod.addCard(new Little_Demon_Recruit());
@@ -153,6 +148,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Nocturne());
              BaseMod.addCard(new One_Two());
              BaseMod.addCard(new Perfection());
+             BaseMod.addCard(new Price_Of_Power());
              BaseMod.addCard(new Prideful_Crash());
              BaseMod.addCard(new Reckless_Greed());
              BaseMod.addCard(new Retaliation());

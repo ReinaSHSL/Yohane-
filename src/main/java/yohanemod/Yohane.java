@@ -1,17 +1,16 @@
 package yohanemod;
 
-import java.util.ArrayList;
-
 import basemod.animations.SpriterAnimation;
-
+import characters.AbstractPlayerWithMinions;
+import characters.CustomCharSelectInfo;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.daily.DailyMods;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import yohanemod.patches.YohaneEnum;
-import characters.CustomCharSelectInfo;
-import characters.AbstractPlayerWithMinions;
+
+import java.util.ArrayList;
 
 public class Yohane extends AbstractPlayerWithMinions {
 	public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn

@@ -196,6 +196,10 @@
     "NAME": "Perfection",
     "DESCRIPTION": "Lose all Fallen Energy. NL Deal damage equal to lost Fallen Energy."
   },
+  "Yohane:Price_Of_Power": {
+    "NAME": "Price of Power",
+    "DESCRIPTION": "Secret. NL All cards played cost one less. NL Lose !M! HP when other cards are played."
+  },
   "Yohane:Prideful_Crash": {
     "NAME":  "Prideful Crash",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. Add Pride to hand.",

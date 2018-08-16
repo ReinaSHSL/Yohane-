@@ -28,12 +28,12 @@ public class Academic_Prowess extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.GREY,
                         rarity, target, POOL);
-        this.magicNumber = ENERGY;
+        this.magicNumber = this.baseMagicNumber = ENERGY;
         this.misc = CARDS_PLAYED;
+        this.retain = true;
     }
 
-    public boolean canPlay(AbstractCard card)
-       {
+    public boolean canPlay(AbstractCard card) {
            if (AbstractDungeon.player.cardsPlayedThisTurn >= this.misc) {
                card.cantUseMessage = EXTENDED_DESCRIPTION[0];
                return false;
@@ -44,20 +44,18 @@ public class Academic_Prowess extends CustomCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
+        this.retain = true;
         if (AbstractDungeon.player.cardsPlayedThisTurn == 0) {
             this.rawDescription = (EXTENDED_DESCRIPTION[1] + this.misc + EXTENDED_DESCRIPTION[2]);
         } else if (AbstractDungeon.player.cardsPlayedThisTurn == 1) {
-            this.rawDescription = (EXTENDED_DESCRIPTION[1] + this.misc + EXTENDED_DESCRIPTION[3] + AbstractDungeon.player.cardsPlayedThisTurn + EXTENDED_DESCRIPTION[4]);
+            this.rawDescription = (EXTENDED_DESCRIPTION[1] + this.misc + EXTENDED_DESCRIPTION[3] +
+                    AbstractDungeon.player.cardsPlayedThisTurn + EXTENDED_DESCRIPTION[4]);
         }
         else {
-            this.rawDescription = (EXTENDED_DESCRIPTION[1] + this.misc + EXTENDED_DESCRIPTION[3] + AbstractDungeon.player.cardsPlayedThisTurn + EXTENDED_DESCRIPTION[5]);
+            this.rawDescription = (EXTENDED_DESCRIPTION[1] + this.misc + EXTENDED_DESCRIPTION[3] +
+                    AbstractDungeon.player.cardsPlayedThisTurn + EXTENDED_DESCRIPTION[5]);
         }
         initializeDescription();
-    }
-
-    @Override
-    public void triggerWhenDrawn(){
-        com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(this.magicNumber));
     }
 
     @Override

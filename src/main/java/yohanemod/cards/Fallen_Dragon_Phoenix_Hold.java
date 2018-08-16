@@ -1,5 +1,6 @@
 package yohanemod.cards;
 
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
-import basemod.abstracts.CustomCard;
 
 public class Fallen_Dragon_Phoenix_Hold extends CustomCard {
     public static final String ID = "Yohane:Fallen_Dragon_Phoenix_Hold";

@@ -1,7 +1,6 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -36,13 +35,14 @@ public class Debut extends CustomCard {
                         rarity, target, POOL);
         this.isInnate = true;
         this.exhaust = true;
-        this.magicNumber = FALLEN_ENERGY;
+        this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
         this.misc = SIN;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.animations.VFXAction(p, new
                     ShockWaveEffect(p.hb.cX, p.hb.cY, com.megacrit.cardcrawl.core.Settings.GREEN_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 1.5F));
             for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {

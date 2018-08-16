@@ -1,13 +1,13 @@
 package yohanemod.relics;
 
 import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import yohanemod.powers.FallenEnergy;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import yohanemod.powers.FallenEnergy;
 
 public class AngelWings extends CustomRelic {
     public static final String ID = "Yohane:AngelWings";

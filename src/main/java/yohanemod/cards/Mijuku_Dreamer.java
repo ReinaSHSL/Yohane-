@@ -1,20 +1,17 @@
 package yohanemod.cards;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import basemod.abstracts.CustomCard;
+import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import basemod.abstracts.CustomCard;
-import yohanemod.patches.AbstractCardEnum;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import yohanemod.patches.AbstractCardEnum;
 
 public class Mijuku_Dreamer extends CustomCard {
     public static final String ID = "Yohane:Mijuku_Dreamer";
