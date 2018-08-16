@@ -1,4 +1,16 @@
 {
+  "Yohane:Academic_Prowess": {
+    "NAME": "Academic Prowess",
+    "DESCRIPTION": "Secret. NL Gain !M! Energy every turn. NL You cannot play more than !F! cards a turn.",
+    "EXTENDED_DESCRIPTION": [
+      "I can only play up to NL #r!F! cards this turn.",
+      "Secret. NL Gain !M! Energy every turn. NL You cannot play more than ",
+      " cards per turn.",
+      " cards per turn. NL You have played ",
+      " card this turn.",
+      " cards this turn."
+    ]
+  },
   "Yohane:Allure_of_Darkness": {
     "NAME": "Allure Of Darkness",
     "DESCRIPTION": "Pay 2 Fallen Energy. NL Draw 2 Cards. NL Exhaust a card from your hand.",
@@ -31,6 +43,10 @@
   "Yohane:Dark_Shield": {
     "NAME": "Dark Shield",
     "DESCRIPTION": "Pay half of your Fallen Energy. NL Gain the same amount of Block."
+  },
+  "Yohane:Debut": {
+    "NAME": "Debut",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Apply !F! Sin to ALL enemies. NL Innate. NL Exhaust."
   },
   "Yohane:Defend_Grey": {
     "NAME": "Defend",
@@ -117,6 +133,10 @@
     "NAME": "Introspection",
     "DESCRIPTION": "Gain !B! Block. NL Remove all Debuffs. NL Exhaust all Curses."
   },
+  "Yohane:Koi_Ni_Naritai": {
+    "NAME": "Koi Ni Naritai",
+    "DESCRIPTION": "Remove ALL the Sin from an enemy. NL Evolve all Summons for every Sin removed. NL Exhaust."
+  },
   "Yohane:Kowareyasuki": {
     "NAME": "Kowareyasuki",
     "DESCRIPTION": "Innate. NL Apply !M! Weak to all enemies. NL Exhaust."
@@ -164,7 +184,7 @@
     "NAME": "My Mai Tonight",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. NL Next instance of damage is 0. NL Exhaust"
   },
-  "Yohane:Nocturne": {
+  "Yohane:Lailapse": {
     "NAME":  "Lailapse!",
     "DESCRIPTION": "Apply !M! Vulnerable. NL Gain !B! Block."
   },

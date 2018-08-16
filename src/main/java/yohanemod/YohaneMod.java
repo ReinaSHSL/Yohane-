@@ -107,6 +107,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 	 @Override
          public void receiveEditCards() {
              BaseMod.addDynamicVariable(new F());
+             BaseMod.addCard(new Academic_Prowess());
              BaseMod.addCard(new Allure_of_Darkness());
              BaseMod.addCard(new Angel_Tears());
              BaseMod.addCard(new Awakening());
@@ -115,6 +116,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Cursed_Strike());
              BaseMod.addCard(new Dark_Rest());
              BaseMod.addCard(new Dark_Shield());
+             BaseMod.addCard(new Debut());
              BaseMod.addCard(new Defend_Grey());
              BaseMod.addCard(new Descent());
              BaseMod.addCard(new Energy_Change());
@@ -136,6 +138,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Impressive_Display());
              BaseMod.addCard(new Inspiration());
              BaseMod.addCard(new Introspection());
+            BaseMod.addCard(new Koi_Ni_Naritai());
              BaseMod.addCard(new Kowareyasuki());
              BaseMod.addCard(new Little_Demon_Lily());
              BaseMod.addCard(new Little_Demon_Recruit());

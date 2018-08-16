@@ -82,7 +82,7 @@ public class FlightPlayerPower extends FlightPower
 
     public void atEndOfTurn(boolean isPlayer) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FallenEnergy(owner, -this.FallenCost), -this.FallenCost));
-        if (this.owner.getPower("FallenEnergy").amount - this.FallenCost <= 0) {
+        if (this.owner.getPower(FallenEnergy.POWER_ID).amount - this.FallenCost <= 0) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Yohane:FlightPlayer"));
         }
     }
