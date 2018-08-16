@@ -86,6 +86,22 @@
     ]
   },
 
+  "Yohane:PriceOfPowerPower": {
+    "NAME": "Price Of Power",
+    "DESCRIPTIONS": [
+      "Cards cost one less energy to play. Take ",
+      " damage when a card is played."
+    ]
+  },
+
+  "Yohane:CityOfSinPower": {
+    "NAME": "City of Sin",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply ",
+      " Sin to EVERYONE."
+    ]
+  },
+
   "Yohane:Sin": {
     "NAME": "Sin",
     "DESCRIPTIONS": [

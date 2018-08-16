@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
-import yohanemod.powers.PriceOfPower;
+import yohanemod.powers.PriceOfPowerPower;
 
 import java.util.ArrayList;
 
@@ -29,7 +29,6 @@ public class Price_Of_Power extends CustomCard {
     private static final int DAMAGE = 2;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.SELF;
-    private ArrayList<AbstractCard> toRestoreCost = new ArrayList<>();
 
     public Price_Of_Power() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -48,12 +47,12 @@ public class Price_Of_Power extends CustomCard {
     @Override
     public void triggerWhenDrawn() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PriceOfPower(p, 1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PriceOfPowerPower(p, this.magicNumber)));
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, PriceOfPower.POWER_ID));
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(p, p, PriceOfPowerPower.POWER_ID));
     }
 
     @Override
@@ -65,7 +64,7 @@ public class Price_Of_Power extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeMagicNumber(-1);
         }
     }
 }

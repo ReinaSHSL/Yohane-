@@ -28,6 +28,10 @@
     "NAME": "Backfoot",
     "DESCRIPTION": "Gain !B! Block. NL Lose !M! Fallen Energy."
   },
+  "Yohane:City_Of_Sin": {
+    "NAME": "City of Sin",
+    "DESCRIPTION": "At the start of your turn, apply !M! Sin to EVERYONE."
+  },
   "Yohane:Counter": {
     "NAME": "Counter",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL If the enemy intends to attack, deal !D! damage."
@@ -237,6 +241,10 @@
   "Yohane:Sloth": {
     "NAME": "Sloth",
     "DESCRIPTION": "Heal !M! HP. NL Apply Entangle to self. NL Exhaust."
+  },
+  "Yohane:Solitude": {
+    "NAME": "Solitude",
+    "DESCRIPTION": "Kill all Summons. NL Gain !M! Fallen Energy for each."
   },
   "Yohane:Strawberry_Trapper": {
     "NAME":  "Strawberry Trapper",

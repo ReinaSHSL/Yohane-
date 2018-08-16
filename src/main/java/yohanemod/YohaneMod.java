@@ -168,6 +168,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Shadow_Gate());
              BaseMod.addCard(new Silence());
              BaseMod.addCard(new Sloth());
+             BaseMod.addCard(new Solitude());
              BaseMod.addCard(new Soul_Peek());
              BaseMod.addCard(new Stealth_Mode());
              BaseMod.addCard(new Strawberry_Trapper());

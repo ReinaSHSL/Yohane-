@@ -8,18 +8,20 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import yohanemod.Yohane;
+import yohanemod.cards.Price_Of_Power;
 
 import java.util.ArrayList;
 
-public class PriceOfPower extends AbstractPower {
-    public static final String POWER_ID = "Yohane:PriceOfPower";
+public class PriceOfPowerPower extends AbstractPower {
+    public static final String POWER_ID = "Yohane:PriceOfPowerPower";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private ArrayList<AbstractCard> affectedCards = new ArrayList<>();
     private ArrayList<AbstractCard> toRestoreCost = new ArrayList<>();
 
-    public PriceOfPower(AbstractPlayer p, int amount) {
+    public PriceOfPowerPower(AbstractPlayer p, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = p;
@@ -100,27 +102,30 @@ public class PriceOfPower extends AbstractPower {
 
     @Override
     public void onUseCard (AbstractCard c, UseCardAction action) {
-        AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 1));
+        if (!c.cardID.equals("Yohane:Price_Of_Power")) {
+            AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, this.amount));
+        }
+
     }
 
     public void onRemove() {
-        if (this.toRestoreCost.size() > 0) {
-            for (AbstractCard cardToRestore : this.toRestoreCost) {
-                if (cardToRestore.costForTurn == 0) {
-                    cardToRestore.costForTurn++;
-                }
-                else {
-                    cardToRestore.modifyCostForTurn(1);
-                }
-                this.affectedCards.remove(cardToRestore);
+        for (AbstractCard cardToRestore : AbstractDungeon.player.hand.group) {
+            if (cardToRestore.cost != 0) {
+                cardToRestore.costForTurn++;
+                cardToRestore.isCostModifiedForTurn = false;
             }
-            this.toRestoreCost.clear();
+            else {
+                cardToRestore.modifyCostForTurn(1);
+                cardToRestore.isCostModifiedForTurn = false;
+            }
+            this.affectedCards.remove(cardToRestore);
         }
+        this.toRestoreCost.clear();
     }
 
     public void updateDescription()
     {
-        this.description = (DESCRIPTIONS[0]);
+        this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
     }
 
     public void stackPower(int stackAmount)
