@@ -18,7 +18,7 @@ public class Modore extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Modore.png";
     private static final int DAMAGE_AMT = 3;
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.UNCOMMON;
     private static final AbstractCard.CardTarget target = AbstractCard.CardTarget.ENEMY;

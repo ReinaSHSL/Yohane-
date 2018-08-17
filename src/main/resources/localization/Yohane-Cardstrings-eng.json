@@ -275,6 +275,10 @@
     "NAME": "Well Laid Ambush",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL Retain."
   },
+  "Yohane:Witch_Trick": {
+    "NAME": "Witch Trick",
+    "DESCRIPTION": "Become Confused."
+  },
   "Yohane:Wrath": {
     "NAME": "Wrath",
     "DESCRIPTION":  "Deal !D! damage to ALL enemies 5 times. NL Apply !M! Weak to self."

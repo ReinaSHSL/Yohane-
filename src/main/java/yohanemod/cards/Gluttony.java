@@ -18,7 +18,7 @@ public class Gluttony extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Gluttony.png";
     private static final int FALLEN_ENERGY = 6;
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
     private static final AbstractCard.CardTarget target = AbstractCard.CardTarget.SELF;

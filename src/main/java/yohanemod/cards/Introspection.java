@@ -21,7 +21,7 @@ public class Introspection extends CustomCard {
     public static final String IMG_PATH = "cards/Introspection.png";
     private static final int BLOCK_AMOUNT = 8;
     private static final int UPGRADE_BLOCK_DMG = 4;
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.SELF;

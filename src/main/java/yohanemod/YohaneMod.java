@@ -118,6 +118,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Angel_Tears());
              BaseMod.addCard(new Awakening());
              BaseMod.addCard(new Backfoot());
+             BaseMod.addCard(new City_Of_Sin())
              BaseMod.addCard(new Counter());
              BaseMod.addCard(new Cursed_Strike());
              BaseMod.addCard(new Dark_Rest());
@@ -176,6 +177,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Take_Flight());
              BaseMod.addCard(new Unstable_World());
              BaseMod.addCard(new Well_Laid_Ambush());
+             BaseMod.addCard(new Witch_Trick());
              BaseMod.addCard(new Wrath());
 	 }
 
