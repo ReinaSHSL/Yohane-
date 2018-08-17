@@ -2,7 +2,7 @@
   "Yohane:FallenEnergy": {
     "NAME": "Fallen Energy",
     "DESCRIPTIONS": [
-      "You have ",
+      "You have #b",
       " #yFallen #yEnergy. Gain 2 per turn. Paying Fallen Energy means you must possess enough. Losing can be played regardless of Fallen Energy count."
     ]
   },
@@ -10,7 +10,7 @@
   "Yohane:StrawberryTrapper": {
     "NAME": "Strawberry Trapper",
     "DESCRIPTIONS": [
-      "Lose ",
+      "Lose #b",
       " Health at the end of your turn."
     ]
   },
@@ -18,7 +18,7 @@
   "Yohane:ShadowGate": {
     "NAME": "Shadow Gate",
     "DESCRIPTIONS": [
-      "Draw ",
+      "Draw #b",
       " card(s). Removed if Fallen Energy is 0."
     ]
   },
@@ -56,24 +56,24 @@
   "Yohane:SchwarzSechsPower": {
     "NAME": "Schwarz Sechs",
     "DESCRIPTIONS": [
-      "The next ",
+      "The next #b",
       " 0 cost cards are played twice."
     ]
   },
   "Yohane:LilyStrength": {
     "NAME": "Powered Up Lily!",
     "DESCRIPTIONS": [
-      "Attacking does ",
-      " damage. Charging gives you ",
+      "Attacking does #b",
+      " damage to a random enemy. Charging gives you #b",
       " Fallen Energy."
     ]
   },
   "Yohane:RubyStrength": {
     "NAME": "Ganbaruby!",
     "DESCRIPTIONS": [
-      "Attacking does ",
-      " damage. Blocking Yohane gives ",
-      " #yBlock."
+      "Attacking does #b",
+      " damage. Blocking gives #b",
+      " #yBlock to Yohane."
     ]
   },
 
@@ -89,7 +89,7 @@
   "Yohane:PriceOfPowerPower": {
     "NAME": "Price Of Power",
     "DESCRIPTIONS": [
-      "Cards cost one less energy to play. Take ",
+      "Cards cost #yone less energy to play. Take #b",
       " damage when a card is played."
     ]
   },
@@ -97,16 +97,33 @@
   "Yohane:CityOfSinPower": {
     "NAME": "City of Sin",
     "DESCRIPTIONS": [
-      "At the start of your turn, apply ",
-      " Sin to EVERYONE."
+      "At the start of your turn, apply #b",
+      " #ySin to everyone (including yourself)."
     ]
   },
 
   "Yohane:Sin": {
     "NAME": "Sin",
     "DESCRIPTIONS": [
-      "You will receive ",
-      " extra damage and deal ",
+      "This unit will receive #b",
+      " extra damage and deal #b",
+      " extra damage. Removed upon being hit."
+    ]
+  },
+
+  "Yohane:GraceUnderFirePower": {
+    "NAME": "Grace Under Fire",
+    "DESCRIPTIONS": [
+      "Whenever you take damage, gain #b",
+      " Fallen Energy."
+    ]
+  },
+
+  "Yohane:LustSin": {
+    "NAME": "LustSin",
+    "DESCRIPTIONS": [
+      "This unit will receive #b",
+      " extra damage and deal #b",
       " extra damage."
     ]
   }

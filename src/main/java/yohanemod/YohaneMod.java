@@ -118,7 +118,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Angel_Tears());
              BaseMod.addCard(new Awakening());
              BaseMod.addCard(new Backfoot());
-             BaseMod.addCard(new City_Of_Sin())
+             BaseMod.addCard(new City_Of_Sin());
              BaseMod.addCard(new Counter());
              BaseMod.addCard(new Cursed_Strike());
              BaseMod.addCard(new Dark_Rest());
@@ -126,6 +126,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Debut());
              BaseMod.addCard(new Defend_Grey());
              BaseMod.addCard(new Descent());
+             BaseMod.addCard(new Energetic_Performance());
              BaseMod.addCard(new Energy_Change());
              BaseMod.addCard(new Envious());
              BaseMod.addCard(new Excitement());
@@ -136,6 +137,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Feather_Tap());
              BaseMod.addCard(new Gluttony());
              BaseMod.addCard(new Go_All_Out());
+             BaseMod.addCard(new Grace_Under_Fire());
              BaseMod.addCard(new Grand_Entrance());
              BaseMod.addCard(new Guilty_Kiss());
              BaseMod.addCard(new Hakodate());
@@ -152,6 +154,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Little_Demon_Ruby());
              BaseMod.addCard(new Little_Demon_Support());
              BaseMod.addCard(new Livestream_Donation());
+             BaseMod.addCard(new Lust());
              BaseMod.addCard(new Mijuku_Dreamer());
              BaseMod.addCard(new Miracle_Wave());
              BaseMod.addCard(new Misfortune());

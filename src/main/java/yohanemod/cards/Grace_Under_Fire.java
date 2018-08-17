@@ -9,43 +9,43 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
-import yohanemod.powers.CityOfSinPower;
+import yohanemod.powers.GraceUnderFirePower;
 
 
-public class City_Of_Sin extends CustomCard {
-    public static final String ID = "Yohane:City_Of_Sin";
+public class Grace_Under_Fire extends CustomCard {
+    public static final String ID = "Yohane:Grace_Under_Fire";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "cards/City_Of_Sin.png";
-    private static final int COST = 3;
+    public static final String IMG_PATH = "cards/Grace_Under_Fire.png";
+    private static final int COST = 2;
     private static final int POOL = 1;
-    private static final int SIN = 3;
-    private static final CardRarity rarity = CardRarity.RARE;
+    private static final int FALLEN_ENERGY = 6;
+    private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.SELF;
 
-    public City_Of_Sin() {
+    public Grace_Under_Fire() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.YOHANE_GREY,
                         rarity, target, POOL);
-        this.magicNumber = this.baseMagicNumber = SIN;
+        this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CityOfSinPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new GraceUnderFirePower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new City_Of_Sin();
+        return new Grace_Under_Fire();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeMagicNumber(2);
         }
     }
 }

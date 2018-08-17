@@ -30,7 +30,7 @@
   },
   "Yohane:City_Of_Sin": {
     "NAME": "City of Sin",
-    "DESCRIPTION": "At the start of your turn, apply !M! Sin to EVERYONE."
+    "DESCRIPTION": "At the start of your turn, apply !M! Sin to everyone (including yourself)."
   },
   "Yohane:Counter": {
     "NAME": "Counter",
@@ -59,6 +59,11 @@
   "Yohane:Descent": {
     "NAME":  "Descent",
     "DESCRIPTION": "Pay !F! Fallen Energy. NL Apply !M! Sin."
+  },
+  "Yohane:Energetic_Performance": {
+    "NAME":  "Energetic Performance",
+    "DESCRIPTION": "Gain [G] [G] [G] next turn. NL Gain !F! Buffer.",
+    "UPGRADE_DESCRIPTION": "Gain [G] [G] [G] [G] next turn. NL Gain !F! Buffer."
   },
   "Yohane:Energy_Change": {
     "NAME": "Energy Change",
@@ -99,6 +104,10 @@
   "Yohane:Go_All_Out": {
     "NAME": "Go All Out",
     "DESCRIPTION": "Exhaust ALL non-attacks, gain !M! Fallen Energy for each. NL Draw 4 cards."
+  },
+  "Yohane:Grace_Under_Fire": {
+    "NAME": "Grace Under Fire",
+    "DESCRIPTION": "Whenever you take attack damage, gain !M! Fallen Energy."
   },
   "Yohane:Grand_Entrance": {
     "NAME": "Grand Entrance",
@@ -166,6 +175,10 @@
   "Yohane:Livestream_Donation": {
     "NAME":  "Livestream Donation",
     "DESCRIPTION": "Gain !F! Fallen Energy. NL Draw a card for every !M! cards in your draw pile."
+  },
+  "Yohane:Lust": {
+    "NAME":  "Lust",
+    "DESCRIPTION": "Apply !M! Sin. NL This Sin is not removed upon being hit. NL Exhaust."
   },
   "Yohane:Mijuku_Dreamer": {
     "NAME": "Mijuku Dreamer",
