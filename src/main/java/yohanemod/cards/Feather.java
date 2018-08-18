@@ -32,7 +32,7 @@ public class Feather extends CustomCard {
             useBlueCandle(p);
             } else {
                 for (AbstractCard c : p.hand.group) {
-                    if (c.cardID != "Feather" || !c.rawDescription.contains("Feather")) {
+                    if (c.cardID != Feather.ID || !c.rawDescription.contains("Feather")) {
                         AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.ExhaustAction(AbstractDungeon.player, AbstractDungeon.player,
                                 1, true, true));
                     }
