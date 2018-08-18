@@ -32,6 +32,7 @@ public class Culinary_Genius extends CustomCard {
         this.exhaust = true;
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = HEAL;
+        this.isMultiDamage = true;
     }
 
     @Override
