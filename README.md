@@ -13,12 +13,16 @@ There shouldn't be any issues with other mods.
 
 ## New Mechanics ##
 * **Fallen Energy**
+
 A resource that many attacks give. Used to play 0 cost cards.
 * **Secrets**
+
 These cards will retain in your hand and have positive and negative effects. They are discarded upon use.
 * **Sin**
+
 Monsters will deal extra damage and take extra damage equal to the Sin they have.
 * **Summons**
+
 Summon minions to help you fight in battle!
 
 ## Usage ##
