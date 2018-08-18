@@ -48,11 +48,7 @@ public class Lily extends AbstractFriendlyMonster {
         super.applyEndOfTurnTriggers();
         this.hasAttacked = false;
     }
-
-    public void applyPowers() {
-        super.applyPowers();
-    }
-
+    
     //Create possible moves for the monster
     private ArrayList<ChooseActionInfo> makeMoves(){
         if (this.hasPower(LilyStrength.POWER_ID) && this.getPower(LilyStrength.POWER_ID).amount != 0) {
