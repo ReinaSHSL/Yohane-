@@ -39,10 +39,12 @@ public class VoodooDollPower extends AbstractPower {
                int tempDamage = card.damage/2;
                int tempMagic = card.magicNumber/2;
                int tempMisc = card.misc/2;
+               int tempBlock = card.block/2;
                AbstractCard tmp = card.makeStatEquivalentCopy();
                tmp.baseDamage = tempDamage;
                tmp.baseMagicNumber = tempMagic;
                tmp.misc = tempMisc;
+               tmp.baseBlock = tempBlock;
                AbstractDungeon.player.limbo.addToBottom(tmp);
                tmp.current_x = card.current_x;
                tmp.current_y = card.current_y;

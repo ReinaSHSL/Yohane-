@@ -84,9 +84,9 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         final String[] Summon = {"summon, summons"};
         BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of ally.");
         final String[] Lily = {"lily"};
-        BaseMod.addKeyword(Lily,"A Little Demon with 15 HP and can either deal 4 damage to a random enemy, or give you 8 Fallen Energy.");
+        BaseMod.addKeyword(Lily,"A Little Demon with 15 HP and can either deal 5 damage to a random enemy, or give you 2 Fallen Energy.");
         final String[] Ruby = {"ruby"};
-        BaseMod.addKeyword(Ruby,"A Little Demon with 12 HP and can either deal 2 damage to all enemies, or give you 6 Block.");
+        BaseMod.addKeyword(Ruby,"A Little Demon with 12 HP and can either deal 2 damage to all enemies, or give you 5 Block.");
         final String[] Evolves = {"evolves, evolve"};
         BaseMod.addKeyword(Evolves,"Strengthen a summon, dependant on the summon, and heal them for 5 HP.");
         final String[] Feather = {"feather, feathers"};

@@ -25,7 +25,7 @@ public class RubyStrength extends AbstractPower {
     public void updateDescription()
     {
         int damage = (2 + this.amount);
-        int block = (6 + this.amount);
+        int block = (5 + this.amount);
         this.description = (DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + block + DESCRIPTIONS[2]);
     }
 
