@@ -54,7 +54,7 @@ public class Lily extends AbstractFriendlyMonster {
         if (this.hasPower(LilyStrength.POWER_ID) && this.getPower(LilyStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(LilyStrength.POWER_ID).amount;
         }
-        int attackDamage = (5 + upgradeCount * 2);
+        int attackDamage = (5 + upgradeCount);
         int chargeAmount = (2 + upgradeCount);
         ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
         target = AbstractDungeon.getRandomMonster();
