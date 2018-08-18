@@ -64,7 +64,7 @@ I couldn't have created anything without:
 
 ## Contact ##
 
-Find me on the Slay the Spire modding Discord and try to @reina. I change my name all the time so that's your best bet. 
+DM me on Discord at reina#8711. 
 
 You can also use the report issue feature [here](https://github.com/ReinaSHSL/Yohane-/issues).
 
