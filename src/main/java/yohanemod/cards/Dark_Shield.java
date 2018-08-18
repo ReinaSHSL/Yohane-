@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
@@ -31,7 +32,7 @@ public class Dark_Shield extends CustomCard {
     }
 
     public boolean hasEnoughEnergy() {
-        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= 0;
+        return (AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID)) && (AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= 0) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
     }
 
     @Override

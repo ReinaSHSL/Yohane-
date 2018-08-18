@@ -74,8 +74,8 @@
   },
   "Yohane:Energetic_Performance": {
     "NAME":  "Energetic Live",
-    "DESCRIPTION": "Gain [G] [G] [G]  next turn. NL Gain !F! Buffer.",
-    "UPGRADE_DESCRIPTION": "Gain [G] [G] [G] [G]  next turn. NL Gain !F! Buffer."
+    "DESCRIPTION": "Gain [G] [G]  next turn. NL Gain !F! Buffer.",
+    "UPGRADE_DESCRIPTION": "Gain [G] [G] [G] next turn. NL Gain !F! Buffer."
   },
   "Yohane:Energy_Change": {
     "NAME": "Energy Change",

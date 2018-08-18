@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
@@ -36,7 +37,7 @@ public class Allure_of_Darkness extends CustomCard{
 
     @Override
     public boolean hasEnoughEnergy() {
-        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.misc;
+        return (AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.misc) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

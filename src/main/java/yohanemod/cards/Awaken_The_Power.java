@@ -18,9 +18,9 @@ public class Awaken_The_Power extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Awaken_The_Power.png";
-    private static final int COST = 3;
-    private static final int STRENGTH = 3;
-    private static final int FADING = 3;
+    private static final int COST = 1;
+    private static final int STRENGTH = 5;
+    private static final int FADING = 2;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;

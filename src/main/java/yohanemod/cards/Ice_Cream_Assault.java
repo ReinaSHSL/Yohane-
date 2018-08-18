@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.IceCreamSlow;
@@ -38,7 +39,7 @@ public class Ice_Cream_Assault extends CustomCard{
     }
 
     public boolean hasEnoughEnergy() {
-        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber;
+        return (AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
     }
 
     @Override

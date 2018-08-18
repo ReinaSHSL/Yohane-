@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
@@ -22,7 +23,7 @@ public class Backfoot extends CustomCard{
     private static final int COST = 1;
     private static final int BLOCK_AMOUNT = 10;
     private static final int UPGRADE_BLOCK_DMG = 4;
-    private static final int FALLEN_ENERGY = 6;
+    private static final int FALLEN_ENERGY = 5;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.COMMON;
     private static final CardTarget target = CardTarget.SELF;
@@ -36,7 +37,7 @@ public class Backfoot extends CustomCard{
     }
 
     public boolean hasEnoughEnergy() {
-        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber;
+        return (AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
     }
 
     @Override

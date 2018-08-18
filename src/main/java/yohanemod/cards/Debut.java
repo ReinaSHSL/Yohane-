@@ -25,7 +25,7 @@ public class Debut extends CustomCard {
     private static final int COST = 0;
     private static final int POOL = 1;
     private static final int FALLEN_ENERGY = 5;
-    private static final int SIN = 9;
+    private static final int SIN = 7;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.ALL_ENEMY;
 

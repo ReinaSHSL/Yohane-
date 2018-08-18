@@ -20,7 +20,7 @@ public class One_Two extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/One_Two.png";
     private static final int COST = 1;
-    private static final int DAMAGE_AMT = 9;
+    private static final int DAMAGE_AMT = 7;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.UNCOMMON;
     private static final AbstractCard.CardTarget target = AbstractCard.CardTarget.ENEMY;
@@ -41,7 +41,8 @@ public class One_Two extends CustomCard {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                         new DamageInfo(p, this.damage, this.damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            } else if (minions.monsters.size() > 0){
+            } else {
+                minions.monsters.size();
                 for (int i = -1; i < minions.monsters.size(); i++) {
                     AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                             new DamageInfo(p, this.damage, this.damageTypeForTurn),

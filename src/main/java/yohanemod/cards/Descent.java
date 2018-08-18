@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.Sin;
@@ -21,7 +22,7 @@ public class Descent extends CustomCard {
     public static final String IMG_PATH = "cards/Descent.png";
     private static final int COST = 0;
     private static final int SIN = 6;
-    private static final int FALLEN_ENERGY = 4;
+    private static final int FALLEN_ENERGY = 3;
     private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.BASIC;
     private static final AbstractCard.CardTarget target = AbstractCard.CardTarget.ENEMY;
@@ -35,7 +36,7 @@ public class Descent extends CustomCard {
     }
 
     public boolean hasEnoughEnergy() {
-        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.misc;
+        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.misc && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
     }
 
     @Override

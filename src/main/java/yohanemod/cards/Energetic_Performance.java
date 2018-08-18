@@ -22,7 +22,7 @@ public class Energetic_Performance extends CustomCard {
     public static final String IMG_PATH = "cards/Energetic_Performance.png";
     private static final int COST = 2;
     private static final int POOL = 1;
-    private static final int ENERGY = 3;
+    private static final int ENERGY = 2;
     private static final int BUFFER = 1;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;

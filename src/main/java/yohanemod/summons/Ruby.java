@@ -5,6 +5,7 @@ import actions.ChooseActionInfo;
 import cards.MonsterCard;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -55,46 +56,16 @@ public class Ruby extends AbstractFriendlyMonster {
         if (this.hasPower(RubyStrength.POWER_ID) && this.getPower(RubyStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(RubyStrength.POWER_ID).amount;
         }
-        float attackDamage = (2 + upgradeCount);
-        int blockAmount = (6 + upgradeCount);
-        ArrayList<AbstractMonster> m = AbstractDungeon.getCurrRoom().monsters.monsters;
-        float[] tmp = new float[m.size()];
-        for (int i = 0; i < tmp.length; i++) {
-            tmp[i] = attackDamage;
-        }
-        for (int i = 0; i < tmp.length; i++) {
-            for (AbstractPower p : AbstractDungeon.player.powers) {
-                tmp[i] = p.atDamageGive(tmp[i], this.damageTypeForTurn);
-                if (attackDamage != (int)tmp[i]) {
-                    this.isDamageModified = true;
-                }
-            }
-        }
-        for (int i = 0; i < tmp.length; i++) {
-            for (AbstractPower p : AbstractDungeon.player.powers) {
-                tmp[i] = p.atDamageFinalGive(tmp[i], this.damageTypeForTurn);
-                if (attackDamage != (int)tmp[i]) {
-                    this.isDamageModified = true;
-                }
-            }
-        }
-        for (int i = 0; i < tmp.length; i++) {
-            if (tmp[i] < 0.0F) {
-                tmp[i] = 0.0F;
-            }
-        }
-        multiDamage = new int[tmp.length];
-        for (int i = 0; i < tmp.length; i++) {
-            this.multiDamage[i] = MathUtils.floor(tmp[i]);
-        }
-        attackDamage = multiDamage[0];
-        String attackDesc = String.format("Deal %f to ALL enemies.", attackDamage);
+        int attackDamage = (2 + upgradeCount);
+        int blockAmount = (5 + upgradeCount);
+        String attackDesc = String.format("Deal %d to ALL enemies.", attackDamage);
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
         tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.SFXAction("ATTACK_HEAVY"));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(this, new CleaveEffect(), 0.1F));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(this,
-                    multiDamage, DamageInfo.DamageType.NORMAL, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
+           for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+               DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
+               info.applyPowers(mo, this);
+               AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
+           }
         }));
         tempInfo.add(new ChooseActionInfo("Defend", blockDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, blockAmount));
