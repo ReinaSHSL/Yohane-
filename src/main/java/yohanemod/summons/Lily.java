@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
+import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import monsters.AbstractFriendlyMonster;
 import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.LilyStrength;
@@ -60,11 +62,18 @@ public class Lily extends AbstractFriendlyMonster {
         target = AbstractDungeon.getRandomMonster();
         String attackDesc = String.format("Deal %d damage to a random enemy.", attackDamage);
         String chargeDesc = String.format("Gain %d Fallen Energy.", chargeAmount);
-        tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
-            DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
-            info.applyPowers(this, target);
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
-        }));
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (mo.id.equals(AwakenedOne.ID) || mo.id.equals(Darkling.ID)) {
+                target = mo;
+            }
+        }
+        if ((target != null)) {
+            tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
+                DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
+                info.applyPowers(this, target);
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+            }));
+        }
         tempInfo.add(new ChooseActionInfo("Charge", chargeDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, chargeAmount), chargeAmount));
         }));

@@ -10,6 +10,8 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
+import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import monsters.AbstractFriendlyMonster;
@@ -60,13 +62,20 @@ public class Ruby extends AbstractFriendlyMonster {
         int blockAmount = (5 + upgradeCount);
         String attackDesc = String.format("Deal %d damage to ALL enemies.", attackDamage);
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
-        tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
-           for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-               DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
-               info.applyPowers(mo, this);
-               AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
-           }
-        }));
+        for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (mo.id.equals(AwakenedOne.ID) || mo.id.equals(Darkling.ID)) {
+                target = mo;
+            }
+        }
+        if ((target != null)) {
+            tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
+                for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
+                    info.applyPowers(mo, this);
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
+                }
+            }));
+        }
         tempInfo.add(new ChooseActionInfo("Defend", blockDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, blockAmount));
         }));

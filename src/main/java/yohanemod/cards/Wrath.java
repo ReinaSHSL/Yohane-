@@ -20,7 +20,7 @@ public class Wrath extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Wrath.png";
-    private static final int DAMAGE = 3;
+    private static final int DAMAGE = 5;
     private static final int UPGRADE_PLUS_DMG = 1;
     private static final int WEAK_AMT = 2;
     private static final int COST = 1;
@@ -40,7 +40,7 @@ public class Wrath extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int effect = 5;
+        final int effect = 3;
         for (int i = 0; i < effect; i++) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.SFXAction("ATTACK_HEAVY"));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));

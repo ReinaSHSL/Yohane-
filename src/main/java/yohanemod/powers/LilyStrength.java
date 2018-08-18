@@ -24,7 +24,7 @@ public class LilyStrength extends AbstractPower{
     @Override
     public void updateDescription()
     {
-        int damage = (2 + this.amount*2);
+        int damage = (2 + this.amount);
         int charge = (5 + this.amount);
         this.description = (DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + charge + DESCRIPTIONS[2]);
     }
