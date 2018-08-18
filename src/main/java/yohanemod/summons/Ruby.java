@@ -58,7 +58,7 @@ public class Ruby extends AbstractFriendlyMonster {
         }
         int attackDamage = (2 + upgradeCount);
         int blockAmount = (5 + upgradeCount);
-        String attackDesc = String.format("Deal %d to ALL enemies.", attackDamage);
+        String attackDesc = String.format("Deal %d damage to ALL enemies.", attackDamage);
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
         tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {

@@ -54,7 +54,7 @@
 						<phase>package</phase>
 						<configuration>
 							<target>
-								<copy file="target/yohanemod.jar" tofile="../_ModTheSpire/mods/Yohane!.jar" />
+								<copy file="target/yohanemod.jar" tofile="../_ModTheSpire/mods/Yohane.jar" />
 							</target>
 						</configuration>
 						<goals>

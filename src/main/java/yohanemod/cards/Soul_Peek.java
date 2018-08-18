@@ -39,6 +39,9 @@ public class Soul_Peek extends CustomCard {
         for (int i = 0; i < this.energyOnUse; i++) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new Sin(m, this.magicNumber), this.magicNumber));
         }
+        if (!this.freeToPlayOnce) {
+            p.energy.use(EnergyPanel.totalCount);
+        }
     }
 
     @Override
