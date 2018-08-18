@@ -35,7 +35,7 @@ public class GuiltyKissAction extends com.megacrit.cardcrawl.actions.AbstractGam
         if (this.energyOnUse != -1) {
             effect = this.energyOnUse;
         }
-        if (EnergyPanel.totalCount > 1) {
+        if (effect > 1) {
             if (this.p.hasRelic("Chemical X")) {
                 effect += 2;
                 this.p.getRelic("Chemical X").flash();
@@ -54,8 +54,10 @@ public class GuiltyKissAction extends com.megacrit.cardcrawl.actions.AbstractGam
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.vulnerableAmt+2, false), this.vulnerableAmt+2,
                         true, AbstractGameAction.AttackEffect.NONE));
             } else {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.vulnerableAmt,
-                        false), this.vulnerableAmt, true, AbstractGameAction.AttackEffect.NONE));
+                if (effect != 0) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.vulnerableAmt,
+                            false), this.vulnerableAmt, true, AbstractGameAction.AttackEffect.NONE));
+                }
             }
         }
         if (!this.freeToPlayOnce) {

@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import monsters.AbstractFriendlyMonster;
 import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.LilyStrength;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 public class Lily extends AbstractFriendlyMonster {
     public static String NAME = "Lily";
     public static String ID = "Lily";
-    public int upgradeCount;
+    private int upgradeCount;
     private ArrayList<ChooseActionInfo> moveInfo;
     private boolean hasAttacked = false;
     private AbstractMonster target;
@@ -46,6 +47,10 @@ public class Lily extends AbstractFriendlyMonster {
     public void applyEndOfTurnTriggers() {
         super.applyEndOfTurnTriggers();
         this.hasAttacked = false;
+    }
+
+    public void applyPowers() {
+        super.applyPowers();
     }
 
     //Create possible moves for the monster
