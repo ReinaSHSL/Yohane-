@@ -37,6 +37,11 @@ public class Hell_Zone extends CustomCard{
         this.retain = true;
     }
 
+
+    public boolean hasEnoughEnergy() {
+        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= 1;
+    }
+
     @Override
     public void applyPowers(){
         super.applyPowers();

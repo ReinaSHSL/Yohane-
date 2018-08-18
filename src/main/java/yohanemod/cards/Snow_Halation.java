@@ -48,6 +48,7 @@ public class Snow_Halation extends CustomCard {
             this.upgradeName();
             this.exhaust = false;
             this.rawDescription = UPGRADED_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

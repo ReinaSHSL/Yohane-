@@ -38,10 +38,15 @@ public class Nocturne extends CustomCard {
         this.misc = FALLEN_ENERGY;
     }
 
+    public boolean hasEnoughEnergy() {
+        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.misc;
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount >= this.misc) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.misc, false), this.misc));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FallenEnergy(m, -this.misc), -this.misc));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));

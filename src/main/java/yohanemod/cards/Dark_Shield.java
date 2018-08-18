@@ -30,6 +30,10 @@ public class Dark_Shield extends CustomCard {
                 rarity, target, POOL);
     }
 
+    public boolean hasEnoughEnergy() {
+        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= 0;
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {

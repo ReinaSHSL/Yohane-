@@ -41,6 +41,10 @@ public class Unstable_World extends CustomCard{
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }
 
+    public boolean hasEnoughEnergy() {
+        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber;
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(FallenEnergy.POWER_ID) && (p.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber)) {
