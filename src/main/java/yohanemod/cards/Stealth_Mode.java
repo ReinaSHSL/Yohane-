@@ -1,7 +1,6 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
-import basemod.interfaces.PreMonsterTurnSubscriber;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

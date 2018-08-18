@@ -5,7 +5,6 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -19,8 +18,6 @@ import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.AngelWings;
 
 import java.nio.charset.StandardCharsets;
-
-import static yohanemod.patches.AbstractCardEnum.YOHANE_GREY;
 
 
 @SpireInitializer

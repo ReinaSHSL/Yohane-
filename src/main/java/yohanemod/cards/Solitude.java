@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
-import yohanemod.summons.Ruby;
 
 
 public class Solitude extends CustomCard {

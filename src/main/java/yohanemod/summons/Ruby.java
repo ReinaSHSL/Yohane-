@@ -91,7 +91,6 @@ public class Ruby extends AbstractFriendlyMonster {
         String attackDesc = String.format("Deal %f to ALL enemies.", attackDamage);
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
         tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
-            super.applyPowers();
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.SFXAction("ATTACK_HEAVY"));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(this, new CleaveEffect(), 0.1F));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(this,

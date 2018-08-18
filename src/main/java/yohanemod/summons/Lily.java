@@ -60,7 +60,6 @@ public class Lily extends AbstractFriendlyMonster {
         String attackDesc = String.format("Deal %d damage to a random enemy.", attackDamage);
         String chargeDesc = String.format("Gain %d Fallen Energy.", chargeAmount);
         tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
-            super.applyPowers();
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target,
                     new DamageInfo(this, attackDamage, DamageInfo.DamageType.NORMAL)));
         }));

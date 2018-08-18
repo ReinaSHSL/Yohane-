@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.LustSin;
-import yohanemod.powers.Sin;
 
 
 public class Lust extends CustomCard {

@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import yohanemod.Yohane;
-import yohanemod.cards.Price_Of_Power;
 
 import java.util.ArrayList;
 

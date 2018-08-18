@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import yohanemod.patches.AbstractCardEnum;
-import yohanemod.powers.FallenEnergy;
 
 
 public class Energetic_Performance extends CustomCard {
