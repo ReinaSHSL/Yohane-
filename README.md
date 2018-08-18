@@ -48,17 +48,19 @@ The Wiki is still under construction.
 * Minion hitboxes can look a little wonky.
 
 ## Credits / Acknowledgements ##
-Reina - Creator
-Tjpers - Early Playtesting
+* Reina - Creator
+* Tjpers - Early Playtesting
 
 ## Special Thanks ##
 
 I couldn't have created anything without:
-Kobting - Creator of Friendly Minions
-kiooeht - MTS and Basemod
-People of the Slay The Spire modding Discord for answering my questions!
+* Kobting - Creator of Friendly Minions
+* kiooeht - MTS and Basemod
+* People of the Slay The Spire modding Discord for answering my questions!
 
 ## Contact ##
+
 Find me on the Slay the Spire modding Discord and try to @reina. I change my name all the time so that's your best bet. 
+
 You can also use the report issue feature here.
 
