@@ -21,6 +21,7 @@ public class LilyStrength extends AbstractPower{
         this.img = getLilyStrengthTexture();
     }
 
+    @Override
     public void updateDescription()
     {
         int damage = (4 + this.amount*2);
@@ -28,13 +29,14 @@ public class LilyStrength extends AbstractPower{
         this.description = (DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + charge + DESCRIPTIONS[2]);
     }
 
+    @Override
     public void stackPower(int stackAmount)
     {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
     }
 
-    public static Texture getLilyStrengthTexture() {
+    private static Texture getLilyStrengthTexture() {
         return new Texture("powers/LilyStrength.png");
     }
 }

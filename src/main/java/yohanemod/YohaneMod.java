@@ -52,15 +52,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
                 ATTACK_GREY, SKILL_GREY, POWER_GREY, ENERGY_ORB_GREY,
                 ATTACK_GREY_PORTRAIT, SKILL_GREY_PORTRAIT, POWER_GREY_PORTRAIT,
                 ENERGY_ORB_GREY_PORTRAIT);
-        AbstractCard.CardColor[] colors = AbstractCard.CardColor.values();
-        for (int icolor = 0; icolor < colors.length; ++icolor) {
-            System.out.println(AbstractCard.CardColor.values()[icolor]);
-            System.out.println(AbstractCard.CardColor.values()[icolor].name());
-            if (icolor > AbstractCard.CardColor.CURSE.ordinal()) {
-                Color color = BaseMod.getTrailVfxColor(AbstractCard.CardColor.values()[icolor].name()).cpy();
-                System.out.println(color);
-            }
-        }
     }
 
 	public static void initialize() {
@@ -82,7 +73,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 	
 	 @Override
 		public void receiveEditCharacters() {
-			BaseMod.addCharacter(Yohane.class,  "The Fallen Angel", "uwu",
+			BaseMod.addCharacter(Yohane.class,  "The Fallen Angel", "FALLEN ANGEL",
 					AbstractCardEnum.YOHANE_GREY.toString(), "Yohane",
 					Yohane_Button , Yohane_Portrait,
 					YohaneEnum.FallenAngel.toString());
@@ -92,7 +83,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     public void receiveEditKeywords() {
         logger.info("begin editing keywords");
         final String[] FallenEnergy = {"fallen"};
-        BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Cards which say pay means you must possess enough Fallen Energy. Cards which say lose can be played regardless of Fallen Energy count.");
+        BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it.");
         final String[] Summon = {"summon, summons"};
         BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of ally.");
         final String[] Lily = {"lily"};
@@ -116,10 +107,13 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Academic_Prowess());
              BaseMod.addCard(new Allure_of_Darkness());
              BaseMod.addCard(new Angel_Tears());
+             BaseMod.addCard(new Awaken_The_Power());
              BaseMod.addCard(new Awakening());
              BaseMod.addCard(new Backfoot());
              BaseMod.addCard(new City_Of_Sin());
              BaseMod.addCard(new Counter());
+             BaseMod.addCard(new Culinary_Genius());
+             BaseMod.addCard(new Curse_The_Heavens());
              BaseMod.addCard(new Cursed_Strike());
              BaseMod.addCard(new Dark_Rest());
              BaseMod.addCard(new Dark_Shield());
@@ -145,6 +139,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Ice_Cream_Assault());
              BaseMod.addCard(new Imagine_Breaker());
              BaseMod.addCard(new Impressive_Display());
+             BaseMod.addCard(new Indulge());
              BaseMod.addCard(new Inspiration());
              BaseMod.addCard(new Introspection());
              BaseMod.addCard(new Koi_Ni_Naritai());
@@ -172,6 +167,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Shadow_Gate());
              BaseMod.addCard(new Silence());
              BaseMod.addCard(new Sloth());
+             BaseMod.addCard(new Snow_Halation());
              BaseMod.addCard(new Solitude());
              BaseMod.addCard(new Soul_Peek());
              BaseMod.addCard(new Stealth_Mode());
@@ -179,9 +175,11 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Strike_Grey());
              BaseMod.addCard(new Take_Flight());
              BaseMod.addCard(new Unstable_World());
+             BaseMod.addCard(new Voodoo_Doll());
              BaseMod.addCard(new Well_Laid_Ambush());
              BaseMod.addCard(new Witch_Trick());
              BaseMod.addCard(new Wrath());
+             BaseMod.addCard(new Yousoro());
 	 }
 
     @Override

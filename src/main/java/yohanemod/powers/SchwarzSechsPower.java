@@ -28,11 +28,13 @@ public class SchwarzSechsPower extends AbstractPower
         this.img = getSchwarzSechsPowerTexture();
     }
 
+    @Override
     public void updateDescription()
     {
         this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
     }
 
+    @Override
     public void onUseCard(AbstractCard card, UseCardAction action)
     {
         if ((!card.purgeOnUse) && (card.cost == 0) && (this.amount > 0)) {
@@ -67,6 +69,7 @@ public class SchwarzSechsPower extends AbstractPower
         }
     }
 
+    @Override
     public void atEndOfTurn(boolean isPlayer)
     {
         if (isPlayer) {
@@ -74,7 +77,7 @@ public class SchwarzSechsPower extends AbstractPower
         }
     }
 
-    public static Texture getSchwarzSechsPowerTexture() {
+    private static Texture getSchwarzSechsPowerTexture() {
         return new Texture("powers/SchwarzSechsPower.png");
     }
 }

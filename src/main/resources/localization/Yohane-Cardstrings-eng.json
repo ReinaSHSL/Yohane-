@@ -20,13 +20,17 @@
     "NAME": "Angel Tears",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Gain 8 Fallen Energy."
   },
+  "Yohane:Awaken_The_Power": {
+    "NAME": "Awaken The Power",
+    "DESCRIPTION": "Gain !M! Strength. NL Die in !F! turns."
+  },
   "Yohane:Awakening": {
     "NAME":  "Awakening",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage NL Evolve all Summons."
   },
   "Yohane:Backfoot": {
     "NAME": "Backfoot",
-    "DESCRIPTION": "Gain !B! Block. NL Lose !M! Fallen Energy."
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Gain !B! Block."
   },
   "Yohane:City_Of_Sin": {
     "NAME": "City of Sin",
@@ -35,6 +39,14 @@
   "Yohane:Counter": {
     "NAME": "Counter",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL If the enemy intends to attack, deal !D! damage."
+  },
+  "Yohane:Culinary_Genius": {
+    "NAME": "Culinary Genius",
+    "DESCRIPTION": "Deal !D! damage and heal !M! HP X times. NL Exhaust."
+  },
+  "Yohane:Curse_The_Heavens": {
+    "NAME": "Curse The Heavens",
+    "DESCRIPTION": "Deal !D! damage and apply !M! Sin to ALL enemies."
   },
   "Yohane:Cursed_Strike": {
     "NAME":  "Cursed Strike",
@@ -54,16 +66,16 @@
   },
   "Yohane:Defend_Grey": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block. NL Lose 1 Fallen Energy."
+    "DESCRIPTION": "Pay !M! Fallen Energy. Gain !B! Block. NL"
   },
   "Yohane:Descent": {
     "NAME":  "Descent",
     "DESCRIPTION": "Pay !F! Fallen Energy. NL Apply !M! Sin."
   },
   "Yohane:Energetic_Performance": {
-    "NAME":  "Energetic Performance",
-    "DESCRIPTION": "Gain [G] [G] [G] next turn. NL Gain !F! Buffer.",
-    "UPGRADE_DESCRIPTION": "Gain [G] [G] [G] [G] next turn. NL Gain !F! Buffer."
+    "NAME":  "Energetic Live",
+    "DESCRIPTION": "Gain [G] [G] [G]  next turn. NL Gain !F! Buffer.",
+    "UPGRADE_DESCRIPTION": "Gain [G] [G] [G] [G]  next turn. NL Gain !F! Buffer."
   },
   "Yohane:Energy_Change": {
     "NAME": "Energy Change",
@@ -138,6 +150,10 @@
     "NAME": "Impressive Display",
     "DESCRIPTION": "Deal !D! damage. NL Draw 1 card. NL Gain !M! Fallen Energy."
   },
+  "Yohane:Indulge": {
+    "NAME": "Indulge",
+    "DESCRIPTION": "All cards in your hand cost one less Energy this turn. NL Start with 0 Energy next turn."
+  },
   "Yohane:Inspiration": {
     "NAME":  "Inspiration",
     "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. NL Gain Blur."
@@ -203,7 +219,7 @@
   },
   "Yohane:Lailapse": {
     "NAME":  "Lailapse!",
-    "DESCRIPTION": "Apply !M! Vulnerable. NL Gain !B! Block."
+    "DESCRIPTION": "Pay !F! Fallen Energy. NL Apply !M! Vulnerable. NL Gain !B! Block."
   },
   "Yohane:One_Two": {
     "NAME": "One Two",
@@ -236,7 +252,7 @@
   },
   "Yohane:Schwarz_Sechs": {
     "NAME": "Schwarz Sechs",
-    "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL The next 0 cost card is played twice. NL Fallen Energy is still consumed."
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL The next 0 cost card is played twice."
   },
   "Yohane:Shadow_Gate": {
     "NAME": "Shadow Gate",
@@ -255,6 +271,11 @@
     "NAME": "Sloth",
     "DESCRIPTION": "Heal !M! HP. NL Apply Entangle to self. NL Exhaust."
   },
+  "Yohane:Snow_Halation": {
+    "NAME": "Snow Halation",
+    "DESCRIPTION": "Stun ALL enemies. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Stun ALL enemies."
+  },
   "Yohane:Solitude": {
     "NAME": "Solitude",
     "DESCRIPTION": "Kill all Summons. NL Gain !M! Fallen Energy for each."
@@ -270,7 +291,7 @@
   },
   "Yohane:Stealth_Mode": {
     "NAME":  "Stealth Mode",
-    "DESCRIPTION": "Secret. At the end of the turn, gain 1 Intangible and Exhaust your draw pile. NL If you cannot, Exhaust your hand."
+    "DESCRIPTION": "Secret. On turn end, gain 1 Intangible and Exhaust your draw and discard pile. NL If you cannot, Exhaust your hand."
   },
   "Yohane:Strike_Grey": {
     "NAME": "Strike",
@@ -284,16 +305,24 @@
     "NAME":  "Unstable World",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage to all enemies. NL Add a copy of this card to your hand. NL Exhaust."
   },
+  "Yohane:Voodoo_Doll": {
+    "NAME":  "Voodoo Doll",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Play your next Skill or Attack at half power (rounded down)."
+  },
   "Yohane:Well_Laid_Ambush": {
     "NAME": "Well Laid Ambush",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL Retain."
   },
   "Yohane:Witch_Trick": {
     "NAME": "Witch Trick",
-    "DESCRIPTION": "Become Confused."
+    "DESCRIPTION": "Become Confused. NL Draw !M! additional card at the start of each turn."
   },
   "Yohane:Wrath": {
     "NAME": "Wrath",
     "DESCRIPTION":  "Deal !D! damage to ALL enemies 5 times. NL Apply !M! Weak to self."
+  },
+  "Yohane:Yousoro": {
+    "NAME": "Yousoro!",
+    "DESCRIPTION":  "You can no longer Block this turn. NL Gain [G]. NL Draw !F! cards. NL Exhaust."
   }
 }

@@ -4,6 +4,7 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
@@ -37,7 +38,7 @@ public class Guilty_Kiss extends CustomCard {
              if (this.energyOnUse < EnergyPanel.totalCount) {
                    this.energyOnUse = EnergyPanel.totalCount;
                  }
-             com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new GuiltyKissAction(p, m,
+             AbstractDungeon.actionManager.addToBottom(new GuiltyKissAction(p, m,
                      this.damage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse, this.magicNumber));
            }
 

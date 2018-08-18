@@ -26,22 +26,25 @@ public class FallenEnergy extends AbstractPower {
         this.canGoNegative = false;
     }
 
+    @Override
     public void atStartOfTurn () {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FallenEnergy(owner, 2), 2));
     }
 
+    @Override
     public void stackPower(int stackAmount)
     {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
     }
 
+    @Override
     public void updateDescription()
     {
         this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
     }
 
-    public static Texture getDarkEnergyPowerTexture() {
+    private static Texture getDarkEnergyPowerTexture() {
         return new Texture("powers/FallenEnergy.png");
     }
 }

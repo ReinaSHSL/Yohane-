@@ -108,6 +108,7 @@ public class PriceOfPowerPower extends AbstractPower {
 
     }
 
+    @Override
     public void onRemove() {
         for (AbstractCard cardToRestore : AbstractDungeon.player.hand.group) {
             if (cardToRestore.cost != 0) {
@@ -123,11 +124,13 @@ public class PriceOfPowerPower extends AbstractPower {
         this.toRestoreCost.clear();
     }
 
+    @Override
     public void updateDescription()
     {
         this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
     }
 
+    @Override
     public void stackPower(int stackAmount)
     {
         this.fontScale = 8.0F;

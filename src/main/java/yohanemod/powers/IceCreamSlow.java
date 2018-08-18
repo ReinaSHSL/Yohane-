@@ -27,43 +27,41 @@ public class IceCreamSlow extends AbstractPower {
              this.img = getIceCreamSlowTexture();
              this.type = AbstractPower.PowerType.DEBUFF;
            }
-    
-       public void atEndOfRound()
-       {
-             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "Yohane:IceCreamSlow"));
-           }
-    
-       public void updateDescription()
-       {
-             this.description = (DESCRIPTIONS[0] + FontHelper.colorString(this.owner.name, "y") + DESCRIPTIONS[1]);
-        
-             if (this.amount != 0) {
-                   this.description = (this.description + DESCRIPTIONS[2] + this.amount * 10 + DESCRIPTIONS[3]);
-                 }
-           }
-    
-       public void onAfterUseCard(AbstractCard card, UseCardAction action)
-       {
-             com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(this.owner,
-                this.owner, new IceCreamSlow(this.owner, 1), 1));
-           }
-    
-       public float atDamageReceive(float damage, DamageInfo.DamageType type)
-       {
-             if (type == DamageInfo.DamageType.NORMAL) {
-                   return damage * (1.0F + this.amount * 0.1F);
-                 }
-             return damage;
-           }
 
-        public void stackPower(int stackAmount)
-        {
+    @Override
+    public void atEndOfRound() {
+        AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "Yohane:IceCreamSlow"));
+    }
 
-            this.fontScale = 8.0F;
-            this.amount += stackAmount;
-        }
+    @Override
+    public void updateDescription() {
+           this.description = (DESCRIPTIONS[0] + FontHelper.colorString(this.owner.name, "y") + DESCRIPTIONS[1]);
+           if (this.amount != 0) {
+               this.description = (this.description + DESCRIPTIONS[2] + this.amount * 10 + DESCRIPTIONS[3]);
+           }
+       }
 
-    public static Texture getIceCreamSlowTexture() {
+    @Override
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+           com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(this.owner,
+                   this.owner, new IceCreamSlow(this.owner, 1), 1));
+       }
+
+    @Override
+    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
+           if (type == DamageInfo.DamageType.NORMAL) {
+               return damage * (1.0F + this.amount * 0.1F);
+           }
+           return damage;
+       }
+
+    @Override
+    public void stackPower(int stackAmount) {
+           this.fontScale = 8.0F;
+           this.amount += stackAmount;
+       }
+
+    private static Texture getIceCreamSlowTexture() {
         return new Texture("powers/IceCreamSlow.png");
     }
 }

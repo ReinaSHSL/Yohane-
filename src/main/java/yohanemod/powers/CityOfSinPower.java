@@ -26,6 +26,7 @@ public class CityOfSinPower extends AbstractPower {
         this.canGoNegative = false;
     }
 
+    @Override
     public void atStartOfTurn () {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new Sin(AbstractDungeon.player, this.amount), this.amount));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
@@ -33,18 +34,20 @@ public class CityOfSinPower extends AbstractPower {
         }
     }
 
+    @Override
     public void stackPower(int stackAmount)
     {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
     }
 
+    @Override
     public void updateDescription()
     {
         this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
     }
 
-    public static Texture getCityOfSinPowerTexture() {
+    private static Texture getCityOfSinPowerTexture() {
         return new Texture("powers/CityOfSinPower.png");
     }
 }

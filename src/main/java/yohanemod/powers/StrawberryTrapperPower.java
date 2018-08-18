@@ -26,10 +26,12 @@ public class StrawberryTrapperPower extends AbstractPower {
         this.type = AbstractPower.PowerType.DEBUFF;
     }
 
+    @Override
     public void atEndOfTurn(boolean isPlayer) {
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.LoseHPAction(this.owner, this.owner, this.hpLoss, AbstractGameAction.AttackEffect.FIRE));
     }
 
+    @Override
     public void stackPower(int stackAmount)
     {
         //flash();
@@ -38,17 +40,14 @@ public class StrawberryTrapperPower extends AbstractPower {
         this.hpLoss += 40;
     }
 
-    public void onShuffle() {
-
-    }
-
+    @Override
     public void updateDescription()
         {
             this.description = (DESCRIPTIONS[0] + this.hpLoss + DESCRIPTIONS[1]);
         }
 
 
-    public static Texture getStrawberryTrapperTexture() {
+    private static Texture getStrawberryTrapperTexture() {
         return new Texture("powers/StrawberryTrapper.png");
     }
 }

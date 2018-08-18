@@ -26,7 +26,7 @@ public class Lily extends AbstractFriendlyMonster {
 
     public Lily() {
         super(NAME, ID, 15,
-                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -750F, 0);
+                null, -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -750F, 0);
 
     }
 
@@ -54,7 +54,7 @@ public class Lily extends AbstractFriendlyMonster {
             upgradeCount = this.getPower(LilyStrength.POWER_ID).amount;
         }
         int attackDamage = (4 + upgradeCount * 2);
-        int chargeAmount = (6 + upgradeCount);
+        int chargeAmount = (2 + upgradeCount);
         ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
         target = AbstractDungeon.getRandomMonster();
         String attackDesc = String.format("Deal %d damage to a random enemy.", attackDamage);

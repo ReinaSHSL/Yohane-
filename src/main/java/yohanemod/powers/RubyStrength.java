@@ -21,6 +21,7 @@ public class RubyStrength extends AbstractPower {
         this.img = getRubyStrengthTexture();
     }
 
+    @Override
     public void updateDescription()
     {
         int damage = (2 + this.amount);
@@ -28,13 +29,14 @@ public class RubyStrength extends AbstractPower {
         this.description = (DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + block + DESCRIPTIONS[2]);
     }
 
+    @Override
     public void stackPower(int stackAmount)
     {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
     }
 
-    public static Texture getRubyStrengthTexture() {
+    private static Texture getRubyStrengthTexture() {
         return new Texture("powers/RubyStrength.png");
     }
 }

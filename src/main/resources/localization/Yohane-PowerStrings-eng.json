@@ -119,12 +119,46 @@
     ]
   },
 
+  "Yohane:YousoroPower": {
+    "NAME": "Yousoro!",
+    "DESCRIPTIONS": [
+      "You cannot Block this turn."
+    ]
+  },
+
+  "Yohane:FadingPlayerPower": {
+    "NAME": "Fading",
+    "DESCRIPTIONS": [
+      "Dies in #b",
+      " turns.",
+      "Dies this turn."
+    ]
+  },
+
+
   "Yohane:LustSin": {
-    "NAME": "LustSin",
+    "NAME": "Lust Sin",
     "DESCRIPTIONS": [
       "This unit will receive #b",
       " extra damage and deal #b",
       " extra damage."
+    ]
+  },
+
+  "Yohane:VoodooDollPower": {
+    "NAME": "Voodoo Doll",
+    "DESCRIPTIONS": [
+      "Your next #b",
+      " card(s) will play an extra time at half power (rounded down)."
+    ]
+  },
+
+  "stslib:Stunned": {
+    "NAME": "Stunned",
+    "DESCRIPTIONS": [
+      "Does nothing for #b",
+      " turn.",
+      " turns."
     ]
   }
 

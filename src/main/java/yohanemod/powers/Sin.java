@@ -26,6 +26,7 @@ public class Sin extends AbstractPower {
         this.type = PowerType.DEBUFF;
     }
 
+    @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type == DamageInfo.DamageType.NORMAL) {
             AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, AbstractDungeon.player, this.ID));
@@ -34,6 +35,7 @@ public class Sin extends AbstractPower {
     }
 
 
+    @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
         if (type == DamageInfo.DamageType.NORMAL) {
             return damage + this.amount;
@@ -41,22 +43,25 @@ public class Sin extends AbstractPower {
         return damage;
     }
 
+    @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type) {
             return damage + this.amount;
     }
 
+    @Override
     public void stackPower(int stackAmount)
     {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
     }
 
+    @Override
     public void updateDescription()
     {
         this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2]);
     }
 
-    public static Texture getSinTexture() {
+    private static Texture getSinTexture() {
         return new Texture("powers/Sin.png");
     }
 }

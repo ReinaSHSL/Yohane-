@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import yohanemod.powers.FallenEnergy;
 
@@ -25,12 +26,26 @@ public class GoAllOutAction extends com.megacrit.cardcrawl.actions.AbstractGameA
             int FallenGain = 0;
             for (AbstractCard c : this.p.drawPile.group) {
                 if (c.type != AbstractCard.CardType.ATTACK) {
+                    c.current_y = (-200.0F * Settings.scale);
+                    c.target_x = (Settings.WIDTH / 2.0F + 200.0F);
+                    c.target_y = (Settings.HEIGHT / 2.0F);
+                    c.targetAngle = 0.0F;
+                    c.lighten(false);
+                    c.drawScale = 0.12F;
+                    c.targetDrawScale = 0.75F;
                     AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, this.p.drawPile));
                     FallenGain++;
                 }
             }
             for (AbstractCard c : this.p.discardPile.group) {
                 if (c.type != AbstractCard.CardType.ATTACK) {
+                    c.current_y = (-200.0F * Settings.scale);
+                    c.target_x = (Settings.WIDTH / 2.0F + 200.0F);
+                    c.target_y = (Settings.HEIGHT / 2.0F);
+                    c.targetAngle = 0.0F;
+                    c.lighten(false);
+                    c.drawScale = 0.12F;
+                    c.targetDrawScale = 0.75F;
                     AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, this.p.discardPile));
                     FallenGain++;
                 }

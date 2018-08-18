@@ -9,11 +9,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.FlightPower;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.IntangiblePower;
+import com.megacrit.cardcrawl.powers.*;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.powers.FadingPlayerPower;
 import yohanemod.powers.NoFallenLossFlightPower;
 
 public class Envious extends CustomCard {
@@ -44,13 +42,16 @@ public class Envious extends CustomCard {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         for (AbstractPower powersToCopy : m.powers) {
-            if (powersToCopy.ID == FlightPower.POWER_ID) {
+            if (powersToCopy.ID.equals(FlightPower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new NoFallenLossFlightPower(p, powersToCopy.amount), powersToCopy.amount));
             }
-            if (powersToCopy.ID == IntangiblePower.POWER_ID) {
+            if (powersToCopy.ID.equals(IntangiblePower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new IntangiblePlayerPower(p, powersToCopy.amount), powersToCopy.amount));
             }
-            if (powersToCopy.ID != FlightPower.POWER_ID && powersToCopy.ID != IntangiblePower.POWER_ID) {
+            if (powersToCopy.ID.equals(FadingPower.POWER_ID)) {
+                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new FadingPlayerPower(p, powersToCopy.amount), powersToCopy.amount));
+            }
+            if (!powersToCopy.ID.equals(FlightPower.POWER_ID) && !powersToCopy.ID.equals(IntangiblePower.POWER_ID) && !powersToCopy.ID.equals(FadingPower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, powersToCopy, powersToCopy.amount));
             }
         }

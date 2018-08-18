@@ -31,29 +31,32 @@ public class ShadowGatePower extends AbstractPower{
 
         }
 
-        public void onUseCard(AbstractCard card, UseCardAction action) {
-            final int FallenLoss = this.amount * this.lossAmount;
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, this.amount));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FallenEnergy(owner, -FallenLoss), -FallenLoss));
-            if (this.owner.getPower(FallenEnergy.POWER_ID).amount - FallenLoss <= 0) {
-                AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-            }
+    @Override
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        final int FallenLoss = this.amount * this.lossAmount;
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.owner, this.amount));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FallenEnergy(owner, -FallenLoss), -FallenLoss));
+        if (this.owner.getPower(FallenEnergy.POWER_ID).amount - FallenLoss <= 0) {
+            AbstractDungeon.actionManager.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
+    }
 
-        public void stackPower(int stackAmount)
-        {
-            //flash();
-            this.fontScale = 8.0F;
-            this.amount += stackAmount;
-        }
+    @Override
+    public void stackPower(int stackAmount)
+    {
+        //flash();
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+    }
 
-        public void updateDescription()
-        {
-            this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
-        }
+    @Override
+    public void updateDescription()
+    {
+        this.description = (DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1]);
+    }
 
-        public static Texture getShadowGateTexture() {
-            return new Texture("powers/ShadowGate.png");
-        }
+    private static Texture getShadowGateTexture() {
+        return new Texture("powers/ShadowGate.png");
+    }
 
 }

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -47,14 +48,32 @@ public class Stealth_Mode extends CustomCard {
         AbstractPlayer p = AbstractDungeon.player;
         if (!p.drawPile.group.isEmpty()) {
             for (AbstractCard c : p.drawPile.group) {
+                c.current_y = (-200.0F * Settings.scale);
+                c.target_x = (Settings.WIDTH / 2.0F + 200.0F);
+                c.target_y = (Settings.HEIGHT / 2.0F);
+                c.targetAngle = 0.0F;
+                c.lighten(false);
+                c.drawScale = 0.12F;
+                c.targetDrawScale = 0.75F;
                 AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, p.drawPile));
+            }
+        }
+        if (!p.discardPile.group.isEmpty()) {
+            for (AbstractCard c : p.discardPile.group) {
+                c.current_y = (-200.0F * Settings.scale);
+                c.target_x = (Settings.WIDTH / 2.0F + 200.0F);
+                c.target_y = (Settings.HEIGHT / 2.0F);
+                c.targetAngle = 0.0F;
+                c.lighten(false);
+                c.drawScale = 0.12F;
+                c.targetDrawScale = 0.75F;
+                AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, p.discardPile));
             }
         } else {
             for (AbstractCard c : p.hand.group) {
                 AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, p.hand));
             }
         }
-
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
     }
     

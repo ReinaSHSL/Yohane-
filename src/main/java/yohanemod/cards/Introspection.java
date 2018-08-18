@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -39,16 +40,37 @@ public class Introspection extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.Cleanse(p, 99));
         for (AbstractCard c : p.drawPile.group) {
             if (c.type == CardType.CURSE) {
+                c.current_y = (-200.0F * Settings.scale);
+                c.target_x = (Settings.WIDTH / 2.0F + 200.0F);
+                c.target_y = (Settings.HEIGHT / 2.0F);
+                c.targetAngle = 0.0F;
+                c.lighten(false);
+                c.drawScale = 0.12F;
+                c.targetDrawScale = 0.75F;
                 AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, p.drawPile));
             }
         }
         for (AbstractCard c : p.discardPile.group) {
             if (c.type == CardType.CURSE) {
+                c.current_y = (-200.0F * Settings.scale);
+                c.target_x = (Settings.WIDTH / 2.0F + 200.0F);
+                c.target_y = (Settings.HEIGHT / 2.0F);
+                c.targetAngle = 0.0F;
+                c.lighten(false);
+                c.drawScale = 0.12F;
+                c.targetDrawScale = 0.75F;
                 AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, p.discardPile));
             }
         }
         for (AbstractCard c : p.hand.group) {
             if (c.type == CardType.CURSE) {
+                c.current_y = (-200.0F * Settings.scale);
+                c.target_x = (Settings.WIDTH / 2.0F + 200.0F);
+                c.target_y = (Settings.HEIGHT / 2.0F);
+                c.targetAngle = 0.0F;
+                c.lighten(false);
+                c.drawScale = 0.12F;
+                c.targetDrawScale = 0.75F;
                 AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, p.hand));
             }
         }

@@ -29,7 +29,7 @@ public class Ruby extends AbstractFriendlyMonster {
 
     public Ruby() {
         super(NAME, ID, 12,
-                null, -8.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", -1150.0F, 0);
+                null, 15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", -1150.0F, 0);
     }
 
     @Override

@@ -40,12 +40,10 @@ public class Solitude extends CustomCard {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
             int summonCount = player.minions.monsters.size();
             if (summonCount > 0) {
-                AbstractMonster minionToKill = player.minions.monsters.get(0);
-                AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.LoseHPAction(minionToKill, AbstractDungeon.player, 99));
+                player.minions.monsters.get(0).die();
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
                 if (player.minions.monsters.get(1) != null) {
-                    AbstractMonster minionToKill2 = player.minions.monsters.get(1);
-                    AbstractDungeon.actionManager.addToTop(new com.megacrit.cardcrawl.actions.common.LoseHPAction(minionToKill2, AbstractDungeon.player, 99));
+                    player.minions.monsters.get(1).die();
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
                 }
             } else {

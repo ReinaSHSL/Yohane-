@@ -1,6 +1,7 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -21,7 +22,7 @@ public class Defend_Grey extends CustomCard{
     private static final int COST = 1;
     private static final int BLOCK_AMOUNT = 5;
     private static final int UPGRADE_BLOCK_DMG = 3;
-    private static final int FALLEN_ENERGY = -1;
+    private static final int FALLEN_ENERGY = 1;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.BASIC;
     private static final CardTarget target = CardTarget.SELF;
@@ -37,8 +38,12 @@ public class Defend_Grey extends CustomCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
+        if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) {
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, -this.magicNumber), -this.magicNumber));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
+        }
     }
 
     @Override

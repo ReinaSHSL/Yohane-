@@ -25,6 +25,7 @@ public class ImagineBreakerPower extends AbstractPower{
         this.img = getImagineBreakerTexture();
     }
 
+    @Override
     public void atEndOfTurn(boolean isPlayer) {
         int FallenLoss = this.owner.getPower(FallenEnergy.POWER_ID).amount;
         if (this.owner.getPower(FallenEnergy.POWER_ID).amount > 0) {
@@ -33,12 +34,13 @@ public class ImagineBreakerPower extends AbstractPower{
         }
     }
 
+    @Override
     public void updateDescription()
     {
         this.description = (DESCRIPTIONS[0]);
     }
 
-    public static Texture getImagineBreakerTexture() {
+    private static Texture getImagineBreakerTexture() {
         return new Texture("powers/ImagineBreaker.png");
     }
 }

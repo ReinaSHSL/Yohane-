@@ -23,6 +23,7 @@ public class Witch_Trick extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Witch_Trick.png";
     private static final int COST = 2;
+    private static final int DRAW = 1;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;
@@ -31,10 +32,12 @@ public class Witch_Trick extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.YOHANE_GREY,
                         rarity, target, POOL);
+        this.magicNumber = this.baseMagicNumber = DRAW;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new com.megacrit.cardcrawl.powers.DrawPower(p, this.magicNumber), this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ConfusionPower(p)));
     }
 

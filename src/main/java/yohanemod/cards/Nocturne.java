@@ -1,6 +1,7 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.powers.FallenEnergy;
 
 public class Nocturne extends CustomCard {
     public static final String ID = "Yohane:Lailapse";
@@ -22,6 +24,7 @@ public class Nocturne extends CustomCard {
     private static final int VULNERABLE_AMT = 2;
     private static final int BLOCK_AMT = 9;
     private static final int BLOCK_UPGRADE = 4;
+    private static final int FALLEN_ENERGY = 8;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.COMMON;
     private static final CardTarget target = CardTarget.ENEMY;
@@ -32,12 +35,17 @@ public class Nocturne extends CustomCard {
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
         this.block = this.baseBlock = BLOCK_AMT;
+        this.misc = FALLEN_ENERGY;
     }
+
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m)
-    {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount >= this.misc) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.misc, false), this.misc));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
+        }
     }
 
     @Override

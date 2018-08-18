@@ -80,6 +80,7 @@ public class FlightPlayerPower extends FlightPower
     {
     }
 
+    @Override
     public void atEndOfTurn(boolean isPlayer) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(owner, owner, new FallenEnergy(owner, -this.FallenCost), -this.FallenCost));
         if (this.owner.getPower(FallenEnergy.POWER_ID).amount - this.FallenCost <= 0) {

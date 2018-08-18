@@ -34,7 +34,7 @@ public class Go_All_Out extends CustomCard{
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new yohanemod.actions.GoAllOutAction(this.magicNumber));
+        AbstractDungeon.actionManager.addToTop(new yohanemod.actions.GoAllOutAction(this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.misc));
     }
 
