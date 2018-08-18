@@ -19,7 +19,7 @@ public class Strawberry_Trapper extends CustomCard{
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "cards/Strawberry_Trapper.png";
-    private static final int STR_AMOUNT = 10;
+    private static final int STR_AMOUNT = 6;
     private static final int DRAW = 1;
     private static final int DRAW_UPGRADE = 1;
     private static final int COST = 1;
@@ -51,7 +51,7 @@ public class Strawberry_Trapper extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(5);
+            this.upgradeMagicNumber(3);
             this.misc += DRAW_UPGRADE;
             this.rawDescription = UPGRADED_DESCRIPTION;
             initializeDescription();
