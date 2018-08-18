@@ -36,7 +36,7 @@ public class Unstable_World extends CustomCard{
                 AbstractCardEnum.YOHANE_GREY, rarity,
                 target, POOL);
 
-        this.baseDamage = ATTACK_DMG;
+        this.damage = this.baseDamage = ATTACK_DMG;
         this.isMultiDamage = true;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }

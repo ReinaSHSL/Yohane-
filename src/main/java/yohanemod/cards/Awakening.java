@@ -62,7 +62,7 @@ public class Awakening extends CustomCard {
                         default:
                             break;
                     }
-                    if (player.minions.monsters.size() == 1) {
+                    if (player.minions.monsters.size() == 2) {
                         String summon1 = player.minions.monsters.get(1).id;
                         switch (summon1) {
                             case "Lily":
