@@ -53,13 +53,14 @@ public class Ruby extends AbstractFriendlyMonster {
         this.hasAttacked = false;
     }
 
-    private ArrayList<ChooseActionInfo> makeMoves(){
+    private ArrayList<ChooseActionInfo> makeMoves() {
         ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
         if (this.hasPower(RubyStrength.POWER_ID) && this.getPower(RubyStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(RubyStrength.POWER_ID).amount;
         }
         int attackDamage = (2 + upgradeCount);
         int blockAmount = (5 + upgradeCount);
+        target = AbstractDungeon.getRandomMonster();
         String attackDesc = String.format("Deal %d damage to ALL enemies.", attackDamage);
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
@@ -70,16 +71,16 @@ public class Ruby extends AbstractFriendlyMonster {
         if ((target != null)) {
             tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
                 for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                    DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
+                    DamageInfo info = new DamageInfo(this, attackDamage, DamageInfo.DamageType.NORMAL);
                     info.applyPowers(mo, this);
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
                 }
             }));
         }
-        tempInfo.add(new ChooseActionInfo("Defend", blockDesc, () -> {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, blockAmount));
-        }));
-        return tempInfo;
+            tempInfo.add(new ChooseActionInfo("Defend", blockDesc, () -> {
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, blockAmount));
+            }));
+            return tempInfo;
     }
 
     @Override
