@@ -1,11 +1,18 @@
 package yohanemod;
 
 import basemod.BaseMod;
+import basemod.ModLabel;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -21,13 +28,15 @@ import java.nio.charset.StandardCharsets;
 
 
 @SpireInitializer
-public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, EditStringsSubscriber {
+public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, PostInitializeSubscriber {
     public static final Logger logger = LogManager.getLogger(YohaneMod.class.getName());
 
     private static final String MODNAME = "Yohane!";
     private static final String AUTHOR = "Reina";
     private static final String DESCRIPTION = "Adds Yohane as a playable character.";
 
+    private static final float BUTTON_ENABLE_X = 350.0f;
+    private static final float BUTTON_ENABLE_Y = 750.0f;
     private static final Color GREY = CardHelper.getColor(131.0f, 156.0f, 165.0f);
     private static final String ATTACK_GREY = "cardBG/bg_attack_grey.png";
     private static final String SKILL_GREY = "cardBG/bg_skill_grey.png";
@@ -40,6 +49,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     private static final String ENERGY_ORB_GREY_PORTRAIT = "cardBGStronk/card_grey_orb.png";
     private static final String Yohane_Portrait = "charstuff/YohaneBG.png";
     private static final String Yohane_Button = "charstuff/YohaneButton.png";
+    public static boolean optOutMetrics = false;
 
     public YohaneMod() {
         //TODO Everything
@@ -178,6 +188,32 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Wrath());
              BaseMod.addCard(new Yousoro());
 	 }
+
+    public void receivePostInitialize() {
+        // Mod badge
+        Texture badgeTexture = new Texture(Gdx.files.internal("badge/YohaneModBadge.png"));
+
+        ModPanel settingsPanel = new ModPanel();
+
+        ModLabeledToggleButton metricsButton = new ModLabeledToggleButton("Opt out of sending metrics to developer.",
+                BUTTON_ENABLE_X, BUTTON_ENABLE_Y, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                optOutMetrics, settingsPanel, (label) -> {}, (button) -> {
+            optOutMetrics = button.enabled;
+            saveData();
+        });
+        settingsPanel.addUIElement(metricsButton);
+        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
+    }
+
+    public static void saveData() {
+        try {
+            SpireConfig config = new SpireConfig("Yohane!", "YohaneSaveData");
+            config.setBool("optOutMetrics", optOutMetrics);
+            config.save();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public void receiveEditRelics() {

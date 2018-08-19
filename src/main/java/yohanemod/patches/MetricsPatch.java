@@ -68,8 +68,9 @@ public class MetricsPatch {
     @SpireInsertPatch(rloc=12)
     public static void Insert(Metrics __dataToSend) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
         final Logger logger = LogManager.getLogger(Metrics.class.getName());
+        boolean optOutMetrics = yohanemod.YohaneMod.optOutMetrics;
         Gson gson = new Gson();
-        if (Settings.isModded && AbstractDungeon.player.chosenClass.name().equals("FallenAngel")) {
+        if (Settings.isModded && AbstractDungeon.player.chosenClass.name().equals("FallenAngel") && !optOutMetrics) {
             HashMap<String, Object> paramData = new HashMap<String, Object>();
             boolean death = __dataToSend.death;
             MonsterGroup monsters = __dataToSend.monsters;
