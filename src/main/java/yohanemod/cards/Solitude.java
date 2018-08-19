@@ -41,7 +41,7 @@ public class Solitude extends CustomCard {
             if (summonCount > 0) {
                 player.minions.monsters.get(0).die();
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
-                if (player.minions.monsters.get(1) != null) {
+                if (summonCount == 2) {
                     player.minions.monsters.get(1).die();
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.magicNumber), this.magicNumber));
                 }
