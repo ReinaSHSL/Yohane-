@@ -2,14 +2,24 @@ package yohanemod.summons;
 
 import actions.ChooseAction;
 import actions.ChooseActionInfo;
+import basemod.interfaces.OnCardUseSubscriber;
+import basemod.interfaces.OnStartBattleSubscriber;
+import basemod.interfaces.PostRenderSubscriber;
+import basemod.interfaces.RenderSubscriber;
 import cards.MonsterCard;
+import characters.AbstractPlayerWithMinions;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Darkling;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import monsters.AbstractFriendlyMonster;
 import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.LilyStrength;
@@ -25,10 +35,9 @@ public class Lily extends AbstractFriendlyMonster {
     private boolean hasAttacked = false;
     private AbstractMonster target;
 
-
-    public Lily() {
+    public Lily(float offSetX) {
         super(NAME, ID, 15,
-                null, -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -750F, 0);
+                null, -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", offSetX, 0);
 
     }
 

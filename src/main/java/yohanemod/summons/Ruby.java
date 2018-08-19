@@ -26,9 +26,9 @@ public class Ruby extends AbstractFriendlyMonster {
     public DamageInfo.DamageType damageTypeForTurn;
     public boolean isDamageModified = false;
 
-    public Ruby() {
+    public Ruby(float offsetX) {
         super(NAME, ID, 12,
-                null, 15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", -1150.0F, 0);
+                null, 15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", offsetX, 0);
     }
 
     @Override

@@ -49,7 +49,7 @@ public class Little_Demon_Ruby extends CustomCard {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) abstractPlayer;
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
-                player.addMinion(new yohanemod.summons.Ruby());
+                player.addMinion(new yohanemod.summons.Ruby(-750F));
             } else if (summonCount == 1) {
                 if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {
                     //Upgrade
@@ -58,7 +58,7 @@ public class Little_Demon_Ruby extends CustomCard {
                     com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(ruby0Upgraded, ruby0Upgraded, 5));
                 } else {
                     //No Upgrade
-                    player.addMinion(new yohanemod.summons.Ruby());
+                    player.addMinion(new yohanemod.summons.Ruby(-1150F));
                 }
             } else if (summonCount == 2) {
                 if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {
