@@ -18,24 +18,47 @@ import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.screens.DeathScreen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import sun.net.TelnetOutputStream;
-import sun.net.ftp.FtpClient;
 
-import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.UUID;
-import java.io.*;
-import java.net.*;
-import java.util.*;
 
 import static com.megacrit.cardcrawl.metrics.Metrics.timestampFormatter;
+
+/*
+
+TURN BACK NOW. THIS CODE IS ABSOLUTELY FUCKING DISGUSTING. IT'S A MESS, IT BARELY WORKS AND REQUIRES AN EXTERNAL JAVASCRIPT
+SCRIPT TO WORK IF YOU'RE USING THE SAME WEBSITE I AM. I DO NOT UNDER ANY CIRCUMSTANCES CONDONE ANYTHING IN THIS PATCH AND IT'S
+HONESTLY A FUCKING TRAVESTY IT GOT THIS AWFUL.
+
+YOU
+
+HAVE
+
+BEEN
+
+WARNED
+
+but if u wanna use the same website here's the script
+
+const listItems = document.querySelectorAll('.code-block pre');
+for (let i = 0; i < listItems.length; i++) {
+ var pom = document.createElement('a');
+    pom.setAttribute('href', 'data:json;charset=utf-8,' + encodeURIComponent(listItems[i].textContent));
+    pom.setAttribute('download', 'runs.json');
+
+    if (document.createEvent) {
+        var event = document.createEvent('MouseEvents');
+        event.initEvent('click', true, true);
+        pom.dispatchEvent(event);
+    }
+    else {
+        pom.click();
+    }
+}
+
+ */
 
 @SpirePatch(
         cls="com.megacrit.cardcrawl.metrics.Metrics",
