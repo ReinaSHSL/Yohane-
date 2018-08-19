@@ -35,13 +35,13 @@ public class Academic_Prowess extends CustomCard implements PostDrawSubscriber {
     }
 
     public boolean canPlay(AbstractCard card) {
-           if (AbstractDungeon.player.cardsPlayedThisTurn >= this.misc) {
-               card.cantUseMessage = EXTENDED_DESCRIPTION[0];
-               return false;
-           }
-           return true;
-       }
-    
+        if (AbstractDungeon.player.cardsPlayedThisTurn >= this.misc) {
+            card.cantUseMessage = EXTENDED_DESCRIPTION[0];
+            return false;
+        }
+        return true;
+    }
+
     @Override
     public void applyPowers() {
         super.applyPowers();

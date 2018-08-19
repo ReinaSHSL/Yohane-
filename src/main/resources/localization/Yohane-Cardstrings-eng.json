@@ -1,9 +1,9 @@
 {
   "Yohane:Academic_Prowess": {
     "NAME": "Academic Prowess",
-    "DESCRIPTION": "Secret. NL Gain !M! Energy every turn. NL You cannot play more than !F! cards a turn.",
+    "DESCRIPTION": "Secret. NL Gain !M! Energy every turn. NL You cannot play more than !F! cards a turn except for cards which pay Fallen Energy.",
     "EXTENDED_DESCRIPTION": [
-      "I can only play up to NL #r!F! cards this turn.",
+      "I cannot play anymore cards this turn!.",
       "Secret. NL Gain !M! Energy every turn. NL You cannot play more than ",
       " cards per turn.",
       " cards per turn. NL You have played ",
