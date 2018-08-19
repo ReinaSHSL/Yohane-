@@ -1,6 +1,7 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
+import basemod.interfaces.PostDrawSubscriber;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 
 
-public class Academic_Prowess extends CustomCard {
+public class Academic_Prowess extends CustomCard implements PostDrawSubscriber {
     public static final String ID = "Yohane:Academic_Prowess";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
@@ -81,6 +82,13 @@ public class Academic_Prowess extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.misc += 1;
+        }
+    }
+
+    @Override
+    public void receivePostDraw(AbstractCard c) {
+        if (c == this) {
+            com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.GainEnergyAction(this.magicNumber));
         }
     }
 }
