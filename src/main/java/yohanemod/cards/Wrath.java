@@ -25,6 +25,7 @@ public class Wrath extends CustomCard {
     private static final int WEAK_AMT = 2;
     private static final int COST = 1;
     private static final int POOL = 1;
+    private static final int EFFECT = 3;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.COMMON;
     private static final AbstractCard.CardTarget target = CardTarget.ALL_ENEMY;
 
@@ -35,13 +36,13 @@ public class Wrath extends CustomCard {
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
         this.damage = this.baseDamage = DAMAGE;
         this.isMultiDamage = true;
+        this.misc = EFFECT;
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        final int effect = 3;
-        for (int i = 0; i < effect; i++) {
+        for (int i = 0; i < this.misc; i++) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.SFXAction("ATTACK_HEAVY"));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(p,

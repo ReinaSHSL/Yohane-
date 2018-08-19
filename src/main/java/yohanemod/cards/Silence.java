@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
+import enums.MonsterIntentEnum;
 
 public class Silence extends CustomCard {
     public static final String ID = "Yohane:Silence";
@@ -39,7 +40,9 @@ public class Silence extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if ((m != null) && ((m.intent ==
                 AbstractMonster.Intent.ATTACK) || (m.intent == AbstractMonster.Intent.ATTACK_BUFF)
-                || (m.intent == AbstractMonster.Intent.ATTACK_DEBUFF) || (m.intent == AbstractMonster.Intent.ATTACK_DEFEND))) {
+                || (m.intent == AbstractMonster.Intent.ATTACK_DEBUFF) || (m.intent == AbstractMonster.Intent.ATTACK_DEFEND)
+                || (m.intent == MonsterIntentEnum.ATTACK_MONSTER) || (m.intent == MonsterIntentEnum.ATTACK_MONSTER_BUFF) ||
+                (m.intent == MonsterIntentEnum.ATTACK_MONSTER_DEBUFF) || (m.intent == MonsterIntentEnum.ATTACK_MONSTER_DEFEND))) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
