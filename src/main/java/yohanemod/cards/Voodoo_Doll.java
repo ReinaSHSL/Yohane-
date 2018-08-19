@@ -23,7 +23,7 @@ public class Voodoo_Doll extends CustomCard {
     public static final String IMG_PATH = "cards/Voodoo_Doll.png";
     private static final int COST = 0;
     private static final int POOL = 1;
-    private static final int FALLEN_ENERGY = 8;
+    private static final int FALLEN_ENERGY = 6;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;
 

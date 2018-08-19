@@ -22,7 +22,7 @@ public class Prideful_Crash extends CustomCard {
     public static final String IMG_PATH = "cards/Prideful_Crash.png";
     private static final int COST = 3;
     private static final int FALLEN_ENERGY = 20;
-    private static final int FALLEN_ENERGY_UPGRADE = 10;
+    private static final int FALLEN_ENERGY_UPGRADE = 20;
     private static final int DAMAGE_AMOUNT = 40;
     private static final int DAMAGE_AMOUNT_UPGRADE = 8;
     private static final int DRAW = 1;

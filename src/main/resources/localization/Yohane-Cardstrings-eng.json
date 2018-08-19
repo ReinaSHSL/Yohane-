@@ -215,7 +215,7 @@
   },
   "Yohane:My_Mai_Tonight": {
     "NAME": "My Mai Tonight",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. NL Next instance of damage is 0. NL Exhaust"
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Fallen Energy. NL Next instance of damage you take is 0. NL Exhaust"
   },
   "Yohane:Lailapse": {
     "NAME":  "Lailapse!",
@@ -269,7 +269,7 @@
   },
   "Yohane:Sloth": {
     "NAME": "Sloth",
-    "DESCRIPTION": "Heal !M! HP. NL Apply Entangle to self. NL Exhaust."
+    "DESCRIPTION": "Cannot be played if an attack was played this turn. NL Heal !M! HP. NL Apply Entangle to self. NL Exhaust."
   },
   "Yohane:Snow_Halation": {
     "NAME": "Snow Halation",
@@ -315,7 +315,7 @@
   },
   "Yohane:Witch_Trick": {
     "NAME": "Witch Trick",
-    "DESCRIPTION": "Become Confused. NL Draw !M! additional card at the start of each turn."
+    "DESCRIPTION": "Become Confused. NL Draw !M! additional cards at the start of each turn."
   },
   "Yohane:Wrath": {
     "NAME": "Wrath",

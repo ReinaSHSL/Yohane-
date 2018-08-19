@@ -2,6 +2,7 @@ package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,6 +20,7 @@ public class    Dark_Rest extends CustomCard{
     public static final String UPGRADED_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String IMG_PATH = "cards/Dark_Rest.png";
     private static final int WEAK_AMT = 2;
+    private static final int BLOCK_AMT = 4;
     private static final int COST = 1;
     private static final int POOL = 1;
     private static final int FALLEN_ENERGY = 4;
@@ -32,19 +34,15 @@ public class    Dark_Rest extends CustomCard{
                 rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
         this.misc = FALLEN_ENERGY;
+        this.block = this.baseBlock = BLOCK_AMT;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!this.upgraded) {
-                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(m, p,
-                        new com.megacrit.cardcrawl.powers.WeakPower(m, this.magicNumber, false), this.magicNumber));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 4), 4));
-            } else {
-                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(m, p,
-                        new com.megacrit.cardcrawl.powers.WeakPower(m, this.magicNumber, false), this.magicNumber));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 8), 8));
-            }
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
+        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(m, p,
+                new com.megacrit.cardcrawl.powers.WeakPower(m, this.magicNumber, false), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, this.misc), this.misc));
     }
 
 
@@ -58,8 +56,8 @@ public class    Dark_Rest extends CustomCard{
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeBlock(2);
             this.misc += FALLEN_ENERGY_UPGRADE;
-            this.initializeDescription();
             this.upgradeMagicNumber(1);
         }
     }

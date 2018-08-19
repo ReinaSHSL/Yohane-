@@ -23,7 +23,7 @@ public class Academic_Prowess extends CustomCard implements PostDrawSubscriber {
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.SELF;
     private static final int ENERGY = 1;
-    private static final int CARDS_PLAYED = 4;
+    private static final int CARDS_PLAYED = 3;
 
     public Academic_Prowess() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,

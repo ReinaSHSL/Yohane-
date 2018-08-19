@@ -69,7 +69,7 @@ public class MetricsPatch {
     public static void Insert(Metrics __dataToSend) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
         final Logger logger = LogManager.getLogger(Metrics.class.getName());
         Gson gson = new Gson();
-        if (Settings.isModded) {
+        if (Settings.isModded && AbstractDungeon.player.chosenClass.name().equals("FallenAngel")) {
             HashMap<String, Object> paramData = new HashMap<String, Object>();
             boolean death = __dataToSend.death;
             MonsterGroup monsters = __dataToSend.monsters;
@@ -136,20 +136,6 @@ public class MetricsPatch {
             paramData.put("campfire_choices", CardCrawlGame.metricData.campfire_choices);
             paramData.put("circlet_count", AbstractDungeon.player.getCircletCount());
             String data;
-            Prefs pref;
-            switch(AbstractDungeon.player.chosenClass) {
-                default:
-                    pref = SaveHelper.getPrefs("FallenAngel");
-            }
-
-            int numVictory = pref.getInteger("WIN_COUNT", 0);
-            int numDeath = pref.getInteger("LOSE_COUNT", 0);
-            if (numVictory <= 0) {
-                paramData.put("win_rate", 0.0F);
-            } else {
-                paramData.put("win_rate", numVictory / (numDeath + numVictory));
-            }
-
             if (death && monsters != null) {
                 paramData.put("killed_by", AbstractDungeon.lastCombatMetricKey);
             } else {
@@ -170,12 +156,12 @@ public class MetricsPatch {
 
            String urlMod = "https://api.jsonbin.io/b";
            String metricsKey = "$2a$10$2FQgw/H4kHPyrskUP5ht9ekPhkaFtG1n0Qds.Ea/vE7tybZTFUbeu";
-            HttpRequestBuilder requestBuilder = new HttpRequestBuilder();
-            Net.HttpRequest httpRequest = requestBuilder.newRequest().method("POST").url(urlMod).header("Content-Type",
+           HttpRequestBuilder requestBuilder = new HttpRequestBuilder();
+           Net.HttpRequest httpRequest = requestBuilder.newRequest().method("POST").url(urlMod).header("Content-Type",
                     "application/json").header("Accept", "application/json").header("User-Agent", "curl/7.43.0").header
-                    ("secret-key", metricsKey).header("collection-id", "5b792360181c7944f023c63b").header("private", "false").build();
-            httpRequest.setContent(data);
-            Gdx.net.sendHttpRequest(httpRequest, new Net.HttpResponseListener() {
+                    ("secret-key", metricsKey).header("collection-id", "5b792360181c7944f023c63b").header("private", "false").timeout(70000).build();
+           httpRequest.setContent(data);
+           Gdx.net.sendHttpRequest(httpRequest, new Net.HttpResponseListener() {
                 public void handleHttpResponse(Net.HttpResponse httpResponse) {
                     logger.info("Metrics: http request response: " + httpResponse.getResultAsString());
 

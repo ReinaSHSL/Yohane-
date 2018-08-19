@@ -31,6 +31,18 @@ public class Sloth extends CustomCard{
     }
 
     @Override
+    public boolean hasEnoughEnergy() {
+        boolean returnValue = super.hasEnoughEnergy();
+        for (AbstractCard playedCard : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
+            if (playedCard.type == AbstractCard.CardType.ATTACK) {
+                return false;
+            }
+        }
+        return returnValue;
+    }
+
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m)
     {
         com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(p, p, this.magicNumber));
