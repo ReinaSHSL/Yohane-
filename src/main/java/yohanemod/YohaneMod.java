@@ -23,9 +23,7 @@ import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.AngelWings;
-import yohanemod.summons.HanamaruNumbers;
-import yohanemod.summons.LilyNumbers;
-import yohanemod.summons.RubyNumbers;
+import yohanemod.summons.*;
 
 import java.nio.charset.StandardCharsets;
 
@@ -198,6 +196,10 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Witch_Trick());
              BaseMod.addCard(new Wrath());
              BaseMod.addCard(new Yousoro());
+
+             BaseMod.addCard(new HanamaruChoiceCards());
+             BaseMod.addCard(new LilyChoiceCards());
+             BaseMod.addCard(new RubyChoiceCards());
 	 }
 
     public void receivePostInitialize() {
