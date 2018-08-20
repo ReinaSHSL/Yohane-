@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
-import yohanemod.powers.RubyStrength;
-import yohanemod.summons.Ruby;
+import yohanemod.summons.Ruby.RubyStrength;
+import yohanemod.summons.Ruby.Ruby;
 
 public class Little_Demon_Ruby extends CustomCard {
     public static final String ID = "Yohane:Little_Demon_Ruby";
@@ -49,7 +49,7 @@ public class Little_Demon_Ruby extends CustomCard {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) abstractPlayer;
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
-                player.addMinion(new yohanemod.summons.Ruby(-750F));
+                player.addMinion(new Ruby(-750F));
             } else if (summonCount == 1) {
                 if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {
                     //Upgrade
@@ -57,7 +57,7 @@ public class Little_Demon_Ruby extends CustomCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0Upgraded, abstractPlayer, new RubyStrength(ruby0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
-                    player.addMinion(new yohanemod.summons.Ruby(-1150F));
+                    player.addMinion(new Ruby(-1150F));
                 }
             } else if (summonCount == 2) {
                 if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {

@@ -1,8 +1,7 @@
-package yohanemod.summons;
+package yohanemod.summons.Lily;
 
 import actions.ChooseAction;
 import actions.ChooseActionInfo;
-import cards.MonsterCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
@@ -13,7 +12,6 @@ import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import monsters.AbstractFriendlyMonster;
 import yohanemod.powers.FallenEnergy;
-import yohanemod.powers.LilyStrength;
 
 import java.util.ArrayList;
 

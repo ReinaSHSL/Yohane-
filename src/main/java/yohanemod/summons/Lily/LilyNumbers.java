@@ -1,4 +1,4 @@
-package yohanemod.summons;
+package yohanemod.summons.Lily;
 
 public class LilyNumbers {
     public static int lilyHP = 15;

@@ -13,9 +13,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
-import yohanemod.powers.HanamaruStrength;
-import yohanemod.powers.LilyStrength;
-import yohanemod.powers.RubyStrength;
+import yohanemod.summons.Chika.ChikaStrength;
+import yohanemod.summons.Hanamaru.HanamaruStrength;
+import yohanemod.summons.Lily.LilyStrength;
+import yohanemod.summons.Ruby.RubyStrength;
 
 public class Awakening extends CustomCard {
     public static final String ID = "Yohane:Awakening";
@@ -65,6 +66,10 @@ public class Awakening extends CustomCard {
                         AbstractMonster Hanamaru = player.minions.monsters.get(0);
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
                         break;
+                    case "Chika":
+                        AbstractMonster Chika = player.minions.monsters.get(0);
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
+                        break;
                     default:
                         break;
                 }
@@ -83,6 +88,10 @@ public class Awakening extends CustomCard {
                         case "Hanamaru":
                             AbstractMonster Hanamaru = player.minions.monsters.get(1);
                             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
+                            break;
+                        case "Chika":
+                            AbstractMonster Chika = player.minions.monsters.get(1);
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
                             break;
                         default:
                             break;

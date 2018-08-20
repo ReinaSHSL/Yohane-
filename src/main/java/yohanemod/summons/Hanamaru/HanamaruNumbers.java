@@ -1,4 +1,4 @@
-package yohanemod.summons;
+package yohanemod.summons.Hanamaru;
 
 public class HanamaruNumbers {
     public static int hanamaruHP = 14;

@@ -1,4 +1,4 @@
-package yohanemod.cards;
+package yohanemod.cards.Deprecated;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

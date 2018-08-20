@@ -1,16 +1,16 @@
-package yohanemod.summons;
+package yohanemod.summons.Hanamaru;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class RubyChoiceCards extends CustomCard {
-    public static final String ID = "RubyChoiceCards";
-    public static final String NAME = "Ruby Moves";
+public class HanamaruChoiceCards extends CustomCard {
+    public static final String ID = "HanamaruChoiceCards";
+    public static final String NAME = "Hanamaru Moves";
 
-    public RubyChoiceCards() {
-        super(ID, NAME, "cards/RubyChoiceCards.png", -2, "NONE", AbstractCard.CardType.ATTACK, AbstractCard.CardColor.COLORLESS, AbstractCard.CardRarity.SPECIAL, AbstractCard.CardTarget.SELF_AND_ENEMY);
+    public HanamaruChoiceCards() {
+        super(ID, NAME, "cards/HanamaruChoiceCards.png", -2, "NONE", CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF_AND_ENEMY);
 
     }
 
@@ -22,7 +22,7 @@ public class RubyChoiceCards extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new RubyChoiceCards();
+        return new HanamaruChoiceCards();
     }
 
     //When selected a custom Action will happen. This isn't needed.

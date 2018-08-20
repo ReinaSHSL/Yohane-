@@ -12,9 +12,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
-import yohanemod.powers.HanamaruStrength;
-import yohanemod.powers.LilyStrength;
-import yohanemod.powers.RubyStrength;
+import yohanemod.summons.Chika.ChikaStrength;
+import yohanemod.summons.Hanamaru.HanamaruStrength;
+import yohanemod.summons.Lily.LilyStrength;
+import yohanemod.summons.Ruby.RubyStrength;
 import yohanemod.powers.Sin;
 
 
@@ -66,6 +67,12 @@ public class Koi_Ni_Naritai extends CustomCard {
                                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, sinAmount), sinAmount));
                             }
                             break;
+                        case "Chika":
+                            AbstractMonster Chika = player.minions.monsters.get(0);
+                            for (int i = 0; i < sinAmount; i++) {
+                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, sinAmount), sinAmount));
+                            }
+                            break;
                         default:
                             break;
                     }
@@ -88,6 +95,12 @@ public class Koi_Ni_Naritai extends CustomCard {
                                 AbstractMonster Hanamaru = player.minions.monsters.get(1);
                                 for (int i = 0; i < sinAmount; i++) {
                                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, sinAmount), sinAmount));
+                                }
+                                break;
+                            case "Chika":
+                                AbstractMonster Chika = player.minions.monsters.get(1);
+                                for (int i = 0; i < sinAmount; i++) {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, sinAmount), sinAmount));
                                 }
                                 break;
                             default:

@@ -1,4 +1,4 @@
-package yohanemod.summons;
+package yohanemod.summons.Ruby;
 
 public class RubyNumbers {
     public static int rubyHP = 12;

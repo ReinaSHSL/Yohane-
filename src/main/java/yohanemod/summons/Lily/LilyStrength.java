@@ -1,26 +1,25 @@
-package yohanemod.powers;
+package yohanemod.summons.Lily;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import yohanemod.summons.RubyNumbers;
+import yohanemod.summons.Lily.LilyNumbers;
 
-public class RubyStrength extends AbstractPower {
-    public static final String POWER_ID = "Yohane:RubyStrength";
+public class LilyStrength extends AbstractPower{
+    public static final String POWER_ID = "Yohane:LilyStrength";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public RubyStrength(AbstractMonster m, int amount) {
+    public LilyStrength(AbstractMonster m, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = m;
         this.amount = amount;
         updateDescription();
-        this.img = getRubyStrengthTexture();
+        this.img = getLilyStrengthTexture();
     }
 
     @Override
@@ -31,9 +30,9 @@ public class RubyStrength extends AbstractPower {
     @Override
     public void updateDescription()
     {
-        int damage = (RubyNumbers.rubyAttackDamage + this.amount);
-        int block = (RubyNumbers.rubyBlockAmount + this.amount);
-        this.description = (DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + block + DESCRIPTIONS[2]);
+        int damage = (LilyNumbers.lilyAttackDamage + this.amount);
+        int charge = (LilyNumbers.lilyChargeAmount + this.amount);
+        this.description = (DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + charge + DESCRIPTIONS[2]);
     }
 
     @Override
@@ -44,7 +43,8 @@ public class RubyStrength extends AbstractPower {
         this.amount += stackAmount;
     }
 
-    private static Texture getRubyStrengthTexture() {
-        return new Texture("powers/RubyStrength.png");
+    private static Texture getLilyStrengthTexture() {
+        return new Texture("powers/LilyStrength.png");
     }
 }
+

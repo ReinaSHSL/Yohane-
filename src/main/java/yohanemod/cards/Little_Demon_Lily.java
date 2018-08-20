@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
-import yohanemod.powers.LilyStrength;
-import yohanemod.summons.Lily;
+import yohanemod.summons.Lily.LilyStrength;
+import yohanemod.summons.Lily.Lily;
 
 public class Little_Demon_Lily extends CustomCard {
     public static final String ID = "Yohane:Little_Demon_Lily";
@@ -49,7 +49,7 @@ public class Little_Demon_Lily extends CustomCard {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) abstractPlayer;
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
-                player.addMinion(new yohanemod.summons.Lily(-750F));
+                player.addMinion(new Lily(-750F));
             } else if (summonCount == 1) {
                 if (player.minions.monsters.get(0).id.equals(Lily.ID)) {
                     //Upgrade
@@ -57,7 +57,7 @@ public class Little_Demon_Lily extends CustomCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0Upgraded, abstractPlayer, new LilyStrength(lily0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
-                    player.addMinion(new yohanemod.summons.Lily(-1150F));
+                    player.addMinion(new Lily(-1150F));
                 }
             } else if (summonCount == 2) {
                 if (player.minions.monsters.get(0).id.equals(Lily.ID)) {
@@ -91,7 +91,7 @@ public class Little_Demon_Lily extends CustomCard {
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily1Upgraded, abstractPlayer, new LilyStrength(player, 1), 1));
                     } else {
                         //No Upgrade
-                        player.addMinion(new yohanemod.summons.Lily());
+                        player.addMinion(new yohanemod.summons.Lily.Lily());
                         AbstractMonster lilyNoUpgrade1 = player.minions.monsters.get(1);
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lilyNoUpgrade1, abstractPlayer, new SoulLink(player, 0), 1));
                         break;

@@ -1,16 +1,17 @@
-package yohanemod.summons;
+package yohanemod.summons.Chika;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import yohanemod.summons.Chika.ChikaChoiceCards;
 
-public class LilyChoiceCards extends CustomCard {
-    public static final String ID = "LilyChoiceCards";
-    public static final String NAME = "Lily Moves";
+public class ChikaChoiceCards extends CustomCard {
+    public static final String ID = "ChikaChoiceCards";
+    public static final String NAME = "Chika Moves";
 
-    public LilyChoiceCards() {
-        super(ID, NAME, "cards/LilyChoiceCards.png", -2, "NONE", CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF_AND_ENEMY);
+    public ChikaChoiceCards() {
+        super(ID, NAME, "cards/ChikaChoiceCards.png", -2, "NONE", CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF_AND_ENEMY);
 
     }
 
@@ -22,7 +23,7 @@ public class LilyChoiceCards extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new LilyChoiceCards();
+        return new ChikaChoiceCards();
     }
 
     //When selected a custom Action will happen. This isn't needed.

@@ -170,6 +170,10 @@
     "NAME": "Kowareyasuki",
     "DESCRIPTION": "Innate. NL Apply !M! Weak to all enemies. NL Exhaust."
   },
+  "Yohane:Little_Demon_Chika": {
+    "NAME":  "Little Demon Chika",
+    "DESCRIPTION": "Summon 1 Chika. NL Playing this card with Chika already on the field Evolves her."
+  },
   "Yohane:Little_Demon_Hanamaru": {
     "NAME":  "Little Demon Hanamaru",
     "DESCRIPTION": "Summon 1 Hanamaru. NL Playing this card with Hanamaru already on the field Evolves her."

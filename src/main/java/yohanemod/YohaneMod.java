@@ -18,12 +18,18 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yohanemod.cards.*;
-import yohanemod.cards.Deprecated.Counter;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.AngelWings;
-import yohanemod.summons.*;
+import yohanemod.summons.Chika.ChikaChoiceCards;
+import yohanemod.summons.Chika.ChikaNumbers;
+import yohanemod.summons.Hanamaru.HanamaruChoiceCards;
+import yohanemod.summons.Hanamaru.HanamaruNumbers;
+import yohanemod.summons.Lily.LilyChoiceCards;
+import yohanemod.summons.Lily.LilyNumbers;
+import yohanemod.summons.Ruby.RubyChoiceCards;
+import yohanemod.summons.Ruby.RubyNumbers;
 
 import java.nio.charset.StandardCharsets;
 
@@ -93,7 +99,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         final String[] FallenEnergy = {"fallen"};
         BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it.");
         final String[] Summon = {"summon, summons"};
-        BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of ally.");
+        BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of Summon.");
         final String[] Lily = {"lily"};
         String lilyDesc = String.format("A Little Demon with %d HP and can either deal %d damage to a random enemy, or give you %d Fallen Energy.",
                 LilyNumbers.lilyHP, LilyNumbers.lilyAttackDamage, LilyNumbers.lilyChargeAmount);
@@ -114,6 +120,11 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         String hanamaruDesc = String.format("A Little Demon with %d HP and can apply %d Sin to ALL enemies, give %d Block to ALL allies and herself, or Exhume one card once until evolved.",
                 HanamaruNumbers.hanamaruHP, HanamaruNumbers.hanamaruSin, HanamaruNumbers.hanamaruBlock);
         BaseMod.addKeyword(Hanamaru, hanamaruDesc);
+        final String[] Chika = {"chika"};
+        String chikaDesc = String.format("A Little Demon with %d HP and can deal %d damage to ALL the lowest HP enemy or heal all Summons for %d HP.",
+                ChikaNumbers.ChikaHP, ChikaNumbers.ChikaAttackDamage, ChikaNumbers.ChikaHeal);
+        BaseMod.addKeyword(Chika, chikaDesc);
+
         logger.info("finish editing keywords");
     }
 
@@ -159,6 +170,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Introspection());
              BaseMod.addCard(new Koi_Ni_Naritai());
              BaseMod.addCard(new Kowareyasuki());
+             BaseMod.addCard(new Little_Demon_Chika());
              BaseMod.addCard(new Little_Demon_Hanamaru());
              BaseMod.addCard(new Little_Demon_Lily());
              BaseMod.addCard(new Little_Demon_Recruit());
@@ -181,7 +193,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Runaway_Umbrella());
              BaseMod.addCard(new Schwarz_Sechs());
              BaseMod.addCard(new Shadow_Gate());
-             BaseMod.addCard(new Silence());
              BaseMod.addCard(new Sloth());
              BaseMod.addCard(new Snow_Halation());
              BaseMod.addCard(new Solitude());
@@ -197,6 +208,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Wrath());
              BaseMod.addCard(new Yousoro());
 
+             BaseMod.addCard(new ChikaChoiceCards());
              BaseMod.addCard(new HanamaruChoiceCards());
              BaseMod.addCard(new LilyChoiceCards());
              BaseMod.addCard(new RubyChoiceCards());

@@ -1,8 +1,7 @@
-package yohanemod.summons;
+package yohanemod.summons.Ruby;
 
 import actions.ChooseAction;
 import actions.ChooseActionInfo;
-import cards.MonsterCard;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
@@ -12,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import monsters.AbstractFriendlyMonster;
-import yohanemod.powers.RubyStrength;
 
 import java.util.ArrayList;
 

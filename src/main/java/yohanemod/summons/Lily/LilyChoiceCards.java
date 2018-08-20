@@ -1,16 +1,16 @@
-package yohanemod.summons;
+package yohanemod.summons.Lily;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HanamaruChoiceCards extends CustomCard {
-    public static final String ID = "HanamaruChoiceCards";
-    public static final String NAME = "Hanamaru Moves";
+public class LilyChoiceCards extends CustomCard {
+    public static final String ID = "LilyChoiceCards";
+    public static final String NAME = "Lily Moves";
 
-    public HanamaruChoiceCards() {
-        super(ID, NAME, "cards/HanamaruChoiceCards.png", -2, "NONE", CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF_AND_ENEMY);
+    public LilyChoiceCards() {
+        super(ID, NAME, "cards/LilyChoiceCards.png", -2, "NONE", CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF_AND_ENEMY);
 
     }
 
@@ -22,7 +22,7 @@ public class HanamaruChoiceCards extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new HanamaruChoiceCards();
+        return new LilyChoiceCards();
     }
 
     //When selected a custom Action will happen. This isn't needed.
