@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class Hanamaru extends AbstractFriendlyMonster {
     public static String NAME = "Hanamaru";
-    public static String ID = "Yohane:Hanamaru";
+    public static String ID = "Hanamaru";
     private int upgradeCount;
     private ArrayList<ChooseActionInfo> moveInfo;
     private boolean hasAttacked = false;

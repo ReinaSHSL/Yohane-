@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.powers.HanamaruStrength;
 import yohanemod.powers.LilyStrength;
 import yohanemod.powers.RubyStrength;
 import yohanemod.powers.Sin;
@@ -27,7 +28,7 @@ public class Koi_Ni_Naritai extends CustomCard {
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.ENEMY;
-    private int SinAmount = 0;
+    private int sinAmount = 0;
 
     public Koi_Ni_Naritai() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -41,20 +42,29 @@ public class Koi_Ni_Naritai extends CustomCard {
         if (m.hasPower(Sin.POWER_ID)) {
             if (p instanceof AbstractPlayerWithMinions) {
                 AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
-                SinAmount = m.getPower(Sin.POWER_ID).amount;
+                sinAmount = m.getPower(Sin.POWER_ID).amount;
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, Sin.POWER_ID));
                 if (player.minions.monsters.size() != 0) {
                     String summon0 = player.minions.monsters.get(0).id;
                     switch (summon0) {
                         case "Lily":
                             AbstractMonster Lily = player.minions.monsters.get(0);
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, SinAmount), SinAmount));
-                            com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
+                            for (int i = 0; i < sinAmount; i++) {
+                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, sinAmount), sinAmount));
+                            }
+                            
                             break;
                         case "Ruby":
                             AbstractMonster Ruby = player.minions.monsters.get(0);
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(player, SinAmount), SinAmount));
-                            com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
+                            for (int i = 0; i < sinAmount; i++) {
+                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, sinAmount), sinAmount));
+                            }
+                            break;
+                        case "Hanamaru":
+                            AbstractMonster Hanamaru = player.minions.monsters.get(0);
+                            for (int i = 0; i < sinAmount; i++) {
+                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, sinAmount), sinAmount));
+                            }
                             break;
                         default:
                             break;
@@ -64,13 +74,21 @@ public class Koi_Ni_Naritai extends CustomCard {
                         switch (summon1) {
                             case "Lily":
                                 AbstractMonster Lily = player.minions.monsters.get(1);
-                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, SinAmount), SinAmount));
-                                com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
+                                for (int i = 0; i < sinAmount; i++) {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, sinAmount), sinAmount));
+                                }
                                 break;
                             case "Ruby":
                                 AbstractMonster Ruby = player.minions.monsters.get(1);
-                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(player, SinAmount), SinAmount));
-                                com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
+                                for (int i = 0; i < sinAmount; i++) {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, sinAmount), sinAmount));
+                                }
+                                break;
+                            case "Hanamaru":
+                                AbstractMonster Hanamaru = player.minions.monsters.get(1);
+                                for (int i = 0; i < sinAmount; i++) {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, sinAmount), sinAmount));
+                                }
                                 break;
                             default:
                                 break;

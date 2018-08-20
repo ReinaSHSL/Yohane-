@@ -44,8 +44,7 @@ public class Little_Demon_Hanamaru extends CustomCard {
                 if (player.minions.monsters.get(0).id.equals(Hanamaru.ID)) {
                     //Upgrade
                     AbstractMonster Hanamaru0Upgraded = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru0Upgraded, p, new HanamaruStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Hanamaru0Upgraded, Hanamaru0Upgraded, 5));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru0Upgraded, p, new HanamaruStrength(Hanamaru0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
                     player.addMinion(new yohanemod.summons.Hanamaru(-1150F));
@@ -55,13 +54,11 @@ public class Little_Demon_Hanamaru extends CustomCard {
                 if (player.minions.monsters.get(0).id.equals(Hanamaru.ID)) {
                     //Upgrade
                     AbstractMonster Hanamaru0Upgraded = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru0Upgraded, p, new HanamaruStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Hanamaru0Upgraded, Hanamaru0Upgraded, 5));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru0Upgraded, p, new HanamaruStrength(Hanamaru0Upgraded, 1), 1));
                 } else if (player.minions.monsters.get(1).id.equals(Hanamaru.ID)) {
                     //Upgrade
                     AbstractMonster Hanamaru1Upgraded = player.minions.monsters.get(1);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru1Upgraded, p, new HanamaruStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Hanamaru1Upgraded, Hanamaru1Upgraded, 5));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru1Upgraded, p, new HanamaruStrength(Hanamaru1Upgraded, 1), 1));
                 }
             } else {
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I can't summon another Little Demon!", 1.0F, 2.0F));

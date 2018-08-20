@@ -54,8 +54,7 @@ public class Little_Demon_Ruby extends CustomCard {
                 if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {
                     //Upgrade
                     AbstractMonster ruby0Upgraded = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0Upgraded, abstractPlayer, new RubyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(ruby0Upgraded, ruby0Upgraded, 5));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0Upgraded, abstractPlayer, new RubyStrength(ruby0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
                     player.addMinion(new yohanemod.summons.Ruby(-1150F));
@@ -64,13 +63,11 @@ public class Little_Demon_Ruby extends CustomCard {
                 if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {
                     //Upgrade
                     AbstractMonster ruby0Upgraded = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0Upgraded, abstractPlayer, new RubyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(ruby0Upgraded, ruby0Upgraded, 5));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0Upgraded, abstractPlayer, new RubyStrength(ruby0Upgraded, 1), 1));
                 } else if (player.minions.monsters.get(1).id.equals(Ruby.ID)) {
                     //Upgrade
                     AbstractMonster ruby1Upgraded = player.minions.monsters.get(1);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby1Upgraded, abstractPlayer, new RubyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(ruby1Upgraded, ruby1Upgraded, 5));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby1Upgraded, abstractPlayer, new RubyStrength(ruby1Upgraded, 1), 1));
                 }
             } else {
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I can't summon another Little Demon!", 1.0F, 2.0F));

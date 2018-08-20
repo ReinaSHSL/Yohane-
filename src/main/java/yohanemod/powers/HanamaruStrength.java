@@ -3,9 +3,11 @@ package yohanemod.powers;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import monsters.AbstractFriendlyMonster;
 import yohanemod.summons.Hanamaru;
 import yohanemod.summons.HanamaruNumbers;
 import yohanemod.summons.LilyNumbers;
@@ -16,10 +18,10 @@ public class HanamaruStrength extends AbstractPower {
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public HanamaruStrength(AbstractPlayer p, int amount) {
+    public HanamaruStrength(AbstractMonster m, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
-        this.owner = p;
+        this.owner = m;
         this.amount = amount;
         updateDescription();
         this.img = getHanamaruStrengthTexture();
@@ -28,6 +30,7 @@ public class HanamaruStrength extends AbstractPower {
     @Override
     public void onInitialApplication() {
         Hanamaru.canExhume = true;
+        this.owner.increaseMaxHp(3, true);
     }
 
     @Override
@@ -41,6 +44,7 @@ public class HanamaruStrength extends AbstractPower {
     @Override
     public void stackPower(int stackAmount)
     {
+        this.owner.increaseMaxHp(3, true);
         this.fontScale = 8.0F;
         this.amount += stackAmount;
         Hanamaru.canExhume = true;

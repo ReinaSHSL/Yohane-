@@ -54,8 +54,7 @@ public class Little_Demon_Lily extends CustomCard {
                 if (player.minions.monsters.get(0).id.equals(Lily.ID)) {
                     //Upgrade
                     AbstractMonster lily0Upgraded = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0Upgraded, abstractPlayer, new LilyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(lily0Upgraded, lily0Upgraded, 5));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0Upgraded, abstractPlayer, new LilyStrength(lily0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
                     player.addMinion(new yohanemod.summons.Lily(-1150F));
@@ -64,13 +63,11 @@ public class Little_Demon_Lily extends CustomCard {
                 if (player.minions.monsters.get(0).id.equals(Lily.ID)) {
                     //Upgrade
                     AbstractMonster lily0Upgraded = player.minions.monsters.get(0);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0Upgraded, abstractPlayer, new LilyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(lily0Upgraded, lily0Upgraded, 5));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0Upgraded, abstractPlayer, new LilyStrength(lily0Upgraded, 1), 1));
                 } else if (player.minions.monsters.get(1).id.equals(Lily.ID)) {
                     //Upgrade
                     AbstractMonster lily1Upgraded = player.minions.monsters.get(1);
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily1Upgraded, abstractPlayer, new LilyStrength(player, 1), 1));
-                    com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(lily1Upgraded, lily1Upgraded, 5));
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily1Upgraded, abstractPlayer, new LilyStrength(lily1Upgraded, 1), 1));
                 }
             } else {
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I can't summon another Little Demon!", 1.0F, 2.0F));

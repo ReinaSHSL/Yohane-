@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
+import yohanemod.powers.HanamaruStrength;
 import yohanemod.powers.LilyStrength;
 import yohanemod.powers.RubyStrength;
 
@@ -54,13 +55,15 @@ public class Awakening extends CustomCard {
                 switch (summon0) {
                     case "Lily":
                         AbstractMonster Lily = player.minions.monsters.get(0);
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, 1), 1));
-                        com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, 1), 1));
                         break;
                     case "Ruby":
                         AbstractMonster Ruby = player.minions.monsters.get(0);
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(player, 1), 1));
-                        com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, 1), 1));
+                        break;
+                    case "Hanamaru":
+                        AbstractMonster Hanamaru = player.minions.monsters.get(0);
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
                         break;
                     default:
                         break;
@@ -70,13 +73,16 @@ public class Awakening extends CustomCard {
                     switch (summon1) {
                         case "Lily":
                             AbstractMonster Lily = player.minions.monsters.get(1);
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(player, 1), 1));
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, 1), 1));
                             com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Lily, Lily, 5));
                             break;
                         case "Ruby":
                             AbstractMonster Ruby = player.minions.monsters.get(1);
-                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(player, 1), 1));
-                            com.megacrit.cardcrawl.dungeons.AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.HealAction(Ruby, Ruby, 5));
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, 1), 1));
+                            break;
+                        case "Hanamaru":
+                            AbstractMonster Hanamaru = player.minions.monsters.get(1);
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
                             break;
                         default:
                             break;
