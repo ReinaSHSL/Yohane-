@@ -64,7 +64,7 @@ public class Chika extends AbstractFriendlyMonster {
         ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
         target = AbstractDungeon.getRandomMonster();
         String attackDesc = String.format("Deal %d damage to the lowest HP enemy. Scales twice as fast from Evolution.", attackDamage);
-        String healDesc = String.format("Heal ALL Summons for #d Health.", healAmount);
+        String healDesc = String.format("Heal ALL Summons for %d Health.", healAmount);
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                if (!m.isDeadOrEscaped()) {
                    if (target == null) {

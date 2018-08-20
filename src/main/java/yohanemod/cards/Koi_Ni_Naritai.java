@@ -51,26 +51,26 @@ public class Koi_Ni_Naritai extends CustomCard {
                         case "Lily":
                             AbstractMonster Lily = player.minions.monsters.get(0);
                             for (int i = 0; i < sinAmount; i++) {
-                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, sinAmount), sinAmount));
+                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, 1), 1));
                             }
                             
                             break;
                         case "Ruby":
                             AbstractMonster Ruby = player.minions.monsters.get(0);
                             for (int i = 0; i < sinAmount; i++) {
-                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, sinAmount), sinAmount));
+                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, 1), 1));
                             }
                             break;
                         case "Hanamaru":
                             AbstractMonster Hanamaru = player.minions.monsters.get(0);
                             for (int i = 0; i < sinAmount; i++) {
-                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, sinAmount), sinAmount));
+                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
                             }
                             break;
                         case "Chika":
                             AbstractMonster Chika = player.minions.monsters.get(0);
                             for (int i = 0; i < sinAmount; i++) {
-                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, sinAmount), sinAmount));
+                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
                             }
                             break;
                         default:
@@ -82,25 +82,25 @@ public class Koi_Ni_Naritai extends CustomCard {
                             case "Lily":
                                 AbstractMonster Lily = player.minions.monsters.get(1);
                                 for (int i = 0; i < sinAmount; i++) {
-                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, sinAmount), sinAmount));
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, 1), 1));
                                 }
                                 break;
                             case "Ruby":
                                 AbstractMonster Ruby = player.minions.monsters.get(1);
                                 for (int i = 0; i < sinAmount; i++) {
-                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, sinAmount), sinAmount));
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, 1), 1));
                                 }
                                 break;
                             case "Hanamaru":
                                 AbstractMonster Hanamaru = player.minions.monsters.get(1);
                                 for (int i = 0; i < sinAmount; i++) {
-                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, sinAmount), sinAmount));
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
                                 }
                                 break;
                             case "Chika":
                                 AbstractMonster Chika = player.minions.monsters.get(1);
                                 for (int i = 0; i < sinAmount; i++) {
-                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, sinAmount), sinAmount));
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
                                 }
                                 break;
                             default:

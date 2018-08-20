@@ -90,8 +90,8 @@
     "NAME": "Kagayakitai!",
     "DESCRIPTIONS": [
       "Attacking does #b",
-      " damage to the lowest health enemy. Healing heals for #b",
-      " #y to all #ySummons."
+      " damage to the lowest health enemy. Healing heals #b",
+      " to all #ySummons."
     ]
   },
 
