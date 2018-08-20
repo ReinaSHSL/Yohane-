@@ -1,4 +1,4 @@
-package yohanemod.cards;
+package yohanemod.cards.Deprecated;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -41,7 +41,7 @@ public class Feather_Curse extends CustomCard {
                 new DamageInfo(p, this.damage, this.damageTypeForTurn),
                 AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction(new
-                yohanemod.cards.Feather(), 2, true, false));
+                Feather(), 2, true, false));
     }
 
 

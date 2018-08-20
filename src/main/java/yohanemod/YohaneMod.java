@@ -22,6 +22,7 @@ import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.AngelWings;
+import yohanemod.screens.LittleDemonScreen;
 import yohanemod.summons.Chika.ChikaChoiceCards;
 import yohanemod.summons.Chika.ChikaNumbers;
 import yohanemod.summons.Hanamaru.HanamaruChoiceCards;
@@ -57,6 +58,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     private static final String Yohane_Portrait = "charstuff/YohaneBG.png";
     private static final String Yohane_Button = "charstuff/YohaneButton.png";
     public static boolean optOutMetrics = false;
+    public static LittleDemonScreen lds;
 
     public YohaneMod() {
         //TODO Everything
@@ -110,8 +112,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         BaseMod.addKeyword(Ruby, rubyDesc);
         final String[] Evolves = {"evolves, evolve"};
         BaseMod.addKeyword(Evolves,"Strengthen a summon, dependant on the summon, and raise max HP by 3.");
-        final String[] Feather = {"feather, feathers"};
-        BaseMod.addKeyword(Feather,"A Curse which exhausts your entire hand except for cards that say Feather at the end of the turn.");
 		final String[] Sin = {"sin"};
 		BaseMod.addKeyword(Sin,"Deal and take extra damage equal to the amount of Sin a monster has. Removed upon being hit.");
         final String[] Secret = {"secret"};
@@ -151,10 +151,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Envious());
              BaseMod.addCard(new Excitement());
              BaseMod.addCard(new Fallen_Dragon_Phoenix_Hold());
-             BaseMod.addCard(new Feather());
-             BaseMod.addCard(new Feather_Curse());
-             BaseMod.addCard(new Feather_Storm());
-             BaseMod.addCard(new Feather_Tap());
              BaseMod.addCard(new Gluttony());
              BaseMod.addCard(new Go_All_Out());
              BaseMod.addCard(new Grace_Under_Fire());

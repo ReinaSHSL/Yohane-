@@ -1,4 +1,4 @@
-package yohanemod.cards;
+package yohanemod.cards.Deprecated;
 
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.math.MathUtils;
