@@ -166,6 +166,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Introspection());
              BaseMod.addCard(new Koi_Ni_Naritai());
              BaseMod.addCard(new Kowareyasuki());
+             BaseMod.addCard(new Little_Demon_Change());
              BaseMod.addCard(new Little_Demon_Chika());
              BaseMod.addCard(new Little_Demon_Hanamaru());
              BaseMod.addCard(new Little_Demon_Lily());
@@ -208,6 +209,8 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new HanamaruChoiceCards());
              BaseMod.addCard(new LilyChoiceCards());
              BaseMod.addCard(new RubyChoiceCards());
+             BaseMod.addCard(new LittleDemonFirst());
+             BaseMod.addCard(new LittleDemonSecond());
 	 }
 
     public void receivePostInitialize() {

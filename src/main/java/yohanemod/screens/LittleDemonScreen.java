@@ -20,7 +20,7 @@ import org.apache.logging.log4j.*;
 public class LittleDemonScreen extends CardRewardScreen{
     private static final Logger logger;
     private static final UIStrings uiStrings;
-    public static final String[] TEXT;
+    private static final String[] TEXT;
     private static final float PAD_X;
     private static final float CARD_TARGET_Y;
     public ArrayList<AbstractCard> rewardGroup;

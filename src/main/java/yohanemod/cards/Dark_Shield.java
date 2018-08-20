@@ -32,7 +32,11 @@ public class Dark_Shield extends CustomCard {
     }
 
     public boolean hasEnoughEnergy() {
-        return (AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID)) && (AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= 0) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
+        boolean retVal = super.hasEnoughEnergy();
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn)) {
+            retVal = false;
+        }
+        return retVal;
     }
 
     @Override

@@ -40,13 +40,17 @@ public class Nocturne extends CustomCard {
     }
 
     public boolean hasEnoughEnergy() {
-        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.misc && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
+        boolean retVal = super.hasEnoughEnergy();
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn)) {
+            retVal = false;
+        }
+        return retVal;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount >= this.misc) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new FallenEnergy(m, -this.misc), -this.misc));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(m, -this.misc), -this.misc));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         } else {

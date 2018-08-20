@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.YohaneMod;
 import yohanemod.cards.*;
+import yohanemod.screens.LittleDemonScreen;
 import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Chika.ChikaStrength;
 import yohanemod.summons.Hanamaru.Hanamaru;
@@ -52,7 +53,8 @@ public class LittleDemonChangeAction extends com.megacrit.cardcrawl.actions.Abst
     public void update() {
         AbstractMonster summonToChange;
         if (this.duration == Settings.ACTION_DUR_FAST) {
-            YohaneMod.lds.open(this.list, null, "Pick Little Demon to change.");
+           LittleDemonScreen lds = new LittleDemonScreen();
+            lds.open(this.list, null, "Pick Little Demon to change.");
             tickDuration();
             return;
         }
@@ -76,6 +78,18 @@ public class LittleDemonChangeAction extends com.megacrit.cardcrawl.actions.Abst
                     AbstractCard c = (AbstractCard) var5.next();
                     if (summons.contains(c)) {
                         tmp.addToRandomSpot(c);
+                    }
+                }
+
+                for (AbstractCard ca : this.p.discardPile.group) {
+                    if (summons.contains(ca)) {
+                        tmp.addToRandomSpot(ca);
+                    }
+                }
+
+                for (AbstractCard ca : this.p.hand.group) {
+                    if (summons.contains(ca)) {
+                        tmp.addToRandomSpot(ca);
                     }
                 }
 

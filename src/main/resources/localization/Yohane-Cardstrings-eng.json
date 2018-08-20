@@ -127,7 +127,7 @@
   },
   "Yohane:Guilty_Kiss": {
     "NAME":  "Guilty Kiss",
-    "DESCRIPTION": "If only [G]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times."
+    "DESCRIPTION": "If only [G]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times instead."
   },
   "Yohane:Hakodate": {
     "NAME": "Hakodate",
@@ -169,6 +169,10 @@
   "Yohane:Kowareyasuki": {
     "NAME": "Kowareyasuki",
     "DESCRIPTION": "Innate. NL Apply !M! Weak to all enemies. NL Exhaust."
+  },
+  "Yohane:Little_Demon_Change": {
+    "NAME":  "Little Demon Change",
+    "DESCRIPTION": "Select one Summon. NL Swap it out for another in your deck. NL Retain Evolutions."
   },
   "Yohane:Little_Demon_Chika": {
     "NAME":  "Little Demon Chika",

@@ -2,6 +2,7 @@ package yohanemod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,12 +13,14 @@ import yohanemod.powers.FallenEnergy;
 public class GoAllOutAction extends com.megacrit.cardcrawl.actions.AbstractGameAction {
     private int magicNumber = 0;
     private AbstractPlayer p;
+    private int draw;
 
-    public GoAllOutAction (int magicNumber) {
+    public GoAllOutAction (int magicNumber, int misc) {
         this.p = AbstractDungeon.player;
         this.magicNumber = magicNumber;
         this.actionType = AbstractGameAction.ActionType.SPECIAL;
         this.duration = 0.8F;
+        this.draw = misc;
     }
 
     @Override
@@ -59,6 +62,7 @@ public class GoAllOutAction extends com.megacrit.cardcrawl.actions.AbstractGameA
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, new FallenEnergy(this.p,
                     FallenGain * this.magicNumber), FallenGain * this.magicNumber));
         }
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.draw));
         tickDuration();
     }
 }
