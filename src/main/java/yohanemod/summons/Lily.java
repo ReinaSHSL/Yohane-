@@ -5,6 +5,7 @@ import actions.ChooseActionInfo;
 import cards.MonsterCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,6 +30,11 @@ public class Lily extends AbstractFriendlyMonster {
         super(NAME, ID, LilyNumbers.lilyHP,
                 null, -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", offSetX, 0);
 
+    }
+
+    @Override
+    public void applyStartOfTurnPowers() {
+        AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(this, this, this.currentBlock));
     }
 
     @Override

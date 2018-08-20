@@ -5,6 +5,7 @@ import actions.ChooseActionInfo;
 import cards.MonsterCard;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,6 +30,11 @@ public class Ruby extends AbstractFriendlyMonster {
     public Ruby(float offsetX) {
         super(NAME, ID, RubyNumbers.rubyHP,
                 null, 15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", offsetX, 0);
+    }
+
+    @Override
+    public void applyStartOfTurnPowers() {
+        AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(this, this, this.currentBlock));
     }
 
     @Override

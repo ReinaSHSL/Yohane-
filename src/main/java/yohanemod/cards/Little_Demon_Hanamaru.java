@@ -39,6 +39,7 @@ public class Little_Demon_Hanamaru extends CustomCard {
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
                 player.addMinion(new yohanemod.summons.Hanamaru(-750F));
+                Hanamaru.canExhume = true;
             } else if (summonCount == 1) {
                 if (player.minions.monsters.get(0).id.equals(Hanamaru.ID)) {
                     //Upgrade
@@ -48,6 +49,7 @@ public class Little_Demon_Hanamaru extends CustomCard {
                 } else {
                     //No Upgrade
                     player.addMinion(new yohanemod.summons.Hanamaru(-1150F));
+                    Hanamaru.canExhume = true;
                 }
             } else if (summonCount == 2) {
                 if (player.minions.monsters.get(0).id.equals(Hanamaru.ID)) {
