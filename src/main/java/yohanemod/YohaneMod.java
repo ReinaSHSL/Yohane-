@@ -1,7 +1,6 @@
 package yohanemod;
 
 import basemod.BaseMod;
-import basemod.ModLabel;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.interfaces.*;
@@ -19,10 +18,14 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yohanemod.cards.*;
+import yohanemod.cards.Deprecated.Counter;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.AngelWings;
+import yohanemod.summons.HanamaruNumbers;
+import yohanemod.summons.LilyNumbers;
+import yohanemod.summons.RubyNumbers;
 
 import java.nio.charset.StandardCharsets;
 
@@ -94,9 +97,13 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         final String[] Summon = {"summon, summons"};
         BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of ally.");
         final String[] Lily = {"lily"};
-        BaseMod.addKeyword(Lily,"A Little Demon with 15 HP and can either deal 5 damage to a random enemy, or give you 3 Fallen Energy.");
+        String lilyDesc = String.format("A Little Demon with %d HP and can either deal %d damage to a random enemy, or give you %d Fallen Energy.",
+                LilyNumbers.lilyHP, LilyNumbers.lilyAttackDamage, LilyNumbers.lilyChargeAmount);
+        BaseMod.addKeyword(Lily, lilyDesc);
         final String[] Ruby = {"ruby"};
-        BaseMod.addKeyword(Ruby,"A Little Demon with 12 HP and can either deal 2 damage to all enemies, or give you 5 Block.");
+        String rubyDesc = String.format("A Little Demon with %d HP and can either deal %d damage to all enemies, or give you %d Block.",
+                RubyNumbers.rubyHP, RubyNumbers.rubyAttackDamage, RubyNumbers.rubyBlockAmount);
+        BaseMod.addKeyword(Ruby, rubyDesc);
         final String[] Evolves = {"evolves, evolve"};
         BaseMod.addKeyword(Evolves,"Strengthen a summon, dependant on the summon, and heal them for 5 HP.");
         final String[] Feather = {"feather, feathers"};
@@ -105,6 +112,10 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		BaseMod.addKeyword(Sin,"Deal and take extra damage equal to the amount of Sin a monster has. Removed upon being hit.");
         final String[] Secret = {"secret"};
         BaseMod.addKeyword(Secret,"These cards are retained and have effects while in the hand. Discarded upon use.");
+        final String[] Hanamaru = {"hanamaru"};
+        String hanamaruDesc = String.format("A Little Demon with %d HP and can apply %d Sin to ALL enemies, give %d Block to ALL allies and herself, or Exhume one card once until evolved.",
+                HanamaruNumbers.hanamaruHP, HanamaruNumbers.hanamaruSin, HanamaruNumbers.hanamaruBlock);
+        BaseMod.addKeyword(Hanamaru, hanamaruDesc);
         logger.info("finish editing keywords");
     }
 
@@ -118,7 +129,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Awakening());
              BaseMod.addCard(new Backfoot());
              BaseMod.addCard(new City_Of_Sin());
-             BaseMod.addCard(new Counter());
              BaseMod.addCard(new Culinary_Genius());
              BaseMod.addCard(new Curse_The_Heavens());
              BaseMod.addCard(new Cursed_Strike());
@@ -151,6 +161,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Introspection());
              BaseMod.addCard(new Koi_Ni_Naritai());
              BaseMod.addCard(new Kowareyasuki());
+             BaseMod.addCard(new Little_Demon_Hanamaru());
              BaseMod.addCard(new Little_Demon_Lily());
              BaseMod.addCard(new Little_Demon_Recruit());
              BaseMod.addCard(new Little_Demon_Ruby());

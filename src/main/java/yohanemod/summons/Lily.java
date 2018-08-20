@@ -2,24 +2,14 @@ package yohanemod.summons;
 
 import actions.ChooseAction;
 import actions.ChooseActionInfo;
-import basemod.interfaces.OnCardUseSubscriber;
-import basemod.interfaces.OnStartBattleSubscriber;
-import basemod.interfaces.PostRenderSubscriber;
-import basemod.interfaces.RenderSubscriber;
 import cards.MonsterCard;
-import characters.AbstractPlayerWithMinions;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Darkling;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import monsters.AbstractFriendlyMonster;
 import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.LilyStrength;
@@ -36,7 +26,7 @@ public class Lily extends AbstractFriendlyMonster {
     private AbstractMonster target;
 
     public Lily(float offSetX) {
-        super(NAME, ID, 15,
+        super(NAME, ID, LilyNumbers.lilyHP,
                 null, -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", offSetX, 0);
 
     }
@@ -64,8 +54,8 @@ public class Lily extends AbstractFriendlyMonster {
         if (this.hasPower(LilyStrength.POWER_ID) && this.getPower(LilyStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(LilyStrength.POWER_ID).amount;
         }
-        int attackDamage = (5 + upgradeCount);
-        int chargeAmount = (3 + upgradeCount);
+        int attackDamage = (LilyNumbers.lilyAttackDamage + upgradeCount);
+        int chargeAmount = (LilyNumbers.lilyChargeAmount + upgradeCount);
         ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
         target = AbstractDungeon.getRandomMonster();
         String attackDesc = String.format("Deal %d damage to a random enemy.", attackDamage);

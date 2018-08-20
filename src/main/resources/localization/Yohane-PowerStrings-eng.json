@@ -68,6 +68,14 @@
       " Fallen Energy."
     ]
   },
+  "Yohane:HanamaruStrength": {
+    "NAME": "Mirai Zura!",
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " Sin to ALL enemies or give all allies including herself #b",
+      " Block."
+    ]
+  },
   "Yohane:RubyStrength": {
     "NAME": "Ganbaruby!",
     "DESCRIPTIONS": [

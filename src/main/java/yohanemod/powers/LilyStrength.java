@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import yohanemod.summons.LilyNumbers;
 
 public class LilyStrength extends AbstractPower{
     public static final String POWER_ID = "Yohane:LilyStrength";
@@ -24,8 +25,8 @@ public class LilyStrength extends AbstractPower{
     @Override
     public void updateDescription()
     {
-        int damage = (5 + this.amount);
-        int charge = (3 + this.amount);
+        int damage = (LilyNumbers.lilyAttackDamage + this.amount);
+        int charge = (LilyNumbers.lilyChargeAmount + this.amount);
         this.description = (DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + charge + DESCRIPTIONS[2]);
     }
 

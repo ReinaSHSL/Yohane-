@@ -27,7 +27,7 @@ public class Ruby extends AbstractFriendlyMonster {
     public boolean isDamageModified = false;
 
     public Ruby(float offsetX) {
-        super(NAME, ID, 12,
+        super(NAME, ID, RubyNumbers.rubyHP,
                 null, 15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", offsetX, 0);
     }
 
@@ -54,8 +54,8 @@ public class Ruby extends AbstractFriendlyMonster {
         if (this.hasPower(RubyStrength.POWER_ID) && this.getPower(RubyStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(RubyStrength.POWER_ID).amount;
         }
-        int attackDamage = (2 + upgradeCount);
-        int blockAmount = (5 + upgradeCount);
+        int attackDamage = (RubyNumbers.rubyAttackDamage + upgradeCount);
+        int blockAmount = (RubyNumbers.rubyBlockAmount + upgradeCount);
         target = AbstractDungeon.getRandomMonster();
         String attackDesc = String.format("Deal %d damage to ALL enemies.", attackDamage);
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
