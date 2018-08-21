@@ -58,7 +58,7 @@ for (let i = 0; i < listItems.length; i++) {
     }
 }
 
- */
+
 
 @SpirePatch(
         cls="com.megacrit.cardcrawl.metrics.Metrics",
@@ -178,3 +178,4 @@ public class MetricsPatch {
         }
     }
 }
+ */

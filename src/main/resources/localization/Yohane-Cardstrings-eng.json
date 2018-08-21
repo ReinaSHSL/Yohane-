@@ -200,6 +200,14 @@
     "NAME": "Little Demon Support",
     "DESCRIPTION": "Each Summon gains !B! Block."
   },
+  "Yohane:LittleDemonFirst": {
+    "NAME": "Right Little Demon",
+    "DESCRIPTION": "Swap out the right Little Demon."
+  },
+  "Yohane:LittleDemonSecond": {
+    "NAME": "Left Little Demon",
+    "DESCRIPTION": "Swap out the left Little Demon."
+  },
   "Yohane:Livestream_Donation": {
     "NAME":  "Livestream Donation",
     "DESCRIPTION": "Gain !F! Fallen Energy. NL Draw a card for every !M! cards in your draw pile."

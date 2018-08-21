@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.daily.DailyMods;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import yohanemod.patches.YohaneEnum;
+import yohanemod.screens.LittleDemonScreen;
 
 import java.util.ArrayList;
 
@@ -29,6 +30,8 @@ public class Yohane extends AbstractPlayerWithMinions {
 		if (Settings.dailyModsEnabled() && DailyMods.cardMods.get("Diverse")) {
 			this.masterMaxOrbs = 1;
 		}
+
+		YohaneMod.lds = new LittleDemonScreen();
 	}
 
 
