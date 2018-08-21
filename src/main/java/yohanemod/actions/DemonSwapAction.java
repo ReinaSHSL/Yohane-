@@ -37,10 +37,9 @@ public class DemonSwapAction extends AbstractGameAction {
         this.selected0 = selected0;
     }
 
-    private boolean summonCheck(AbstractCard c, AbstractPlayerWithMinions player) {
+    private boolean summonCheck(AbstractCard c) {
         return c.cardID.equals(Little_Demon_Ruby.ID) || c.cardID.equals(Little_Demon_Lily.ID)
-                || c.cardID.equals(Little_Demon_Hanamaru.ID) || c.cardID.equals(Little_Demon_Chika.ID)
-                && (!c.rawDescription.contains(player.minions.monsters.get(0).id) || !c.rawDescription.contains(player.minions.monsters.get(1).id));
+                || c.cardID.equals(Little_Demon_Hanamaru.ID) || c.cardID.equals(Little_Demon_Chika.ID);
     }
 
     @Override
@@ -55,41 +54,37 @@ public class DemonSwapAction extends AbstractGameAction {
                 }
                 CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 for (AbstractCard ca : this.p.drawPile.group) {
-                    if (summonCheck(ca, player)) {
-                        System.out.println("Check draw");
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id) &&
+                            !ca.rawDescription.contains(player.minions.monsters.get(1).id))) {
                         tmp.addToRandomSpot(ca);
                     }
                 }
 
                 for (AbstractCard ca : this.p.discardPile.group) {
-                    if (summonCheck(ca, player)) {
-                        System.out.println("Check disc");
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id) &&
+                            !ca.rawDescription.contains(player.minions.monsters.get(1).id))) {
                         tmp.addToRandomSpot(ca);
                     }
                 }
 
                 for (AbstractCard ca : this.p.hand.group) {
-                    if (summonCheck(ca, player)) {
-                        System.out.println("Check hand");
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id) &&
+                            !ca.rawDescription.contains(player.minions.monsters.get(1).id))) {
                         tmp.addToRandomSpot(ca);
                     }
                 }
 
                 if (tmp.size() == 0) {
-                    System.out.println("Check -1");
                     this.isDone = true;
                 } else if (tmp.size() == 1) {
-                    System.out.println("Check 0");
                     this.card = tmp.getTopCard();
                     this.isDone = true;
                 } else {
-                    System.out.println("Check 1");
                     AbstractDungeon.gridSelectScreen.open(tmp, 1, TEXT[0], false);
                     this.tickDuration();
             }
         } else {
                 if (AbstractDungeon.gridSelectScreen.selectedCards.size() != 0) {
-                    System.out.println("Check 2");
                     for (AbstractCard ca : AbstractDungeon.gridSelectScreen.selectedCards) {
                         this.card = ca;
                         card.unhover();
@@ -106,10 +101,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Chika(-750F));
-                                        Chika = player.minions.monsters.get(0);
+                                        Chika = player.getMinions().getMonster(yohanemod.summons.Chika.Chika.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Chika);
+                                            player.minions.monsters.add(0, Chika);
+                                        }
                                     } else {
                                         player.addMinion(new Chika(-1150F));
-                                        Chika = player.minions.monsters.get(1);
+                                        Chika = player.getMinions().getMonster(yohanemod.summons.Chika.Chika.ID);
                                     }
 
                                     for (int i = 0; i < upgradeCount; i++) {
@@ -123,10 +122,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Chika(-750F));
-                                        Chika = player.minions.monsters.get(0);
+                                        Chika = player.getMinions().getMonster(yohanemod.summons.Chika.Chika.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Chika);
+                                            player.minions.monsters.add(0, Chika);
+                                        }
                                     } else {
                                         player.addMinion(new Chika(-1150F));
-                                        Chika = player.minions.monsters.get(1);
+                                        Chika = player.getMinions().getMonster(yohanemod.summons.Chika.Chika.ID);
                                     }
                                     for (int i = 0; i < upgradeCount; i++) {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
@@ -139,10 +142,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Chika(-750F));
-                                        Chika = player.minions.monsters.get(0);
+                                        Chika = player.getMinions().getMonster(yohanemod.summons.Chika.Chika.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Chika);
+                                            player.minions.monsters.add(0, Chika);
+                                        }
                                     } else {
                                         player.addMinion(new Chika(-1150F));
-                                        Chika = player.minions.monsters.get(1);
+                                        Chika = player.getMinions().getMonster(yohanemod.summons.Chika.Chika.ID);
                                     }
                                     for (int i = 0; i < upgradeCount; i++) {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
@@ -162,10 +169,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Ruby(-750F));
-                                        Ruby = player.minions.monsters.get(0);
+                                        Ruby = player.getMinions().getMonster(yohanemod.summons.Ruby.Ruby.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Ruby);
+                                            player.minions.monsters.add(0, Ruby);
+                                        }
                                     } else {
                                         player.addMinion(new Ruby(-1150F));
-                                        Ruby = player.minions.monsters.get(1);
+                                        Ruby = player.getMinions().getMonster(yohanemod.summons.Ruby.Ruby.ID);
                                     }
 
                                     for (int i = 0; i < upgradeCount; i++) {
@@ -179,10 +190,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Ruby(-750F));
-                                        Ruby = player.minions.monsters.get(0);
+                                        Ruby = player.getMinions().getMonster(yohanemod.summons.Ruby.Ruby.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Ruby);
+                                            player.minions.monsters.add(0, Ruby);
+                                        }
                                     } else {
                                         player.addMinion(new Ruby(-1150F));
-                                        Ruby = player.minions.monsters.get(1);
+                                        Ruby = player.getMinions().getMonster(yohanemod.summons.Ruby.Ruby.ID);
                                     }
                                     for (int i = 0; i < upgradeCount; i++) {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, 1), 1));
@@ -195,10 +210,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Ruby(-750F));
-                                        Ruby = player.minions.monsters.get(0);
+                                        Ruby = player.getMinions().getMonster(yohanemod.summons.Ruby.Ruby.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Ruby);
+                                            player.minions.monsters.add(0, Ruby);
+                                        }
                                     } else {
                                         player.addMinion(new Ruby(-1150F));
-                                        Ruby = player.minions.monsters.get(1);
+                                        Ruby = player.getMinions().getMonster(yohanemod.summons.Ruby.Ruby.ID);
                                     }
                                     for (int i = 0; i < upgradeCount; i++) {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, 1), 1));
@@ -218,10 +237,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Lily(-750F));
-                                        Lily = player.minions.monsters.get(0);
+                                        Lily = player.getMinions().getMonster(yohanemod.summons.Lily.Lily.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Lily);
+                                            player.minions.monsters.add(0, Lily);
+                                        }
                                     } else {
                                         player.addMinion(new Lily(-1150F));
-                                        Lily = player.minions.monsters.get(1);
+                                        Lily = player.getMinions().getMonster(yohanemod.summons.Lily.Lily.ID);
                                     }
 
                                     for (int i = 0; i < upgradeCount; i++) {
@@ -235,10 +258,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Lily(-750F));
-                                        Lily = player.minions.monsters.get(0);
+                                        Lily = player.getMinions().getMonster(yohanemod.summons.Lily.Lily.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Lily);
+                                            player.minions.monsters.add(0, Lily);
+                                        }
                                     } else {
                                         player.addMinion(new Lily(-1150F));
-                                        Lily = player.minions.monsters.get(1);
+                                        Lily = player.getMinions().getMonster(yohanemod.summons.Lily.Lily.ID);
                                     }
                                     for (int i = 0; i < upgradeCount; i++) {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, 1), 1));
@@ -251,10 +278,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Lily(-750F));
-                                        Lily = player.minions.monsters.get(0);
+                                        Lily = player.getMinions().getMonster(yohanemod.summons.Lily.Lily.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Lily);
+                                            player.minions.monsters.add(0, Lily);
+                                        }
                                     } else {
                                         player.addMinion(new Lily(-1150F));
-                                        Lily = player.minions.monsters.get(1);
+                                        Lily = player.getMinions().getMonster(yohanemod.summons.Lily.Lily.ID);
                                     }
                                     for (int i = 0; i < upgradeCount; i++) {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, 1), 1));
@@ -274,10 +305,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Hanamaru(-750F));
-                                        Hanamaru = player.minions.monsters.get(0);
+                                        Hanamaru = player.getMinions().getMonster(yohanemod.summons.Hanamaru.Hanamaru.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Hanamaru);
+                                            player.minions.monsters.add(0, Hanamaru);
+                                        }
                                     } else {
                                         player.addMinion(new Hanamaru(-1150F));
-                                        Hanamaru = player.minions.monsters.get(1);
+                                        Hanamaru = player.getMinions().getMonster(yohanemod.summons.Hanamaru.Hanamaru.ID);
                                     }
 
                                     for (int i = 0; i < upgradeCount; i++) {
@@ -291,10 +326,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Hanamaru(-750F));
-                                        Hanamaru = player.minions.monsters.get(0);
+                                        Hanamaru = player.getMinions().getMonster(yohanemod.summons.Hanamaru.Hanamaru.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Hanamaru);
+                                            player.minions.monsters.add(0, Hanamaru);
+                                        }
                                     } else {
                                         player.addMinion(new Hanamaru(-1150F));
-                                        Hanamaru = player.minions.monsters.get(1);
+                                        Hanamaru = player.getMinions().getMonster(yohanemod.summons.Hanamaru.Hanamaru.ID);
                                     }
                                     for (int i = 0; i < upgradeCount; i++) {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
@@ -307,10 +346,14 @@ public class DemonSwapAction extends AbstractGameAction {
                                     summonToChange.die();
                                     if (selected0) {
                                         player.addMinion(new Hanamaru(-750F));
-                                        Hanamaru = player.minions.monsters.get(0);
+                                        Hanamaru = player.getMinions().getMonster(yohanemod.summons.Hanamaru.Hanamaru.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Hanamaru);
+                                            player.minions.monsters.add(0, Hanamaru);
+                                        }
                                     } else {
                                         player.addMinion(new Hanamaru(-1150F));
-                                        Hanamaru = player.minions.monsters.get(1);
+                                        Hanamaru = player.getMinions().getMonster(yohanemod.summons.Hanamaru.Hanamaru.ID);
                                     }
                                     for (int i = 0; i < upgradeCount; i++) {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
