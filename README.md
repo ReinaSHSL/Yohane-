@@ -9,7 +9,7 @@ Weekly Patch 38+
 Yohane is a character all about trade offs and big numbers. Many cards are powerful, but have some sort of negative effect to them requiring well thought out plays, highly rewarding plays. 
 
 ### Compatibility ###
-There shouldn't be any issues with other mods.
+If your Colored Maps isn't fully updated, the game will crash.
 
 ## New Mechanics ##
 * **Fallen Energy**
