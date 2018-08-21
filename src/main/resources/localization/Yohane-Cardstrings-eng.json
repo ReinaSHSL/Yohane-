@@ -11,6 +11,10 @@
       " cards this turn."
     ]
   },
+  "Yohane:Adept_Technology": {
+    "NAME": "Adept Technology",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Retain your entire hand at the end of the turn."
+  },
   "Yohane:Allure_of_Darkness": {
     "NAME": "Allure Of Darkness",
     "DESCRIPTION": "Pay 2 Fallen Energy. NL Draw 2 Cards. NL Exhaust a card from your hand.",
@@ -277,6 +281,10 @@
   "Yohane:Schwarz_Sechs": {
     "NAME": "Schwarz Sechs",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL The next 0 cost card is played twice."
+  },
+  "Yohane:Scorn": {
+    "NAME": "Scorn",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL Apply !F! Vulnerable."
   },
   "Yohane:Shadow_Gate": {
     "NAME": "Shadow Gate",

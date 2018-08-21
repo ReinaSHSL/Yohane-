@@ -132,6 +132,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
          public void receiveEditCards() {
              BaseMod.addDynamicVariable(new F());
              BaseMod.addCard(new Academic_Prowess());
+             BaseMod.addCard(new Adept_Technology());
              BaseMod.addCard(new Allure_of_Darkness());
              BaseMod.addCard(new Angel_Tears());
              BaseMod.addCard(new Awaken_The_Power());
@@ -167,6 +168,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Introspection());
              BaseMod.addCard(new Koi_Ni_Naritai());
              BaseMod.addCard(new Kowareyasuki());
+             BaseMod.addCard(new Lailapse());
              BaseMod.addCard(new Little_Demon_Change());
              BaseMod.addCard(new Little_Demon_Chika());
              BaseMod.addCard(new Little_Demon_Hanamaru());
@@ -181,7 +183,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Misfortune());
              BaseMod.addCard(new Modore());
              BaseMod.addCard(new My_Mai_Tonight());
-             BaseMod.addCard(new Nocturne());
              BaseMod.addCard(new One_Two());
              BaseMod.addCard(new Perfection());
              BaseMod.addCard(new Price_Of_Power());
@@ -190,6 +191,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Retaliation());
              BaseMod.addCard(new Runaway_Umbrella());
              BaseMod.addCard(new Schwarz_Sechs());
+             BaseMod.addCard(new Scorn());
              BaseMod.addCard(new Shadow_Gate());
              BaseMod.addCard(new Sloth());
              BaseMod.addCard(new Snow_Halation());

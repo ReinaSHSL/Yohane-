@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
-public class Nocturne extends CustomCard {
+public class Lailapse extends CustomCard {
     public static final String ID = "Yohane:Lailapse";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
@@ -30,7 +30,7 @@ public class Nocturne extends CustomCard {
     private static final CardRarity rarity = CardRarity.COMMON;
     private static final CardTarget target = CardTarget.ENEMY;
 
-    public Nocturne() {
+    public Lailapse() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target, POOL);
@@ -60,7 +60,7 @@ public class Nocturne extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Nocturne();
+        return new Lailapse();
     }
 
     @Override

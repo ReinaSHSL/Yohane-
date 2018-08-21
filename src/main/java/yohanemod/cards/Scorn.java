@@ -2,7 +2,6 @@ package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,32 +10,35 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
-import yohanemod.powers.SchwarzSechsPower;
 
-public class Schwarz_Sechs extends CustomCard {
-    public static final String ID = "Yohane:Schwarz_Sechs";
+
+public class Scorn extends CustomCard {
+    public static final String ID = "Yohane:Scorn";
     private static CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String IMG_PATH = "cards/Schwarz_Sechs.png";
+    public static final String IMG_PATH = "cards/Scorn.png";
     private static final int COST = 0;
-    private static final int ATTACK_DMG = 8;
-    private static final int UPGRADE_PLUS_DMG = 3;
-    private static final int FALLEN_ENERGY = 6;
     private static final int POOL = 1;
+    private static final int FALLEN_ENERGY = 7;
+    private static final int DAMAGE_AMT = 6;
+    private static final int DAMAGE_UPGRADE = 4;
+    private static final int VULN_AMT = 2;
+    private static final int VULN_UPGRADE = 1;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.ENEMY;
 
-    public Schwarz_Sechs() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
-                AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
-
-        this.baseDamage = ATTACK_DMG;
+    public Scorn() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+                CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
+                        rarity, target, POOL);
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
+        this.damage = this.baseDamage = DAMAGE_AMT;
+        this.misc = VULN_AMT;
     }
 
     public boolean hasEnoughEnergy() {
@@ -54,24 +56,21 @@ public class Schwarz_Sechs extends CustomCard {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
                     new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SchwarzSechsPower(p, 1), 1));
-        } else {
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, this.misc, false), this.misc));
         }
-
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Schwarz_Sechs();
+        return new Scorn();
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(UPGRADE_PLUS_DMG);
-            this.upgradeMagicNumber(-3);
+            this.upgradeDamage(DAMAGE_UPGRADE);
+            this.misc += VULN_UPGRADE;
         }
     }
 }
