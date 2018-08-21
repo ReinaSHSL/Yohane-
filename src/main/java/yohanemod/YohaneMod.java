@@ -137,6 +137,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Awaken_The_Power());
              BaseMod.addCard(new Awakening());
              BaseMod.addCard(new Backfoot());
+             BaseMod.addCard(new Blazing());
              BaseMod.addCard(new City_Of_Sin());
              BaseMod.addCard(new Culinary_Genius());
              BaseMod.addCard(new Curse_The_Heavens());
