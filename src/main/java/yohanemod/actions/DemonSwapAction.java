@@ -24,7 +24,7 @@ import yohanemod.summons.Ruby.Ruby;
 import yohanemod.summons.Ruby.RubyStrength;
 
 public class DemonSwapAction extends AbstractGameAction {
-    private static final String[] TEXT = new String[]{"Change to who?"};
+    private static final String[] TEXT = new String[]{"Change to whom?"};
     private AbstractPlayer p;
     private boolean selected0;
     private AbstractCard card;

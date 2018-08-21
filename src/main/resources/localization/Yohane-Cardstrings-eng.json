@@ -32,6 +32,10 @@
     "NAME": "Backfoot",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL Gain !B! Block."
   },
+  "Yohane:Blazing": {
+    "NAME": "Blazing!",
+    "DESCRIPTION": "This turn do double damage. NL Next turn, do half damage."
+  },
   "Yohane:City_Of_Sin": {
     "NAME": "City of Sin",
     "DESCRIPTION": "At the start of your turn, apply !M! Sin to everyone (including yourself)."

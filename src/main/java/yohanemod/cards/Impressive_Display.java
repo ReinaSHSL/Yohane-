@@ -22,7 +22,7 @@ public class Impressive_Display extends CustomCard{
     public static final String IMG_PATH = "cards/Impressive_Display.png";
     private static final int ATTACK_DMG = 9;
     private static final int UPGRADE_PLUS_DMG = 2;
-    private static final int FALLEN_ENERGY = 6;
+    private static final int FALLEN_ENERGY = 4;
     private static final int COST = 1;
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.COMMON;
@@ -56,7 +56,7 @@ public class Impressive_Display extends CustomCard{
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(UPGRADE_PLUS_DMG);
-            this.upgradeMagicNumber(4);
+            this.upgradeMagicNumber(2);
         }
     };
 

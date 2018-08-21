@@ -171,6 +171,24 @@
     ]
   },
 
+  "Yohane:BurntOutPower": {
+    "NAME": "Burning Out",
+    "DESCRIPTIONS": [
+      "Deal #yHalf #yDamage next turn.",
+      "Deal #yHalf #yDamage for the next ",
+      " turns."
+    ]
+  },
+
+  "Yohane:HalveDamagePower": {
+    "NAME": "Half Damage",
+    "DESCRIPTIONS": [
+      "#yAttacks deal half damage for #b",
+      " turn.",
+      " turns."
+    ]
+  },
+
   "stslib:Stunned": {
     "NAME": "Stunned",
     "DESCRIPTIONS": [
