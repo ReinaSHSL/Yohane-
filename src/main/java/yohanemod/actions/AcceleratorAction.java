@@ -48,8 +48,8 @@ public class AcceleratorAction extends AbstractGameAction {
             tickDuration();
             return;
         }
-        AbstractCard attackPicked = new LittleDemonFirst();
-        AbstractCard dodgePicked = new LittleDemonSecond();
+        AbstractCard attackPicked = new AccelerateAttack();
+        AbstractCard dodgePicked = new AccelerateDodge();
         if (YohaneMod.lds.selected0.cardID.equals(attackPicked.cardID)) {
             this.attack = true;
         }
@@ -58,16 +58,14 @@ public class AcceleratorAction extends AbstractGameAction {
         }
         if (this.attack) {
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.
-                    DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            tickDuration();
+                    DamageAction(m, new DamageInfo(this.p, this.damage, DamageInfo.DamageType.NORMAL), com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.BLUNT_HEAVY));
             this.isDone = true;
             return;
         }
         if (this.dodge) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DodgePower(p, 1), 1));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p,
-                    p, new com.megacrit.cardcrawl.powers.VulnerablePower(p, this.vuln, false), this.vuln));
-            tickDuration();
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, new DodgePower(this.p, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(this.p,
+                    this.p, new com.megacrit.cardcrawl.powers.VulnerablePower(this.p, this.vuln, false), this.vuln));
             this.isDone = true;
         }
     }

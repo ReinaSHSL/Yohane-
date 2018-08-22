@@ -53,46 +53,48 @@ public class DemonSwapAction extends AbstractGameAction {
                 summonToChange = player.minions.monsters.get(1);
             }
             CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-            for (AbstractCard ca : this.p.drawPile.group) {
-                if (summonCheck(ca)) {
-                    if (player.minions.monsters.size() == 1 && (!ca.rawDescription.contains(player.minions.monsters.get(0).id))) {
+            if (player.minions.monsters.size() == 2) {
+                for (AbstractCard ca : this.p.drawPile.group) {
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id) &&
+                            !ca.rawDescription.contains(player.minions.monsters.get(1).id))) {
                         tmp.addToRandomSpot(ca);
                     }
-                    if (player.minions.monsters.size() == 2 && !ca.rawDescription.contains(player.minions.monsters.get(0).id) && !ca.rawDescription.contains(player.minions.monsters.get(1).id)) {
-                        tmp.addToRandomSpot(ca);
-                    }
-
                 }
-            }
 
-            for (AbstractCard ca : this.p.discardPile.group) {
-                if (summonCheck(ca)) {
-                    if (player.minions.monsters.size() == 1 && (!ca.rawDescription.contains(player.minions.monsters.get(0).id))) {
+                for (AbstractCard ca : this.p.discardPile.group) {
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id) &&
+                            !ca.rawDescription.contains(player.minions.monsters.get(1).id))) {
                         tmp.addToRandomSpot(ca);
                     }
-                    if (player.minions.monsters.size() == 2 && !ca.rawDescription.contains(player.minions.monsters.get(0).id) && !ca.rawDescription.contains(player.minions.monsters.get(1).id)) {
-                        tmp.addToRandomSpot(ca);
-                    }
-
                 }
-            }
 
-            for (AbstractCard ca : this.p.hand.group) {
-                if (summonCheck(ca)) {
-                    if (player.minions.monsters.size() == 1 && (!ca.rawDescription.contains(player.minions.monsters.get(0).id))) {
+                for (AbstractCard ca : this.p.hand.group) {
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id))) {
                         tmp.addToRandomSpot(ca);
                     }
-                    if (player.minions.monsters.size() == 2 && !ca.rawDescription.contains(player.minions.monsters.get(0).id) && !ca.rawDescription.contains(player.minions.monsters.get(1).id)) {
+                }
+            } else {
+                for (AbstractCard ca : this.p.drawPile.group) {
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id) &&
+                            !ca.rawDescription.contains(player.minions.monsters.get(1).id))) {
                         tmp.addToRandomSpot(ca);
                     }
+                }
 
+                for (AbstractCard ca : this.p.discardPile.group) {
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id))) {
+                        tmp.addToRandomSpot(ca);
+                    }
+                }
+
+                for (AbstractCard ca : this.p.hand.group) {
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id))) {
+                        tmp.addToRandomSpot(ca);
+                    }
                 }
             }
 
             if (tmp.size() == 0) {
-                this.isDone = true;
-            } else if (tmp.size() == 1) {
-                this.card = tmp.getTopCard();
                 this.isDone = true;
             } else {
                 AbstractDungeon.gridSelectScreen.open(tmp, 1, TEXT[0], false);
