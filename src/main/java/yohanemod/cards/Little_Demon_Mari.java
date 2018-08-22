@@ -78,6 +78,7 @@ public class Little_Demon_Mari extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeBaseCost(0);
         }
     }
 }

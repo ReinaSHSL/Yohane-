@@ -2,10 +2,12 @@ package yohanemod.summons.Ruby;
 
 import actions.ChooseAction;
 import actions.ChooseActionInfo;
+import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
@@ -85,5 +87,17 @@ public class Ruby extends AbstractFriendlyMonster {
 
     @Override
     protected void getMove(int i) {
+    }
+
+    @Override
+    public void die() {
+        AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) AbstractDungeon.player;
+        if (player.minions.monsters.get(0) == this) {
+            if (player.minions.monsters.size() == 2) {
+                AbstractMonster moveToRightSummon = player.minions.monsters.get(1);
+                moveToRightSummon.drawX = -1150F * Settings.scale;
+            }
+        }
+        super.die();
     }
 }

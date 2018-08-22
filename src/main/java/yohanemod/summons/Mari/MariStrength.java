@@ -25,7 +25,7 @@ public class MariStrength extends AbstractPower {
     @Override
     public void updateDescription()
     {
-        int damage = (MariNumbers.MariAttackDamage + this.amount);
+        int damage = (MariNumbers.MariAttackDamage + (this.amount * 4));
         int charge = (MariNumbers.MariHealthLoss);
         this.description = (DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + charge + DESCRIPTIONS[2]);
     }

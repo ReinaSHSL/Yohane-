@@ -64,7 +64,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     public static LittleDemonScreen lds;
 
     public YohaneMod() {
-        //TODO Everything
         BaseMod.subscribe(this);
         BaseMod.addColor(AbstractCardEnum.YOHANE_GREY.toString(),
                 GREY, GREY, GREY, GREY, GREY, GREY, GREY,
@@ -103,7 +102,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         logger.info("begin editing keywords");
         final String[] FallenEnergy = {"fallen"};
         BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it.");
-        final String[] Summon = {"summon, summons"};
+        final String[] Summon = {"summon", "summons"};
         BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of Summon.");
         final String[] Lily = {"lily"};
         String lilyDesc = String.format("A Little Demon with %d HP and can either deal %d damage to a random enemy, or give you %d Fallen Energy.",
@@ -113,7 +112,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         String rubyDesc = String.format("A Little Demon with %d HP and can either deal %d damage to all enemies, or give you %d Block.",
                 RubyNumbers.rubyHP, RubyNumbers.rubyAttackDamage, RubyNumbers.rubyBlockAmount);
         BaseMod.addKeyword(Ruby, rubyDesc);
-        final String[] Evolves = {"evolves, evolve"};
+        final String[] Evolves = {"evolves", "evolve"};
         BaseMod.addKeyword(Evolves,"Everything done by the Summon gets more effective by 1 and raise max HP by 3.");
 		final String[] Sin = {"sin"};
 		BaseMod.addKeyword(Sin,"Deal and take extra damage equal to the amount of Sin a monster has. Removed upon being hit.");
@@ -191,7 +190,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new My_Mai_Tonight());
              BaseMod.addCard(new One_Two());
              BaseMod.addCard(new Perfection());
-             BaseMod.addCard(new Price_Of_Power());
+             //BaseMod.addCard(new Price_Of_Power());
              BaseMod.addCard(new Prideful_Crash());
              BaseMod.addCard(new Reckless_Greed());
              BaseMod.addCard(new Retaliation());
@@ -240,7 +239,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
     }
 
-    public static void saveData() {
+    private static void saveData() {
         try {
             SpireConfig config = new SpireConfig("Yohane!", "YohaneSaveData");
             config.setBool("optOutMetrics", optOutMetrics);

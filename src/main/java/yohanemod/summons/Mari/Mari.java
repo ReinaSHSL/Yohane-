@@ -2,14 +2,18 @@ package yohanemod.summons.Mari;
 
 import actions.ChooseAction;
 import actions.ChooseActionInfo;
+import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Darkling;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
 import monsters.AbstractFriendlyMonster;
 import yohanemod.powers.FallenEnergy;
@@ -37,6 +41,7 @@ public class Mari extends AbstractFriendlyMonster {
     @Override
     public void applyStartOfTurnPowers() {
         AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(this, this, this.currentBlock));
+        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, IntangiblePlayerPower.POWER_ID));
     }
 
     @Override
@@ -62,7 +67,7 @@ public class Mari extends AbstractFriendlyMonster {
         if (this.hasPower(MariStrength.POWER_ID) && this.getPower(MariStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(MariStrength.POWER_ID).amount;
         }
-        int attackDamage = (MariNumbers.MariAttackDamage + upgradeCount);
+        int attackDamage = (MariNumbers.MariAttackDamage + (upgradeCount * 4));
         int healthLoss = (MariNumbers.MariHealthLoss);
         ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
         target = AbstractDungeon.getRandomMonster();
@@ -90,7 +95,7 @@ public class Mari extends AbstractFriendlyMonster {
         }));
         if (this.maxHealth > 5) {
             tempInfo.add(new ChooseActionInfo("Intangible", intangibleDesc, () -> {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePower(this, 1), 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 1), 1));
                 this.decreaseMaxHealth(healthLoss);
             }));
         }
@@ -101,6 +106,17 @@ public class Mari extends AbstractFriendlyMonster {
     //Not needed unless doing some kind of random move like normal Monsters
     @Override
     protected void getMove(int i) {
+    }
 
+    @Override
+    public void die() {
+        AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) AbstractDungeon.player;
+        if (player.minions.monsters.get(0) == this) {
+            if (player.minions.monsters.size() == 2) {
+                AbstractMonster moveToRightSummon = player.minions.monsters.get(1);
+                moveToRightSummon.drawX = -1150F * Settings.scale;
+            }
+        }
+        super.die();
     }
 }

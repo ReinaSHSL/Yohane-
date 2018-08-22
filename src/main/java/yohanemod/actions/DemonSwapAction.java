@@ -75,8 +75,7 @@ public class DemonSwapAction extends AbstractGameAction {
                 }
             } else {
                 for (AbstractCard ca : this.p.drawPile.group) {
-                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id) &&
-                            !ca.rawDescription.contains(player.minions.monsters.get(1).id))) {
+                    if (summonCheck(ca) && (!ca.rawDescription.contains(player.minions.monsters.get(0).id))) {
                         tmp.addToRandomSpot(ca);
                     }
                 }
