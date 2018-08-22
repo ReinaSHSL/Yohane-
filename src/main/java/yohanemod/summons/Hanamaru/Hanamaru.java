@@ -54,6 +54,7 @@ public class Hanamaru extends AbstractFriendlyMonster {
     @Override
     public void applyStartOfTurnPowers() {
         AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(this, this, this.currentBlock));
+        System.out.println(this.name + " " + this.currentHealth);
     }
 
     //Create possible moves for the monster
@@ -96,13 +97,14 @@ public class Hanamaru extends AbstractFriendlyMonster {
 
     @Override
     public void die() {
-        AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) AbstractDungeon.player;
-        if (player.minions.monsters.get(0) == this) {
-            if (player.minions.monsters.size() == 2) {
-                AbstractMonster moveToRightSummon = player.minions.monsters.get(1);
-                moveToRightSummon.drawX = -1150F * Settings.scale;
-            }
-        }
         super.die();
+        AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) AbstractDungeon.player;
+        if (player.hasMinions()) {
+            if (player.minions.monsters.get(0).currentHealth == 0) {
+                player.minions.monsters.get(0).die();
+            }
+            AbstractMonster moveToRightSummon = player.minions.monsters.get(0);
+            moveToRightSummon.drawX = -750F * Settings.scale;
+        }
     }
 }

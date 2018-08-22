@@ -42,6 +42,7 @@ public class Mari extends AbstractFriendlyMonster {
     public void applyStartOfTurnPowers() {
         AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(this, this, this.currentBlock));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, IntangiblePlayerPower.POWER_ID));
+        System.out.println(this.name + " " + this.currentHealth);
     }
 
     @Override
@@ -110,13 +111,14 @@ public class Mari extends AbstractFriendlyMonster {
 
     @Override
     public void die() {
-        AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) AbstractDungeon.player;
-        if (player.minions.monsters.get(0) == this) {
-            if (player.minions.monsters.size() == 2) {
-                AbstractMonster moveToRightSummon = player.minions.monsters.get(1);
-                moveToRightSummon.drawX = -1150F * Settings.scale;
-            }
-        }
         super.die();
+        AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) AbstractDungeon.player;
+        if (player.hasMinions()) {
+            if (player.minions.monsters.get(0).currentHealth == 0) {
+                player.minions.monsters.get(0).die();
+            }
+            AbstractMonster moveToRightSummon = player.minions.monsters.get(0);
+            moveToRightSummon.drawX = -750F * Settings.scale;
+        }
     }
 }
