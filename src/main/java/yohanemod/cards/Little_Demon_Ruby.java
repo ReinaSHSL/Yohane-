@@ -50,6 +50,8 @@ public class Little_Demon_Ruby extends CustomCard {
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
                 player.addMinion(new Ruby(-750F));
+                AbstractMonster Ruby0 = player.minions.monsters.get(0);
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby0, abstractPlayer, new RubyStrength(Ruby0, 0), 0));
             } else if (summonCount == 1) {
                 if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {
                     //Upgrade
@@ -58,6 +60,8 @@ public class Little_Demon_Ruby extends CustomCard {
                 } else {
                     //No Upgrade
                     player.addMinion(new Ruby(-1150F));
+                    AbstractMonster Ruby1 = player.minions.monsters.get(1);
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby1, abstractPlayer, new RubyStrength(Ruby1, 0), 0));
                 }
             } else if (summonCount == 2) {
                 if (player.minions.monsters.get(0).id.equals(Ruby.ID)) {

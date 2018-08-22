@@ -81,8 +81,25 @@
     "NAME": "Ganbaruby!",
     "DESCRIPTIONS": [
       "Attacking does #b",
-      " damage. Blocking gives #b",
+      " damage to ALL enemies. Blocking gives #b",
       " #yBlock to Yohane."
+    ]
+  },
+
+  "Yohane:MariStrength": {
+    "NAME": "Shiny!",
+    "DESCRIPTIONS": [
+      "Attacking does #b",
+      " damage to the lowest health enemy. Gaining Intangible lowers Max HP by #b",
+      ". This Summon can evolve herself."
+    ]
+  },
+
+  "Yohane:Dodge": {
+    "NAME": "Dodge",
+    "DESCRIPTIONS": [
+      "The next #b",
+      " Attacks you take do no damage."
     ]
   },
 

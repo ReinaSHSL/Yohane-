@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yohanemod.cards.*;
+import yohanemod.cards.Deprecated.Awakening;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
@@ -29,6 +30,8 @@ import yohanemod.summons.Hanamaru.HanamaruChoiceCards;
 import yohanemod.summons.Hanamaru.HanamaruNumbers;
 import yohanemod.summons.Lily.LilyChoiceCards;
 import yohanemod.summons.Lily.LilyNumbers;
+import yohanemod.summons.Mari.MariChoiceCards;
+import yohanemod.summons.Mari.MariNumbers;
 import yohanemod.summons.Ruby.RubyChoiceCards;
 import yohanemod.summons.Ruby.RubyNumbers;
 
@@ -111,7 +114,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
                 RubyNumbers.rubyHP, RubyNumbers.rubyAttackDamage, RubyNumbers.rubyBlockAmount);
         BaseMod.addKeyword(Ruby, rubyDesc);
         final String[] Evolves = {"evolves, evolve"};
-        BaseMod.addKeyword(Evolves,"Strengthen a summon, dependant on the summon, and raise max HP by 3.");
+        BaseMod.addKeyword(Evolves,"Everything done by the Summon gets more effective by 1 and raise max HP by 3.");
 		final String[] Sin = {"sin"};
 		BaseMod.addKeyword(Sin,"Deal and take extra damage equal to the amount of Sin a monster has. Removed upon being hit.");
         final String[] Secret = {"secret"};
@@ -121,10 +124,13 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
                 HanamaruNumbers.hanamaruHP, HanamaruNumbers.hanamaruSin, HanamaruNumbers.hanamaruBlock);
         BaseMod.addKeyword(Hanamaru, hanamaruDesc);
         final String[] Chika = {"chika"};
-        String chikaDesc = String.format("A Little Demon with %d HP and can deal %d damage to ALL the lowest HP enemy or heal all Summons for %d HP.",
+        String chikaDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy or heal all Summons for %d HP.",
                 ChikaNumbers.ChikaHP, ChikaNumbers.ChikaAttackDamage, ChikaNumbers.ChikaHeal);
         BaseMod.addKeyword(Chika, chikaDesc);
-
+        final String[] Mari = {"Mari"};
+        String mariDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy, Evolve or gain 1 Intangible in exchange for %d HP.",
+                MariNumbers.MariHP, MariNumbers.MariAttackDamage, MariNumbers.MariHealthLoss);
+        BaseMod.addKeyword(Mari, mariDesc);
         logger.info("finish editing keywords");
     }
 
@@ -133,10 +139,10 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addDynamicVariable(new F());
              BaseMod.addCard(new Academic_Prowess());
              BaseMod.addCard(new Adept_Technology());
+             BaseMod.addCard(new Accelerator());
              BaseMod.addCard(new Allure_of_Darkness());
              BaseMod.addCard(new Angel_Tears());
              BaseMod.addCard(new Awaken_The_Power());
-             BaseMod.addCard(new Awakening());
              BaseMod.addCard(new Backfoot());
              BaseMod.addCard(new Blazing());
              BaseMod.addCard(new City_Of_Sin());
@@ -166,12 +172,12 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Indulge());
              BaseMod.addCard(new Inspiration());
              BaseMod.addCard(new Introspection());
-             BaseMod.addCard(new Koi_Ni_Naritai());
              BaseMod.addCard(new Kowareyasuki());
              BaseMod.addCard(new Lailapse());
              BaseMod.addCard(new Little_Demon_Change());
              BaseMod.addCard(new Little_Demon_Chika());
              BaseMod.addCard(new Little_Demon_Hanamaru());
+             BaseMod.addCard(new Little_Demon_Mari());
              BaseMod.addCard(new Little_Demon_Lily());
              BaseMod.addCard(new Little_Demon_Recruit());
              BaseMod.addCard(new Little_Demon_Ruby());
@@ -195,7 +201,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Shadow_Gate());
              BaseMod.addCard(new Sloth());
              BaseMod.addCard(new Snow_Halation());
-             BaseMod.addCard(new Solitude());
              BaseMod.addCard(new Soul_Peek());
              BaseMod.addCard(new Stealth_Mode());
              BaseMod.addCard(new Strawberry_Trapper());
@@ -212,8 +217,11 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new HanamaruChoiceCards());
              BaseMod.addCard(new LilyChoiceCards());
              BaseMod.addCard(new RubyChoiceCards());
+             BaseMod.addCard(new MariChoiceCards());
              BaseMod.addCard(new LittleDemonFirst());
              BaseMod.addCard(new LittleDemonSecond());
+             BaseMod.addCard(new AccelerateAttack());
+             BaseMod.addCard(new AccelerateDodge());
 	 }
 
     public void receivePostInitialize() {

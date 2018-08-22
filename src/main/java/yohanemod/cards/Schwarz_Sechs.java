@@ -41,7 +41,7 @@ public class Schwarz_Sechs extends CustomCard {
 
     public boolean hasEnoughEnergy() {
         boolean retVal = super.hasEnoughEnergy();
-        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn)) {
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.magicNumber)) {
             retVal = false;
         }
         return retVal;

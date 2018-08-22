@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Chika.ChikaStrength;
+import yohanemod.summons.Ruby.RubyStrength;
 
 
 public class Little_Demon_Chika extends CustomCard {
@@ -39,6 +40,8 @@ public class Little_Demon_Chika extends CustomCard {
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
                 player.addMinion(new Chika(-750F));
+                AbstractMonster Chika0 = player.minions.monsters.get(0);
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika0, abstractPlayer, new ChikaStrength(Chika0, 0), 0));
             } else if (summonCount == 1) {
                 if (player.minions.monsters.get(0).id.equals(Chika.ID)) {
                     //Upgrade
@@ -47,6 +50,8 @@ public class Little_Demon_Chika extends CustomCard {
                 } else {
                     //No Upgrade
                     player.addMinion(new Chika(-1150F));
+                    AbstractMonster Chika1 = player.minions.monsters.get(1);
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika1, abstractPlayer, new ChikaStrength(Chika1, 0), 0));
                 }
             } else if (summonCount == 2) {
                 if (player.minions.monsters.get(0).id.equals(Chika.ID)) {

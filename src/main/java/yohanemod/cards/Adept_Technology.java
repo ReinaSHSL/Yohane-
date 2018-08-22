@@ -40,7 +40,9 @@ public class Adept_Technology extends CustomCard {
         AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(p,
                 this.multiDamage, this.damageTypeForTurn, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
         for (AbstractCard c : p.hand.group) {
-            c.retain = true;
+            if (c != this) {
+                c.retain = true;
+            }
         }
     }
 

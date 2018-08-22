@@ -23,11 +23,6 @@ public class LilyStrength extends AbstractPower{
     }
 
     @Override
-    public void onInitialApplication() {
-        this.owner.increaseMaxHp(3, true);
-    }
-
-    @Override
     public void updateDescription()
     {
         int damage = (LilyNumbers.lilyAttackDamage + this.amount);

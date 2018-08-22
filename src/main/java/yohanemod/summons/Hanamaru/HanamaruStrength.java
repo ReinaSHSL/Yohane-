@@ -24,12 +24,6 @@ public class HanamaruStrength extends AbstractPower {
     }
 
     @Override
-    public void onInitialApplication() {
-        Hanamaru.canExhume = true;
-        this.owner.increaseMaxHp(3, true);
-    }
-
-    @Override
     public void updateDescription()
     {
         int sinAmount = (HanamaruNumbers.hanamaruSin + this.amount);

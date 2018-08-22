@@ -10,16 +10,15 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import yohanemod.cards.Little_Demon_Chika;
-import yohanemod.cards.Little_Demon_Hanamaru;
-import yohanemod.cards.Little_Demon_Lily;
-import yohanemod.cards.Little_Demon_Ruby;
+import yohanemod.cards.*;
 import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Chika.ChikaStrength;
 import yohanemod.summons.Hanamaru.Hanamaru;
 import yohanemod.summons.Hanamaru.HanamaruStrength;
 import yohanemod.summons.Lily.Lily;
 import yohanemod.summons.Lily.LilyStrength;
+import yohanemod.summons.Mari.Mari;
+import yohanemod.summons.Mari.MariStrength;
 import yohanemod.summons.Ruby.Ruby;
 import yohanemod.summons.Ruby.RubyStrength;
 
@@ -39,7 +38,8 @@ public class DemonSwapAction extends AbstractGameAction {
 
     private boolean summonCheck(AbstractCard c) {
         return c.cardID.equals(Little_Demon_Ruby.ID) || c.cardID.equals(Little_Demon_Lily.ID)
-                || c.cardID.equals(Little_Demon_Hanamaru.ID) || c.cardID.equals(Little_Demon_Chika.ID);
+                || c.cardID.equals(Little_Demon_Hanamaru.ID) || c.cardID.equals(Little_Demon_Chika.ID)
+                || c.cardID.equals(Little_Demon_Mari.ID);
     }
 
     @Override
@@ -155,6 +155,26 @@ public class DemonSwapAction extends AbstractGameAction {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
                                     }
                                     break;
+                                case "Mari":
+                                    if (summonToChange.hasPower(MariStrength.POWER_ID)) {
+                                        upgradeCount = summonToChange.getPower(MariStrength.POWER_ID).amount;
+                                    }
+                                    summonToChange.die();
+                                    if (selected0) {
+                                        player.addMinion(new Chika(-750F));
+                                        Chika = player.getMinions().getMonster(yohanemod.summons.Chika.Chika.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Chika);
+                                            player.minions.monsters.add(0, Chika);
+                                        }
+                                    } else {
+                                        player.addMinion(new Chika(-1150F));
+                                        Chika = player.getMinions().getMonster(yohanemod.summons.Chika.Chika.ID);
+                                    }
+                                    for (int i = 0; i < upgradeCount; i++) {
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
+                                    }
+                                    break;
                                 default:
                                     break;
                             }
@@ -206,6 +226,26 @@ public class DemonSwapAction extends AbstractGameAction {
                                 case "Hanamaru":
                                     if (summonToChange.hasPower(HanamaruStrength.POWER_ID)) {
                                         upgradeCount = summonToChange.getPower(HanamaruStrength.POWER_ID).amount;
+                                    }
+                                    summonToChange.die();
+                                    if (selected0) {
+                                        player.addMinion(new Ruby(-750F));
+                                        Ruby = player.getMinions().getMonster(yohanemod.summons.Ruby.Ruby.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Ruby);
+                                            player.minions.monsters.add(0, Ruby);
+                                        }
+                                    } else {
+                                        player.addMinion(new Ruby(-1150F));
+                                        Ruby = player.getMinions().getMonster(yohanemod.summons.Ruby.Ruby.ID);
+                                    }
+                                    for (int i = 0; i < upgradeCount; i++) {
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby, p, new RubyStrength(Ruby, 1), 1));
+                                    }
+                                    break;
+                                case "Mari":
+                                    if (summonToChange.hasPower(MariStrength.POWER_ID)) {
+                                        upgradeCount = summonToChange.getPower(MariStrength.POWER_ID).amount;
                                     }
                                     summonToChange.die();
                                     if (selected0) {
@@ -291,6 +331,26 @@ public class DemonSwapAction extends AbstractGameAction {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, 1), 1));
                                     }
                                     break;
+                                case "Mari":
+                                    if (summonToChange.hasPower(MariStrength.POWER_ID)) {
+                                        upgradeCount = summonToChange.getPower(MariStrength.POWER_ID).amount;
+                                    }
+                                    summonToChange.die();
+                                    if (selected0) {
+                                        player.addMinion(new Lily(-750F));
+                                        Lily = player.getMinions().getMonster(yohanemod.summons.Lily.Lily.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Lily);
+                                            player.minions.monsters.add(0, Lily);
+                                        }
+                                    } else {
+                                        player.addMinion(new Lily(-1150F));
+                                        Lily = player.getMinions().getMonster(yohanemod.summons.Lily.Lily.ID);
+                                    }
+                                    for (int i = 0; i < upgradeCount; i++) {
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily, p, new LilyStrength(Lily, 1), 1));
+                                    }
+                                    break;
                                 default:
                                     break;
                             }
@@ -357,6 +417,114 @@ public class DemonSwapAction extends AbstractGameAction {
                                     }
                                     for (int i = 0; i < upgradeCount; i++) {
                                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
+                                    }
+                                    break;
+                                case "Mari":
+                                    if (summonToChange.hasPower(MariStrength.POWER_ID)) {
+                                        upgradeCount = summonToChange.getPower(MariStrength.POWER_ID).amount;
+                                    }
+                                    summonToChange.die();
+                                    if (selected0) {
+                                        player.addMinion(new Hanamaru(-750F));
+                                        Hanamaru = player.getMinions().getMonster(yohanemod.summons.Hanamaru.Hanamaru.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Hanamaru);
+                                            player.minions.monsters.add(0, Hanamaru);
+                                        }
+                                    } else {
+                                        player.addMinion(new Hanamaru(-1150F));
+                                        Hanamaru = player.getMinions().getMonster(yohanemod.summons.Hanamaru.Hanamaru.ID);
+                                    }
+                                    for (int i = 0; i < upgradeCount; i++) {
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru, p, new HanamaruStrength(Hanamaru, 1), 1));
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                        case "Little_Demon_Mari":
+                            switch (summonToChange.id) {
+                                case "Ruby":
+                                    AbstractMonster Mari;
+                                    if (summonToChange.hasPower(RubyStrength.POWER_ID)) {
+                                        upgradeCount = summonToChange.getPower(RubyStrength.POWER_ID).amount;
+                                    }
+                                    summonToChange.die();
+                                    if (selected0) {
+                                        player.addMinion(new Mari(-750F));
+                                        Mari = player.getMinions().getMonster(yohanemod.summons.Mari.Mari.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Mari);
+                                            player.minions.monsters.add(0, Mari);
+                                        }
+                                    } else {
+                                        player.addMinion(new Mari(-1150F));
+                                        Mari = player.getMinions().getMonster(yohanemod.summons.Mari.Mari.ID);
+                                    }
+
+                                    for (int i = 0; i < upgradeCount; i++) {
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari, p, new MariStrength(Mari, 1), 1));
+                                    }
+                                    break;
+                                case "Chika":
+                                    if (summonToChange.hasPower(ChikaStrength.POWER_ID)) {
+                                        upgradeCount = summonToChange.getPower(ChikaStrength.POWER_ID).amount;
+                                    }
+                                    summonToChange.die();
+                                    if (selected0) {
+                                        player.addMinion(new Mari(-750F));
+                                        Mari = player.getMinions().getMonster(yohanemod.summons.Mari.Mari.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Mari);
+                                            player.minions.monsters.add(0, Mari);
+                                        }
+                                    } else {
+                                        player.addMinion(new Mari(-1150F));
+                                        Mari = player.getMinions().getMonster(yohanemod.summons.Mari.Mari.ID);
+                                    }
+                                    for (int i = 0; i < upgradeCount; i++) {
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari, p, new MariStrength(Mari, 1), 1));
+                                    }
+                                    break;
+                                case "Lily":
+                                    if (summonToChange.hasPower(LilyStrength.POWER_ID)) {
+                                        upgradeCount = summonToChange.getPower(LilyStrength.POWER_ID).amount;
+                                    }
+                                    summonToChange.die();
+                                    if (selected0) {
+                                        player.addMinion(new Mari(-750F));
+                                        Mari = player.getMinions().getMonster(yohanemod.summons.Mari.Mari.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Mari);
+                                            player.minions.monsters.add(0, Mari);
+                                        }
+                                    } else {
+                                        player.addMinion(new Mari(-1150F));
+                                        Mari = player.getMinions().getMonster(yohanemod.summons.Mari.Mari.ID);
+                                    }
+                                    for (int i = 0; i < upgradeCount; i++) {
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari, p, new MariStrength(Mari, 1), 1));
+                                    }
+                                    break;
+                                case "Hanamaru":
+                                    if (summonToChange.hasPower(HanamaruStrength.POWER_ID)) {
+                                        upgradeCount = summonToChange.getPower(HanamaruStrength.POWER_ID).amount;
+                                    }
+                                    summonToChange.die();
+                                    if (selected0) {
+                                        player.addMinion(new Mari(-750F));
+                                        Mari = player.getMinions().getMonster(yohanemod.summons.Mari.Mari.ID);
+                                        if (player.minions.monsters.size() == 2) {
+                                            player.minions.monsters.remove(Mari);
+                                            player.minions.monsters.add(0, Mari);
+                                        }
+                                    } else {
+                                        player.addMinion(new Mari(-1150F));
+                                        Mari = player.getMinions().getMonster(yohanemod.summons.Mari.Mari.ID);
+                                    }
+                                    for (int i = 0; i < upgradeCount; i++) {
+                                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari, p, new MariStrength(Mari, 1), 1));
                                     }
                                     break;
                                 default:

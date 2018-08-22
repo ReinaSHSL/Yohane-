@@ -1,4 +1,4 @@
-package yohanemod.cards;
+package yohanemod.cards.Deprecated;
 
 import basemod.abstracts.CustomCard;
 import characters.AbstractPlayerWithMinions;
@@ -16,6 +16,7 @@ import yohanemod.powers.FallenEnergy;
 import yohanemod.summons.Chika.ChikaStrength;
 import yohanemod.summons.Hanamaru.HanamaruStrength;
 import yohanemod.summons.Lily.LilyStrength;
+import yohanemod.summons.Mari.MariStrength;
 import yohanemod.summons.Ruby.RubyStrength;
 
 public class Awakening extends CustomCard {
@@ -74,6 +75,10 @@ public class Awakening extends CustomCard {
                         AbstractMonster Chika = player.minions.monsters.get(0);
                         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
                         break;
+                    case "Mari":
+                        AbstractMonster Mari = player.minions.monsters.get(0);
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari, p, new MariStrength(Mari, 1), 1));
+                        break;
                     default:
                         break;
                 }
@@ -96,6 +101,10 @@ public class Awakening extends CustomCard {
                         case "Chika":
                             AbstractMonster Chika = player.minions.monsters.get(1);
                             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
+                            break;
+                        case "Mari":
+                            AbstractMonster Mari = player.minions.monsters.get(1);
+                            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari, p, new MariStrength(Mari, 1), 1));
                             break;
                         default:
                             break;

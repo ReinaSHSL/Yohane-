@@ -1,4 +1,4 @@
-package yohanemod.cards;
+package yohanemod.cards.Deprecated;
 
 import basemod.abstracts.CustomCard;
 import characters.AbstractPlayerWithMinions;
@@ -15,6 +15,7 @@ import yohanemod.patches.AbstractCardEnum;
 import yohanemod.summons.Chika.ChikaStrength;
 import yohanemod.summons.Hanamaru.HanamaruStrength;
 import yohanemod.summons.Lily.LilyStrength;
+import yohanemod.summons.Mari.MariStrength;
 import yohanemod.summons.Ruby.RubyStrength;
 import yohanemod.powers.Sin;
 
@@ -29,7 +30,6 @@ public class Koi_Ni_Naritai extends CustomCard {
     private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.ENEMY;
-    private int sinAmount = 0;
 
     public Koi_Ni_Naritai() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
@@ -43,7 +43,7 @@ public class Koi_Ni_Naritai extends CustomCard {
         if (m.hasPower(Sin.POWER_ID)) {
             if (p instanceof AbstractPlayerWithMinions) {
                 AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
-                sinAmount = m.getPower(Sin.POWER_ID).amount;
+                int sinAmount = m.getPower(Sin.POWER_ID).amount;
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(m, p, Sin.POWER_ID));
                 if (player.minions.monsters.size() != 0) {
                     String summon0 = player.minions.monsters.get(0).id;
@@ -71,6 +71,12 @@ public class Koi_Ni_Naritai extends CustomCard {
                             AbstractMonster Chika = player.minions.monsters.get(0);
                             for (int i = 0; i < sinAmount; i++) {
                                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
+                            }
+                            break;
+                        case "Mari":
+                            AbstractMonster Mari = player.minions.monsters.get(0);
+                            for (int i = 0; i < sinAmount; i++) {
+                                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari, p, new MariStrength(Mari, 1), 1));
                             }
                             break;
                         default:
@@ -101,6 +107,12 @@ public class Koi_Ni_Naritai extends CustomCard {
                                 AbstractMonster Chika = player.minions.monsters.get(1);
                                 for (int i = 0; i < sinAmount; i++) {
                                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika, p, new ChikaStrength(Chika, 1), 1));
+                                }
+                                break;
+                            case "Mari":
+                                AbstractMonster Mari = player.minions.monsters.get(1);
+                                for (int i = 0; i < sinAmount; i++) {
+                                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari, p, new MariStrength(Mari, 1), 1));
                                 }
                                 break;
                             default:

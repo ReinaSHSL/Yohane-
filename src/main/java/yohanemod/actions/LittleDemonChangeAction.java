@@ -2,33 +2,20 @@ package yohanemod.actions;
 
 import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.YohaneMod;
-import yohanemod.cards.*;
-import yohanemod.screens.LittleDemonScreen;
-import yohanemod.summons.Chika.Chika;
-import yohanemod.summons.Chika.ChikaStrength;
-import yohanemod.summons.Hanamaru.Hanamaru;
-import yohanemod.summons.Hanamaru.HanamaruStrength;
-import yohanemod.summons.Lily.Lily;
-import yohanemod.summons.Lily.LilyStrength;
-import yohanemod.summons.Ruby.Ruby;
-import yohanemod.summons.Ruby.RubyStrength;
+import yohanemod.cards.LittleDemonFirst;
+import yohanemod.cards.LittleDemonSecond;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class LittleDemonChangeAction extends com.megacrit.cardcrawl.actions.AbstractGameAction {
     private boolean selected0;
     private AbstractPlayer p;
-    private ArrayList<AbstractCard> list = new ArrayList<AbstractCard>();
+    private ArrayList<AbstractCard> list = new ArrayList<>();
     private AbstractCard card;
 
     public LittleDemonChangeAction(AbstractPlayer p) {
