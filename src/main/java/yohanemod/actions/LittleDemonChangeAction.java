@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.YohaneMod;
 import yohanemod.cards.LittleDemonFirst;
@@ -13,7 +14,7 @@ import yohanemod.cards.LittleDemonSecond;
 import java.util.ArrayList;
 
 public class LittleDemonChangeAction extends com.megacrit.cardcrawl.actions.AbstractGameAction {
-    private boolean selected0;
+    private AbstractCard demonToChange;
     private AbstractPlayer p;
     private ArrayList<AbstractCard> list = new ArrayList<>();
     private AbstractCard card;
@@ -30,10 +31,10 @@ public class LittleDemonChangeAction extends com.megacrit.cardcrawl.actions.Abst
         if (this.duration == Settings.ACTION_DUR_FAST) {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) this.p;
             if (player.minions.monsters.size() > 1) {
-                AbstractCard c = new LittleDemonSecond();
-                this.list.add(c);
-                c = new LittleDemonFirst();
-                this.list.add(c);
+                for (AbstractMonster mo : player.minions.monsters) {
+                    AbstractCard c = YohaneMod.demonAndCardMap.get(mo.id);
+                    list.add(c);
+                }
                 YohaneMod.lds.open(this.list, null, "Pick Little Demon to change.");
                 tickDuration();
                 return;
@@ -43,15 +44,8 @@ public class LittleDemonChangeAction extends com.megacrit.cardcrawl.actions.Abst
                 return;
             }
         }
-        AbstractCard firstDemon = new LittleDemonFirst();
-        AbstractCard secondDemon = new LittleDemonSecond();
-        if (YohaneMod.lds.selected0.cardID.equals(secondDemon.cardID)) {
-            this.selected0 = false;
-        }
-        else if (YohaneMod.lds.selected0.cardID.equals(firstDemon.cardID)) {
-            this.selected0 = true;
-        }
-        AbstractDungeon.actionManager.addToBottom(new DemonSwapAction(this.p, this.selected0));
+        this.demonToChange = YohaneMod.lds.selected0;
+        AbstractDungeon.actionManager.addToBottom(new DemonSwapAction(this.p, this.demonToChange));
         this.isDone = true;
     }
 }

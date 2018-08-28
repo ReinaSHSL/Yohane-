@@ -12,6 +12,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import yohanemod.cards.*;
+import yohanemod.summons.Chika.Chika;
+import yohanemod.summons.Hanamaru.Hanamaru;
+import yohanemod.summons.Lily.Lily;
+import yohanemod.summons.Mari.Mari;
+import yohanemod.summons.Ruby.Ruby;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -21,15 +26,21 @@ import java.util.HashMap;
 public class DemonSwapAction extends AbstractGameAction {
     private static final String[] TEXT = new String[]{"Change to whom?"};
     private AbstractPlayer p;
-    private boolean selected0;
+    private AbstractCard demonToChange;
     private AbstractCard card;
     private AbstractMonster summonToChange;
+    private static HashMap<AbstractCard, AbstractMonster> cardToDemonMap;
 
 
-    DemonSwapAction(AbstractPlayer p, boolean selected0) {
+    DemonSwapAction(AbstractPlayer p, AbstractCard demonToChange) {
         this.p = p;
         this.duration = Settings.ACTION_DUR_FAST;
-        this.selected0 = selected0;
+        this.demonToChange = demonToChange;
+        cardToDemonMap.put(new Little_Demon_Chika(), new Chika());
+        cardToDemonMap.put(new Little_Demon_Lily(), new Little_Demon_Lily());
+        cardToDemonMap.put(new Little_Demon_Hanamaru(), new Little_Demon_Hanamaru());
+        cardToDemonMap.put(new Little_Demon_Mari(), new Little_Demon_Mari());
+        cardToDemonMap.put(new Little_Demon_Ruby(), );
     }
 
     private boolean summonCheck(AbstractCard c) {
@@ -43,6 +54,7 @@ public class DemonSwapAction extends AbstractGameAction {
         try {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) this.p;
             if (this.duration == Settings.ACTION_DUR_FAST) {
+                this.summonToChange = this.demonToChange
                 if (this.selected0) {
                     this.summonToChange = player.minions.monsters.get(0);
                     System.out.println(this.summonToChange);

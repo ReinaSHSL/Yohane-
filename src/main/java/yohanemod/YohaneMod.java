@@ -9,12 +9,14 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yohanemod.cards.*;
@@ -24,18 +26,25 @@ import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.AngelWings;
 import yohanemod.screens.LittleDemonScreen;
+import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Chika.ChikaChoiceCards;
 import yohanemod.summons.Chika.ChikaNumbers;
+import yohanemod.summons.Hanamaru.Hanamaru;
 import yohanemod.summons.Hanamaru.HanamaruChoiceCards;
 import yohanemod.summons.Hanamaru.HanamaruNumbers;
+import yohanemod.summons.Lily.Lily;
 import yohanemod.summons.Lily.LilyChoiceCards;
 import yohanemod.summons.Lily.LilyNumbers;
+import yohanemod.summons.Mari.Mari;
 import yohanemod.summons.Mari.MariChoiceCards;
 import yohanemod.summons.Mari.MariNumbers;
+import yohanemod.summons.Ruby.Ruby;
 import yohanemod.summons.Ruby.RubyChoiceCards;
 import yohanemod.summons.Ruby.RubyNumbers;
 
 import java.nio.charset.StandardCharsets;
+import java.util.AbstractMap;
+import java.util.HashMap;
 
 
 @SpireInitializer
@@ -62,6 +71,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     private static final String Yohane_Button = "charstuff/YohaneButton.png";
     public static boolean optOutMetrics = false;
     public static LittleDemonScreen lds;
+    public static HashMap<String, AbstractCard> demonAndCardMap;
 
     public YohaneMod() {
         BaseMod.subscribe(this);
@@ -70,6 +80,11 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
                 ATTACK_GREY, SKILL_GREY, POWER_GREY, ENERGY_ORB_GREY,
                 ATTACK_GREY_PORTRAIT, SKILL_GREY_PORTRAIT, POWER_GREY_PORTRAIT,
                 ENERGY_ORB_GREY_PORTRAIT);
+        demonAndCardMap.put(Chika.ID, new Little_Demon_Chika());
+        demonAndCardMap.put(Lily.ID, new Little_Demon_Lily());
+        demonAndCardMap.put(Hanamaru.ID, new Little_Demon_Hanamaru());
+        demonAndCardMap.put(Mari.ID, new Little_Demon_Mari());
+        demonAndCardMap.put(Ruby.ID, new Little_Demon_Ruby());
     }
 
 	public static void initialize() {

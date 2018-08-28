@@ -90,17 +90,4 @@ public class Ruby extends AbstractFriendlyMonster {
     protected void getMove(int i) {
     }
 
-    @Override
-    public void update() {
-        System.out.println(this.drawX);
-        AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) AbstractDungeon.player;
-        if (player.hasMinions()) {
-            if (this.drawX == -1150F * Settings.scale) {
-                if (player.minions.monsters.size() == 1) {
-                    AbstractMonster moveToRightSummon = player.minions.monsters.get(0);
-                    moveToRightSummon.drawX = -750F * Settings.scale;
-                }
-            }
-        }
-    }
 }
