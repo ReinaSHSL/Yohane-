@@ -35,7 +35,7 @@ public class Scorn extends CustomCard {
     public Scorn() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
         this.damage = this.baseDamage = DAMAGE_AMT;
         this.misc = VULN_AMT;

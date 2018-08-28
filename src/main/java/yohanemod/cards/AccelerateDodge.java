@@ -22,7 +22,7 @@ public class AccelerateDodge extends CustomCard {
     public AccelerateDodge() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.magicNumber = this.baseMagicNumber = Accelerator.WEAK_AMT;
     }
 

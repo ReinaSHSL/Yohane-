@@ -1,7 +1,6 @@
 package yohanemod.cards.Deprecated;
 
 import basemod.abstracts.CustomCard;
-import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 
@@ -29,7 +29,7 @@ public class Solitude extends CustomCard {
     public Solitude() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }
 

@@ -27,7 +27,7 @@ public class Grace_Under_Fire extends CustomCard {
     public Grace_Under_Fire() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }
 

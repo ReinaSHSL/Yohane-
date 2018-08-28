@@ -1,7 +1,6 @@
 package yohanemod.cards.Deprecated;
 
 import basemod.abstracts.CustomCard;
-import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -11,13 +10,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.powers.Sin;
 import yohanemod.summons.Chika.ChikaStrength;
 import yohanemod.summons.Hanamaru.HanamaruStrength;
 import yohanemod.summons.Lily.LilyStrength;
 import yohanemod.summons.Mari.MariStrength;
 import yohanemod.summons.Ruby.RubyStrength;
-import yohanemod.powers.Sin;
 
 
 public class Koi_Ni_Naritai extends CustomCard {
@@ -34,7 +34,7 @@ public class Koi_Ni_Naritai extends CustomCard {
     public Koi_Ni_Naritai() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.exhaust = true;
     }
 

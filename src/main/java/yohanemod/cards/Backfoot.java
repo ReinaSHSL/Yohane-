@@ -31,7 +31,7 @@ public class Backfoot extends CustomCard{
     public Backfoot() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.block = this.baseBlock = BLOCK_AMOUNT;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }

@@ -28,7 +28,7 @@ public class Adept_Technology extends CustomCard {
     public Adept_Technology() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.damage = this.baseDamage = ATTACK_DMG;
         this.isMultiDamage = true;
     }

@@ -27,7 +27,7 @@ public class Kowareyasuki extends CustomCard {
     public Kowareyasuki() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.isInnate = true;
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
         this.exhaust = true;

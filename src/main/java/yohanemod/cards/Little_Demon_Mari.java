@@ -1,7 +1,6 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
-import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.summons.Mari.Mari;
 import yohanemod.summons.Mari.MariStrength;
@@ -29,7 +29,7 @@ public class Little_Demon_Mari extends CustomCard {
     public Little_Demon_Mari() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.exhaust = true;
     }
 

@@ -23,7 +23,7 @@ public class Feather extends CustomCard {
     public Feather() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.CURSE,
                 AbstractCard.CardColor.CURSE, rarity,
-                target, POOL);
+                target);
     }
 
     @Override

@@ -28,7 +28,7 @@ public class Dark_Shield extends CustomCard {
     public Dark_Shield() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
     }
 
     public boolean hasEnoughEnergy() {

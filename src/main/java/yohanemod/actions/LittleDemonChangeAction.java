@@ -1,11 +1,11 @@
 package yohanemod.actions;
 
-import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.YohaneMod;
 import yohanemod.cards.LittleDemonFirst;
 import yohanemod.cards.LittleDemonSecond;

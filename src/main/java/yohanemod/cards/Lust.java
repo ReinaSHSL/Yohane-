@@ -27,7 +27,7 @@ public class Lust extends CustomCard {
     public Lust() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = SIN;
         this.exhaust = true;
     }

@@ -29,7 +29,7 @@ public class Feather_Curse extends CustomCard {
     public Feather_Curse() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
 
         this.damage = this.baseDamage = ATTACK_DMG;
     }

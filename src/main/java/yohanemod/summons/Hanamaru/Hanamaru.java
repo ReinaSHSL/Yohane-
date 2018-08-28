@@ -1,8 +1,5 @@
 package yohanemod.summons.Hanamaru;
 
-import actions.ChooseAction;
-import actions.ChooseActionInfo;
-import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.unique.ExhumeAction;
@@ -11,7 +8,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import monsters.AbstractFriendlyMonster;
+import kobting.friendlyminions.actions.ChooseAction;
+import kobting.friendlyminions.actions.ChooseActionInfo;
+import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
+import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import yohanemod.powers.Sin;
 
 import java.util.ArrayList;
@@ -96,15 +96,16 @@ public class Hanamaru extends AbstractFriendlyMonster {
     }
 
     @Override
-    public void die() {
-        super.die();
+    public void update() {
+        System.out.println(this.drawX);
         AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) AbstractDungeon.player;
         if (player.hasMinions()) {
-            if (player.minions.monsters.get(0).currentHealth == 0) {
-                player.minions.monsters.get(0).die();
+            if (this.drawX == -1150F * Settings.scale) {
+                if (player.minions.monsters.size() == 1) {
+                    AbstractMonster moveToRightSummon = player.minions.monsters.get(0);
+                    moveToRightSummon.drawX = -750F * Settings.scale;
+                }
             }
-            AbstractMonster moveToRightSummon = player.minions.monsters.get(0);
-            moveToRightSummon.drawX = -750F * Settings.scale;
         }
     }
 }

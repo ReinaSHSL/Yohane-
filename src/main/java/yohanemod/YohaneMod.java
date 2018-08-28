@@ -65,7 +65,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 
     public YohaneMod() {
         BaseMod.subscribe(this);
-        BaseMod.addColor(AbstractCardEnum.YOHANE_GREY.toString(),
+        BaseMod.addColor(AbstractCardEnum.YOHANE_GREY,
                 GREY, GREY, GREY, GREY, GREY, GREY, GREY,
                 ATTACK_GREY, SKILL_GREY, POWER_GREY, ENERGY_ORB_GREY,
                 ATTACK_GREY_PORTRAIT, SKILL_GREY_PORTRAIT, POWER_GREY_PORTRAIT,
@@ -92,9 +92,9 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 	 @Override
 		public void receiveEditCharacters() {
 			BaseMod.addCharacter(Yohane.class,  "The Fallen Angel", "FALLEN ANGEL",
-					AbstractCardEnum.YOHANE_GREY.toString(), "Yohane",
+					AbstractCardEnum.YOHANE_GREY, "Yohane",
 					Yohane_Button , Yohane_Portrait,
-					YohaneEnum.FallenAngel.toString());
+					YohaneEnum.FallenAngel);
 		}
 
     @Override
@@ -251,7 +251,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 
     @Override
     public void receiveEditRelics() {
-        BaseMod.addRelicToCustomPool(new AngelWings(), AbstractCardEnum.YOHANE_GREY.toString());
+        BaseMod.addRelicToCustomPool(new AngelWings(), AbstractCardEnum.YOHANE_GREY);
     }
 
 

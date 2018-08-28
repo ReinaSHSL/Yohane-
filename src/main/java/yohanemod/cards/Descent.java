@@ -30,7 +30,7 @@ public class Descent extends CustomCard {
     public Descent() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
         this.magicNumber = this.baseMagicNumber = SIN;
         this.misc = FALLEN_ENERGY;
     }

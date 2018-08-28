@@ -26,7 +26,7 @@ public class Gluttony extends CustomCard {
     public Gluttony() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }
 

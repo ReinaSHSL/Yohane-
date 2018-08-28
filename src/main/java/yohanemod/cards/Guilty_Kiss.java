@@ -29,7 +29,7 @@ public class Guilty_Kiss extends CustomCard {
     public Guilty_Kiss() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.damage = this.baseDamage = DAMAGE_AMT;
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
     }

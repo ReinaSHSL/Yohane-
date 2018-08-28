@@ -28,7 +28,7 @@ public class Feather_Tap extends CustomCard {
     public Feather_Tap() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
         this.baseDamage = ATTACK_DMG;
     }
 

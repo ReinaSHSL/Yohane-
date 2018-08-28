@@ -30,7 +30,7 @@ public class Shadow_Gate extends CustomCard{
     public Shadow_Gate() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.magicNumber = this.baseMagicNumber = DRAW;
         this.misc = FALLEN_ENERGY;
     }

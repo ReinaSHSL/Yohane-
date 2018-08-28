@@ -1,8 +1,5 @@
 package yohanemod.summons.Mari;
 
-import actions.ChooseAction;
-import actions.ChooseActionInfo;
-import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -15,12 +12,10 @@ import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
 import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.IntangiblePower;
-import monsters.AbstractFriendlyMonster;
-import yohanemod.powers.FallenEnergy;
-import yohanemod.summons.Chika.ChikaStrength;
-import yohanemod.summons.Mari.MariChoiceCards;
-import yohanemod.summons.Mari.MariNumbers;
-import yohanemod.summons.Mari.MariStrength;
+import kobting.friendlyminions.actions.ChooseAction;
+import kobting.friendlyminions.actions.ChooseActionInfo;
+import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
+import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 
 import java.util.ArrayList;
 
@@ -110,15 +105,16 @@ public class Mari extends AbstractFriendlyMonster {
     }
 
     @Override
-    public void die() {
-        super.die();
+    public void update() {
+        System.out.println(this.drawX);
         AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) AbstractDungeon.player;
         if (player.hasMinions()) {
-            if (player.minions.monsters.get(0).currentHealth == 0) {
-                player.minions.monsters.get(0).die();
+            if (this.drawX == -1150F * Settings.scale) {
+                if (player.minions.monsters.size() == 1) {
+                    AbstractMonster moveToRightSummon = player.minions.monsters.get(0);
+                    moveToRightSummon.drawX = -750F * Settings.scale;
+                }
             }
-            AbstractMonster moveToRightSummon = player.minions.monsters.get(0);
-            moveToRightSummon.drawX = -750F * Settings.scale;
         }
     }
 }

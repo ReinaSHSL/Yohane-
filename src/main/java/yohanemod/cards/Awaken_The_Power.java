@@ -28,7 +28,7 @@ public class Awaken_The_Power extends CustomCard {
     public Awaken_The_Power() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = STRENGTH;
         this.misc = FADING;
     }

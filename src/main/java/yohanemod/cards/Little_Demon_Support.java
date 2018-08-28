@@ -1,7 +1,6 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
-import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
 
 public class Little_Demon_Support extends CustomCard {
@@ -27,7 +27,7 @@ public class Little_Demon_Support extends CustomCard {
     public Little_Demon_Support() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.block = this.baseBlock = BLOCK_AMT;
     }
 

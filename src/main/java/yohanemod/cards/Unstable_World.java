@@ -35,7 +35,7 @@ public class Unstable_World extends CustomCard{
     public Unstable_World() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
 
         this.damage = this.baseDamage = ATTACK_DMG;
         this.isMultiDamage = true;

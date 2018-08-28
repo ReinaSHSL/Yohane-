@@ -1,13 +1,13 @@
 package yohanemod;
 
 import basemod.animations.SpriterAnimation;
-import characters.AbstractPlayerWithMinions;
-import characters.CustomCharSelectInfo;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.daily.DailyMods;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
+import kobting.friendlyminions.characters.CustomCharSelectInfo;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.screens.LittleDemonScreen;
 

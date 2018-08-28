@@ -28,7 +28,7 @@ public class Angel_Tears extends CustomCard{
     public Angel_Tears() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
 
         this.damage = this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;

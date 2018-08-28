@@ -30,7 +30,7 @@ public class Excitement extends CustomCard {
     public Excitement() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
         this.damage = this.baseDamage;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }

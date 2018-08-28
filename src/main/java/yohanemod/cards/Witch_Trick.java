@@ -27,7 +27,7 @@ public class Witch_Trick extends CustomCard {
     public Witch_Trick() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = DRAW;
     }
 

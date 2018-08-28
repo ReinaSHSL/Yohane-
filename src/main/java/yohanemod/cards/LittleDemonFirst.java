@@ -22,7 +22,7 @@ public class LittleDemonFirst extends CustomCard {
     public LittleDemonFirst() {
             super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                     AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                    rarity, target, POOL);
+                    rarity, target);
     }
 
     //Can't be upgraded

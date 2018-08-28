@@ -28,7 +28,7 @@ public class Culinary_Genius extends CustomCard {
     public Culinary_Genius() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.exhaust = true;
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = HEAL;

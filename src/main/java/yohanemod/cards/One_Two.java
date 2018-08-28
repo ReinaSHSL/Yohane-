@@ -1,7 +1,6 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
-import characters.AbstractPlayerWithMinions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
 
 public class One_Two extends CustomCard {
@@ -26,9 +26,7 @@ public class One_Two extends CustomCard {
     private static final AbstractCard.CardTarget target = AbstractCard.CardTarget.ENEMY;
 
     public One_Two() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                AbstractCard.CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+       super(ID, NAME, IMG_PATH, COST, DESCRIPTION,                 CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,                         rarity, target);
         this.damage = this.baseDamage = DAMAGE_AMT;
     }
     @Override

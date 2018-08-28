@@ -28,7 +28,7 @@ public class Stealth_Mode extends CustomCard {
     public Stealth_Mode() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = INTANGIBLE;
         this.retain = true;
     }

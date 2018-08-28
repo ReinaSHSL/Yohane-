@@ -28,7 +28,7 @@ public class Price_Of_Power extends CustomCard {
     public Price_Of_Power() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.retain = true;
         this.magicNumber = this.baseMagicNumber = DAMAGE;
     }

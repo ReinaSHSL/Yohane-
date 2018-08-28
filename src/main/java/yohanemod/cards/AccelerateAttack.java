@@ -20,9 +20,9 @@ public class AccelerateAttack extends CustomCard {
     private static final AbstractCard.CardTarget target = CardTarget.SELF_AND_ENEMY;
 
     public AccelerateAttack() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                AbstractCard.CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+       super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
+               CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
+               rarity, target);
         this.damage = this.baseDamage = Accelerator.DAMAGE_AMT;
     }
 

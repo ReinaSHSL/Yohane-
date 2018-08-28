@@ -32,7 +32,7 @@ public class    Dark_Rest extends CustomCard{
     public Dark_Rest () {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.magicNumber = this.baseMagicNumber = WEAK_AMT;
         this.misc = FALLEN_ENERGY;
         this.block = this.baseBlock = BLOCK_AMT;

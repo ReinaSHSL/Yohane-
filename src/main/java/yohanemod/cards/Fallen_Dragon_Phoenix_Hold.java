@@ -25,7 +25,7 @@ public class Fallen_Dragon_Phoenix_Hold extends CustomCard {
     public Fallen_Dragon_Phoenix_Hold() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.magicNumber = this.baseMagicNumber = STRENGTH_LOSS;
         this.exhaust = true;
     }

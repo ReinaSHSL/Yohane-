@@ -30,7 +30,7 @@ public class Perfection extends CustomCard {
     public Perfection() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
         this.damage = this.baseDamage;
     }
 

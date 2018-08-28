@@ -30,7 +30,7 @@ public class Curse_The_Heavens extends CustomCard {
     public Curse_The_Heavens() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.damage = this.baseDamage = DAMAGE_AMT;
         this.magicNumber = this.baseMagicNumber = SIN;
         this.isMultiDamage = true;

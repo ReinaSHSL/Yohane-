@@ -33,7 +33,7 @@ public class Lailapse extends CustomCard {
     public Lailapse() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.magicNumber = this.baseMagicNumber = VULNERABLE_AMT;
         this.block = this.baseBlock = BLOCK_AMT;
         this.misc = FALLEN_ENERGY;

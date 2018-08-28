@@ -26,7 +26,7 @@ public class Modore extends CustomCard {
     public Modore() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.damage = this.baseDamage = DAMAGE_AMT;
     }
 
