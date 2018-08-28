@@ -3,7 +3,7 @@
 **Yohane!** adds Yohane! to **Slay the Spire**.
 
 Currently supported versions: 
-Weekly Patch 38+
+Weekly Patch 39+
 
 ## Content/Gameplay ##
 Yohane is a character all about trade offs and big numbers. Many cards are powerful, but have some sort of negative effect to them requiring well thought out plays, highly rewarding plays. 
