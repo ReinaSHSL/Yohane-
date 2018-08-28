@@ -26,7 +26,7 @@ public class Sloth extends CustomCard{
     public Sloth() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.magicNumber = this.baseMagicNumber = HEAL;
     }
 

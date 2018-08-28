@@ -54,6 +54,7 @@ The Wiki is still under construction.
 ## Credits / Acknowledgements ##
 * Reina - Creator
 * Tjpers - Early Playtesting
+* JohnnyDevos - Demon Swap optimization
 
 ## Special Thanks ##
 

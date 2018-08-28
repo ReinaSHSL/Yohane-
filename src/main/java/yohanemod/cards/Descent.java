@@ -30,13 +30,17 @@ public class Descent extends CustomCard {
     public Descent() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
         this.magicNumber = this.baseMagicNumber = SIN;
         this.misc = FALLEN_ENERGY;
     }
 
     public boolean hasEnoughEnergy() {
-        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.misc && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
+        boolean retVal = super.hasEnoughEnergy();
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.misc)) {
+            retVal = false;
+        }
+        return retVal;
     }
 
     @Override

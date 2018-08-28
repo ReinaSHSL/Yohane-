@@ -19,7 +19,6 @@ public class Academic_Prowess extends CustomCard implements PostDrawSubscriber {
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final String IMG_PATH = "cards/Academic_Prowess.png";
     private static final int COST = 1;
-    private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.SELF;
     private static final int ENERGY = 1;
@@ -28,7 +27,7 @@ public class Academic_Prowess extends CustomCard implements PostDrawSubscriber {
     public Academic_Prowess() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = ENERGY;
         this.misc = CARDS_PLAYED;
         this.retain = true;

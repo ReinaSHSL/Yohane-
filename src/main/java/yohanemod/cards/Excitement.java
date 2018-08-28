@@ -30,20 +30,25 @@ public class Excitement extends CustomCard {
     public Excitement() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
+        this.damage = this.baseDamage;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
     }
 
     public boolean hasEnoughEnergy() {
-        return (AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
+        boolean retVal = super.hasEnoughEnergy();
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.magicNumber)) {
+            retVal = false;
+        }
+        return retVal;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if ((p.hasPower(FallenEnergy.POWER_ID)) && (p.getPower(FallenEnergy.POWER_ID).amount > this.magicNumber)) {
-            int damageToDeal = (p.getPower(FallenEnergy.POWER_ID).amount/2);
+            this.baseDamage = (p.getPower(FallenEnergy.POWER_ID).amount/2);
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, damageToDeal, this.damageTypeForTurn),
+                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
                     AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -this.magicNumber));
 

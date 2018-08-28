@@ -35,7 +35,7 @@ public class Unstable_World extends CustomCard{
     public Unstable_World() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
 
         this.damage = this.baseDamage = ATTACK_DMG;
         this.isMultiDamage = true;
@@ -43,7 +43,11 @@ public class Unstable_World extends CustomCard{
     }
 
     public boolean hasEnoughEnergy() {
-        return (AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
+        boolean retVal = super.hasEnoughEnergy();
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.magicNumber)) {
+            retVal = false;
+        }
+        return retVal;
     }
 
     @Override

@@ -27,7 +27,7 @@ public class City_Of_Sin extends CustomCard {
     public City_Of_Sin() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.POWER, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = SIN;
     }
 

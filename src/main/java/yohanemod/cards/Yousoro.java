@@ -28,8 +28,8 @@ public class Yousoro extends CustomCard {
 
     public Yousoro() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                CardType.POWER, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
+                        rarity, target);
         this.exhaust = true;
         this.magicNumber = this.baseMagicNumber = ENERGY;
         this.misc = DRAW;

@@ -30,7 +30,7 @@ public class Energetic_Performance extends CustomCard {
     public Energetic_Performance() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                        rarity, target, POOL);
+                        rarity, target);
         this.magicNumber = this.baseMagicNumber = ENERGY;
         this.misc = BUFFER;
     }

@@ -31,13 +31,16 @@ public class Allure_of_Darkness extends CustomCard{
     public Allure_of_Darkness() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.SKILL,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
         this.misc = FALLEN_ENERGY;
     }
 
-    @Override
     public boolean hasEnoughEnergy() {
-        return (AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= this.misc) && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
+        boolean retVal = super.hasEnoughEnergy();
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.misc)) {
+            retVal = false;
+        }
+        return retVal;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

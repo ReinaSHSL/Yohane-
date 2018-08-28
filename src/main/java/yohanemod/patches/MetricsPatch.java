@@ -58,15 +58,14 @@ for (let i = 0; i < listItems.length; i++) {
     }
 }
 
- */
+
 
 @SpirePatch(
         cls="com.megacrit.cardcrawl.metrics.Metrics",
         method="run"
 )
 public class MetricsPatch {
-    @SpireInsertPatch(rloc=12)
-    public static void Insert(Metrics __dataToSend) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
+    public static void Postfix(Metrics __dataToSend) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
         final Logger logger = LogManager.getLogger(Metrics.class.getName());
         boolean optOutMetrics = yohanemod.YohaneMod.optOutMetrics;
         Gson gson = new Gson();
@@ -179,3 +178,4 @@ public class MetricsPatch {
         }
     }
 }
+ */

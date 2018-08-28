@@ -27,7 +27,7 @@ public class Soul_Peek extends CustomCard {
     public Soul_Peek() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.magicNumber = this.baseMagicNumber = SIN;
     }
 

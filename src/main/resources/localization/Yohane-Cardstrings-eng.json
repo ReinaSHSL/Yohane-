@@ -11,6 +11,22 @@
       " cards this turn."
     ]
   },
+  "Yohane:AccelerateAttack": {
+    "NAME": "Attack",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "Yohane:AccelerateDodge": {
+    "NAME": "Dodge",
+    "DESCRIPTION": "Next Attack you take does 0 damage. NL Apply !M! Vulnerable to yourself."
+  },
+  "Yohane:Accelerator": {
+    "NAME": "Accelerator",
+    "DESCRIPTION": "Choose. NL Deal !D! damage. NL Next Attack you take does 0 damage and apply !M! Vulnerable to yourself."
+  },
+  "Yohane:Adept_Technology": {
+    "NAME": "Adept Technology",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Retain your entire hand at the end of the turn."
+  },
   "Yohane:Allure_of_Darkness": {
     "NAME": "Allure Of Darkness",
     "DESCRIPTION": "Pay 2 Fallen Energy. NL Draw 2 Cards. NL Exhaust a card from your hand.",
@@ -32,13 +48,13 @@
     "NAME": "Backfoot",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL Gain !B! Block."
   },
+  "Yohane:Blazing": {
+    "NAME": "Blazing!",
+    "DESCRIPTION": "This turn do double damage. NL Next turn, do half damage."
+  },
   "Yohane:City_Of_Sin": {
     "NAME": "City of Sin",
     "DESCRIPTION": "At the start of your turn, apply !M! Sin to everyone (including yourself)."
-  },
-  "Yohane:Counter": {
-    "NAME": "Counter",
-    "DESCRIPTION": "Pay !M! Fallen Energy. NL If the enemy intends to attack, deal !D! damage."
   },
   "Yohane:Culinary_Genius": {
     "NAME": "Culinary Genius",
@@ -93,22 +109,6 @@
     "NAME": "Phoenix Hold",
     "DESCRIPTION": "Enemy loses !M! Strength for the rest of the turn. NL Exhaust."
   },
-  "Yohane:Feather": {
-    "NAME": "Feather",
-    "DESCRIPTION": "Unplayable. NL Exhaust your hand except for Feathers and cards that say Feather at the end of the turn."
-  },
-  "Yohane:Feather_Curse": {
-    "NAME":  "Feather Curse",
-    "DESCRIPTION": "Exhaust a card in your hand. NL Deal !D! damage. NL Add 2 Feathers to your draw pile."
-  },
-  "Yohane:Feather_Storm": {
-    "NAME": "Feather Storm",
-    "DESCRIPTION": "Exhaust ALL Feathers from everywhere. NL Deal !D! damage to ALL enemies for each."
-  },
-  "Yohane:Feather_Tap": {
-    "NAME": "Feather Tap",
-    "DESCRIPTION":  "Deal !D! damage. NL Add a Feather to your hand."
-  },
   "Yohane:Gluttony": {
     "NAME":  "Gluttony",
     "DESCRIPTION": "Exhaust your entire hand. NL Gain !M! Fallen Energy for each."
@@ -127,7 +127,7 @@
   },
   "Yohane:Guilty_Kiss": {
     "NAME":  "Guilty Kiss",
-    "DESCRIPTION": "If only [G]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times."
+    "DESCRIPTION": "If only [G]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times instead."
   },
   "Yohane:Hakodate": {
     "NAME": "Hakodate",
@@ -170,6 +170,22 @@
     "NAME": "Kowareyasuki",
     "DESCRIPTION": "Innate. NL Apply !M! Weak to all enemies. NL Exhaust."
   },
+  "Yohane:Little_Demon_Change": {
+    "NAME":  "Little Demon Change",
+    "DESCRIPTION": "Select one Summon. NL Swap it out for another in your deck. NL Retain Evolutions."
+  },
+  "Yohane:Little_Demon_Chika": {
+    "NAME":  "Little Demon Chika",
+    "DESCRIPTION": "Summon 1 Chika. NL Playing this card with Chika already on the field Evolves her."
+  },
+  "Yohane:Little_Demon_Hanamaru": {
+    "NAME":  "Little Demon Hanamaru",
+    "DESCRIPTION": "Summon 1 Hanamaru. NL Playing this card with Hanamaru already on the field Evolves her."
+  },
+  "Yohane:Little_Demon_Mari": {
+    "NAME":  "Little Demon Mari",
+    "DESCRIPTION": "Summon 1 Mari. NL Playing this card with Mari already on the field Evolves her. NL Exhaust."
+  },
   "Yohane:Little_Demon_Lily": {
     "NAME":  "Little Demon Lily",
     "DESCRIPTION": "Summon 1 Lily. NL Playing this card with Lily already on the field Evolves her."
@@ -187,6 +203,14 @@
   "Yohane:Little_Demon_Support": {
     "NAME": "Little Demon Support",
     "DESCRIPTION": "Each Summon gains !B! Block."
+  },
+  "Yohane:LittleDemonFirst": {
+    "NAME": "Right Little Demon",
+    "DESCRIPTION": "Swap out the right Little Demon."
+  },
+  "Yohane:LittleDemonSecond": {
+    "NAME": "Left Little Demon",
+    "DESCRIPTION": "Swap out the left Little Demon."
   },
   "Yohane:Livestream_Donation": {
     "NAME":  "Livestream Donation",
@@ -254,18 +278,14 @@
     "NAME": "Schwarz Sechs",
     "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL The next 0 cost card is played twice."
   },
+  "Yohane:Scorn": {
+    "NAME": "Scorn",
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Deal !D! damage. NL Apply !F! Vulnerable."
+  },
   "Yohane:Shadow_Gate": {
     "NAME": "Shadow Gate",
     "DESCRIPTION": "Draw !M! card and lose 5 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0.",
     "UPGRADE_DESCRIPTION": "Draw !M! cards and lose 5 Fallen Energy when a card is played. NL Removed if Fallen Energy drops to 0."
-  },
-  "Yohane:Shark_Summon": {
-    "NAME":  "Shark Guard",
-    "DESCRIPTION": "Gain !B! Block. NL Lose 1/4 Fallen Energy. NL Gain equal Thorns."
-  },
-  "Yohane:Silence": {
-    "NAME": "Silence",
-    "DESCRIPTION": "If the enemy intends to attack, deal !D! damage."
   },
   "Yohane:Sloth": {
     "NAME": "Sloth",

@@ -29,7 +29,7 @@ public class Little_Demon_Recruit extends CustomCard {
     public Little_Demon_Recruit() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.magicNumber = this.baseMagicNumber = ADD;
         this.exhaust = true;
     }

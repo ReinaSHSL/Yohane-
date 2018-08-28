@@ -34,7 +34,7 @@ public class Prideful_Crash extends CustomCard {
     public Prideful_Crash() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.damage = this.baseDamage = DAMAGE_AMOUNT;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
         this.misc = DRAW;

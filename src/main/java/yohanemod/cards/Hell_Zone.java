@@ -33,14 +33,20 @@ public class Hell_Zone extends CustomCard{
     public Hell_Zone() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.exhaust = true;
         this.retain = true;
+        this.damage = this.baseDamage;
+        this.isMultiDamage = true;
     }
 
 
     public boolean hasEnoughEnergy() {
-        return AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount >= 1 && (EnergyPanel.getCurrentEnergy() >= this.costForTurn);
+        boolean retVal = super.hasEnoughEnergy();
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.magicNumber)) {
+            retVal = false;
+        }
+        return retVal;
     }
 
     @Override
@@ -52,41 +58,11 @@ public class Hell_Zone extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m)
     {
         if (p.hasPower(FallenEnergy.POWER_ID) && (p.getPower(FallenEnergy.POWER_ID).amount > 1)) {
-            float damage = p.getPower(FallenEnergy.POWER_ID).amount/2;
-            ArrayList<AbstractMonster> mo = AbstractDungeon.getCurrRoom().monsters.monsters;
-            float[] tmp = new float[mo.size()];
-            for (int i = 0; i < tmp.length; i++) {
-                tmp[i] = damage;
-            }
-            for (int i = 0; i < tmp.length; i++) {
-                for (AbstractPower pl : AbstractDungeon.player.powers) {
-                    tmp[i] = pl.atDamageGive(tmp[i], this.damageTypeForTurn);
-                    if (damage != (int)tmp[i]) {
-                        this.isDamageModified = true;
-                    }
-                }
-            }
-            for (int i = 0; i < tmp.length; i++) {
-                for (AbstractPower pl : AbstractDungeon.player.powers) {
-                    tmp[i] = pl.atDamageFinalGive(tmp[i], this.damageTypeForTurn);
-                    if (damage != (int)tmp[i]) {
-                        this.isDamageModified = true;
-                    }
-                }
-            }
-            for (int i = 0; i < tmp.length; i++) {
-                if (tmp[i] < 0.0F) {
-                    tmp[i] = 0.0F;
-                }
-            }
-            multiDamage = new int[tmp.length];
-            for (int i = 0; i < tmp.length; i++) {
-                this.multiDamage[i] = MathUtils.floor(tmp[i]);
-            }
+            this.baseDamage = p.getPower(FallenEnergy.POWER_ID).amount/2;
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.SFXAction("ATTACK_HEAVY"));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));
             AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(p,
-                    multiDamage, this.damageTypeForTurn, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
+                    this.multiDamage, this.damageTypeForTurn, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
         }  else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }

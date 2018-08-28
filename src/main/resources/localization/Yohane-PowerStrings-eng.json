@@ -3,7 +3,7 @@
     "NAME": "Fallen Energy",
     "DESCRIPTIONS": [
       "You have #b",
-      " #yFallen #yEnergy. Gain 2 per turn. Paying Fallen Energy means you must possess enough. Losing can be played regardless of Fallen Energy count."
+      " #yFallen #yEnergy. Gain 2 per turn."
     ]
   },
 
@@ -68,12 +68,47 @@
       " Fallen Energy."
     ]
   },
+  "Yohane:HanamaruStrength": {
+    "NAME": "Mirai Zura!",
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " Sin to ALL enemies or give all allies including herself #b",
+      " Block."
+    ]
+  },
+
   "Yohane:RubyStrength": {
     "NAME": "Ganbaruby!",
     "DESCRIPTIONS": [
       "Attacking does #b",
-      " damage. Blocking gives #b",
+      " damage to ALL enemies. Blocking gives #b",
       " #yBlock to Yohane."
+    ]
+  },
+
+  "Yohane:MariStrength": {
+    "NAME": "Shiny!",
+    "DESCRIPTIONS": [
+      "Attacking does #b",
+      " damage to the lowest health enemy. Gaining Intangible lowers Max HP by #b",
+      ". This Summon can evolve herself."
+    ]
+  },
+
+  "Yohane:DodgePower": {
+    "NAME": "Dodge",
+    "DESCRIPTIONS": [
+      "The next #b",
+      " Attacks you take do no damage."
+    ]
+  },
+
+  "Yohane:ChikaStrength": {
+    "NAME": "Kagayakitai!",
+    "DESCRIPTIONS": [
+      "Attacking does #b",
+      " damage to the lowest health enemy. Healing heals #b",
+      " to all #ySummons."
     ]
   },
 
@@ -150,6 +185,24 @@
     "DESCRIPTIONS": [
       "Your next #b",
       " card(s) will play an extra time at half power (rounded down)."
+    ]
+  },
+
+  "Yohane:BurntOutPower": {
+    "NAME": "Burning Out",
+    "DESCRIPTIONS": [
+      "Deal #yHalf #yDamage next turn.",
+      "Deal #yHalf #yDamage for the next ",
+      " turns."
+    ]
+  },
+
+  "Yohane:HalveDamagePower": {
+    "NAME": "Half Damage",
+    "DESCRIPTIONS": [
+      "#yAttacks deal half damage for #b",
+      " turn.",
+      " turns."
     ]
   },
 

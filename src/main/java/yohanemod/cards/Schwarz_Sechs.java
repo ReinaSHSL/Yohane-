@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
 import yohanemod.powers.SchwarzSechsPower;
@@ -32,10 +33,18 @@ public class Schwarz_Sechs extends CustomCard {
     public Schwarz_Sechs() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
 
         this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
+    }
+
+    public boolean hasEnoughEnergy() {
+        boolean retVal = super.hasEnoughEnergy();
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.magicNumber)) {
+            retVal = false;
+        }
+        return retVal;
     }
 
     @Override

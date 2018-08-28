@@ -30,7 +30,7 @@ public class Runaway_Umbrella extends CustomCard {
     public Runaway_Umbrella() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, AbstractCard.CardType.ATTACK,
                 AbstractCardEnum.YOHANE_GREY, rarity,
-                target, POOL);
+                target);
 
         this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;

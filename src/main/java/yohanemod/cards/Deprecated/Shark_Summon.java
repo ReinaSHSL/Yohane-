@@ -29,7 +29,7 @@ public class Shark_Summon extends CustomCard {
     public Shark_Summon() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
                 AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
-                rarity, target, POOL);
+                rarity, target);
         this.block = this.baseBlock = DAMAGE_AMT;
     }
 
