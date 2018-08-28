@@ -71,7 +71,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     private static final String Yohane_Button = "charstuff/YohaneButton.png";
     public static boolean optOutMetrics = false;
     public static LittleDemonScreen lds;
-    public static HashMap<String, AbstractCard> demonAndCardMap;
 
     public YohaneMod() {
         BaseMod.subscribe(this);
@@ -80,11 +79,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
                 ATTACK_GREY, SKILL_GREY, POWER_GREY, ENERGY_ORB_GREY,
                 ATTACK_GREY_PORTRAIT, SKILL_GREY_PORTRAIT, POWER_GREY_PORTRAIT,
                 ENERGY_ORB_GREY_PORTRAIT);
-        demonAndCardMap.put(Chika.ID, new Little_Demon_Chika());
-        demonAndCardMap.put(Lily.ID, new Little_Demon_Lily());
-        demonAndCardMap.put(Hanamaru.ID, new Little_Demon_Hanamaru());
-        demonAndCardMap.put(Mari.ID, new Little_Demon_Mari());
-        demonAndCardMap.put(Ruby.ID, new Little_Demon_Ruby());
     }
 
 	public static void initialize() {
@@ -188,7 +182,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
              BaseMod.addCard(new Introspection());
              BaseMod.addCard(new Kowareyasuki());
              BaseMod.addCard(new Lailapse());
-             BaseMod.addCard(new Little_Demon_Change());
+             //BaseMod.addCard(new Little_Demon_Change());
              BaseMod.addCard(new Little_Demon_Chika());
              BaseMod.addCard(new Little_Demon_Hanamaru());
              BaseMod.addCard(new Little_Demon_Mari());

@@ -29,18 +29,18 @@ public class DemonSwapAction extends AbstractGameAction {
     private AbstractCard demonToChange;
     private AbstractCard card;
     private AbstractMonster summonToChange;
-    private static HashMap<AbstractCard, AbstractMonster> cardToDemonMap;
+    private static HashMap<AbstractCard, String> cardToDemonMap = new HashMap<>();
 
 
     DemonSwapAction(AbstractPlayer p, AbstractCard demonToChange) {
         this.p = p;
         this.duration = Settings.ACTION_DUR_FAST;
         this.demonToChange = demonToChange;
-        cardToDemonMap.put(new Little_Demon_Chika(), new Chika());
-        cardToDemonMap.put(new Little_Demon_Lily(), new Little_Demon_Lily());
-        cardToDemonMap.put(new Little_Demon_Hanamaru(), new Little_Demon_Hanamaru());
-        cardToDemonMap.put(new Little_Demon_Mari(), new Little_Demon_Mari());
-        cardToDemonMap.put(new Little_Demon_Ruby(), );
+        cardToDemonMap.put(new Little_Demon_Chika(), Chika.ID);
+        cardToDemonMap.put(new Little_Demon_Lily(), Lily.ID);
+        cardToDemonMap.put(new Little_Demon_Hanamaru(), Hanamaru.ID);
+        cardToDemonMap.put(new Little_Demon_Mari(), Mari.ID);
+        cardToDemonMap.put(new Little_Demon_Ruby(), Ruby.ID);
     }
 
     private boolean summonCheck(AbstractCard c) {
@@ -54,14 +54,7 @@ public class DemonSwapAction extends AbstractGameAction {
         try {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) this.p;
             if (this.duration == Settings.ACTION_DUR_FAST) {
-                this.summonToChange = this.demonToChange
-                if (this.selected0) {
-                    this.summonToChange = player.minions.monsters.get(0);
-                    System.out.println(this.summonToChange);
-                    System.out.println(this.summonToChange.id);
-                } else {
-                    summonToChange = player.minions.monsters.get(1);
-                }
+                this.summonToChange = player.minions.getMonster(cardToDemonMap.get(this.demonToChange));
                 CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
                 if (player.minions.monsters.size() == 2) {
                     for (AbstractCard ca : this.p.drawPile.group) {
@@ -123,38 +116,24 @@ public class DemonSwapAction extends AbstractGameAction {
                     demonMap.put(Little_Demon_Mari.ID, "yohanemod.summons.Mari.Mari");
                     demonMap.put(Little_Demon_Ruby.ID, "yohanemod.summons.Ruby.Ruby");
                     String newParameter = demonMap.get(this.card.cardID);
-                    System.out.println("newParameter = " + newParameter);
-                    AbstractMonster Minion;
+                    AbstractMonster Minion = player.minions.monsters.get(0);
                     Class minionClass = Class.forName(newParameter);
-                    System.out.println("minionClass = " + minionClass);
                     Constructor monsterConstructor = minionClass.getConstructor(new Class[]{float.class});
-                    System.out.println("monsterConstructor = " + monsterConstructor);
-                    System.out.println("Checking for " + summonToChange.id + "Strength");
-                    if (summonToChange.hasPower(summonToChange.id + "Strength")) {
-                        upgradeCount = summonToChange.getPower(summonToChange.id + "Strength").amount;
-                        System.out.println("upgradeCount = " + upgradeCount + ", power = " + summonToChange.id + "Strength");
-                    } else {
-                        System.out.println("minion did not have Strength");
+                    if (summonToChange.hasPower(summonToChange + "Strength")) {
+                        upgradeCount = summonToChange.getPower(summonToChange + "Strength").amount;
                     }
                     summonToChange.die();
                     Field minionClassID = minionClass.getField("ID");
-                    System.out.println("minionClassID = " + minionClassID);
-                    System.out.println("minionClassID.get(minionClass) returns " + minionClassID.get(minionClass));
-                    if (selected0) {
-                    System.out.println("settings.scale = " + Settings.scale);
+                    if (player.minions.monsters.size() == 0) {
                         player.addMinion((AbstractFriendlyMonster) monsterConstructor.newInstance(new Object[]{-750f}));
                         Minion = player.getMinions().getMonster((String)minionClassID.get(minionClass));
-                        player.minions.monsters.remove(Minion);
-                        player.minions.monsters.add(0, Minion);
-                    } else {
+                    } else if ((player.minions.monsters.size() == 1 && player.minions.monsters.get(0).drawX == -750F * Settings.scale) ||
+                            player.minions.monsters.get(1).drawX == -750F * Settings.scale) {
                         player.addMinion((AbstractFriendlyMonster) monsterConstructor.newInstance(new Object[]{-1150f}));
                         Minion = player.getMinions().getMonster((String)minionClassID.get(minionClass));
                     }
-                    System.out.println("Minion = " + Minion);
                     Class powerClass = Class.forName("yohanemod.summons." + minionClassID.get(minionClass) + "." + minionClassID.get(minionClass) + "Strength");
-                    System.out.println("powerClass = " + powerClass);
                     Constructor powerConstructor = powerClass.getConstructor(new Class[]{AbstractMonster.class, int.class});
-                    System.out.println("powerConstructor = " + powerConstructor);
                     if (upgradeCount > 0) {
                         for (int i = 0; i < upgradeCount; i++) {
                             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Minion, p, (AbstractPower) powerConstructor.newInstance(new Object[]{Minion, 1}), 1));
