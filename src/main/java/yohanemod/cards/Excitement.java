@@ -4,6 +4,7 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -46,10 +47,10 @@ public class Excitement extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if ((p.hasPower(FallenEnergy.POWER_ID)) && (p.getPower(FallenEnergy.POWER_ID).amount > this.magicNumber)) {
-            this.baseDamage = (p.getPower(FallenEnergy.POWER_ID).amount/2);
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAction(m,
-                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            DamageInfo info = new DamageInfo(p, p.getPower(FallenEnergy.POWER_ID).amount/2);
+            info.applyPowers(p, m);
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), - p.getPower(FallenEnergy.POWER_ID).amount));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, info));
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -this.magicNumber));
 
         } else {

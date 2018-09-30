@@ -52,6 +52,7 @@ public class Envious extends CustomCard {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new FadingPlayerPower(p, powersToCopy.amount), powersToCopy.amount));
             }
             if (!powersToCopy.ID.equals(FlightPower.POWER_ID) && !powersToCopy.ID.equals(IntangiblePower.POWER_ID) && !powersToCopy.ID.equals(FadingPower.POWER_ID)) {
+
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, powersToCopy, powersToCopy.amount));
             }
         }

@@ -135,7 +135,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         String chikaDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy or heal all Summons for %d HP.",
                 ChikaNumbers.ChikaHP, ChikaNumbers.ChikaAttackDamage, ChikaNumbers.ChikaHeal);
         BaseMod.addKeyword(Chika, chikaDesc);
-        final String[] Mari = {"Mari"};
+        final String[] Mari = {"mari"};
         String mariDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy, Evolve or gain 1 Intangible in exchange for %d HP.",
                 MariNumbers.MariHP, MariNumbers.MariAttackDamage, MariNumbers.MariHealthLoss);
         BaseMod.addKeyword(Mari, mariDesc);

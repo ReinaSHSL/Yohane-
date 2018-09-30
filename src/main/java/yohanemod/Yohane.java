@@ -3,7 +3,6 @@ package yohanemod;
 import basemod.animations.SpriterAnimation;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.daily.DailyMods;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
@@ -26,10 +25,6 @@ public class Yohane extends AbstractPlayerWithMinions {
 
 		initializeClass(null, "charassets/shoulder2.png", "charassets/shoulder.png", "charassets/corpse.png",
 				getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
-		
-		if (Settings.dailyModsEnabled() && DailyMods.cardMods.get("Diverse")) {
-			this.masterMaxOrbs = 1;
-		}
 
 		YohaneMod.lds = new LittleDemonScreen();
 	}

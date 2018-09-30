@@ -80,11 +80,8 @@ public class MetricsPatch {
             paramData.put("seed_played", Settings.seed.toString());
             paramData.put("chose_seed", Settings.seedSet);
             paramData.put("seed_source_timestamp", Settings.seedSourceTimestamp);
-            paramData.put("is_daily", Settings.isDailyRun);
+
             paramData.put("special_seed", Settings.specialSeed);
-            if (Settings.dailyMods != null && Settings.dailyMods.getEnabledModIDs().size() > 0) {
-                paramData.put("daily_mods", Settings.dailyMods.getEnabledModIDs());
-            }
 
             paramData.put("is_trial", Settings.isTrial);
             paramData.put("is_endless", Settings.isEndless);

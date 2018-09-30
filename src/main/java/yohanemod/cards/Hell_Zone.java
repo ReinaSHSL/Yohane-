@@ -4,7 +4,10 @@ import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -58,11 +61,12 @@ public class Hell_Zone extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m)
     {
         if (p.hasPower(FallenEnergy.POWER_ID) && (p.getPower(FallenEnergy.POWER_ID).amount > 1)) {
-            this.baseDamage = p.getPower(FallenEnergy.POWER_ID).amount/2;
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.utility.SFXAction("ATTACK_HEAVY"));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(p, new CleaveEffect(), 0.1F));
-            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction(p,
-                    this.multiDamage, this.damageTypeForTurn, com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect.NONE));
+            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                DamageInfo info = new DamageInfo(p, p.getPower(FallenEnergy.POWER_ID).amount, DamageInfo.DamageType.NORMAL);
+                info.applyPowers(p, mo);
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
+            }
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), - p.getPower(FallenEnergy.POWER_ID).amount));
         }  else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }
