@@ -38,19 +38,6 @@ public class MariStrength extends AbstractPower {
     public void stackPower(int stackAmount)
     {
         this.owner.increaseMaxHp(3, true);
-        if (this.owner.maxHealth > 5) {
-            int healthLoss = (MariNumbers.MariHealthLoss);
-            AbstractFriendlyMonster mari = (AbstractFriendlyMonster) this.owner;
-            String intangibleDesc = String.format("Mari gains 1 Intangible. NL Lose %d Max HP. NL Cannot be used under %d max HP. Does not scale with Evolve.", healthLoss, healthLoss);
-            mari.addMove(new MinionMove("Intangible", (AbstractFriendlyMonster) this.owner, new Texture("summons/bubbles/intangible_bubble.png")
-                    , intangibleDesc, () -> {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new IntangiblePlayerPower(this.owner, 1), 1));
-                this.owner.decreaseMaxHealth(healthLoss);
-                if (this.owner.maxHealth <= 5) {
-                    mari.removeMove("Intangible");
-                }
-            }));
-        }
         this.fontScale = 8.0F;
         this.amount += stackAmount;
     }

@@ -64,7 +64,6 @@ public class Backfoot extends CustomCard{
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBlock(UPGRADE_BLOCK_DMG);
-            this.upgradeMagicNumber(-4);
         }
     }
 }

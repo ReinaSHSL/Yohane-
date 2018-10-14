@@ -1,6 +1,7 @@
 package yohanemod.summons.Mari;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -22,14 +23,13 @@ public class Mari extends AbstractFriendlyMonster {
 
     public Mari(float offSetX) {
         super(NAME, ID, MariNumbers.MariHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", offSetX, 0);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", -1135F, 0);
         addMoves();
 
     }
 
     @Override
     public void applyStartOfTurnPowers() {
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, IntangiblePlayerPower.POWER_ID));
     }
 
     @Override
@@ -71,11 +71,13 @@ public class Mari extends AbstractFriendlyMonster {
         }));
         this.moves.addMove(new MinionMove("Intangible", this, new Texture("summons/bubbles/intangible_bubble.png")
                 , intangibleDesc, () -> {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 1), 1));
-            this.decreaseMaxHealth(healthLoss);
-            if (maxHealth <= 5) {
-                this.removeMove("Intangible");
+            if (this.currentHealth > healthLoss) {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 2), 1));
+                this.decreaseMaxHealth(healthLoss);
+            } else {
+                AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "Mari is too damaged!", 1.0F, 2.0F));
             }
+
         }));
     }
 

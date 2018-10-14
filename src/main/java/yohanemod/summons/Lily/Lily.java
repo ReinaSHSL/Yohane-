@@ -23,7 +23,7 @@ public class Lily extends AbstractFriendlyMonster {
 
     public Lily(float offSetX) {
         super(NAME, ID, LilyNumbers.lilyHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", offSetX, 0);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -850F, 300);
         addMoves();
 
     }
@@ -50,9 +50,9 @@ public class Lily extends AbstractFriendlyMonster {
         String chargeDesc = String.format("Gain %d Fallen Energy.", chargeAmount);
         this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
+            target = AbstractDungeon.getMonsters().getRandomMonster(true);
             DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
             info.applyPowers(this, target);
-            target = AbstractDungeon.getRandomMonster();
             if (target != null) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
             }

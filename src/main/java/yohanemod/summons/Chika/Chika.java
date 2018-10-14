@@ -25,7 +25,7 @@ public class Chika extends AbstractFriendlyMonster {
 
     public Chika(float offSetX) {
         super(NAME, ID, ChikaNumbers.ChikaHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", offSetX, 0);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", -1150F, 300);
         addMoves();
 
     }
@@ -49,14 +49,14 @@ public class Chika extends AbstractFriendlyMonster {
         }
         int attackDamage = (ChikaNumbers.ChikaAttackDamage + (upgradeCount * 2));
         int healAmount = (ChikaNumbers.ChikaHeal + upgradeCount);
-        DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
-        info.applyPowers(this, target);
         String attackDesc = String.format("Deal %d damage to the lowest HP enemy. Scales twice as fast from Evolution."
-                , info.base);
+                , attackDamage);
         String healDesc = String.format("Heal ALL Summons for %d Health.", healAmount);
         this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
-            target = AbstractDungeon.getRandomMonster();
+            target = AbstractDungeon.getMonsters().getRandomMonster(true);
+            DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
+            info.applyPowers(this, target);
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
         }));
         this.moves.addMove(new MinionMove("Heal", this, new Texture("summons/bubbles/heal_bubble.png")

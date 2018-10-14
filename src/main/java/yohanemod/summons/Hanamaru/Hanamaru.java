@@ -26,7 +26,8 @@ public class Hanamaru extends AbstractFriendlyMonster {
     public static boolean canExhume = true;
 
     public Hanamaru(float offSetX) {
-        super(NAME, ID, HanamaruNumbers.hanamaruHP, -2.0F, 10.0F, 230.0F, 240.0F, "summons/Hanamaru.png", offSetX, 0);
+        super(NAME, ID, HanamaruNumbers.hanamaruHP, -2.0F, 10.0F, 230.0F, 240.0F,
+                "summons/Hanamaru.png", -750F, 300);
         addMoves();
     }
 
@@ -65,11 +66,12 @@ public class Hanamaru extends AbstractFriendlyMonster {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(mo, p, blockAmount));
             }
         }));
-        this.moves.addMove(new MinionMove("Exhume", this, new Texture("images/monsters/exhume_bubble.png")
+        this.moves.addMove(new MinionMove("Exhume", this, new Texture("summons/bubbles/exhume_bubble.png")
                 , "Add one card from your Exhaust pile to your hand. NL You can only do this once until Evolved again.", () -> {
+            if (canExhume)     {
                 AbstractDungeon.actionManager.addToBottom(new ExhumeAction(false));
+            }
                 canExhume = false;
-                this.removeMove("Exhume");
         }));
     }
 
