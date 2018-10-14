@@ -1,10 +1,7 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,13 +10,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
-import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.FallenEnergy;
-
-import java.util.ArrayList;
 
 public class Hell_Zone extends CustomCard{
     public static final String ID = "Yohane:Hell_Zone";
@@ -66,7 +58,6 @@ public class Hell_Zone extends CustomCard{
                 info.applyPowers(p, mo);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
             }
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), - p.getPower(FallenEnergy.POWER_ID).amount));
         }  else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }

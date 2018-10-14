@@ -40,27 +40,27 @@ public class Little_Demon_Mari extends CustomCard {
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
                 player.addMinion(new Mari(-750F));
-                AbstractMonster Mari0 = player.minions.monsters.get(0);
+                AbstractMonster Mari0 = player.minions.getMonster(Mari.ID);
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari0, p, new MariStrength(Mari0, 0), 0));
             } else if (summonCount == 1) {
                 if (player.minions.monsters.get(0).id.equals(Mari.ID)) {
                     //Upgrade
-                    AbstractMonster Mari0Upgraded = player.minions.monsters.get(0);
+                    AbstractMonster Mari0Upgraded = player.minions.getMonster(Mari.ID);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari0Upgraded, p, new MariStrength(Mari0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
                     player.addMinion(new Mari(-1150F));
-                    AbstractMonster Mari1 = player.minions.monsters.get(1);
+                    AbstractMonster Mari1 = player.minions.getMonster(Mari.ID);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari1, p, new MariStrength(Mari1, 0), 0));
                 }
             } else if (summonCount == 2) {
                 if (player.minions.monsters.get(0).id.equals(Mari.ID)) {
                     //Upgrade
-                    AbstractMonster Mari0Upgraded = player.minions.monsters.get(0);
+                    AbstractMonster Mari0Upgraded = player.minions.getMonster(Mari.ID);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari0Upgraded, p, new MariStrength(Mari0Upgraded, 1), 1));
                 } else if (player.minions.monsters.get(1).id.equals(Mari.ID)) {
                     //Upgrade
-                    AbstractMonster Mari1Upgraded = player.minions.monsters.get(1);
+                    AbstractMonster Mari1Upgraded = player.minions.getMonster(Mari.ID);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari1Upgraded, p, new MariStrength(Mari1Upgraded, 1), 1));
                 }
             } else {

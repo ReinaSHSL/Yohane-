@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
-import yohanemod.summons.Lily.LilyStrength;
 import yohanemod.summons.Lily.Lily;
+import yohanemod.summons.Lily.LilyStrength;
 
 public class Little_Demon_Lily extends CustomCard {
     public static final String ID = "Yohane:Little_Demon_Lily";

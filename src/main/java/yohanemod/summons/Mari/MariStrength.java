@@ -1,11 +1,15 @@
 package yohanemod.summons.Mari;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import yohanemod.summons.Mari.MariNumbers;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
+import kobting.friendlyminions.monsters.MinionMove;
 
 public class MariStrength extends AbstractPower {
     public static final String POWER_ID = "Yohane:MariStrength";
@@ -34,6 +38,19 @@ public class MariStrength extends AbstractPower {
     public void stackPower(int stackAmount)
     {
         this.owner.increaseMaxHp(3, true);
+        if (this.owner.maxHealth > 5) {
+            int healthLoss = (MariNumbers.MariHealthLoss);
+            AbstractFriendlyMonster mari = (AbstractFriendlyMonster) this.owner;
+            String intangibleDesc = String.format("Mari gains 1 Intangible. NL Lose %d Max HP. NL Cannot be used under %d max HP. Does not scale with Evolve.", healthLoss, healthLoss);
+            mari.addMove(new MinionMove("Intangible", (AbstractFriendlyMonster) this.owner, new Texture("summons/bubbles/intangible_bubble.png")
+                    , intangibleDesc, () -> {
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new IntangiblePlayerPower(this.owner, 1), 1));
+                this.owner.decreaseMaxHealth(healthLoss);
+                if (this.owner.maxHealth <= 5) {
+                    mari.removeMove("Intangible");
+                }
+            }));
+        }
         this.fontScale = 8.0F;
         this.amount += stackAmount;
     }

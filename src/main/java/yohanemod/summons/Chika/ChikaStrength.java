@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import yohanemod.summons.Chika.ChikaNumbers;
 
 public class ChikaStrength extends AbstractPower {
     public static final String POWER_ID = "Yohane:ChikaStrength";
@@ -25,9 +24,7 @@ public class ChikaStrength extends AbstractPower {
     @Override
     public void updateDescription()
     {
-        int damage = (ChikaNumbers.ChikaAttackDamage + (this.amount * 2));
-        int charge = (ChikaNumbers.ChikaHeal + this.amount);
-        this.description = (DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + charge + DESCRIPTIONS[2]);
+        this.description = (DESCRIPTIONS[0]);
     }
 
     @Override

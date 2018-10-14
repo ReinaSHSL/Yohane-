@@ -13,7 +13,6 @@ import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Chika.ChikaStrength;
-import yohanemod.summons.Ruby.RubyStrength;
 
 
 public class Little_Demon_Chika extends CustomCard {

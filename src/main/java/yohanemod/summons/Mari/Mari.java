@@ -1,55 +1,35 @@
 package yohanemod.summons.Mari;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.beyond.AwakenedOne;
-import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
-import com.megacrit.cardcrawl.powers.IntangiblePower;
-import kobting.friendlyminions.actions.ChooseAction;
-import kobting.friendlyminions.actions.ChooseActionInfo;
-import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
-
-import java.util.ArrayList;
+import kobting.friendlyminions.monsters.MinionMove;
 
 public class Mari extends AbstractFriendlyMonster {
     public static String NAME = "Mari";
     public static String ID = "Mari";
     private int upgradeCount;
-    private ArrayList<ChooseActionInfo> moveInfo;
     private boolean hasAttacked = false;
     private AbstractMonster target;
 
+
     public Mari(float offSetX) {
         super(NAME, ID, MariNumbers.MariHP,
-                null, -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", offSetX, 0);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", offSetX, 0);
+        addMoves();
 
     }
 
     @Override
     public void applyStartOfTurnPowers() {
-        AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(this, this, this.currentBlock));
         AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this, this, IntangiblePlayerPower.POWER_ID));
-        System.out.println(this.name + " " + this.currentHealth);
-    }
-
-    @Override
-    public void takeTurn() {
-        if(!hasAttacked){
-            moveInfo = makeMoves();
-            ChooseAction pickAction = new ChooseAction(new MariChoiceCards(), target, "Choose your attack");
-            this.moveInfo.forEach( move -> {
-                pickAction.add(move.getName(), move.getDescription(), move.getAction());
-            });
-            AbstractDungeon.actionManager.addToBottom(pickAction);
-        }
     }
 
     @Override
@@ -58,14 +38,12 @@ public class Mari extends AbstractFriendlyMonster {
         this.hasAttacked = false;
     }
 
-    //Create possible moves for the monster
-    private ArrayList<ChooseActionInfo> makeMoves(){
+    public void addMoves() {
         if (this.hasPower(MariStrength.POWER_ID) && this.getPower(MariStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(MariStrength.POWER_ID).amount;
         }
         int attackDamage = (MariNumbers.MariAttackDamage + (upgradeCount * 4));
         int healthLoss = (MariNumbers.MariHealthLoss);
-        ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
         target = AbstractDungeon.getRandomMonster();
         String attackDesc = String.format("Deal %d damage to the lowest health enemy. Scales 4 times as fast with Evolve.", attackDamage);
         String evolveDesc = "Evolve this card.";
@@ -79,24 +57,28 @@ public class Mari extends AbstractFriendlyMonster {
                 }
             }
         }
-        if ((target != null)) {
-            tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
-                DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
+        this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
+                , attackDesc, () -> {
+            if (target != null) {
+                DamageInfo info = new DamageInfo(this, attackDamage, DamageInfo.DamageType.NORMAL);
                 info.applyPowers(this, target);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
-            }));
-        }
-        tempInfo.add(new ChooseActionInfo("Evolve", evolveDesc, () -> {
+            }
+        }));
+        this.moves.addMove(new MinionMove("Evolve", this, new Texture("summons/bubbles/evolve_bubble.png")
+                , evolveDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new MariStrength(this, 1), 1));
         }));
-        if (this.maxHealth > 5) {
-            tempInfo.add(new ChooseActionInfo("Intangible", intangibleDesc, () -> {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 1), 1));
-                this.decreaseMaxHealth(healthLoss);
-            }));
-        }
-        return tempInfo;
+        this.moves.addMove(new MinionMove("Intangible", this, new Texture("summons/bubbles/intangible_bubble.png")
+                , intangibleDesc, () -> {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new IntangiblePlayerPower(this, 1), 1));
+            this.decreaseMaxHealth(healthLoss);
+            if (maxHealth <= 5) {
+                this.removeMove("Intangible");
+            }
+        }));
     }
+
 
 
     //Not needed unless doing some kind of random move like normal Monsters

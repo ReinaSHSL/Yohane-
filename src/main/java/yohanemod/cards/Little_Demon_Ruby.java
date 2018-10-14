@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
-import yohanemod.summons.Ruby.RubyStrength;
 import yohanemod.summons.Ruby.Ruby;
+import yohanemod.summons.Ruby.RubyStrength;
 
 public class Little_Demon_Ruby extends CustomCard {
     public static final String ID = "Yohane:Little_Demon_Ruby";

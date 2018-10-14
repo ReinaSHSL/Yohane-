@@ -1,31 +1,6 @@
 package yohanemod.patches;
 
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Net;
-import com.badlogic.gdx.net.HttpRequestBuilder;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.google.gson.Gson;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.Prefs;
-import com.megacrit.cardcrawl.helpers.SaveHelper;
-import com.megacrit.cardcrawl.metrics.Metrics;
-import com.megacrit.cardcrawl.monsters.MonsterGroup;
-import com.megacrit.cardcrawl.screens.DeathScreen;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.UUID;
-
-import static com.megacrit.cardcrawl.metrics.Metrics.timestampFormatter;
-
 /*
 
 TURN BACK NOW. THIS CODE IS ABSOLUTELY FUCKING DISGUSTING. IT'S A MESS, IT BARELY WORKS AND REQUIRES AN EXTERNAL JAVASCRIPT

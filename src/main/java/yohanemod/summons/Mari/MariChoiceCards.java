@@ -4,7 +4,6 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import yohanemod.summons.Mari.MariChoiceCards;
 
 public class MariChoiceCards extends CustomCard {
     public static final String ID = "MariChoiceCards";

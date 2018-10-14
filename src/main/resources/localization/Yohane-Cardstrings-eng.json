@@ -21,7 +21,7 @@
   },
   "Yohane:Accelerator": {
     "NAME": "Accelerator",
-    "DESCRIPTION": "Choose. NL Deal !D! damage. NL Next Attack you take does 0 damage and apply !M! Vulnerable to yourself."
+    "DESCRIPTION": "Choose. NL Deal !D! damage. NL Next attack you take does 0 damage and apply !M! Vulnerable to yourself."
   },
   "Yohane:Adept_Technology": {
     "NAME": "Adept Technology",
@@ -90,12 +90,12 @@
   },
   "Yohane:Energetic_Performance": {
     "NAME":  "Energetic Live",
-    "DESCRIPTION": "Gain [G] [G]  next turn. NL Gain !F! Buffer.",
-    "UPGRADE_DESCRIPTION": "Gain [G] [G] [G] next turn. NL Gain !F! Buffer."
+    "DESCRIPTION": "Gain [E] [E]  next turn. NL Gain !F! Dodge.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] next turn. NL Gain !F! Dodge."
   },
   "Yohane:Energy_Change": {
     "NAME": "Energy Change",
-    "DESCRIPTION": "Pay !M! Fallen Energy. NL Gain [G]."
+    "DESCRIPTION": "Pay !M! Fallen Energy. NL Gain [E]."
   },
   "Yohane:Envious": {
     "NAME": "Envious",
@@ -127,7 +127,7 @@
   },
   "Yohane:Guilty_Kiss": {
     "NAME":  "Guilty Kiss",
-    "DESCRIPTION": "If only [G]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times instead."
+    "DESCRIPTION": "If only [E]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times instead."
   },
   "Yohane:Hakodate": {
     "NAME": "Hakodate",
@@ -343,6 +343,6 @@
   },
   "Yohane:Yousoro": {
     "NAME": "Yousoro!",
-    "DESCRIPTION":  "You can no longer Block this turn. NL Gain [G]. NL Draw !F! cards. NL Exhaust."
+    "DESCRIPTION":  "You can no longer Block this turn. NL Gain [E]. NL Draw !F! cards. NL Exhaust."
   }
 }

@@ -34,7 +34,7 @@ public class Reckless_Greed extends com.megacrit.cardcrawl.actions.AbstractGameA
                 } else {
                     for (int i = 0; i < this.amount; i++) {
                         AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, this.randomSpot));
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
                     }
                 }
                 this.duration -= com.badlogic.gdx.Gdx.graphics.getDeltaTime();
@@ -52,7 +52,7 @@ public class Reckless_Greed extends com.megacrit.cardcrawl.actions.AbstractGameA
                     for (int i = 0; i < this.amount; i++) {
                         AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
                         c.upgrade();
-                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, this.randomSpot));
+                        AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, true, false));
                     }
                 }
                 this.duration -= com.badlogic.gdx.Gdx.graphics.getDeltaTime();

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.actions.AcceleratorAction;
-import yohanemod.actions.LittleDemonChangeAction;
 import yohanemod.patches.AbstractCardEnum;
 
 

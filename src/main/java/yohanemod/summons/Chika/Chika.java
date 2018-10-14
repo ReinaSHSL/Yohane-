@@ -1,24 +1,23 @@
 package yohanemod.summons.Chika;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import kobting.friendlyminions.actions.ChooseAction;
-import kobting.friendlyminions.actions.ChooseActionInfo;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
+import kobting.friendlyminions.monsters.MinionMove;
+
 import java.util.ArrayList;
 
 public class Chika extends AbstractFriendlyMonster {
     public static String NAME = "Chika";
     public static String ID = "Chika";
     private int upgradeCount;
-    private ArrayList<ChooseActionInfo> moveInfo;
     private boolean hasAttacked = false;
     private AbstractMonster target;
     private AbstractPlayer p = AbstractDungeon.player;
@@ -26,7 +25,8 @@ public class Chika extends AbstractFriendlyMonster {
 
     public Chika(float offSetX) {
         super(NAME, ID, ChikaNumbers.ChikaHP,
-                null, -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", offSetX, 0);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", offSetX, 0);
+        addMoves();
 
     }
 
@@ -37,58 +37,35 @@ public class Chika extends AbstractFriendlyMonster {
     }
 
     @Override
-    public void takeTurn() {
-        if(!hasAttacked){
-            moveInfo = makeMoves();
-            ChooseAction pickAction = new ChooseAction(new ChikaChoiceCards(), target, "Choose your attack");
-            this.moveInfo.forEach( move -> {
-                pickAction.add(move.getName(), move.getDescription(), move.getAction());
-            });
-            AbstractDungeon.actionManager.addToBottom(pickAction);
-        }
-    }
-
-    @Override
     public void applyEndOfTurnTriggers() {
         super.applyEndOfTurnTriggers();
         this.hasAttacked = false;
     }
 
 
-    private ArrayList<ChooseActionInfo> makeMoves(){
+    public void addMoves() {
         if (this.hasPower(ChikaStrength.POWER_ID) && this.getPower(ChikaStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(ChikaStrength.POWER_ID).amount;
         }
         int attackDamage = (ChikaNumbers.ChikaAttackDamage + (upgradeCount * 2));
         int healAmount = (ChikaNumbers.ChikaHeal + upgradeCount);
-        ArrayList<ChooseActionInfo> tempInfo = new ArrayList<>();
-        String attackDesc = String.format("Deal %d damage to the lowest HP enemy. Scales twice as fast from Evolution.", attackDamage);
+        DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
+        info.applyPowers(this, target);
+        String attackDesc = String.format("Deal %d damage to the lowest HP enemy. Scales twice as fast from Evolution."
+                , info.base);
         String healDesc = String.format("Heal ALL Summons for %d Health.", healAmount);
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-               if (!m.isDeadOrEscaped()) {
-                   if (target == null) {
-                       target = m;
-                     } else if (m.currentHealth < target.currentHealth) {
-                         target = m;
-                     }
-               }
-        }
-        if ((target != null)) {
-            tempInfo.add(new ChooseActionInfo("Attack", attackDesc, () -> {
-                DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
-                info.applyPowers(this, target);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
-            }));
-        }
-        tempInfo.add(new ChooseActionInfo("Heal", healDesc, () -> {
+        this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
+                , attackDesc, () -> {
+            target = AbstractDungeon.getRandomMonster();
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+        }));
+        this.moves.addMove(new MinionMove("Heal", this, new Texture("summons/bubbles/heal_bubble.png")
+                ,healDesc, () -> {
             for (AbstractMonster mo : player.minions.monsters) {
                 AbstractDungeon.actionManager.addToBottom(new HealAction(mo, this, healAmount));
             }
         }));
-        return tempInfo;
     }
-
-
 
     @Override
     protected void getMove(int i) {

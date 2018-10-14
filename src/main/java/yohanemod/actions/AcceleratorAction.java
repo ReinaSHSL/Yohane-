@@ -11,10 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import yohanemod.YohaneMod;
 import yohanemod.cards.AccelerateAttack;
 import yohanemod.cards.AccelerateDodge;
-import yohanemod.cards.LittleDemonFirst;
-import yohanemod.cards.LittleDemonSecond;
 import yohanemod.powers.DodgePower;
-import yohanemod.summons.Mari.MariStrength;
 
 import java.util.ArrayList;
 

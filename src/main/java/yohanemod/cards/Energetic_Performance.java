@@ -8,9 +8,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.BufferPower;
 import com.megacrit.cardcrawl.powers.EnergizedPower;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.powers.DodgePower;
 
 
 public class Energetic_Performance extends CustomCard {
@@ -38,7 +38,7 @@ public class Energetic_Performance extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, this.magicNumber), this.magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new BufferPower(p, this.misc), this.misc));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DodgePower(p, this.misc), this.misc));
     }
 
     @Override

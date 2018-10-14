@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import yohanemod.summons.Lily.LilyNumbers;
 
 public class LilyStrength extends AbstractPower{
     public static final String POWER_ID = "Yohane:LilyStrength";

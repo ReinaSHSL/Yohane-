@@ -1,21 +1,23 @@
 package yohanemod.screens;
 
-import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.cards.*;
-import com.megacrit.cardcrawl.rewards.*;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.controller.CInputActionSet;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
+import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
-import com.megacrit.cardcrawl.ui.buttons.*;
-import com.megacrit.cardcrawl.dungeons.*;
-import com.badlogic.gdx.*;
-import com.megacrit.cardcrawl.helpers.controller.*;
-import com.megacrit.cardcrawl.core.*;
-import com.megacrit.cardcrawl.helpers.input.*;
-
+import com.megacrit.cardcrawl.ui.buttons.SingingBowlButton;
+import com.megacrit.cardcrawl.ui.buttons.SkipCardButton;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import yohanemod.YohaneMod;
 
-import com.badlogic.gdx.graphics.g2d.*;
-import java.util.*;
-import org.apache.logging.log4j.*;
+import java.util.ArrayList;
 
 public class LittleDemonScreen extends CardRewardScreen{
     private static final Logger logger;

@@ -1,50 +1,36 @@
 package yohanemod;
 
 import basemod.BaseMod;
-import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
-import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yohanemod.cards.*;
-import yohanemod.cards.Deprecated.Awakening;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.relics.AngelWings;
 import yohanemod.screens.LittleDemonScreen;
-import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Chika.ChikaChoiceCards;
 import yohanemod.summons.Chika.ChikaNumbers;
-import yohanemod.summons.Hanamaru.Hanamaru;
 import yohanemod.summons.Hanamaru.HanamaruChoiceCards;
 import yohanemod.summons.Hanamaru.HanamaruNumbers;
-import yohanemod.summons.Lily.Lily;
 import yohanemod.summons.Lily.LilyChoiceCards;
 import yohanemod.summons.Lily.LilyNumbers;
-import yohanemod.summons.Mari.Mari;
 import yohanemod.summons.Mari.MariChoiceCards;
 import yohanemod.summons.Mari.MariNumbers;
-import yohanemod.summons.Ruby.Ruby;
 import yohanemod.summons.Ruby.RubyChoiceCards;
 import yohanemod.summons.Ruby.RubyNumbers;
 
 import java.nio.charset.StandardCharsets;
-import java.util.AbstractMap;
-import java.util.HashMap;
 
 
 @SpireInitializer
@@ -97,14 +83,15 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
                 String.valueOf(StandardCharsets.UTF_8));
         BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
         }
-	
-	 @Override
-		public void receiveEditCharacters() {
-			BaseMod.addCharacter(Yohane.class,  "The Fallen Angel", "FALLEN ANGEL",
-					AbstractCardEnum.YOHANE_GREY, "Yohane",
-					Yohane_Button , Yohane_Portrait,
-					YohaneEnum.FallenAngel);
-		}
+
+    @Override
+    public void receiveEditCharacters() {
+        BaseMod.addCharacter(new Yohane("Yohane"),
+                AbstractCardEnum.YOHANE_GREY,
+                Yohane_Button,
+                Yohane_Portrait,
+                YohaneEnum.FallenAngel);
+    }
 
     @Override
     public void receiveEditKeywords() {
@@ -139,6 +126,8 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
         String mariDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy, Evolve or gain 1 Intangible in exchange for %d HP.",
                 MariNumbers.MariHP, MariNumbers.MariAttackDamage, MariNumbers.MariHealthLoss);
         BaseMod.addKeyword(Mari, mariDesc);
+        final String[] Dodge = {"dodge"};
+        BaseMod.addKeyword(Dodge,"Next attack you take deals 0 damage.");
         logger.info("finish editing keywords");
     }
 
@@ -238,25 +227,9 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 
         ModPanel settingsPanel = new ModPanel();
 
-        ModLabeledToggleButton metricsButton = new ModLabeledToggleButton("Opt out of sending metrics to developer.",
-                BUTTON_ENABLE_X, BUTTON_ENABLE_Y, Settings.CREAM_COLOR, FontHelper.charDescFont,
-                optOutMetrics, settingsPanel, (label) -> {}, (button) -> {
-            optOutMetrics = button.enabled;
-            saveData();
-        });
-        settingsPanel.addUIElement(metricsButton);
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
     }
 
-    private static void saveData() {
-        try {
-            SpireConfig config = new SpireConfig("Yohane!", "YohaneSaveData");
-            config.setBool("optOutMetrics", optOutMetrics);
-            config.save();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void receiveEditRelics() {

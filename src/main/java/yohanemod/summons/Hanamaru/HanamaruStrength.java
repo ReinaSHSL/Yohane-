@@ -1,12 +1,14 @@
 package yohanemod.summons.Hanamaru;
 
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.unique.ExhumeAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import yohanemod.summons.Hanamaru.Hanamaru;
-import yohanemod.summons.Hanamaru.HanamaruNumbers;
+import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
+import kobting.friendlyminions.monsters.MinionMove;
 
 public class HanamaruStrength extends AbstractPower {
     public static final String POWER_ID = "Yohane:HanamaruStrength";
@@ -35,6 +37,15 @@ public class HanamaruStrength extends AbstractPower {
     public void stackPower(int stackAmount)
     {
         this.owner.increaseMaxHp(3, true);
+        AbstractFriendlyMonster hanamaru = (AbstractFriendlyMonster)this.owner;
+        if (!Hanamaru.canExhume) {
+            hanamaru.addMove(new MinionMove("Exhume", hanamaru, new Texture("images/monsters/exhume_bubble.png")
+                    , "Add one card from your Exhaust pile to your hand. NL You can only do this once until Evolved again.", () -> {
+                AbstractDungeon.actionManager.addToBottom(new ExhumeAction(false));
+                Hanamaru.canExhume = false;
+                hanamaru.removeMove("Exhume");
+            }));
+        }
         this.fontScale = 8.0F;
         this.amount += stackAmount;
         Hanamaru.canExhume = true;
