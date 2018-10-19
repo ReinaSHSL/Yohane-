@@ -40,7 +40,7 @@ public class VoodooDollPower extends AbstractPower {
                int tempMagic = card.magicNumber/2;
                int tempMisc = card.misc/2;
                int tempBlock = card.block/2;
-               AbstractCard tmp = card.makeStatEquivalentCopy();
+               AbstractCard tmp = card.makeSameInstanceOf();
                tmp.baseDamage = tempDamage;
                tmp.baseMagicNumber = tempMagic;
                tmp.misc = tempMisc;
@@ -57,7 +57,7 @@ public class VoodooDollPower extends AbstractPower {
                tmp.purgeOnUse = true;
                AbstractDungeon.actionManager.cardQueue.add(new com.megacrit.cardcrawl.cards.CardQueueItem(tmp, m, card.energyOnUse));
                if (tmp.cardID.equals("Rampage")) {
-                   AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ModifyDamageAction(card, tmp.magicNumber));
+                   AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ModifyDamageAction(card.uuid, tmp.magicNumber));
                }
                this.amount -= 1;
                if (this.amount == 0) {

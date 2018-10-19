@@ -35,7 +35,7 @@ public class HanamaruSin extends AbstractGameAction {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new Sin(mo, sinAmount), sinAmount));
                 }
             }
-            tickDuration();
+            this.isDone = true;
         }
     }
 }

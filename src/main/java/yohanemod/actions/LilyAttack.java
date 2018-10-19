@@ -32,7 +32,7 @@ public class LilyAttack extends AbstractGameAction {
             if (target != null) {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
             }
-            tickDuration();
+            this.isDone = true;
         }
     }
 }

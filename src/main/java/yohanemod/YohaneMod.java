@@ -87,7 +87,6 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     @Override
     public void receiveEditCharacters() {
         BaseMod.addCharacter(new Yohane("Yohane"),
-                AbstractCardEnum.YOHANE_GREY,
                 Yohane_Button,
                 Yohane_Portrait,
                 YohaneEnum.FallenAngel);

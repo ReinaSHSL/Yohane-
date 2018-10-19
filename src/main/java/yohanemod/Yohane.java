@@ -3,7 +3,9 @@ package yohanemod;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,6 +19,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.characters.CustomCharSelectInfo;
 import yohanemod.cards.Descent;
+import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.screens.LittleDemonScreen;
 
@@ -89,7 +92,12 @@ public class Yohane extends AbstractPlayerWithMinions {
 	}
 
 	@Override
-	public Color getCardColor() {
+	public AbstractCard.CardColor getCardColor() {
+		return AbstractCardEnum.YOHANE_GREY;
+	}
+
+	@Override
+	public Color getCardRenderColor() {
 		return GREY;
 	}
 
@@ -134,6 +142,31 @@ public class Yohane extends AbstractPlayerWithMinions {
 	@Override
 	public AbstractPlayer newInstance() {
 		return new Yohane(this.name);
+	}
+
+	@Override
+	public TextureAtlas.AtlasRegion getOrb() {
+		return AbstractCard.orb_red;
+	}
+
+	@Override
+	public String getSpireHeartText() {
+		return "NL You gather all your Fallen Energy...";
+	}
+
+	@Override
+	public Color getSlashAttackColor() {
+		return Color.BLACK;
+	}
+
+	@Override
+	public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
+		return new AbstractGameAction.AttackEffect[]{AbstractGameAction.AttackEffect.SLASH_HEAVY, AbstractGameAction.AttackEffect.FIRE, AbstractGameAction.AttackEffect.BLUNT_HEAVY, AbstractGameAction.AttackEffect.SLASH_HEAVY, AbstractGameAction.AttackEffect.FIRE, AbstractGameAction.AttackEffect.BLUNT_HEAVY};
+	}
+
+	@Override
+	public String getVampireText() {
+		return "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~weeb,~ ~and~ ~feel~ ~the~ ~warmth~ ~of~ ~the~ ~Spire.\"~";
 	}
 
 }

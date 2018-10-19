@@ -45,7 +45,7 @@ public class SchwarzSechsPower extends AbstractPower
                 m = (AbstractMonster)action.target;
             }
 
-            AbstractCard tmp = card.makeStatEquivalentCopy();
+            AbstractCard tmp = card. makeSameInstanceOf();
             AbstractDungeon.player.limbo.addToBottom(tmp);
             tmp.current_x = card.current_x;
             tmp.current_y = card.current_y;
@@ -60,7 +60,7 @@ public class SchwarzSechsPower extends AbstractPower
             tmp.purgeOnUse = true;
             AbstractDungeon.actionManager.cardQueue.add(new com.megacrit.cardcrawl.cards.CardQueueItem(tmp, m, card.energyOnUse));
             if (tmp.cardID.equals("Rampage")) {
-                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ModifyDamageAction(card, tmp.magicNumber));
+                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ModifyDamageAction(card.uuid, tmp.magicNumber));
             }
             this.amount -= 1;
             if (this.amount == 0) {

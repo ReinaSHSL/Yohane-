@@ -31,7 +31,7 @@ public class HanamaruBlock extends AbstractGameAction {
             for (AbstractMonster mo : player.minions.monsters) {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(mo, this.owner, blockAmount));
             }
-            tickDuration();
+            this.isDone = true;
         }
     }
 }

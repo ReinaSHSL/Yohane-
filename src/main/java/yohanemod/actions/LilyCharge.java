@@ -27,7 +27,7 @@ public class LilyCharge extends AbstractGameAction {
             }
             int chargeAmount = (LilyNumbers.lilyChargeAmount + upgradeCount);
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, chargeAmount), chargeAmount));
-            tickDuration();
+            this.isDone = true;
         }
     }
 }

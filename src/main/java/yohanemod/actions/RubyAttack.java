@@ -31,7 +31,7 @@ public class RubyAttack extends AbstractGameAction {
                 info.applyPowers(mo, this.owner);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
             }
-            tickDuration();
+            this.isDone = true;
         }
     }
 }

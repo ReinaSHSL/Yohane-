@@ -42,7 +42,7 @@ public class MariAttack extends AbstractGameAction {
                 info.applyPowers(this.owner, target);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
             }
-            tickDuration();
+            this.isDone = true;
         }
     }
 }

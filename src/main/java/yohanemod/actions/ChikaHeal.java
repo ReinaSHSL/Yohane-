@@ -31,7 +31,7 @@ public class ChikaHeal extends AbstractGameAction {
             for (AbstractMonster mo : player.minions.monsters) {
                 AbstractDungeon.actionManager.addToBottom(new HealAction(mo, this.owner, healAmount));
             }
-            tickDuration();
+            this.isDone = true;
         }
     }
 }

@@ -28,7 +28,7 @@ public class RubyBlock extends AbstractGameAction {
             }
             int blockAmount = (RubyNumbers.rubyBlockAmount + upgradeCount);
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, blockAmount));
-            tickDuration();
+            this.isDone = true;
         }
     }
 }

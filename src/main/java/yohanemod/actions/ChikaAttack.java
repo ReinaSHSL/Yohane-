@@ -30,7 +30,7 @@ public class ChikaAttack extends AbstractGameAction {
             DamageInfo info = new DamageInfo(this.owner, attackDamage,DamageInfo.DamageType.NORMAL);
             info.applyPowers(this.owner, target);
             AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
-            tickDuration();
+            this.isDone = true;
         }
     }
 }
