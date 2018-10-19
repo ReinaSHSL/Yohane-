@@ -28,6 +28,7 @@ public class Modore extends CustomCard {
                 AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target);
         this.damage = this.baseDamage = DAMAGE_AMT;
+        this.exhaust = true;
     }
 
     @Override
