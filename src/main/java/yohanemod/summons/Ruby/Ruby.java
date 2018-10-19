@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
+import yohanemod.actions.RubyAttack;
+import yohanemod.actions.RubyBlock;
 
 import java.util.ArrayList;
 
@@ -50,15 +52,11 @@ public class Ruby extends AbstractFriendlyMonster {
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
         this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                DamageInfo info = new DamageInfo(this, attackDamage, DamageInfo.DamageType.NORMAL);
-                info.applyPowers(mo, this);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
-            }
+            AbstractDungeon.actionManager.addToBottom(new RubyAttack(this));
         }));
         this.moves.addMove(new MinionMove("Block", this, new Texture("summons/bubbles/block_bubble.png")
                 ,blockDesc, () -> {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, blockAmount));
+            AbstractDungeon.actionManager.addToBottom(new RubyBlock(this));
         }));
     }
 

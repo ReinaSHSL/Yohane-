@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
+import yohanemod.actions.MariAttack;
 
 public class Mari extends AbstractFriendlyMonster {
     public static String NAME = "Mari";
@@ -44,26 +45,13 @@ public class Mari extends AbstractFriendlyMonster {
         }
         int attackDamage = (MariNumbers.MariAttackDamage + (upgradeCount * 4));
         int healthLoss = (MariNumbers.MariHealthLoss);
-        target = AbstractDungeon.getRandomMonster();
+
         String attackDesc = String.format("Deal %d damage to the lowest health enemy. Scales 4 times as fast with Evolve.", attackDamage);
         String evolveDesc = "Evolve this card.";
         String intangibleDesc = String.format("Mari gains 1 Intangible. NL Lose %d Max HP. NL Cannot be used under %d max HP. Does not scale with Evolve.", healthLoss, healthLoss);
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (!m.isDeadOrEscaped()) {
-                if (target == null) {
-                    target = m;
-                } else if (m.currentHealth < target.currentHealth) {
-                    target = m;
-                }
-            }
-        }
         this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
-            if (target != null) {
-                DamageInfo info = new DamageInfo(this, attackDamage, DamageInfo.DamageType.NORMAL);
-                info.applyPowers(this, target);
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
-            }
+            AbstractDungeon.actionManager.addToBottom(new MariAttack(this));
         }));
         this.moves.addMove(new MinionMove("Evolve", this, new Texture("summons/bubbles/evolve_bubble.png")
                 , evolveDesc, () -> {

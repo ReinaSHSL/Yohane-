@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
+import yohanemod.actions.LilyAttack;
+import yohanemod.actions.LilyCharge;
 import yohanemod.powers.FallenEnergy;
 
 import java.util.ArrayList;
@@ -50,17 +52,12 @@ public class Lily extends AbstractFriendlyMonster {
         String chargeDesc = String.format("Gain %d Fallen Energy.", chargeAmount);
         this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
-            target = AbstractDungeon.getMonsters().getRandomMonster(true);
-            DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
-            info.applyPowers(this, target);
-            if (target != null) {
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
-            }
+            AbstractDungeon.actionManager.addToBottom(new LilyAttack(this));
 
         }));
         this.moves.addMove(new MinionMove("Charge", this, new Texture("summons/bubbles/charge_bubble.png")
                 ,chargeDesc, () -> {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new FallenEnergy(AbstractDungeon.player, chargeAmount), chargeAmount));
+            AbstractDungeon.actionManager.addToBottom(new LilyCharge(this));
         }));
     }
 

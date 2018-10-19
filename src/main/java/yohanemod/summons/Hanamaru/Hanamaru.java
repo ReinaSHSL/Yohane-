@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
+import yohanemod.actions.HanamaruBlock;
+import yohanemod.actions.HanamaruSin;
 import yohanemod.powers.Sin;
 
 import java.util.ArrayList;
@@ -47,24 +49,18 @@ public class Hanamaru extends AbstractFriendlyMonster {
         if (this.hasPower(HanamaruStrength.POWER_ID) && this.getPower(HanamaruStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(HanamaruStrength.POWER_ID).amount;
         }
-        int sinAmount = (HanamaruNumbers.hanamaruSin + upgradeCount);
-        int blockAmount = (HanamaruNumbers.hanamaruBlock + upgradeCount);
+        int sinAmount = (HanamaruNumbers.hanamaruSin);
+        int blockAmount = (HanamaruNumbers.hanamaruBlock);
         String sinDesc = String.format("Apply %d Sin to ALL enemies.", sinAmount);
         String blockDesc = String.format("Give %d Block to Yohane and ALL Summons.", blockAmount);
         this.moves.addMove(new MinionMove("Sin", this, new Texture("summons/bubbles/sin_bubble.png")
                 , sinDesc, () -> {
-            for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                if (mo != null) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new Sin(mo, sinAmount), sinAmount));
-                }
-            }
+            AbstractDungeon.actionManager.addToBottom(new HanamaruSin(this));
         }));
         this.moves.addMove(new MinionMove("Block", this, new Texture("summons/bubbles/block_bubble.png")
                 , blockDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, this, blockAmount));
-            for (AbstractMonster mo : player.minions.monsters) {
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(mo, p, blockAmount));
-            }
+            AbstractDungeon.actionManager.addToBottom(new HanamaruBlock(this));
         }));
         this.moves.addMove(new MinionMove("Exhume", this, new Texture("summons/bubbles/exhume_bubble.png")
                 , "Add one card from your Exhaust pile to your hand. NL You can only do this once until Evolved again.", () -> {

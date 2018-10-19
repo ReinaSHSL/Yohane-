@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
+import yohanemod.actions.ChikaAttack;
+import yohanemod.actions.ChikaHeal;
 
 import java.util.ArrayList;
 
@@ -44,26 +46,18 @@ public class Chika extends AbstractFriendlyMonster {
 
 
     public void addMoves() {
-        if (this.hasPower(ChikaStrength.POWER_ID) && this.getPower(ChikaStrength.POWER_ID).amount != 0) {
-            upgradeCount = this.getPower(ChikaStrength.POWER_ID).amount;
-        }
-        int attackDamage = (ChikaNumbers.ChikaAttackDamage + (upgradeCount * 2));
-        int healAmount = (ChikaNumbers.ChikaHeal + upgradeCount);
+        int attackDamage = (ChikaNumbers.ChikaAttackDamage);
+        int healAmount = (ChikaNumbers.ChikaHeal);
         String attackDesc = String.format("Deal %d damage to the lowest HP enemy. Scales twice as fast from Evolution."
                 , attackDamage);
         String healDesc = String.format("Heal ALL Summons for %d Health.", healAmount);
         this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
-            target = AbstractDungeon.getMonsters().getRandomMonster(true);
-            DamageInfo info = new DamageInfo(this,attackDamage,DamageInfo.DamageType.NORMAL);
-            info.applyPowers(this, target);
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info));
+            AbstractDungeon.actionManager.addToBottom(new ChikaAttack(this));
         }));
         this.moves.addMove(new MinionMove("Heal", this, new Texture("summons/bubbles/heal_bubble.png")
                 ,healDesc, () -> {
-            for (AbstractMonster mo : player.minions.monsters) {
-                AbstractDungeon.actionManager.addToBottom(new HealAction(mo, this, healAmount));
-            }
+            AbstractDungeon.actionManager.addToBottom(new ChikaHeal(this));
         }));
     }
 
