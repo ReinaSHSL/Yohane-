@@ -63,7 +63,7 @@ public class Hanamaru extends AbstractFriendlyMonster {
             AbstractDungeon.actionManager.addToBottom(new HanamaruBlock(this));
         }));
         this.moves.addMove(new MinionMove("Exhume", this, new Texture("summons/bubbles/exhume_bubble.png")
-                , "Add one card from your Exhaust pile to your hand. NL You can only do this once until Evolved again.", () -> {
+                , "Add one card from your Exhaust pile to your hand. NL You can only do this once.", () -> {
             if (canExhume)     {
                 AbstractDungeon.actionManager.addToBottom(new ExhumeAction(false));
             }

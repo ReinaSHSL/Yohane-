@@ -38,14 +38,6 @@ public class HanamaruStrength extends AbstractPower {
     {
         this.owner.increaseMaxHp(3, true);
         AbstractFriendlyMonster hanamaru = (AbstractFriendlyMonster)this.owner;
-        if (!Hanamaru.canExhume) {
-            hanamaru.addMove(new MinionMove("Exhume", hanamaru, new Texture("summons/bubbles/exhume_bubble.png")
-                    , "Add one card from your Exhaust pile to your hand. NL You can only do this once until Evolved again.", () -> {
-                AbstractDungeon.actionManager.addToBottom(new ExhumeAction(false));
-                Hanamaru.canExhume = false;
-                hanamaru.removeMove("Exhume");
-            }));
-        }
         this.fontScale = 8.0F;
         this.amount += stackAmount;
         Hanamaru.canExhume = true;
