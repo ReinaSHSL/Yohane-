@@ -1,6 +1,7 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
+import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -35,6 +36,8 @@ public class Strike_Grey extends CustomCard {
 
         this.baseDamage = ATTACK_DMG;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
+        this.tags.add(CardTags.STRIKE);
+        this.tags.add(BaseModCardTags.BASIC_STRIKE);
     }
 
     @Override
@@ -58,7 +61,4 @@ public class Strike_Grey extends CustomCard {
         }
     }
 
-    public boolean isStrike() {
-        return true;
-    }
 }

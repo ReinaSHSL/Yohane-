@@ -1,6 +1,7 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
+import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -33,6 +34,7 @@ public class Defend_Grey extends CustomCard{
                 rarity, target);
         this.block = this.baseBlock = BLOCK_AMOUNT;
         this.magicNumber = this.baseMagicNumber = FALLEN_ENERGY;
+        this.tags.add(BaseModCardTags.BASIC_DEFEND);
     }
 
     public boolean hasEnoughEnergy() {

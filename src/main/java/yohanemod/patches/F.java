@@ -29,8 +29,7 @@ public class F extends DynamicVariable {
     }
 
     @Override
-    public boolean upgraded(AbstractCard card)
-    {
-        return false;
+    public boolean upgraded(AbstractCard card) {
+        return card.upgraded;
     }
 }

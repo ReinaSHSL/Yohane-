@@ -28,6 +28,7 @@ public class Sloth extends CustomCard{
                 CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
                 rarity, target);
         this.magicNumber = this.baseMagicNumber = HEAL;
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override
