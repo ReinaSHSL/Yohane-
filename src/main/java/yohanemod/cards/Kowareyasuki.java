@@ -39,7 +39,7 @@ public class Kowareyasuki extends CustomCard {
                 ShockWaveEffect(p.hb.cX, p.hb.cY, com.megacrit.cardcrawl.core.Settings.GREEN_TEXT_COLOR, ShockWaveEffect.ShockWaveType.CHAOTIC), 1.5F));
         for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, p, new com.megacrit.cardcrawl.powers.WeakPower(mo, this.magicNumber, false),
-                    -this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+                    this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
 
