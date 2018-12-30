@@ -43,6 +43,11 @@ public class Allure_of_Darkness extends CustomCard{
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if (this.upgraded) {
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
+            AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, 1, false));
+            return;
+        }
         if ((p.hasPower(FallenEnergy.POWER_ID)) && (p.getPower(FallenEnergy.POWER_ID).amount >= this.misc)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -this.misc));
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
@@ -50,10 +55,7 @@ public class Allure_of_Darkness extends CustomCard{
         } else {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "I don't have enough Fallen Energy!", 1.0F, 2.0F));
         }
-        if (this.upgraded) {
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
-            AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, 1, false));
-        }
+
     }
 
     @Override
