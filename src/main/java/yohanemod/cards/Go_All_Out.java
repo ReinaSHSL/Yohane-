@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import yohanemod.actions.GoAllOutAction;
 import yohanemod.patches.AbstractCardEnum;
 
 public class Go_All_Out extends CustomCard{
@@ -33,7 +34,7 @@ public class Go_All_Out extends CustomCard{
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new yohanemod.actions.GoAllOutAction(this.magicNumber, this.misc));
+        AbstractDungeon.actionManager.addToBottom(new GoAllOutAction(this.magicNumber, this.misc));
     }
 
     @Override
