@@ -54,7 +54,7 @@ public class Hell_Zone extends CustomCard{
     {
         if (p.hasPower(FallenEnergy.POWER_ID) && (p.getPower(FallenEnergy.POWER_ID).amount > 1)) {
             for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                DamageInfo info = new DamageInfo(p, p.getPower(FallenEnergy.POWER_ID).amount, DamageInfo.DamageType.NORMAL);
+                DamageInfo info = new DamageInfo(p, p.getPower(FallenEnergy.POWER_ID).amount/2, DamageInfo.DamageType.NORMAL);
                 info.applyPowers(p, mo);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
             }
