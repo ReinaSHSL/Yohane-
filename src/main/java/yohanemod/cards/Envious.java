@@ -46,20 +46,22 @@ public class Envious extends CustomCard {
         for (AbstractPower powersToCopy : m.powers) {
             if (powersToCopy.ID.equals(FlightPower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new NoFallenLossFlightPower(p, powersToCopy.amount), powersToCopy.amount));
+                return;
             }
             if (powersToCopy.ID.equals(IntangiblePower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new IntangiblePlayerPower(p, powersToCopy.amount), powersToCopy.amount));
+                return;
             }
             if (powersToCopy.ID.equals(FadingPower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, new FadingPlayerPower(p, powersToCopy.amount), powersToCopy.amount));
+                return;
             }
             if (powersToCopy.ID.equals(CurlUpPower.POWER_ID)) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CurlUpPlayerPower(p, powersToCopy.amount), powersToCopy.amount));
+                return;
             }
-            if (!powersToCopy.ID.equals(FlightPower.POWER_ID) && !powersToCopy.ID.equals(IntangiblePower.POWER_ID) && !powersToCopy.ID.equals(FadingPower.POWER_ID) && !powersToCopy.ID.equals(CurlUpPower.POWER_ID)) {
-                powersToCopy.owner = p;
-                AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, powersToCopy, powersToCopy.amount));
-            }
+            powersToCopy.owner = p;
+            AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ApplyPowerAction(p, p, powersToCopy, powersToCopy.amount));
         }
     }
 

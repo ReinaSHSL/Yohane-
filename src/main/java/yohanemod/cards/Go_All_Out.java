@@ -1,6 +1,7 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,7 +20,6 @@ public class Go_All_Out extends CustomCard{
     private static final int FALLEN_ENERGY = 5;
     private static final int DRAW = 4;
     private static final int COST = 2;
-    private static final int POOL = 1;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;
 
@@ -35,6 +35,7 @@ public class Go_All_Out extends CustomCard{
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GoAllOutAction(this.magicNumber, this.misc));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.misc));
     }
 
     @Override

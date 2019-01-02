@@ -62,7 +62,7 @@ public class GoAllOutAction extends com.megacrit.cardcrawl.actions.AbstractGameA
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, new FallenEnergy(this.p,
                     FallenGain * this.magicNumber), FallenGain * this.magicNumber));
         }
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.draw));
         tickDuration();
+        this.isDone = true;
     }
 }
