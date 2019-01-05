@@ -96,7 +96,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     public void receiveEditKeywords() {
         logger.info("begin editing keywords");
         final String[] FallenEnergy = {"fallen"};
-        BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it.");
+        BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Gain 2 per turn.");
         final String[] Summon = {"summon", "summons"};
         BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of Summon.");
         final String[] Lily = {"lily"};
@@ -112,17 +112,17 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
 		final String[] Sin = {"sin"};
 		BaseMod.addKeyword(Sin,"Deal and take extra damage equal to the amount of Sin a monster has. Removed upon being hit.");
         final String[] Secret = {"secret"};
-        BaseMod.addKeyword(Secret,"These cards are retained and have effects while in the hand. Discarded upon use.");
+        BaseMod.addKeyword(Secret,"These cards are retained and have effects while in the hand. Can be played for no effect.");
         final String[] Hanamaru = {"hanamaru"};
-        String hanamaruDesc = String.format("A Little Demon with %d HP and can apply %d Sin to ALL enemies, give %d Block to ALL allies and herself, or Exhume one card once until evolved.",
+        String hanamaruDesc = String.format("A Little Demon with %d HP and can apply %d Sin to ALL enemies, give %d Block to ALL allies and herself, or Exhume one card one time only..",
                 HanamaruNumbers.hanamaruHP, HanamaruNumbers.hanamaruSin, HanamaruNumbers.hanamaruBlock);
         BaseMod.addKeyword(Hanamaru, hanamaruDesc);
         final String[] Chika = {"chika"};
-        String chikaDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy or heal all Summons for %d HP.",
+        String chikaDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy or heal all Summons for %d HP. Evolving makes Chika's attack do 2 more damage.",
                 ChikaNumbers.ChikaHP, ChikaNumbers.ChikaAttackDamage, ChikaNumbers.ChikaHeal);
         BaseMod.addKeyword(Chika, chikaDesc);
         final String[] Mari = {"mari"};
-        String mariDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy, Evolve or gain 1 Intangible in exchange for %d HP.",
+        String mariDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy, Evolve or gain 2 Intangible in exchange for %d HP. Evolving increases Mari's attack damage by 4.",
                 MariNumbers.MariHP, MariNumbers.MariAttackDamage, MariNumbers.MariHealthLoss);
         BaseMod.addKeyword(Mari, mariDesc);
         final String[] Dodge = {"dodge"};

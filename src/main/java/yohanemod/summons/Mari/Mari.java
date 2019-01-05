@@ -20,11 +20,13 @@ public class Mari extends AbstractFriendlyMonster {
     private int upgradeCount;
     private boolean hasAttacked = false;
     private AbstractMonster target;
+    String attackDesc;
+    String evolveDesc;
 
 
     public Mari(float offSetX) {
         super(NAME, ID, MariNumbers.MariHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", -1135F, 0);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", -1135F, 200);
         addMoves();
 
     }
@@ -46,8 +48,8 @@ public class Mari extends AbstractFriendlyMonster {
         int attackDamage = (MariNumbers.MariAttackDamage + (upgradeCount * 4));
         int healthLoss = (MariNumbers.MariHealthLoss);
 
-        String attackDesc = String.format("Deal %d damage to the lowest health enemy. Scales 4 times as fast with Evolve.", attackDamage);
-        String evolveDesc = "Evolve this card.";
+        attackDesc = String.format("Deal %d damage to the lowest health enemy. Scales 4 times as fast with Evolve.", attackDamage);
+        evolveDesc = "Evolve this card.";
         String intangibleDesc = String.format("Mari gains 1 Intangible. NL Lose %d Max HP. NL Cannot be used under %d max HP. Does not scale with Evolve.", healthLoss, healthLoss);
         this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
@@ -65,7 +67,6 @@ public class Mari extends AbstractFriendlyMonster {
             } else {
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "Mari is too damaged!", 1.0F, 2.0F));
             }
-
         }));
     }
 

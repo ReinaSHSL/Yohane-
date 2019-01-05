@@ -119,7 +119,7 @@
   },
   "Yohane:Grace_Under_Fire": {
     "NAME": "Grace Under Fire",
-    "DESCRIPTION": "Whenever you take attack damage, gain !M! Fallen Energy."
+    "DESCRIPTION": "Whenever you are attacked, gain !M! Fallen Energy."
   },
   "Yohane:Grand_Entrance": {
     "NAME": "Grand Entrance",
@@ -127,7 +127,7 @@
   },
   "Yohane:Guilty_Kiss": {
     "NAME":  "Guilty Kiss",
-    "DESCRIPTION": "If only [E]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times instead."
+    "DESCRIPTION": "If only 1 [E]  was used, apply !M! Vulnerable. NL If more was used, deal !D! damage X times instead."
   },
   "Yohane:Hakodate": {
     "NAME": "Hakodate",
@@ -226,8 +226,8 @@
   },
   "Yohane:Miracle_Wave": {
     "NAME": "Miracle Wave",
-    "DESCRIPTION": "Deal !D! damage. NL Add an Injury to your deck.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a Clumsy to your deck."
+    "DESCRIPTION": "Deal !D! damage. NL Add an Injury to your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a Clumsy to your draw pile."
   },
   "Yohane:Misfortune": {
     "NAME":  "Misfortune",

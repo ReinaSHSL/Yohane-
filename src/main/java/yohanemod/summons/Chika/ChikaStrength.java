@@ -22,9 +22,10 @@ public class ChikaStrength extends AbstractPower {
     }
 
     @Override
-    public void updateDescription()
-    {
-        this.description = (DESCRIPTIONS[0]);
+    public void updateDescription() {
+        int damage = ChikaNumbers.ChikaAttackDamage + (this.amount * 2);
+        int heal = ChikaNumbers.ChikaHeal + this.amount;
+        this.description = DESCRIPTIONS[0] + damage + DESCRIPTIONS[1] + heal + DESCRIPTIONS[2];
     }
 
     @Override
@@ -33,6 +34,7 @@ public class ChikaStrength extends AbstractPower {
         this.owner.increaseMaxHp(3, true);
         this.fontScale = 8.0F;
         this.amount += stackAmount;
+        this.updateDescription();
     }
 
     private static Texture getChikaStrengthTexture() {

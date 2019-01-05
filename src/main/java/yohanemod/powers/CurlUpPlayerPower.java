@@ -20,7 +20,7 @@ public class CurlUpPlayerPower extends AbstractPower {
 
     public CurlUpPlayerPower(AbstractCreature owner, int amount) {
         this.name = NAME;
-        this.ID = "Curl Up";
+        this.ID = "Yohane:CurlUp";
         this.owner = owner;
         this.amount = amount;
         this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
@@ -31,7 +31,6 @@ public class CurlUpPlayerPower extends AbstractPower {
         if (!this.triggered && damageAmount < this.owner.currentHealth && damageAmount > 0 && info.owner != null && info.type == DamageInfo.DamageType.NORMAL) {
             this.flash();
             this.triggered = true;
-            AbstractDungeon.actionManager.addToBottom(new ChangeStateAction((AbstractMonster)this.owner, "CLOSED"));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, this.amount));
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Curl Up"));
         }

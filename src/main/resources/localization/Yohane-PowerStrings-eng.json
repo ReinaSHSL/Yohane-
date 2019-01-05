@@ -105,7 +105,10 @@
 
   "Yohane:ChikaStrength": {
     "NAME": "Kagayakitai!",
-    "DESCRIPTIONS": [ "Mikan!"
+    "DESCRIPTIONS": [
+      "Attacking does #b",
+      " damage to the lowest health enemy. Healing heals all Summons for #b",
+      " health."
     ]
   },
 
@@ -138,15 +141,15 @@
     "NAME": "Sin",
     "DESCRIPTIONS": [
       "This unit will receive #b",
-      " extra damage and deal #b",
-      " extra damage. Removed upon being hit."
+      " extra Attack damage and deal #b",
+      " extra Attack damage. Removed upon being hit."
     ]
   },
 
   "Yohane:GraceUnderFirePower": {
     "NAME": "Grace Under Fire",
     "DESCRIPTIONS": [
-      "Whenever you take damage, gain #b",
+      "Whenever you are attacked, gain #b",
       " Fallen Energy."
     ]
   },

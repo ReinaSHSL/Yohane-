@@ -27,7 +27,7 @@ public class Chika extends AbstractFriendlyMonster {
 
     public Chika(float offSetX) {
         super(NAME, ID, ChikaNumbers.ChikaHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", -1150F, 300);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", -900F, 300);
         addMoves();
 
     }
