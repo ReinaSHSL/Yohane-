@@ -24,38 +24,4 @@ public class KobtingPlease {
             return SpireReturn.Continue();
         }
     }
-
-    @SpirePatch(
-            clz = AbstractFriendlyMonster.class,
-            method = "render"
-    )
-    public static class NoMoreRender {
-        @SpireInsertPatch(
-                rloc = 1
-        )
-        public static SpireReturn Insert(AbstractFriendlyMonster __instance, SpriteBatch sb) {
-            if (__instance.hasTakenTurn() && AbstractDungeon.player instanceof Yohane) {
-                return SpireReturn.Return(null);
-            } else {
-                return SpireReturn.Continue();
-            }
-        }
-    }
-
-    @SpirePatch(
-            clz = AbstractFriendlyMonster.class,
-            method = "update"
-    )
-    public static class NoMoreUpdate {
-        @SpireInsertPatch(
-                rloc = 1
-        )
-        public static SpireReturn Insert(AbstractFriendlyMonster __instance) {
-            if (__instance.hasTakenTurn() && AbstractDungeon.player instanceof Yohane) {
-                return SpireReturn.Return(null);
-            } else {
-                return SpireReturn.Continue();
-            }
-        }
-    }
 }
