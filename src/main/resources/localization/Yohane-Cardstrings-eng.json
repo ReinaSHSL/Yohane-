@@ -95,7 +95,8 @@
   },
   "Yohane:Energy_Change": {
     "NAME": "Energy Change",
-    "DESCRIPTION": "Pay !M! Fallen Energy. NL Gain [E]."
+    "DESCRIPTION": "Pay 4 Fallen Energy. NL Gain [E].",
+    "UPGRADE_DESCRIPTION": "Pay 4 Fallen Energy. NL Gain [E] [E]."
   },
   "Yohane:Envious": {
     "NAME": "Envious",
