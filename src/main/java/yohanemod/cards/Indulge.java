@@ -19,8 +19,7 @@ public class Indulge extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Indulge.png";
-    private static final int COST = 3;
-    private static final int POOL = 1;
+    private static final int COST = 1;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;
 
