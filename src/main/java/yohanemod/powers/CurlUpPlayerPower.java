@@ -32,7 +32,7 @@ public class CurlUpPlayerPower extends AbstractPower {
             this.flash();
             this.triggered = true;
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.owner, this.owner, this.amount));
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, "Curl Up"));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, ID));
         }
 
         return damageAmount;
