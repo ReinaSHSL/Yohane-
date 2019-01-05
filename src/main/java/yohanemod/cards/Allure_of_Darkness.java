@@ -36,7 +36,7 @@ public class Allure_of_Darkness extends CustomCard{
 
     public boolean hasEnoughEnergy() {
         boolean retVal = super.hasEnoughEnergy();
-        if (!AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID)) {
+        if (!AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && !this.upgraded) {
             retVal = false;
         }
         if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.misc)) {

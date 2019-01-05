@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.ChemicalX;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.Sin;
@@ -35,6 +36,9 @@ public class Soul_Peek extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (this.energyOnUse < EnergyPanel.totalCount) {
             this.energyOnUse = EnergyPanel.totalCount;
+        }
+        if (AbstractDungeon.player.hasRelic(ChemicalX.ID)) {
+            this.energyOnUse += 2;
         }
         for (int i = 0; i < this.energyOnUse; i++) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new Sin(m, this.magicNumber), this.magicNumber));

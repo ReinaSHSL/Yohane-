@@ -36,7 +36,7 @@ public class GoAllOutAction extends com.megacrit.cardcrawl.actions.AbstractGameA
                     c.lighten(false);
                     c.drawScale = 0.12F;
                     c.targetDrawScale = 0.75F;
-                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, this.p.drawPile));
+                    AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, this.p.drawPile));
                     FallenGain++;
                 }
             }
@@ -49,17 +49,17 @@ public class GoAllOutAction extends com.megacrit.cardcrawl.actions.AbstractGameA
                     c.lighten(false);
                     c.drawScale = 0.12F;
                     c.targetDrawScale = 0.75F;
-                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, this.p.discardPile));
+                    AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, this.p.discardPile));
                     FallenGain++;
                 }
             }
             for (AbstractCard c : this.p.hand.group) {
                 if (c.type != AbstractCard.CardType.ATTACK) {
-                    AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, this.p.hand));
+                    AbstractDungeon.actionManager.addToTop(new ExhaustSpecificCardAction(c, this.p.hand));
                     FallenGain++;
                 }
             }
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.p, this.p, new FallenEnergy(this.p,
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.p, this.p, new FallenEnergy(this.p,
                     FallenGain * this.magicNumber), FallenGain * this.magicNumber));
         }
         tickDuration();

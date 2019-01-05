@@ -4,8 +4,8 @@
   "author_list": ["Reina"],
   "description": "Yohane descends upon the Spire!",
   "credits": null,
-  "version": "v1.0.8",
-  "sts_version": "12-20-2018",
+  "version": "v1.0.9",
+  "sts_version": "01-03-2018",
   "mts_version": "3.6.3",
   "update_json": "https://api.github.com/repos/ReinaSHSL/Yohane-/releases/latest",
   "dependencies": ["Friendly_Minions_0987678"]

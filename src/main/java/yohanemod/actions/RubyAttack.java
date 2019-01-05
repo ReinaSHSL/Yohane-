@@ -29,7 +29,7 @@ public class RubyAttack extends AbstractGameAction {
             int attackDamage = RubyNumbers.rubyAttackDamage + upgradeCount;
             for (AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
                 DamageInfo info = new DamageInfo(this.owner, attackDamage, DamageInfo.DamageType.NORMAL);
-                info.applyPowers(mo, this.owner);
+                info.applyPowers(this.owner, mo);
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(mo, info));
             }
             this.isDone = true;
