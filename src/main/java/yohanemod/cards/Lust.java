@@ -18,9 +18,9 @@ public class Lust extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "cards/Lust.png";
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int POOL = 1;
-    private static final int SIN = 4;
+    private static final int SIN = 8;
     private static final CardRarity rarity = CardRarity.UNCOMMON;
     private static final CardTarget target = CardTarget.ENEMY;
 
