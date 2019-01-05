@@ -19,7 +19,7 @@ public class Go_All_Out extends CustomCard{
     public static final String IMG_PATH = "cards/Go_All_Out.png";
     private static final int FALLEN_ENERGY = 5;
     private static final int DRAW = 4;
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final CardRarity rarity = CardRarity.RARE;
     private static final CardTarget target = CardTarget.SELF;
 
