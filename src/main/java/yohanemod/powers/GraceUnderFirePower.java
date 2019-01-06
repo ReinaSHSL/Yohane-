@@ -23,7 +23,7 @@ public class GraceUnderFirePower extends AbstractPower {
         this.amount = amount;
         updateDescription();
         this.img = getSinTexture();
-        this.type = AbstractPower.PowerType.DEBUFF;
+        this.type = AbstractPower.PowerType.BUFF;
     }
 
     @Override
