@@ -35,7 +35,7 @@ public class Ruby extends AbstractFriendlyMonster {
 
     public Ruby(float offsetX) {
         super(NAME, ID, RubyNumbers.rubyHP,
-                15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", -750F, 100, intentImgs);
+                15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", offsetX, 0, intentImgs);
         addMoves();
     }
 

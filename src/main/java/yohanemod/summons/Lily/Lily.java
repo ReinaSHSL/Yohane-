@@ -34,7 +34,7 @@ public class Lily extends AbstractFriendlyMonster {
 
     public Lily(float offSetX) {
         super(NAME, ID, LilyNumbers.lilyHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", -1050F, 300, intentImgs);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", offSetX, 0, intentImgs);
         addMoves();
 
     }

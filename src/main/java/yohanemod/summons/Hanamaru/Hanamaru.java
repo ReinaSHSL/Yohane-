@@ -38,7 +38,7 @@ public class Hanamaru extends AbstractFriendlyMonster {
 
     public Hanamaru(float offSetX) {
         super(NAME, ID, HanamaruNumbers.hanamaruHP, -2.0F, 10.0F, 230.0F, 240.0F,
-                "summons/Hanamaru.png", -750F, 300, intentImgs);
+                "summons/Hanamaru.png", offSetX, 0, intentImgs);
         addMoves();
     }
 

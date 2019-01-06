@@ -35,7 +35,7 @@ public class Mari extends AbstractFriendlyMonster {
 
     public Mari(float offSetX) {
         super(NAME, ID, MariNumbers.MariHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", -1135F, 200, intentImgs);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", offSetX, 0, intentImgs);
         addMoves();
 
     }
