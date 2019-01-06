@@ -5,10 +5,12 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
+import kobting.friendlyminions.monsters.MinionMoveGroup;
 import yohanemod.actions.RubyAttack;
 import yohanemod.actions.RubyBlock;
 import yohanemod.tools.TextureLoader;
@@ -37,7 +39,6 @@ public class Ruby extends AbstractFriendlyMonster {
         super(NAME, ID, RubyNumbers.rubyHP,
                 15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", offsetX, 0, intentImgs);
         addMoves();
-        setMoveLocations();
     }
 
     @Override
@@ -45,18 +46,8 @@ public class Ruby extends AbstractFriendlyMonster {
         AbstractDungeon.actionManager.addToBottom(new LoseBlockAction(this, this, this.currentBlock));
     }
 
-    private void setMoveLocations() {
-        this.moves.setxStart(-1150F);
-        this.moves.setyStart(900F);
-    }
-
-    @Override
-    public void applyEndOfTurnTriggers() {
-        super.applyEndOfTurnTriggers();
-        this.hasAttacked = false;
-    }
-
-    public void addMoves() {
+    private void addMoves() {
+        ArrayList<MinionMove> rubyMoves = new ArrayList<>();
         if (this.hasPower(RubyStrength.POWER_ID) && this.getPower(RubyStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(RubyStrength.POWER_ID).amount;
         }
@@ -64,14 +55,25 @@ public class Ruby extends AbstractFriendlyMonster {
         int blockAmount = (RubyNumbers.rubyBlockAmount + upgradeCount);
         String attackDesc = String.format("Deal %d damage to ALL enemies.", attackDamage);
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
-        this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
+        rubyMoves.add(new MinionMove("rubyPic", this, TextureLoader.getTexture("summons/bubbles/rubybubble.png")
+                , "", () -> {
+            this.setTakenTurn(false);
+        }));
+        rubyMoves.add(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new RubyAttack(this));
         }));
-        this.moves.addMove(new MinionMove("Block", this, new Texture("summons/bubbles/block_bubble.png")
+        rubyMoves.add(new MinionMove("Block", this, new Texture("summons/bubbles/block_bubble.png")
                 ,blockDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new RubyBlock(this));
         }));
+        this.moves = new MinionMoveGroup(rubyMoves, 400F * Settings.scale, -300F * Settings.scale);
+    }
+
+    @Override
+    public void applyEndOfTurnTriggers() {
+        super.applyEndOfTurnTriggers();
+        this.hasAttacked = false;
     }
 
     @Override

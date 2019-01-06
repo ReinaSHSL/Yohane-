@@ -5,10 +5,12 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
+import kobting.friendlyminions.monsters.MinionMoveGroup;
 import yohanemod.actions.LilyAttack;
 import yohanemod.actions.LilyCharge;
 import yohanemod.powers.FallenEnergy;
@@ -36,12 +38,6 @@ public class Lily extends AbstractFriendlyMonster {
         super(NAME, ID, LilyNumbers.lilyHP,
                 -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", offSetX, 0, intentImgs);
         addMoves();
-        setMoveLocations();
-    }
-
-    private void setMoveLocations() {
-        this.moves.setxStart(-1150F);
-        this.moves.setyStart(900F);
     }
 
     @Override
@@ -57,6 +53,7 @@ public class Lily extends AbstractFriendlyMonster {
     }
 
     public void addMoves() {
+        ArrayList<MinionMove> lilyMoves = new ArrayList<>();
         if (this.hasPower(LilyStrength.POWER_ID) && this.getPower(LilyStrength.POWER_ID).amount != 0) {
             upgradeCount = this.getPower(LilyStrength.POWER_ID).amount;
         }
@@ -64,15 +61,16 @@ public class Lily extends AbstractFriendlyMonster {
         int chargeAmount = (LilyNumbers.lilyChargeAmount + upgradeCount);
         String attackDesc = String.format("Deal %d damage to a random enemy.", attackDamage);
         String chargeDesc = String.format("Gain %d Fallen Energy.", chargeAmount);
-        this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
+        lilyMoves.add(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new LilyAttack(this));
 
         }));
-        this.moves.addMove(new MinionMove("Charge", this, new Texture("summons/bubbles/charge_bubble.png")
+        lilyMoves.add(new MinionMove("Charge", this, new Texture("summons/bubbles/charge_bubble.png")
                 ,chargeDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new LilyCharge(this));
         }));
+        this.moves = new MinionMoveGroup(lilyMoves, 400F * Settings.scale, -300F * Settings.scale);
     }
 
     //Not needed unless doing some kind of random move like normal Monsters

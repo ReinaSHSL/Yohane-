@@ -6,11 +6,13 @@ import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.utility.LoseBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
+import kobting.friendlyminions.monsters.MinionMoveGroup;
 import yohanemod.actions.ChikaAttack;
 import yohanemod.actions.ChikaHeal;
 import yohanemod.tools.TextureLoader;
@@ -38,12 +40,6 @@ public class Chika extends AbstractFriendlyMonster {
         super(NAME, ID, ChikaNumbers.ChikaHP,
                 -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", offSetX, 0, intentImgs);
         addMoves();
-        setMoveLocations();
-    }
-
-    private void setMoveLocations() {
-        this.moves.setxStart(-1150F);
-        this.moves.setyStart(900F);
     }
 
     @Override
@@ -60,19 +56,21 @@ public class Chika extends AbstractFriendlyMonster {
 
 
     public void addMoves() {
+        ArrayList<MinionMove> chikaMoves = new ArrayList<>();
         int attackDamage = (ChikaNumbers.ChikaAttackDamage);
         int healAmount = (ChikaNumbers.ChikaHeal);
         String attackDesc = String.format("Deal %d damage to the lowest HP enemy. Scales twice as fast from Evolution."
                 , attackDamage);
         String healDesc = String.format("Heal ALL Summons for %d Health.", healAmount);
-        this.moves.addMove(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
+        chikaMoves.add(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new ChikaAttack(this));
         }));
-        this.moves.addMove(new MinionMove("Heal", this, new Texture("summons/bubbles/heal_bubble.png")
+        chikaMoves.add(new MinionMove("Heal", this, new Texture("summons/bubbles/heal_bubble.png")
                 ,healDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new ChikaHeal(this));
         }));
+        this.moves = new MinionMoveGroup(chikaMoves, 400F * Settings.scale, -300F * Settings.scale);
     }
 
     @Override
