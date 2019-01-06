@@ -61,6 +61,8 @@ public class Lily extends AbstractFriendlyMonster {
         int chargeAmount = (LilyNumbers.lilyChargeAmount + upgradeCount);
         String attackDesc = String.format("Deal %d damage to a random enemy.", attackDamage);
         String chargeDesc = String.format("Gain %d Fallen Energy.", chargeAmount);
+        lilyMoves.add(new MinionMove("rubyPic", this, TextureLoader.getTexture("summons/bubbles/lilybubble.png")
+                , "", () -> this.setTakenTurn(false)));
         lilyMoves.add(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new LilyAttack(this));

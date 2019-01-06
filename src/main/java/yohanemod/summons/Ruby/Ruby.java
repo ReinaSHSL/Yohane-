@@ -56,9 +56,7 @@ public class Ruby extends AbstractFriendlyMonster {
         String attackDesc = String.format("Deal %d damage to ALL enemies.", attackDamage);
         String blockDesc = String.format("Give %d Block to Yohane.", blockAmount);
         rubyMoves.add(new MinionMove("rubyPic", this, TextureLoader.getTexture("summons/bubbles/rubybubble.png")
-                , "", () -> {
-            this.setTakenTurn(false);
-        }));
+                , "", () -> this.setTakenTurn(false)));
         rubyMoves.add(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new RubyAttack(this));

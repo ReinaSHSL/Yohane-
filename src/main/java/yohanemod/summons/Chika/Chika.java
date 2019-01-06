@@ -62,6 +62,8 @@ public class Chika extends AbstractFriendlyMonster {
         String attackDesc = String.format("Deal %d damage to the lowest HP enemy. Scales twice as fast from Evolution."
                 , attackDamage);
         String healDesc = String.format("Heal ALL Summons for %d Health.", healAmount);
+        chikaMoves.add(new MinionMove("rubyPic", this, TextureLoader.getTexture("summons/bubbles/chikabubble.png")
+                , "", () -> this.setTakenTurn(false)));
         chikaMoves.add(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new ChikaAttack(this));

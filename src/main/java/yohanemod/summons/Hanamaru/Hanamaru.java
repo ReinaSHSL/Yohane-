@@ -65,6 +65,8 @@ public class Hanamaru extends AbstractFriendlyMonster {
         int blockAmount = (HanamaruNumbers.hanamaruBlock);
         String sinDesc = String.format("Apply %d Sin to ALL enemies.", sinAmount);
         String blockDesc = String.format("Give %d Block to Yohane and ALL Summons.", blockAmount);
+        hanamaruMoves.add(new MinionMove("rubyPic", this, TextureLoader.getTexture("summons/bubbles/hanamarububble.png")
+                , "", () -> this.setTakenTurn(false)));
         hanamaruMoves.add(new MinionMove("Sin", this, new Texture("summons/bubbles/sin_bubble.png")
                 , sinDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new HanamaruSin(this));

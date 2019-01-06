@@ -60,10 +60,11 @@ public class Mari extends AbstractFriendlyMonster {
         }
         int attackDamage = (MariNumbers.MariAttackDamage + (upgradeCount * 4));
         int healthLoss = (MariNumbers.MariHealthLoss);
-
         attackDesc = String.format("Deal %d damage to the lowest health enemy. Scales 4 times as fast with Evolve.", attackDamage);
         evolveDesc = "Evolve this card.";
         String intangibleDesc = String.format("Mari gains 1 Intangible. NL Lose %d Max HP. NL Cannot be used under %d max HP. Does not scale with Evolve.", healthLoss, healthLoss);
+        mariMoves.add(new MinionMove("rubyPic", this, TextureLoader.getTexture("summons/bubbles/maribubble.png")
+                , "", () -> this.setTakenTurn(false)));
         mariMoves.add(new MinionMove("Attack", this, new Texture("summons/bubbles/atk_bubble.png")
                 , attackDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new MariAttack(this));
