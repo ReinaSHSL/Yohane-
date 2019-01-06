@@ -25,19 +25,25 @@ public class Chika extends AbstractFriendlyMonster {
     private AbstractMonster target;
     private AbstractPlayer p = AbstractDungeon.player;
     private AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
-    private static Texture intentOne = TextureLoader.getTexture("summons/intents/chika/attack_intent_1");
-    private static Texture intentTwo = TextureLoader.getTexture("summons/intents/chika/attack_intent_2");
-    private static Texture intentThree = TextureLoader.getTexture("summons/intents/chika/attack_intent_3");
-    private static Texture intentFour = TextureLoader.getTexture("summons/intents/chika/attack_intent_4");
-    private static Texture intentFive = TextureLoader.getTexture("summons/intents/chika/attack_intent_5");
-    private static Texture intentSix = TextureLoader.getTexture("summons/intents/chika/attack_intent_6");
-    private static Texture intentSeven = TextureLoader.getTexture("summons/intents/chika/attack_intent_7");
+    private static Texture intentOne = TextureLoader.getTexture("summons/intents/chika/attack_intent_1.png");
+    private static Texture intentTwo = TextureLoader.getTexture("summons/intents/chika/attack_intent_2.png");
+    private static Texture intentThree = TextureLoader.getTexture("summons/intents/chika/attack_intent_3.png");
+    private static Texture intentFour = TextureLoader.getTexture("summons/intents/chika/attack_intent_4.png");
+    private static Texture intentFive = TextureLoader.getTexture("summons/intents/chika/attack_intent_5.png");
+    private static Texture intentSix = TextureLoader.getTexture("summons/intents/chika/attack_intent_6.png");
+    private static Texture intentSeven = TextureLoader.getTexture("summons/intents/chika/attack_intent_7.png");
     private static Texture[] intentImgs = {intentOne, intentTwo, intentThree, intentFour, intentFive, intentSix, intentSeven};
 
     public Chika(float offSetX) {
         super(NAME, ID, ChikaNumbers.ChikaHP,
                 -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", offSetX, 0, intentImgs);
         addMoves();
+        setMoveLocations();
+    }
+
+    private void setMoveLocations() {
+        this.moves.setxStart(-1150F);
+        this.moves.setyStart(900F);
     }
 
     @Override
