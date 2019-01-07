@@ -6,17 +6,22 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import yohanemod.cards.*;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.F;
 import yohanemod.patches.YohaneEnum;
+import yohanemod.powers.FallenEnergy;
 import yohanemod.relics.AngelWings;
 import yohanemod.screens.LittleDemonScreen;
 import yohanemod.summons.Chika.ChikaChoiceCards;
@@ -29,12 +34,20 @@ import yohanemod.summons.Mari.MariChoiceCards;
 import yohanemod.summons.Mari.MariNumbers;
 import yohanemod.summons.Ruby.RubyChoiceCards;
 import yohanemod.summons.Ruby.RubyNumbers;
+import yohanemod.tools.TextureLoader;
 
 import java.nio.charset.StandardCharsets;
 
 
 @SpireInitializer
-public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, EditStringsSubscriber, PostInitializeSubscriber {
+public class YohaneMod implements
+        EditCharactersSubscriber,
+        EditCardsSubscriber,
+        EditRelicsSubscriber,
+        EditKeywordsSubscriber,
+        EditStringsSubscriber,
+        PostInitializeSubscriber,
+        RenderSubscriber {
     public static final Logger logger = LogManager.getLogger(YohaneMod.class.getName());
 
     private static final String MODNAME = "Yohane!";
@@ -57,6 +70,7 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     private static final String Yohane_Button = "charstuff/YohaneButton.png";
     public static boolean optOutMetrics = false;
     public static LittleDemonScreen lds;
+    //private static FallenEnergyCounter fallenEnergyCounter = new FallenEnergyCounter();
 
     public YohaneMod() {
         BaseMod.subscribe(this);
@@ -236,4 +250,10 @@ public class YohaneMod implements EditCharactersSubscriber, EditCardsSubscriber,
     }
 
 
+    @Override
+    public void receiveRender(SpriteBatch sb) {
+//        if (AbstractDungeon.player != null && CardCrawlGame.dungeon != null && AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+//            fallenEnergyCounter.render(sb);
+//        }
+    }
 }

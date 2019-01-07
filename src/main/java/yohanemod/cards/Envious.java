@@ -1,6 +1,7 @@
 package yohanemod.cards;
 
 import basemod.abstracts.CustomCard;
+import com.google.gson.Gson;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -16,6 +17,7 @@ import yohanemod.patches.AbstractCardEnum;
 import yohanemod.powers.CurlUpPlayerPower;
 import yohanemod.powers.FadingPlayerPower;
 import yohanemod.powers.NoFallenLossFlightPower;
+import yohanemod.powers.Sin;
 
 public class Envious extends CustomCard {
     public static final String ID = "Yohane:Envious";
@@ -40,28 +42,74 @@ public class Envious extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
-                new DamageInfo(p, this.damage, this.damageTypeForTurn),
-                AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        for (AbstractPower powersToCopy : m.powers) {
-            if (powersToCopy.ID.equals(FlightPower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NoFallenLossFlightPower(p, powersToCopy.amount), powersToCopy.amount));
-                return;
+        try {
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(m,
+                    new DamageInfo(p, this.damage, this.damageTypeForTurn),
+                    AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            for (AbstractPower powersToCopy : m.powers) {
+                if (powersToCopy.ID.equals(FlightPower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NoFallenLossFlightPower(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(IntangiblePower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(FadingPower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FadingPlayerPower(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(CurlUpPower.POWER_ID) || powersToCopy.ID.equals("conspire:Shedding")) {
+                    if (powersToCopy.amount < 0) {
+                        powersToCopy.amount = 8;
+                    }
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CurlUpPlayerPower(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(ReactivePower.POWER_ID)) {
+                    continue;
+                }
+                if (powersToCopy.ID.equals(ArtifactPower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ArtifactPower(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(Sin.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new Sin(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(MalleablePower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MalleablePower(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(PlatedArmorPower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(ShiftingPower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new ShiftingPower(p), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(StrengthPower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(SlowPower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new SlowPower(p, powersToCopy.amount), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(VulnerablePower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new VulnerablePower(p, powersToCopy.amount, false), powersToCopy.amount));
+                    continue;
+                }
+                if (powersToCopy.ID.equals(WeakPower.POWER_ID)) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new WeakPower(p, powersToCopy.amount, false), powersToCopy.amount));
+                    continue;
+                }
+                powersToCopy.owner = p;
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, powersToCopy, powersToCopy.amount));
             }
-            if (powersToCopy.ID.equals(IntangiblePower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, powersToCopy.amount), powersToCopy.amount));
-                return;
-            }
-            if (powersToCopy.ID.equals(FadingPower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FadingPlayerPower(p, powersToCopy.amount), powersToCopy.amount));
-                return;
-            }
-            if (powersToCopy.ID.equals(CurlUpPower.POWER_ID)) {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new CurlUpPlayerPower(p, powersToCopy.amount), powersToCopy.amount));
-                return;
-            }
-            powersToCopy.owner = p;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, powersToCopy, powersToCopy.amount));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
