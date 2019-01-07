@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import kobting.friendlyminions.characters.CustomCharSelectInfo;
-import yohanemod.cards.Descent;
+import yohanemod.cards.*;
 import yohanemod.patches.AbstractCardEnum;
 import yohanemod.patches.YohaneEnum;
 import yohanemod.screens.LittleDemonScreen;
@@ -46,17 +46,16 @@ public class Yohane extends AbstractPlayerWithMinions {
 
 	public ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
-		retVal.add("Yohane:Strike_Grey");
-		retVal.add("Yohane:Strike_Grey");
-		retVal.add("Yohane:Strike_Grey");
-		retVal.add("Yohane:Strike_Grey");
-		retVal.add("Yohane:Strike_Grey");
-		retVal.add("Yohane:Defend_Grey");
-		retVal.add("Yohane:Defend_Grey");
-		retVal.add("Yohane:Defend_Grey");
-		retVal.add("Yohane:Defend_Grey");
-		retVal.add("Yohane:Descent");
-		retVal.add("Yohane:Well_Laid_Ambush");
+		retVal.add(Strike_Grey.ID);
+		retVal.add(Strike_Grey.ID);
+		retVal.add(Strike_Grey.ID);
+		retVal.add(Strike_Grey.ID);
+		retVal.add(Defend_Grey.ID);
+		retVal.add(Defend_Grey.ID);
+		retVal.add(Defend_Grey.ID);
+		retVal.add(Defend_Grey.ID);
+		retVal.add(Little_Demon_Lily.ID);
+		retVal.add(Well_Laid_Ambush.ID);
 		return retVal;
 	}
 
@@ -103,7 +102,7 @@ public class Yohane extends AbstractPlayerWithMinions {
 
 	@Override
 	public AbstractCard getStartCardForEvent() {
-		return new Descent();
+		return new Little_Demon_Lily();
 	}
 
 	@Override

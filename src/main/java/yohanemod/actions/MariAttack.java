@@ -26,7 +26,7 @@ public class MariAttack extends AbstractGameAction {
             if (this.owner.hasPower(MariStrength.POWER_ID) && this.owner.getPower(MariStrength.POWER_ID).amount != 0) {
                 upgradeCount = this.owner.getPower(MariStrength.POWER_ID).amount;
             }
-            int attackDamage = (MariNumbers.MariAttackDamage + (upgradeCount * 4));
+            int attackDamage = (MariNumbers.MariAttackDamage + (upgradeCount * 6));
             target = AbstractDungeon.getMonsters().getRandomMonster(true);
             for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (!m.isDeadOrEscaped()) {

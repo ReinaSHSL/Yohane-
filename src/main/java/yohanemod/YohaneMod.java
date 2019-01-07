@@ -139,7 +139,7 @@ public class YohaneMod implements
                 ChikaNumbers.ChikaHP, ChikaNumbers.ChikaAttackDamage, ChikaNumbers.ChikaHeal);
         BaseMod.addKeyword(Chika, chikaDesc);
         final String[] Mari = {"mari"};
-        String mariDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy, Evolve or gain 2 Intangible in exchange for %d HP. Evolving increases Mari's attack damage by 4.",
+        String mariDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy, Evolve or gain 2 Intangible in exchange for %d HP. Evolving increases Mari's attack damage by 6.",
                 MariNumbers.MariHP, MariNumbers.MariAttackDamage, MariNumbers.MariHealthLoss);
         BaseMod.addKeyword(Mari, mariDesc);
         final String[] Dodge = {"dodge"};
