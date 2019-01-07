@@ -73,7 +73,11 @@ public class Lily extends AbstractYohaneMinion {
                 ,chargeDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new LilyCharge(this));
         }));
-        this.moves = new MinionMoveGroup(lilyMoves, 400F * Settings.scale, -300F * Settings.scale);
+        if (slotOne) {
+            this.moves = new MinionMoveGroup(lilyMoves, 400F * Settings.scale, -200F * Settings.scale);
+        } else {
+            this.moves = new MinionMoveGroup(lilyMoves, 400F * Settings.scale, -300F * Settings.scale);
+        }
     }
 
     //Not needed unless doing some kind of random move like normal Monsters

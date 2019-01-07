@@ -83,7 +83,11 @@ public class Mari extends AbstractYohaneMinion {
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, "Mari is too damaged!", 1.0F, 2.0F));
             }
         }));
-        this.moves = new MinionMoveGroup(mariMoves, 400F * Settings.scale, -300F * Settings.scale);
+        if (slotOne) {
+            this.moves = new MinionMoveGroup(mariMoves, 400F * Settings.scale, -200F * Settings.scale);
+        } else {
+            this.moves = new MinionMoveGroup(mariMoves, 400F * Settings.scale, -300F * Settings.scale);
+        }
     }
 
 

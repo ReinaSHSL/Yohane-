@@ -84,7 +84,11 @@ public class Hanamaru extends AbstractYohaneMinion {
             }
                 canExhume = false;
         }));
-        this.moves = new MinionMoveGroup(hanamaruMoves, 400F * Settings.scale, -300F * Settings.scale);
+        if (slotOne) {
+            this.moves = new MinionMoveGroup(hanamaruMoves, 400F * Settings.scale, -200F * Settings.scale);
+        } else {
+            this.moves = new MinionMoveGroup(hanamaruMoves, 400F * Settings.scale, -300F * Settings.scale);
+        }
     }
 
 

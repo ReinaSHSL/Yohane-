@@ -74,11 +74,10 @@ public class Chika extends AbstractYohaneMinion {
             AbstractDungeon.actionManager.addToBottom(new ChikaHeal(this));
         }));
         if (slotOne) {
-            this.moves = new MinionMoveGroup(chikaMoves, 400F * Settings.scale, -300F * Settings.scale);
+            this.moves = new MinionMoveGroup(chikaMoves, 400F * Settings.scale, -200F * Settings.scale);
         } else {
-            this.moves = new MinionMoveGroup(chikaMoves, 400F * Settings.scale, -150F * Settings.scale);
+            this.moves = new MinionMoveGroup(chikaMoves, 400F * Settings.scale, -300F * Settings.scale);
         }
-
     }
 
     @Override
