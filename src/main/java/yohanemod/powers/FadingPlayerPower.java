@@ -15,13 +15,14 @@ public class FadingPlayerPower extends AbstractPower {
        public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     
        public FadingPlayerPower(AbstractCreature owner, int turns) {
-             this.name = NAME;
-             this.ID = POWER_ID;
-             this.owner = owner;
-             this.amount = turns;
-             updateDescription();
-             loadRegion("fading");
-           }
+           this.name = NAME;
+           this.ID = POWER_ID;
+           this.owner = owner;
+           this.amount = turns;
+           updateDescription();
+           loadRegion("fading");
+           this.type = PowerType.DEBUFF;
+       }
     
        public void updateDescription()
        {
