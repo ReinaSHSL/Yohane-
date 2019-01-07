@@ -54,7 +54,6 @@ public class FallenEnergyCounter extends ClickableUIElement {
 
     @Override
     public void render(SpriteBatch sb) {
-        if (Settings.hideLowerElements) return;
         super.render(sb);
         FontHelper.renderFontCentered(sb, FontHelper.energyNumFontBlue, Integer.toString(this.fallenNumber), textX, textY, Color.WHITE);
     }

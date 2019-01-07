@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -256,8 +257,10 @@ public class YohaneMod implements
     @Override
     public void receiveRender(SpriteBatch sb) {
         if (AbstractDungeon.player != null && CardCrawlGame.dungeon != null && AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            fallenEnergyCounter.render(sb);
-            fallenEnergyCounter.update();
+            if (!AbstractDungeon.isScreenUp) {
+                fallenEnergyCounter.render(sb);
+                fallenEnergyCounter.update();
+            }
         }
     }
 }
