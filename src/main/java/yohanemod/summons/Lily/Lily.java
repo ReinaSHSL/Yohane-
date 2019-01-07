@@ -74,9 +74,9 @@ public class Lily extends AbstractYohaneMinion {
             AbstractDungeon.actionManager.addToBottom(new LilyCharge(this));
         }));
         if (slotOne) {
-            this.moves = new MinionMoveGroup(lilyMoves, 400F * Settings.scale, -200F * Settings.scale);
+            this.moves = new MinionMoveGroup(lilyMoves, 350F * Settings.scale, -200F * Settings.scale);
         } else {
-            this.moves = new MinionMoveGroup(lilyMoves, 400F * Settings.scale, -300F * Settings.scale);
+            this.moves = new MinionMoveGroup(lilyMoves, 350F * Settings.scale, -300F * Settings.scale);
         }
     }
 

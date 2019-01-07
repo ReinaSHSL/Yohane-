@@ -84,9 +84,9 @@ public class Mari extends AbstractYohaneMinion {
             }
         }));
         if (slotOne) {
-            this.moves = new MinionMoveGroup(mariMoves, 400F * Settings.scale, -200F * Settings.scale);
+            this.moves = new MinionMoveGroup(mariMoves, 350F * Settings.scale, -200F * Settings.scale);
         } else {
-            this.moves = new MinionMoveGroup(mariMoves, 400F * Settings.scale, -300F * Settings.scale);
+            this.moves = new MinionMoveGroup(mariMoves, 350F * Settings.scale, -300F * Settings.scale);
         }
     }
 

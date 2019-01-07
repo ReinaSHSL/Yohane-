@@ -67,9 +67,9 @@ public class Ruby extends AbstractYohaneMinion {
             AbstractDungeon.actionManager.addToBottom(new RubyBlock(this));
         }));
         if (slotOne) {
-            this.moves = new MinionMoveGroup(rubyMoves, 400F * Settings.scale, -200F * Settings.scale);
+            this.moves = new MinionMoveGroup(rubyMoves, 350F * Settings.scale, -200F * Settings.scale);
         } else {
-            this.moves = new MinionMoveGroup(rubyMoves, 400F * Settings.scale, -300F * Settings.scale);
+            this.moves = new MinionMoveGroup(rubyMoves, 350F * Settings.scale, -300F * Settings.scale);
         }
     }
 
