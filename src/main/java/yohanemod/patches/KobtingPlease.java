@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
 import yohanemod.Yohane;
+import yohanemod.summons.AbstractYohaneMinion;
 
 public class KobtingPlease {
 
@@ -18,7 +19,8 @@ public class KobtingPlease {
     )
     public static class NoMoreHover {
         public static SpireReturn Prefix(MinionMove __instance) {
-            if (AbstractDungeon.player instanceof Yohane) {
+            AbstractFriendlyMonster owner = (AbstractFriendlyMonster) ReflectionHacks.getPrivate(__instance, MinionMove.class, "owner");
+            if (owner instanceof AbstractYohaneMinion) {
                 return SpireReturn.Return(null);
             }
             return SpireReturn.Continue();

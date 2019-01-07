@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -70,7 +71,7 @@ public class YohaneMod implements
     private static final String Yohane_Button = "charstuff/YohaneButton.png";
     public static boolean optOutMetrics = false;
     public static LittleDemonScreen lds;
-    //private static FallenEnergyCounter fallenEnergyCounter = new FallenEnergyCounter();
+    private static FallenEnergyCounter fallenEnergyCounter;
 
     public YohaneMod() {
         BaseMod.subscribe(this);
@@ -93,9 +94,10 @@ public class YohaneMod implements
             String powerStrings = Gdx.files.internal("localization/Yohane-PowerStrings-eng.json").readString(
                     String.valueOf(StandardCharsets.UTF_8));
             BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
-        String cardStrings = Gdx.files.internal("localization/Yohane-Cardstrings-eng.json").readString(
+            String cardStrings = Gdx.files.internal("localization/Yohane-Cardstrings-eng.json").readString(
                 String.valueOf(StandardCharsets.UTF_8));
-        BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
+            BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
+            BaseMod.loadCustomStringsFile(UIStrings.class, "localization/Yohane-UIStrings-eng.json");
         }
 
     @Override
@@ -241,6 +243,7 @@ public class YohaneMod implements
         ModPanel settingsPanel = new ModPanel();
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
+        fallenEnergyCounter = new FallenEnergyCounter(TextureLoader.getTexture("FallenEnergyCounter.png"));
     }
 
 
@@ -252,8 +255,9 @@ public class YohaneMod implements
 
     @Override
     public void receiveRender(SpriteBatch sb) {
-//        if (AbstractDungeon.player != null && CardCrawlGame.dungeon != null && AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-//            fallenEnergyCounter.render(sb);
-//        }
+        if (AbstractDungeon.player != null && CardCrawlGame.dungeon != null && AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+            fallenEnergyCounter.render(sb);
+            fallenEnergyCounter.update();
+        }
     }
 }
