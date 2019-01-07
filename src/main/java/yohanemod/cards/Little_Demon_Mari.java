@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.summons.AbstractYohaneMinion;
+import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Mari.Mari;
 import yohanemod.summons.Mari.MariStrength;
 
@@ -49,7 +51,16 @@ public class Little_Demon_Mari extends CustomCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari0Upgraded, p, new MariStrength(Mari0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
-                    player.addMinion(new Mari(-1150F, false));
+                    AbstractYohaneMinion yohaneMinion = null;
+                    AbstractMonster summonedMonster = player.minions.monsters.get(0);
+                    if (summonedMonster instanceof AbstractYohaneMinion) {
+                        yohaneMinion = (AbstractYohaneMinion)summonedMonster;
+                    }
+                    if (yohaneMinion != null && yohaneMinion.slotOne)  {
+                        player.addMinion(new Mari(-1150F, false));
+                    } else {
+                        player.addMinion(new Mari(-750F, true));
+                    }
                     AbstractMonster Mari1 = player.minions.getMonster(Mari.ID);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari1, p, new MariStrength(Mari1, 0), 0));
                 }

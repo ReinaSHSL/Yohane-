@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.summons.AbstractYohaneMinion;
+import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Hanamaru.HanamaruStrength;
 import yohanemod.summons.Hanamaru.Hanamaru;
 
@@ -48,8 +50,16 @@ public class Little_Demon_Hanamaru extends CustomCard {
                     AbstractMonster Hanamaru0Upgraded = player.minions.monsters.get(0);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru0Upgraded, p, new HanamaruStrength(Hanamaru0Upgraded, 1), 1));
                 } else {
-                    //No Upgrade
-                    player.addMinion(new Hanamaru(-1150F, false));
+                    AbstractYohaneMinion yohaneMinion = null;
+                    AbstractMonster summonedMonster = player.minions.monsters.get(0);
+                    if (summonedMonster instanceof AbstractYohaneMinion) {
+                        yohaneMinion = (AbstractYohaneMinion)summonedMonster;
+                    }
+                    if (yohaneMinion != null && yohaneMinion.slotOne)  {
+                        player.addMinion(new Hanamaru(-1150F, false));
+                    } else {
+                        player.addMinion(new Hanamaru(-750F, true));
+                    }
                     Hanamaru.canExhume = true;
                     AbstractMonster Hanamaru1 = player.minions.monsters.get(1);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru1, p, new HanamaruStrength(Hanamaru1, 0), 0));

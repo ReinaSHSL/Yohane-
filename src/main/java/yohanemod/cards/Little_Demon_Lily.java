@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.summons.AbstractYohaneMinion;
+import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Lily.Lily;
 import yohanemod.summons.Lily.LilyStrength;
 
@@ -59,7 +61,16 @@ public class Little_Demon_Lily extends CustomCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0Upgraded, abstractPlayer, new LilyStrength(lily0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
-                    player.addMinion(new Lily(-1150F, false));
+                    AbstractYohaneMinion yohaneMinion = null;
+                    AbstractMonster summonedMonster = player.minions.monsters.get(0);
+                    if (summonedMonster instanceof AbstractYohaneMinion) {
+                        yohaneMinion = (AbstractYohaneMinion)summonedMonster;
+                    }
+                    if (yohaneMinion != null && yohaneMinion.slotOne)  {
+                        player.addMinion(new Lily(-1150F, false));
+                    } else {
+                        player.addMinion(new Lily(-750F, true));
+                    }
                     AbstractMonster Lily1 = player.minions.monsters.get(1);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily1, abstractPlayer, new LilyStrength(Lily1, 0), 0));
                 }

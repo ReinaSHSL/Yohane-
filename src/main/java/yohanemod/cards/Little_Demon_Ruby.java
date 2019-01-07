@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.summons.AbstractYohaneMinion;
+import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Ruby.Ruby;
 import yohanemod.summons.Ruby.RubyStrength;
 
@@ -59,7 +61,16 @@ public class Little_Demon_Ruby extends CustomCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(ruby0Upgraded, abstractPlayer, new RubyStrength(ruby0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
-                    player.addMinion(new Ruby(-1150F, false));
+                    AbstractYohaneMinion yohaneMinion = null;
+                    AbstractMonster summonedMonster = player.minions.monsters.get(0);
+                    if (summonedMonster instanceof AbstractYohaneMinion) {
+                        yohaneMinion = (AbstractYohaneMinion)summonedMonster;
+                    }
+                    if (yohaneMinion != null && yohaneMinion.slotOne)  {
+                        player.addMinion(new Ruby(-1150F, false));
+                    } else {
+                        player.addMinion(new Ruby(750F, true));
+                    }
                     AbstractMonster Ruby1 = player.minions.monsters.get(1);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Ruby1, abstractPlayer, new RubyStrength(Ruby1, 0), 0));
                 }
