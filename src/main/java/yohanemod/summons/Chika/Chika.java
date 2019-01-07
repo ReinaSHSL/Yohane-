@@ -15,11 +15,12 @@ import kobting.friendlyminions.monsters.MinionMove;
 import kobting.friendlyminions.monsters.MinionMoveGroup;
 import yohanemod.actions.ChikaAttack;
 import yohanemod.actions.ChikaHeal;
+import yohanemod.summons.AbstractYohaneMinion;
 import yohanemod.tools.TextureLoader;
 
 import java.util.ArrayList;
 
-public class Chika extends AbstractFriendlyMonster {
+public class Chika extends AbstractYohaneMinion {
     public static String NAME = "Chika";
     public static String ID = "Chika";
     private int upgradeCount;
@@ -36,9 +37,9 @@ public class Chika extends AbstractFriendlyMonster {
     private static Texture intentSeven = TextureLoader.getTexture("summons/intents/chika/attack_intent_7.png");
     private static Texture[] intentImgs = {intentOne, intentTwo, intentThree, intentFour, intentFive, intentSix, intentSeven};
 
-    public Chika(float offSetX) {
+    public Chika(float offSetX, boolean slotOne) {
         super(NAME, ID, ChikaNumbers.ChikaHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", offSetX, 0, intentImgs);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Chika.png", offSetX, 0, intentImgs, slotOne);
         addMoves();
     }
 
@@ -72,7 +73,12 @@ public class Chika extends AbstractFriendlyMonster {
                 ,healDesc, () -> {
             AbstractDungeon.actionManager.addToBottom(new ChikaHeal(this));
         }));
-        this.moves = new MinionMoveGroup(chikaMoves, 400F * Settings.scale, -300F * Settings.scale);
+        if (slotOne) {
+            this.moves = new MinionMoveGroup(chikaMoves, 400F * Settings.scale, -300F * Settings.scale);
+        } else {
+            this.moves = new MinionMoveGroup(chikaMoves, 400F * Settings.scale, -150F * Settings.scale);
+        }
+
     }
 
     @Override

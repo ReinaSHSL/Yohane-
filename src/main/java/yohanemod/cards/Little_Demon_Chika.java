@@ -10,7 +10,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
+import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import yohanemod.patches.AbstractCardEnum;
+import yohanemod.summons.AbstractYohaneMinion;
 import yohanemod.summons.Chika.Chika;
 import yohanemod.summons.Chika.ChikaStrength;
 
@@ -38,7 +40,7 @@ public class Little_Demon_Chika extends CustomCard {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) abstractPlayer;
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
-                player.addMinion(new Chika(-750F));
+                player.addMinion(new Chika(-750F, true));
                 AbstractMonster Chika0 = player.minions.monsters.get(0);
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika0, abstractPlayer, new ChikaStrength(Chika0, 0), 0));
             } else if (summonCount == 1) {
@@ -48,7 +50,16 @@ public class Little_Demon_Chika extends CustomCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika0Upgraded, abstractPlayer, new ChikaStrength(Chika0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
-                    player.addMinion(new Chika(-1150F));
+                    AbstractYohaneMinion yohaneMinion = null;
+                    AbstractMonster summonedMonster = player.minions.monsters.get(0);
+                    if (summonedMonster instanceof AbstractYohaneMinion) {
+                        yohaneMinion = (AbstractYohaneMinion)summonedMonster;
+                    }
+                    if (yohaneMinion != null && yohaneMinion.slotOne)  {
+                        player.addMinion(new Chika(-1150F, false));
+                    } else {
+                        player.addMinion(new Chika(-750F, true));
+                    }
                     AbstractMonster Chika1 = player.minions.monsters.get(1);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Chika1, abstractPlayer, new ChikaStrength(Chika1, 0), 0));
                 }
