@@ -39,7 +39,7 @@ public class Little_Demon_Mari extends CustomCard {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
-                player.addMinion(new Mari(-750F));
+                player.addMinion(new Mari(-750F, true));
                 AbstractMonster Mari0 = player.minions.getMonster(Mari.ID);
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari0, p, new MariStrength(Mari0, 0), 0));
             } else if (summonCount == 1) {
@@ -49,7 +49,7 @@ public class Little_Demon_Mari extends CustomCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari0Upgraded, p, new MariStrength(Mari0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
-                    player.addMinion(new Mari(-1150F));
+                    player.addMinion(new Mari(-1150F, false));
                     AbstractMonster Mari1 = player.minions.getMonster(Mari.ID);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Mari1, p, new MariStrength(Mari1, 0), 0));
                 }

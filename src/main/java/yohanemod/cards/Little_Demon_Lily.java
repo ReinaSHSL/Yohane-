@@ -49,7 +49,7 @@ public class Little_Demon_Lily extends CustomCard {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) abstractPlayer;
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
-                player.addMinion(new Lily(-750F));
+                player.addMinion(new Lily(-750F, true));
                 AbstractMonster Lily0 = player.minions.monsters.get(0);
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily0, abstractPlayer, new LilyStrength(Lily0, 0), 0));
             } else if (summonCount == 1) {
@@ -59,7 +59,7 @@ public class Little_Demon_Lily extends CustomCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(lily0Upgraded, abstractPlayer, new LilyStrength(lily0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
-                    player.addMinion(new Lily(-1150F));
+                    player.addMinion(new Lily(-1150F, false));
                     AbstractMonster Lily1 = player.minions.monsters.get(1);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Lily1, abstractPlayer, new LilyStrength(Lily1, 0), 0));
                 }

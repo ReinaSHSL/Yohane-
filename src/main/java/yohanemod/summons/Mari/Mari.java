@@ -15,11 +15,12 @@ import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
 import kobting.friendlyminions.monsters.MinionMoveGroup;
 import yohanemod.actions.MariAttack;
+import yohanemod.summons.AbstractYohaneMinion;
 import yohanemod.tools.TextureLoader;
 
 import java.util.ArrayList;
 
-public class Mari extends AbstractFriendlyMonster {
+public class Mari extends AbstractYohaneMinion {
     public static String NAME = "Mari";
     public static String ID = "Mari";
     private int upgradeCount;
@@ -37,9 +38,9 @@ public class Mari extends AbstractFriendlyMonster {
     private static Texture[] intentImgs = {intentOne, intentTwo, intentThree, intentFour, intentFive, intentSix, intentSeven};
 
 
-    public Mari(float offSetX) {
+    public Mari(float offSetX, boolean slotOne) {
         super(NAME, ID, MariNumbers.MariHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", offSetX, 0, intentImgs);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Mari.png", offSetX, 0, intentImgs, slotOne);
         addMoves();
     }
 

@@ -14,12 +14,13 @@ import kobting.friendlyminions.monsters.MinionMoveGroup;
 import yohanemod.actions.LilyAttack;
 import yohanemod.actions.LilyCharge;
 import yohanemod.powers.FallenEnergy;
+import yohanemod.summons.AbstractYohaneMinion;
 import yohanemod.tools.TextureLoader;
 
 import java.util.ArrayList;
 
 
-public class Lily extends AbstractFriendlyMonster {
+public class Lily extends AbstractYohaneMinion {
     public static String NAME = "Lily";
     public static String ID = "Lily";
     private int upgradeCount;
@@ -34,9 +35,9 @@ public class Lily extends AbstractFriendlyMonster {
     private static Texture intentSeven = TextureLoader.getTexture("summons/intents/lily/attack_intent_7.png");
     private static Texture[] intentImgs = {intentOne, intentTwo, intentThree, intentFour, intentFive, intentSix, intentSeven};
 
-    public Lily(float offSetX) {
+    public Lily(float offSetX, boolean slotOne) {
         super(NAME, ID, LilyNumbers.lilyHP,
-                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", offSetX, 0, intentImgs);
+                -2.0F, 10.0F, 230.0F, 240.0F, "summons/Lily.png", offSetX, 0, intentImgs, slotOne);
         addMoves();
     }
 

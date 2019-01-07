@@ -16,11 +16,12 @@ import kobting.friendlyminions.monsters.MinionMoveGroup;
 import yohanemod.actions.HanamaruBlock;
 import yohanemod.actions.HanamaruSin;
 import yohanemod.powers.Sin;
+import yohanemod.summons.AbstractYohaneMinion;
 import yohanemod.tools.TextureLoader;
 
 import java.util.ArrayList;
 
-public class Hanamaru extends AbstractFriendlyMonster {
+public class Hanamaru extends AbstractYohaneMinion {
     public static String NAME = "Hanamaru";
     public static String ID = "Hanamaru";
     private int upgradeCount;
@@ -38,9 +39,9 @@ public class Hanamaru extends AbstractFriendlyMonster {
     private static Texture intentSeven = TextureLoader.getTexture("summons/intents/hanamaru/attack_intent_7.png");
     private static Texture[] intentImgs = {intentOne, intentTwo, intentThree, intentFour, intentFive, intentSix, intentSeven};
 
-    public Hanamaru(float offSetX) {
+    public Hanamaru(float offSetX, boolean slotOne) {
         super(NAME, ID, HanamaruNumbers.hanamaruHP, -2.0F, 10.0F, 230.0F, 240.0F,
-                "summons/Hanamaru.png", offSetX, 0, intentImgs);
+                "summons/Hanamaru.png", offSetX, 0, intentImgs, slotOne);
         addMoves();
     }
 

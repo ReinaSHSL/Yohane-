@@ -13,11 +13,12 @@ import kobting.friendlyminions.monsters.MinionMove;
 import kobting.friendlyminions.monsters.MinionMoveGroup;
 import yohanemod.actions.RubyAttack;
 import yohanemod.actions.RubyBlock;
+import yohanemod.summons.AbstractYohaneMinion;
 import yohanemod.tools.TextureLoader;
 
 import java.util.ArrayList;
 
-public class Ruby extends AbstractFriendlyMonster {
+public class Ruby extends AbstractYohaneMinion {
     public static String NAME = "Ruby";
     public static String ID = "Ruby";
     private boolean hasAttacked = false;
@@ -35,9 +36,9 @@ public class Ruby extends AbstractFriendlyMonster {
     private static Texture intentSeven = TextureLoader.getTexture("summons/intents/chika/attack_intent_7.png");
     private static Texture[] intentImgs = {intentOne, intentTwo, intentThree, intentFour, intentFive, intentSix, intentSeven};
 
-    public Ruby(float offsetX) {
+    public Ruby(float offsetX, boolean slotOne) {
         super(NAME, ID, RubyNumbers.rubyHP,
-                15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", offsetX, 0, intentImgs);
+                15.0F, 10.0F, 230.0F, 240.0F, "summons/Ruby.png", offsetX, 0, intentImgs, slotOne);
         addMoves();
     }
 

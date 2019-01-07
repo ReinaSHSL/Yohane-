@@ -38,7 +38,7 @@ public class Little_Demon_Hanamaru extends CustomCard {
             AbstractPlayerWithMinions player = (AbstractPlayerWithMinions) p;
             int summonCount = player.minions.monsters.size();
             if (summonCount == 0) {
-                player.addMinion(new Hanamaru(-750F));
+                player.addMinion(new Hanamaru(-750F, true));
                 AbstractMonster Hanamaru0 = player.minions.monsters.get(0);
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru0, p, new HanamaruStrength(Hanamaru0, 0), 0));
                 Hanamaru.canExhume = true;
@@ -49,7 +49,7 @@ public class Little_Demon_Hanamaru extends CustomCard {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru0Upgraded, p, new HanamaruStrength(Hanamaru0Upgraded, 1), 1));
                 } else {
                     //No Upgrade
-                    player.addMinion(new Hanamaru(-1150F));
+                    player.addMinion(new Hanamaru(-1150F, false));
                     Hanamaru.canExhume = true;
                     AbstractMonster Hanamaru1 = player.minions.monsters.get(1);
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(Hanamaru1, p, new HanamaruStrength(Hanamaru1, 0), 0));
