@@ -14,6 +14,7 @@ import kobting.friendlyminions.monsters.AbstractFriendlyMonster;
 import kobting.friendlyminions.monsters.MinionMove;
 import kobting.friendlyminions.monsters.MinionMoveGroup;
 import yohanemod.actions.HanamaruBlock;
+import yohanemod.actions.HanamaruExhumeAction;
 import yohanemod.actions.HanamaruSin;
 import yohanemod.powers.Sin;
 import yohanemod.summons.AbstractYohaneMinion;
@@ -80,7 +81,7 @@ public class Hanamaru extends AbstractYohaneMinion {
         hanamaruMoves.add(new MinionMove("Exhume", this, new Texture("summons/bubbles/exhume_bubble.png")
                 , "Add one card from your Exhaust pile to your hand. NL You can only do this once.", () -> {
             if (canExhume)     {
-                AbstractDungeon.actionManager.addToBottom(new ExhumeAction(false));
+                AbstractDungeon.actionManager.addToBottom(new HanamaruExhumeAction());
             }
                 canExhume = false;
         }));
