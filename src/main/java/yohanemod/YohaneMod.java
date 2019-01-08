@@ -89,16 +89,19 @@ public class YohaneMod implements
 
 	@Override
         public void receiveEditStrings() {
-            String relicStrings = Gdx.files.internal("localization/Yohane-RelicStrings-eng.json").readString(
-                    String.valueOf(StandardCharsets.UTF_8));
-            BaseMod.loadCustomStrings(RelicStrings.class, relicStrings);
-            String powerStrings = Gdx.files.internal("localization/Yohane-PowerStrings-eng.json").readString(
-                    String.valueOf(StandardCharsets.UTF_8));
-            BaseMod.loadCustomStrings(PowerStrings.class, powerStrings);
-            String cardStrings = Gdx.files.internal("localization/Yohane-Cardstrings-eng.json").readString(
-                String.valueOf(StandardCharsets.UTF_8));
-            BaseMod.loadCustomStrings(CardStrings.class, cardStrings);
-            BaseMod.loadCustomStringsFile(UIStrings.class, "localization/Yohane-UIStrings-eng.json");
+            switch (Settings.language) {
+                case ZHS:
+                    BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/Yohane-RelicStrings-zh.json");
+                    BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/Yohane-PowerStrings-zh.json");
+                    BaseMod.loadCustomStringsFile(CardStrings.class, "localization/Yohane-Cardstrings-zh.json");
+                    BaseMod.loadCustomStringsFile(UIStrings.class, "localization/Yohane-UIStrings-zh.json");
+                    break;
+                default:
+                    BaseMod.loadCustomStringsFile(RelicStrings.class, "localization/Yohane-RelicStrings-eng.json");
+                    BaseMod.loadCustomStringsFile(PowerStrings.class, "localization/Yohane-PowerStrings-eng.json");
+                    BaseMod.loadCustomStringsFile(CardStrings.class, "localization/Yohane-Cardstrings-eng.json");
+                    BaseMod.loadCustomStringsFile(UIStrings.class, "localization/Yohane-UIStrings-eng.json");
+            }
         }
 
     @Override
@@ -112,38 +115,65 @@ public class YohaneMod implements
     @Override
     public void receiveEditKeywords() {
         logger.info("begin editing keywords");
-        final String[] FallenEnergy = {"fallen"};
-        BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Gain 2 per turn.");
-        final String[] Summon = {"summon", "summons"};
-        BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of Summon.");
-        final String[] Lily = {"lily"};
-        String lilyDesc = String.format("A Little Demon with %d HP and can either deal %d damage to a random enemy, or give you %d Fallen Energy.",
-                LilyNumbers.lilyHP, LilyNumbers.lilyAttackDamage, LilyNumbers.lilyChargeAmount);
-        BaseMod.addKeyword(Lily, lilyDesc);
-        final String[] Ruby = {"ruby"};
-        String rubyDesc = String.format("A Little Demon with %d HP and can either deal %d damage to all enemies, or give you %d Block.",
-                RubyNumbers.rubyHP, RubyNumbers.rubyAttackDamage, RubyNumbers.rubyBlockAmount);
-        BaseMod.addKeyword(Ruby, rubyDesc);
-        final String[] Evolves = {"evolves", "evolve"};
-        BaseMod.addKeyword(Evolves,"Everything done by the Summon gets more effective by 1 and raise max HP by 3.");
-		final String[] Sin = {"sin"};
-		BaseMod.addKeyword(Sin,"Deal and take extra damage equal to the amount of Sin a monster has. Removed upon being hit.");
-        final String[] Secret = {"secret"};
-        BaseMod.addKeyword(Secret,"These cards are retained and have effects while in the hand. Can be played for no effect.");
-        final String[] Hanamaru = {"hanamaru"};
-        String hanamaruDesc = String.format("A Little Demon with %d HP and can apply %d Sin to ALL enemies, give %d Block to ALL allies and herself, or Exhume one card one time only..",
-                HanamaruNumbers.hanamaruHP, HanamaruNumbers.hanamaruSin, HanamaruNumbers.hanamaruBlock);
-        BaseMod.addKeyword(Hanamaru, hanamaruDesc);
-        final String[] Chika = {"chika"};
-        String chikaDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy or heal all Summons for %d HP. Evolving makes Chika's attack do 2 more damage.",
-                ChikaNumbers.ChikaHP, ChikaNumbers.ChikaAttackDamage, ChikaNumbers.ChikaHeal);
-        BaseMod.addKeyword(Chika, chikaDesc);
-        final String[] Mari = {"mari"};
-        String mariDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy, Evolve or gain 2 Intangible in exchange for %d HP. Evolving increases Mari's attack damage by 6.",
-                MariNumbers.MariHP, MariNumbers.MariAttackDamage, MariNumbers.MariHealthLoss);
-        BaseMod.addKeyword(Mari, mariDesc);
-        final String[] Dodge = {"dodge"};
-        BaseMod.addKeyword(Dodge,"Next attack you take deals 0 damage.");
+        final String[] FallenEnergy = {"堕天之力", "fallen"};
+        final String[] Summon = {"小恶魔", "小恶魔", "summon", "summons"};
+        final String[] Lily = {"梨梨", "lily"};
+        final String[] Ruby = {"露比", "ruby"};
+        final String[] Evolves = {"进化", "进化", "evolve", "evolves"};
+        final String[] Sin = {"罪印", "sin"};
+        final String[] Secret = {"奥秘", "secret"};
+        final String[] Hanamaru = {"花丸", "hanamaru"};
+        final String[] Chika = {"千歌", "chika"};
+        final String[] Mari = {"鞠莉", "mari"};
+        final String[] Dodge = {"闪避", "dodge"};
+        switch (Settings.language) {
+            case ZHS:
+
+                BaseMod.addKeyword(FallenEnergy,"某些卡牌需要它才能被打出。 每回合获得2点。");
+                BaseMod.addKeyword(Summon,"小恶魔可以在战斗中帮助你。 你最多只能召唤两名小恶魔，不会有复数同名小恶魔出现在战场上。");
+                String lilyDesc = String.format("拥有 %d 点生命值，可以对随机敌人造成 %d 点伤害，或者给予你 %d 点堕天之力。",
+                        LilyNumbers.lilyHP, LilyNumbers.lilyAttackDamage, LilyNumbers.lilyChargeAmount);
+                BaseMod.addKeyword(Lily, lilyDesc);
+                String rubyDesc = String.format("拥有 %d 点生命值，可以对所有敌人造成 %d 点伤害，或者给予你 %d 点格挡。",
+                        RubyNumbers.rubyHP, RubyNumbers.rubyAttackDamage, RubyNumbers.rubyBlockAmount);
+                BaseMod.addKeyword(Ruby, rubyDesc);
+                BaseMod.addKeyword(Evolves,"无特别说明的情况下，除生命值外的其他各项数值提升1点，生命值提升3点。");
+                BaseMod.addKeyword(Sin,"攻击和被攻击时额外造成相当于罪印层数的伤害，被命中后移除。");
+                BaseMod.addKeyword(Secret,"卡牌会被保留在手中并获得某些效果。打出后失去此效果。");
+                String hanamaruDesc = String.format("拥有 %d 点生命值，可以对所有敌人施加 %d 层罪印，或者给予所有友方单位 %d 点格挡， 并且仅有一次机会发掘一张已消耗的卡牌。",
+                        HanamaruNumbers.hanamaruHP, HanamaruNumbers.hanamaruSin, HanamaruNumbers.hanamaruBlock);
+                BaseMod.addKeyword(Hanamaru, hanamaruDesc);
+                String chikaDesc = String.format("拥有 %d 点生命值，可以对生命值最低的敌人造成 %d点伤害，或者恢复所有小恶魔 %d 点生命。进化会额外提升 2 点攻击力。",
+                        ChikaNumbers.ChikaHP, ChikaNumbers.ChikaAttackDamage, ChikaNumbers.ChikaHeal);
+                BaseMod.addKeyword(Chika, chikaDesc);
+                String mariDesc = String.format("拥有 %d 点生命值， 可以对生命值最低的敌人造成 %d 点伤害，自我进化，或消耗 %d 点生命值并获得 2 层无实体。进化会提升鞠莉6点攻击力。",
+                        MariNumbers.MariHP, MariNumbers.MariAttackDamage, MariNumbers.MariHealthLoss);
+                BaseMod.addKeyword(Mari, mariDesc);
+                BaseMod.addKeyword(Dodge,"你受到的下一次伤害变为0点。");
+                break;
+            default:
+                BaseMod.addKeyword(FallenEnergy,"Used to pay for cards that require it. Gain 2 per turn.");
+                BaseMod.addKeyword(Summon,"Summon an ally to help you in battle. There can only be maximum two summons out at a time. You cannot summon more than one of the same kind of Summon.");
+                lilyDesc = String.format("A Little Demon with %d HP and can either deal %d damage to a random enemy, or give you %d Fallen Energy.",
+                        LilyNumbers.lilyHP, LilyNumbers.lilyAttackDamage, LilyNumbers.lilyChargeAmount);
+                BaseMod.addKeyword(Lily, lilyDesc);
+                rubyDesc = String.format("A Little Demon with %d HP and can either deal %d damage to all enemies, or give you %d Block.",
+                        RubyNumbers.rubyHP, RubyNumbers.rubyAttackDamage, RubyNumbers.rubyBlockAmount);
+                BaseMod.addKeyword(Ruby, rubyDesc);
+                BaseMod.addKeyword(Evolves,"Everything done by the Summon gets more effective by 1 and raise max HP by 3.");
+                BaseMod.addKeyword(Sin,"Deal and take extra damage equal to the amount of Sin a monster has. Removed upon being hit.");
+                BaseMod.addKeyword(Secret,"These cards are retained and have effects while in the hand. Can be played for no effect.");
+                hanamaruDesc = String.format("A Little Demon with %d HP and can apply %d Sin to ALL enemies, give %d Block to ALL allies and herself, or Exhume one card one time only..",
+                        HanamaruNumbers.hanamaruHP, HanamaruNumbers.hanamaruSin, HanamaruNumbers.hanamaruBlock);
+                BaseMod.addKeyword(Hanamaru, hanamaruDesc);
+                chikaDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy or heal all Summons for %d HP. Evolving makes Chika's attack do 2 more damage.",
+                        ChikaNumbers.ChikaHP, ChikaNumbers.ChikaAttackDamage, ChikaNumbers.ChikaHeal);
+                BaseMod.addKeyword(Chika, chikaDesc);
+                mariDesc = String.format("A Little Demon with %d HP and can deal %d damage to the lowest HP enemy, Evolve or gain 2 Intangible in exchange for %d HP. Evolving increases Mari's attack damage by 6.",
+                        MariNumbers.MariHP, MariNumbers.MariAttackDamage, MariNumbers.MariHealthLoss);
+                BaseMod.addKeyword(Mari, mariDesc);
+                BaseMod.addKeyword(Dodge,"Next attack you take deals 0 damage.");
+        }
         logger.info("finish editing keywords");
     }
 
