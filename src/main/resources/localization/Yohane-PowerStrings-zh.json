@@ -1,0 +1,457 @@
+{
+
+  "Yohane:FallenEnergy": {
+
+    "NAME": "堕天之力",
+
+    "DESCRIPTIONS": [
+
+      "你有 #b",
+
+      "堕天之力 。每回合开始时获得 #y",
+
+      "2 点。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:StrawberryTrapper": {
+
+    "NAME": "草莓猎手",
+
+    "DESCRIPTIONS": [
+
+      "回合结束时，失去 #b",
+
+      " 点生命。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:ShadowGate": {
+
+    "NAME": "暗影之扉",
+
+    "DESCRIPTIONS": [
+
+      "抽 #b",
+
+      " 张卡。 如果堕天之力为0则弃掉。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:FlightPlayer": {
+
+    "NAME": "飞行",
+
+    "DESCRIPTIONS": [
+
+      "受到的 #y",
+
+      "攻击伤害 减少 #b",
+
+      "50% 。一回合内造成 #y",
+
+      "伤害 #b",
+
+      " 次后移除。 堕天之力0层时移除。",
+
+      " 次后移除。 堕天之力0层时移除。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:ImagineBreakerPower": {
+
+    "NAME": "幻想杀手",
+
+    "DESCRIPTIONS": [
+
+      "你的回合结束时失去所有堕天之力，并获得相同数值的格挡。"
+
+    ]
+
+  },
+
+  "Yohane:IceCreamSlow": {
+
+    "NAME": "其实是冰淇淋",
+
+    "DESCRIPTIONS": [
+
+      "本回合你每打出一张牌, ",
+
+      " 从 #y",
+
+      "攻击中受到的伤害增加 #b",
+
+      "10%。 (受到 #b",
+
+      "% 额外伤害.)  回合结束时移除。"
+
+    ]
+
+  },
+
+  "Yohane:SoulLink": {
+
+    "NAME": "灵魂链接",
+
+    "DESCRIPTIONS": [
+
+      "召唤的小恶魔受到的所有伤害与减益效果也会被夜羽承受。"
+
+    ]
+
+  },
+
+  "Yohane:SchwarzSechsPower": {
+
+    "NAME": "Schwarz Sechs",
+
+    "DESCRIPTIONS": [
+
+      "你的下一张 #b",
+
+      " 费用为0的卡牌会被打出两次。"
+
+    ]
+
+  },
+
+  "Yohane:LilyStrength": {
+
+    "NAME": "上级小恶魔梨梨！",
+
+    "DESCRIPTIONS": [
+
+      "对随机敌人造成 #b",
+
+      " 点伤害。给予你 #b",
+
+      "点堕天之力。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:HanamaruStrength": {
+
+    "NAME": "未来Zura！",
+
+    "DESCRIPTIONS": [
+
+      "给予所有敌人 #b",
+
+      " 罪印，或者 包括自己在内的所有友方 #b",
+
+      " 点格挡。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:RubyStrength": {
+
+    "NAME": "加油露比！",
+
+    "DESCRIPTIONS": [
+
+      "对所有敌人造成 #b",
+
+      "点伤害。给予夜羽 #b",
+
+      "点 #y",
+
+      "格挡。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:MariStrength": {
+
+    "NAME": "Shiny!",
+
+    "DESCRIPTIONS": [
+
+      "对生命值最低的敌人造成 #b",
+
+      "点伤害。 获得一层 无实体 并降低最大生命值 #b",
+
+      "点。 这个小恶魔可以自我 进化 。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:DodgePower": {
+
+    "NAME": "闪避",
+
+    "DESCRIPTIONS": [
+
+      "下 #b",
+
+      " 次你受到的攻击伤害无效。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:ChikaStrength": {
+
+    "NAME": "闪闪发光！",
+
+    "DESCRIPTIONS": [
+
+      "对生命值最低的敌人造成 #b",
+
+      "点伤害。 恢复所有小恶魔 #b",
+
+      "点生命。",
+
+    ]
+
+  },
+
+
+
+
+
+  "Yohane:NoFallenFlightPlayer": {
+
+    "NAME": "飞行",
+
+    "DESCRIPTIONS": [
+
+      "受到的 #y",
+
+      "攻击伤害 减少 #b",
+
+      "50% 。一回合内造成 #y",
+
+      "伤害 #b",
+
+      " 次后移除。",
+
+      " 次后移除。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:PriceOfPowerPower": {
+
+    "NAME": "力量的代价",
+
+    "DESCRIPTIONS": [
+
+      "打出卡牌需要的能量减少 #y",
+
+      "一点。每打出一张卡牌受到 #b",
+
+      " 点伤害。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:CityOfSinPower": {
+
+    "NAME": "罪业之都",
+
+    "DESCRIPTIONS": [
+
+      "你的回合开始时，给与所有单位 #b",
+
+      "层 #y",
+
+      "罪印 （包括自身）。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:Sin": {
+
+    "NAME": "罪印",
+
+    "DESCRIPTIONS": [
+
+      "这个单位会受到 #b",
+
+      " 点额外伤害，并造成 #b",
+
+      " 点额外伤害，被命中后移除。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:GraceUnderFirePower": {
+
+    "NAME": "从容不迫",
+
+    "DESCRIPTIONS": [
+
+      "每当你被攻击时，获得 #b",
+
+      "点 堕天之力。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:YousoroPower": {
+
+    "NAME": "全速前进！",
+
+    "DESCRIPTIONS": [
+
+      "本回合你无法获得格挡。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:FadingPlayerPower": {
+
+    "NAME": "消逝",
+
+    "DESCRIPTIONS": [
+
+      "#b回合内死亡。",
+
+      "本回合死亡。"
+
+    ]
+
+  },
+
+
+
+
+
+  "Yohane:LustSin": {
+
+    "NAME": "色欲罪印",
+
+    "DESCRIPTIONS": [
+
+      "这个单位会受到 #b",
+
+      " 点额外伤害，并造成 #b",
+
+      " 点额外伤害。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:VoodooDollPower": {
+
+    "NAME": "巫毒娃娃",
+
+    "DESCRIPTIONS": [
+
+      "你的下 #b",
+
+      "张卡牌会额外打出一次并威力减半（向下取整）。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:BurntOutPower": {
+
+    "NAME": "强弩之末",
+
+    "DESCRIPTIONS": [
+
+      "#y",
+
+      "下回合 造成伤害 #y",
+
+      "减半 。"
+
+    ]
+
+  },
+
+
+
+  "Yohane:HalveDamagePower": {
+
+    "NAME": "力竭",
+
+    "DESCRIPTIONS": [
+
+      "#y",
+
+      "攻击 造成的伤害减半 #b",
+
+      " 回合。"
+
+    ]
+
+  },
+
+
+
+  "stslib:Stunned": {
+
+    "NAME": "昏迷",
+
+    "DESCRIPTIONS": [
+
+      " #b",
+
+      " 回合内无法行动。"
+
+    ]
+
+  }
+
+
+
+}
