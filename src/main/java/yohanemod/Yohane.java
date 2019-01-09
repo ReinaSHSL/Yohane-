@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import kobting.friendlyminions.characters.AbstractPlayerWithMinions;
@@ -26,6 +27,8 @@ import yohanemod.screens.LittleDemonScreen;
 import java.util.ArrayList;
 
 public class Yohane extends AbstractPlayerWithMinions {
+    private static UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("YohaneChar");
+    private static final String[] CHARDESC = uiStrings.TEXT;
 	public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
 	private static final Color GREY = CardHelper.getColor(131.0f, 156.0f, 165.0f);
     public CustomCharSelectInfo getInfo() {
@@ -71,7 +74,7 @@ public class Yohane extends AbstractPlayerWithMinions {
 
         CharSelectInfo info = new CustomCharSelectInfo (
                 "Yohane",
-                "A fallen angel from Japan. NL Uses dark magic and idol techniques.",
+                CHARDESC[0],
                 60, //currentHP
                 60, //maxHP
                 0,  //maxOrbs

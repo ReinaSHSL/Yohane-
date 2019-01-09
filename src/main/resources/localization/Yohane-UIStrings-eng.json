@@ -4,5 +4,10 @@
       "Fallen Energy",
       "Your Fallen Energy accumulates here. Gain 2 Fallen Energy at the end of your turn."
     ]
+  },
+  "YohaneChar": {
+    "TEXT": [
+      "A fallen angel from Japan. NL Uses dark magic and idol techniques."
+    ]
   }
 }

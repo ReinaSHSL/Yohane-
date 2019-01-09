@@ -4,7 +4,7 @@
 
     "NAME": "学院派实力",
 
-    "DESCRIPTION": " 奥秘 。 NL 每回合获得 !M! 点能量。 NL 除了消耗 堕天之力 的牌，你每回合不能打出超过 !F! 张牌。",
+    "DESCRIPTION": " 奥秘 。 NL 每回合获得 !M! 点能量。 NL 除了 消耗  堕天之力 的牌，你每回合不能打出超过 !F! 张牌。",
 
     "EXTENDED_DESCRIPTION": [
 
@@ -52,7 +52,7 @@
 
     "NAME": "行家里手",
 
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 本回合内保留你的手牌。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 本回合内 保留 你的手牌。"
 
   },
 
@@ -60,9 +60,9 @@
 
     "NAME": "暗影之诱",
 
-    "DESCRIPTION": "消耗2点 堕天之力 。 NL 抽2张牌。 NL 消耗1张手牌。",
+    "DESCRIPTION": " 消耗 2点 堕天之力 。 NL 抽2张牌。 NL  消耗 1张手牌。",
 
-    "UPGRADE_DESCRIPTION": "抽2张牌。 NL 消耗1张手牌。"
+    "UPGRADE_DESCRIPTION": "抽2张牌。 NL  消耗 1张手牌。"
 
   },
 
@@ -70,15 +70,15 @@
 
     "NAME": "堕天使之泪",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层虚弱。 NL 获得 8 点 堕天之力 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 。 NL 获得 8 点 堕天之力 。"
 
   },
 
   "Yohane:Awaken_The_Power": {
 
-    "NAME": "觉醒力量",
+    "NAME": "觉醒 力量 ",
 
-    "DESCRIPTION": "获得 !M! 点力量。 NL !F! 回合后死亡。"
+    "DESCRIPTION": "获得 !M! 点 力量 。 NL !F! 回合后死亡。"
 
   },
 
@@ -86,7 +86,7 @@
 
     "NAME":  "唤醒",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 NL 造成 !D! 点伤害， NL  进化 所有 小恶魔 。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害， NL  进化 所有  小恶魔  。"
 
   },
 
@@ -94,7 +94,7 @@
 
     "NAME": "退守",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 NL 获得 !B! 点格挡。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 获得 !B! 点 格挡 。"
 
   },
 
@@ -118,7 +118,7 @@
 
     "NAME": "厨神",
 
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并治疗 !M! 点生命值 X 次。 NL 消耗。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并治疗 !M! 点生命值 X 次。 NL  消耗 。"
 
   },
 
@@ -132,9 +132,9 @@
 
   "Yohane:Cursed_Strike": {
 
-    "NAME":  "诅咒打击",
+    "NAME":  " 诅咒 打击",
 
-    "DESCRIPTION": "造成 !D! 点伤害，你的抽牌堆中每有一张诅咒牌，获得 !M! 点 堕天之力 。"
+    "DESCRIPTION": "造成 !D! 点伤害，你的抽牌堆中每有一张 诅咒 牌，获得 !M! 点 堕天之力 。"
 
   },
 
@@ -142,7 +142,7 @@
 
     "NAME": "摸了",
 
-    "DESCRIPTION": "获得 !B! 点格挡。 NL 给予 !M! 层虚弱。 NL 获得 !F! 点 堕天之力 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 给予 !M! 层 虚弱 。 NL 获得 !F! 点 堕天之力 。"
 
   },
 
@@ -150,7 +150,7 @@
 
     "NAME": "暗影之盾",
 
-    "DESCRIPTION": "消耗一半的 堕天之力 ， NL 并获得与之相同数值的格挡。"
+    "DESCRIPTION": " 消耗 一半的 堕天之力 ， NL 并获得与之相同数值的 格挡 。"
 
   },
 
@@ -158,7 +158,7 @@
 
     "NAME": "处女秀",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 NL 给予所有敌人 !F! 层 罪印 。 NL 固有。 NL 消耗。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 给予所有敌人 !F! 层 罪印 。 NL 固有 。 NL  消耗 。"
 
   },
 
@@ -166,7 +166,7 @@
 
     "NAME": "防御",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 获得 !B! 点格挡。 NL"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 获得 !B! 点 格挡 。 NL"
 
   },
 
@@ -174,7 +174,7 @@
 
     "NAME":  "断罪",
 
-    "DESCRIPTION": "消耗 !F! 点 堕天之力 。 NL 给予 !M! 点 罪印 。"
+    "DESCRIPTION": " 消耗  !F! 点 堕天之力 。 NL 给予 !M! 点 罪印 。"
 
   },
 
@@ -192,7 +192,9 @@
 
     "NAME": "闇力转换",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 获得 [E] 。"
+    "DESCRIPTION": " 消耗  4 点 堕天之力 。 获得 [E] 。",
+
+    "UPGRADE_DESCRIPTION": " 消耗  4 点 堕天之力 。 获得 [E] [E] 。"
 
   },
 
@@ -200,7 +202,7 @@
 
     "NAME": "嫉妒",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 复制目标敌人身上所有增益与减益效果。 NL 消耗。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 复制目标敌人身上所有增益与减益效果。 NL  消耗 。"
 
   },
 
@@ -208,7 +210,7 @@
 
     "NAME":  "冲动",
 
-    "DESCRIPTION": "造成等同于你 堕天之力 一半的伤害。 NL 消耗 !M! 点 堕天之力 。"
+    "DESCRIPTION": "造成等同于你 堕天之力 一半的伤害。 NL  消耗  !M! 点 堕天之力 。"
 
   },
 
@@ -216,7 +218,7 @@
 
     "NAME": "堕天流龙凤缚",
 
-    "DESCRIPTION": "目标敌人本回合内丢失 !M! 点力量。 NL 消耗。"
+    "DESCRIPTION": "目标敌人本回合内丢失 !M! 点 力量 。 NL  消耗 。"
 
   },
 
@@ -224,7 +226,7 @@
 
     "NAME":  "暴食",
 
-    "DESCRIPTION": "消耗所有手牌。 NL 每张消耗的手牌给予你 !M! 点 堕天之力 。"
+    "DESCRIPTION": " 消耗 所有手牌。 NL 每张 消耗 的手牌给予你 !M! 点 堕天之力 。"
 
   },
 
@@ -232,7 +234,7 @@
 
     "NAME": "背水阵",
 
-    "DESCRIPTION": "消耗所有非攻击牌，获得 !M! 点 堕天之力 ， NL 抽 4 张牌。"
+    "DESCRIPTION": " 消耗 所有非攻击牌，获得 !M! 点 堕天之力 ， NL 抽 4 张牌。"
 
   },
 
@@ -248,7 +250,7 @@
 
     "NAME": "华丽登场",
 
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 固有。 NL 消耗。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL  固有 。 NL  消耗 。"
 
   },
 
@@ -264,7 +266,7 @@
 
     "NAME": "函馆",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每个 小恶魔 给你额外提供 !M! 点 堕天之力 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每个  小恶魔  给你额外提供 !M! 点 堕天之力 。"
 
   },
 
@@ -272,9 +274,9 @@
 
     "NAME": "炼狱之境",
 
-    "DESCRIPTION": "对所有敌人造成等同于你 堕天之力 一半的伤害。 NL 消耗。 NL 保留。",
+    "DESCRIPTION": "对所有敌人造成等同于你 堕天之力 一半的伤害。 NL  消耗 。 NL  保留 。",
 
-    "UPGRADE_DESCRIPTION": "对所有敌人造成等同于你 堕天之力 的伤害。 NL 消耗。 NL 保留。"
+    "UPGRADE_DESCRIPTION": "对所有敌人造成等同于你 堕天之力 的伤害。 NL  消耗 。 NL  保留 。"
 
   },
 
@@ -282,7 +284,7 @@
 
     "NAME":  "冰霜震击",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 直到回合结束前对目标释放“缓慢” 。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 直到回合结束前对目标释放“缓慢” 。"
 
   },
 
@@ -290,7 +292,7 @@
 
     "NAME": "幻想杀手",
 
-    "DESCRIPTION": "回合结束时，失去所有 堕天之力 。 NL 获得相同数量的格挡。"
+    "DESCRIPTION": "回合结束时，失去所有 堕天之力 。 NL 获得相同数量的 格挡 。"
 
   },
 
@@ -306,7 +308,7 @@
 
     "NAME": "放纵",
 
-    "DESCRIPTION": "本回合你的手牌能量消耗减少一点。 NL 下回合开始时能量为0。"
+    "DESCRIPTION": "本回合你的手牌能量 消耗 减少一点。 NL 下回合开始时能量为0。"
 
   },
 
@@ -322,7 +324,7 @@
 
     "NAME": "调息",
 
-    "DESCRIPTION": "获得 !B! 点格挡。 NL 移除所有减益效果。 NL 消耗所有诅咒牌。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 移除所有减益效果。 NL  消耗 所有 诅咒 牌。"
 
   },
 
@@ -330,7 +332,7 @@
 
     "NAME": "恋于水族馆",
 
-    "DESCRIPTION": "移除一名敌人的所有 罪印 。 NL 每层 罪印  进化 所有 小恶魔 一次。 NL 消耗。"
+    "DESCRIPTION": "移除一名敌人的所有 罪印 。 NL 每层 罪印  进化 所有  小恶魔  一次。 NL  消耗 。"
 
   },
 
@@ -338,7 +340,7 @@
 
     "NAME": "支离破碎",
 
-    "DESCRIPTION": "固有。 NL 给予所有敌人 !M! 层虚弱。 NL 消耗。"
+    "DESCRIPTION": " 固有 。 NL 给予所有敌人 !M! 层 虚弱 。 NL  消耗 。"
 
   },
 
@@ -346,7 +348,7 @@
 
     "NAME":  "契约：易位",
 
-    "DESCRIPTION": "选择一名 小恶魔 。 NL 与你牌库中另一名交换。 NL 保留 进化 层数。"
+    "DESCRIPTION": "选择一名  小恶魔  。 NL 与你牌库中另一名交换。 NL  保留  进化 层数。"
 
   },
 
@@ -354,7 +356,7 @@
 
     "NAME":  "契约： 千歌 ",
 
-    "DESCRIPTION": "召唤 1 名 千歌 。 NL 当 千歌 在场时打出这张牌会 进化 她。"
+    "DESCRIPTION": " 召唤  1 名 千歌 。 NL 当 千歌 在场时打出这张牌会 进化 她。"
 
   },
 
@@ -362,7 +364,7 @@
 
     "NAME":  "契约： 花丸 ",
 
-    "DESCRIPTION": "召唤 1 名 花丸 。 NL 当 花丸 在场时打出这张牌会 进化 她。"
+    "DESCRIPTION": " 召唤  1 名 花丸 。 NL 当 花丸 在场时打出这张牌会 进化 她。"
 
   },
 
@@ -370,7 +372,7 @@
 
     "NAME":  "契约： 鞠莉 ",
 
-    "DESCRIPTION": "召唤 1 名 鞠莉 。 NL 当 鞠莉 在场时打出这张牌会 进化 她。 NL 消耗。"
+    "DESCRIPTION": " 召唤  1 名 鞠莉 。 NL 当 鞠莉 在场时打出这张牌会 进化 她。 NL  消耗 。"
 
   },
 
@@ -378,7 +380,7 @@
 
     "NAME":  "契约： 梨梨 ",
 
-    "DESCRIPTION": "召唤 1 名 梨梨 。 NL 当 梨梨 在场时打出这张牌会 进化 她。"
+    "DESCRIPTION": " 召唤  1 名 梨梨 。 NL 当 梨梨 在场时打出这张牌会 进化 她。"
 
   },
 
@@ -386,11 +388,11 @@
 
     "NAME": "契约：招募",
 
-    "DESCRIPTION": "从抽牌堆中将含有召唤词缀的 !M! 张卡加入手牌。 NL 消耗。",
+    "DESCRIPTION": "从抽牌堆中将含有 召唤 词缀的 !M! 张卡加入手牌。 NL  消耗 。",
 
-    "UPGRADE_DESCRIPTION": "从抽牌堆中将含有召唤词缀的 !M! 张卡加入手牌。 NL 消耗。",
+    "UPGRADE_DESCRIPTION": "从抽牌堆中将含有 召唤 词缀的 !M! 张卡加入手牌。 NL  消耗 。",
 
-    "EXTENDED_DESCRIPTION": ["我没有召唤 小恶魔 ！"]
+    "EXTENDED_DESCRIPTION": ["我没有 召唤   小恶魔  ！"]
 
   },
 
@@ -398,7 +400,7 @@
 
     "NAME": "契约： 露比 ",
 
-    "DESCRIPTION": "召唤 1 名 露比 。 NL 当 露比 在场时打出这张牌会 进化 她。"
+    "DESCRIPTION": " 召唤  1 名 露比 。 NL 当 露比 在场时打出这张牌会 进化 她。"
 
   },
 
@@ -406,7 +408,7 @@
 
     "NAME": "契约：援护",
 
-    "DESCRIPTION": "每位 小恶魔 获得 !B! 点格挡。"
+    "DESCRIPTION": "每位  小恶魔  获得 !B! 点 格挡 。"
 
   },
 
@@ -414,7 +416,7 @@
 
     "NAME": "易位：右",
 
-    "DESCRIPTION": "与右边的 小恶魔 交换。"
+    "DESCRIPTION": "与右边的  小恶魔  交换。"
 
   },
 
@@ -422,7 +424,7 @@
 
     "NAME": "易位：左",
 
-    "DESCRIPTION": "与左边的 小恶魔 交换。"
+    "DESCRIPTION": "与左边的  小恶魔  交换。"
 
   },
 
@@ -438,7 +440,7 @@
 
     "NAME":  "色欲",
 
-    "DESCRIPTION": "给予 !M! 层 罪印 。 NL 这个 罪印 被攻击也不会消失。 NL 消耗。"
+    "DESCRIPTION": "给予 !M! 层 罪印 。 NL 这个 罪印 被攻击也不会消失。 NL  消耗 。"
 
   },
 
@@ -446,7 +448,7 @@
 
     "NAME": "不成熟的Dreamer",
 
-    "DESCRIPTION": "每个 小恶魔 给与你 !M! 点力量。 NL 消耗。"
+    "DESCRIPTION": "每个  小恶魔  给与你 !M! 点 力量 。 NL  消耗 。"
 
   },
 
@@ -454,9 +456,9 @@
 
     "NAME": "奇迹波纹",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张受伤加入抽牌堆。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 受伤 加入抽牌堆。",
 
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 将一张笨拙加入抽牌堆。"
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 笨拙 加入抽牌堆。"
 
   },
 
@@ -464,7 +466,7 @@
 
     "NAME":  "否极泰来",
 
-    "DESCRIPTION": "自身获得 !M! 层易伤。 NL 获得 2 点力量。"
+    "DESCRIPTION": "自身获得 !M! 层易伤。 NL 获得 2 点 力量 。"
 
   },
 
@@ -472,7 +474,7 @@
 
     "NAME": "呼唤",
 
-    "DESCRIPTION": "造成相当于已消耗牌数x3的伤害（ 造成 !D! 点伤害 ）。 NL 消耗。"
+    "DESCRIPTION": "造成相当于已 消耗 牌数x3的伤害（ 造成 !D! 点伤害 ）。 NL  消耗 。"
 
   },
 
@@ -480,7 +482,7 @@
 
     "NAME": "My舞Tonight",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 你受到的下次伤害变为0。 NL 消耗。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 你受到的下次伤害变为0。 NL  消耗 。"
 
   },
 
@@ -488,7 +490,7 @@
 
     "NAME":  "莱拉普斯",
 
-    "DESCRIPTION": "消耗 !F! 点 堕天之力 。 NL 给予 !M! 层易伤。 NL 获得 !B! 点格挡。"
+    "DESCRIPTION": " 消耗  !F! 点 堕天之力 。 NL 给予 !M! 层易伤。 NL 获得 !B! 点 格挡 。"
 
   },
 
@@ -496,7 +498,7 @@
 
     "NAME": "预备，起",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每控制一个 小恶魔 额外造成一次 !D! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每控制一个  小恶魔  额外造成一次 !D! 点伤害。"
 
   },
 
@@ -510,19 +512,19 @@
 
   "Yohane:Price_Of_Power": {
 
-    "NAME": "力量的代价",
+    "NAME": " 力量 的代价",
 
-    "DESCRIPTION": " 奥秘 。 NL 所有卡牌消耗减少1点。 NL 你每打出一张牌失去 !M! 点生命。"
+    "DESCRIPTION": " 奥秘 。 NL 所有卡牌 消耗 减少1点。 NL 你每打出一张牌失去 !M! 点生命。"
 
   },
 
   "Yohane:Prideful_Crash": {
 
-    "NAME":  "傲慢之灾",
+    "NAME":  " 傲慢 之灾",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 将 1 张傲慢加入手牌。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 将 1 张 傲慢 加入手牌。",
 
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 将 2 张傲慢加入手牌。"
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 将 2 张 傲慢 加入手牌。"
 
   },
 
@@ -554,7 +556,7 @@
 
     "NAME": "Schwarz Sechs",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 你的下一张费用为 0 的牌会被打出两次。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 你的下一张费用为 0 的牌会被打出两次。"
 
   },
 
@@ -562,7 +564,7 @@
 
     "NAME": "轻蔑",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 给予 !F! 层虚弱。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 给予 !F! 层 虚弱 。"
 
   },
 
@@ -580,7 +582,7 @@
 
     "NAME": "懒惰",
 
-    "DESCRIPTION": "如果你本回合打出过攻击牌则不能打出这张牌。 NL 恢复 !M! 点生命。 NL 自身获得缠绕。 NL 消耗。"
+    "DESCRIPTION": "如果你本回合打出过攻击牌则不能打出这张牌。 NL 恢复 !M! 点生命。 NL 自身获得缠绕。 NL  消耗 。"
 
   },
 
@@ -588,7 +590,7 @@
 
     "NAME": "雪色光晕",
 
-    "DESCRIPTION": "击晕所有敌人。 NL 消耗。",
+    "DESCRIPTION": "击晕所有敌人。 NL  消耗 。",
 
     "UPGRADE_DESCRIPTION": "击晕所有敌人。"
 
@@ -598,7 +600,7 @@
 
     "NAME": "契约：献祭",
 
-    "DESCRIPTION": "献祭所有 小恶魔 。 NL 每献祭一位 小恶魔 获得 !M!  堕天之力 。"
+    "DESCRIPTION": "献祭所有  小恶魔  。 NL 每献祭一位  小恶魔  获得 !M!  堕天之力 。"
 
   },
 
@@ -606,9 +608,9 @@
 
     "NAME":  "草莓猎手",
 
-    "DESCRIPTION": "获得 !M! 点力量。 NL 抽 !F! 张牌。 NL 你的回合结束时失去40点生命。",
+    "DESCRIPTION": "获得 !M! 点 力量 。 NL 抽 !F! 张牌。 NL 你的回合结束时失去40点生命。",
 
-    "UPGRADE_DESCRIPTION": "获得 !M! 点力量。 NL 抽 !F! 张牌。 NL 你的回合结束时失去40点生命。"
+    "UPGRADE_DESCRIPTION": "获得 !M! 点 力量 。 NL 抽 !F! 张牌。 NL 你的回合结束时失去40点生命。"
 
   },
 
@@ -624,7 +626,7 @@
 
     "NAME":  "潜行模式",
 
-    "DESCRIPTION": " 奥秘 。 回合结束时，获得一层无实体并消耗你的抽牌堆和弃牌堆。 NL 如果均没有则消耗你的手牌。"
+    "DESCRIPTION": " 奥秘 。 回合结束时，获得一层无实体并 消耗 你的抽牌堆和弃牌堆。 NL 如果均没有则 消耗 你的手牌。"
 
   },
 
@@ -648,7 +650,7 @@
 
     "NAME":  "动荡世界",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 NL 对所有敌人造成 !D! 点伤害。 NL 将这张牌的复制加入你的手牌。 NL 消耗。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 对所有敌人造成 !D! 点伤害。 NL 将这张牌的复制加入你的手牌。 NL  消耗 。"
 
   },
 
@@ -656,7 +658,7 @@
 
     "NAME":  "巫毒娃娃",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 NL 你打出的下一张攻击或技能牌会以一半的威力（向下取整）打出第二次。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 你打出的下一张攻击或技能牌会以一半的威力（向下取整）打出第二次。"
 
   },
 
@@ -664,7 +666,7 @@
 
     "NAME": "耐心的刺客",
 
-    "DESCRIPTION": "消耗 !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 保留。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL  保留 。"
 
   },
 
@@ -680,7 +682,7 @@
 
     "NAME": "暴怒",
 
-    "DESCRIPTION":  "对所有敌人造成 !D! 点伤害 !F! 次。 NL 自身获得 !M! 层虚弱。"
+    "DESCRIPTION":  "对所有敌人造成 !D! 点伤害 !F! 次。 NL 自身获得 !M! 层 虚弱 。"
 
   },
 
@@ -688,7 +690,7 @@
 
     "NAME": "全速前进！",
 
-    "DESCRIPTION":  "本回合你不能再获得格挡。 NL 获得 [E]。 NL 抽 !F! 张牌。 NL 消耗。"
+    "DESCRIPTION":  "本回合你不能再获得 格挡 。 NL 获得 [E]。 NL 抽 !F! 张牌。 NL  消耗 。"
 
   }
 
