@@ -1,16 +1,18 @@
 {
 
+
+
   "Yohane:Academic_Prowess": {
 
     "NAME": "学院派实力",
 
-    "DESCRIPTION": " 奥秘 。 NL 每回合获得 !M! 点能量。 NL 除了 消耗  堕天之力 的牌，你每回合不能打出超过 !F! 张牌。",
+    "DESCRIPTION": " 奥秘 。 NL 回合开始时获得 !M! 点能量。 NL 除了需要 堕天之力 的牌，你每回合不能打出超过 !F! 张牌。",
 
     "EXTENDED_DESCRIPTION": [
 
       "我这回合不能再打出更多牌了！",
 
-      " 奥秘 。 NL 每回合获得 !M! 点能量。 NL 你每回合不能打出超过 ",
+      "奥秘。 NL 回合开始时获得 !M! 点能量。 NL 你每回合不能打出超过 ",
 
       " 张牌。",
 
@@ -24,6 +26,10 @@
 
   },
 
+
+
+
+
   "Yohane:AccelerateAttack": {
 
     "NAME": "进攻",
@@ -32,21 +38,27 @@
 
   },
 
+
+
   "Yohane:AccelerateDodge": {
 
     "NAME": "回避",
 
-    "DESCRIPTION": "你受到的下次伤害为0，自身获得 !M! 层易伤。"
+    "DESCRIPTION": "你受到的下次伤害为0，自身获得 !M! 层 易伤 。"
 
   },
+
+
 
   "Yohane:Accelerator": {
 
     "NAME": "起跑准备",
 
-    "DESCRIPTION": "抉择。 NL 造成 !D! 点伤害。 NL 你受到的下次伤害为0，自身获得 !M! 层易伤。"
+    "DESCRIPTION": "抉择。 NL 造成 !D! 点伤害； NL 或者你受到的下次伤害为0，自身获得 !M! 层 易伤 。"
 
   },
+
+
 
   "Yohane:Adept_Technology": {
 
@@ -56,15 +68,21 @@
 
   },
 
+
+
   "Yohane:Allure_of_Darkness": {
 
     "NAME": "暗影之诱",
 
-    "DESCRIPTION": " 消耗 2点 堕天之力 。 NL 抽2张牌。 NL  消耗 1张手牌。",
+    "DESCRIPTION": "失去2点 堕天之力 。 NL 抽2张牌。 NL 消耗1张手牌。",
 
-    "UPGRADE_DESCRIPTION": "抽2张牌。 NL  消耗 1张手牌。"
+    "UPGRADE_DESCRIPTION": "抽2张牌。 NL 消耗1张手牌。"
 
   },
+
+
+
+
 
   "Yohane:Angel_Tears": {
 
@@ -74,29 +92,41 @@
 
   },
 
+
+
   "Yohane:Awaken_The_Power": {
 
-    "NAME": "觉醒 力量 ",
+    "NAME": "觉醒力量",
 
     "DESCRIPTION": "获得 !M! 点 力量 。 NL !F! 回合后死亡。"
 
+
+
   },
+
+
 
   "Yohane:Awakening": {
 
     "NAME":  "唤醒",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害， NL  进化 所有  小恶魔  。"
+    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害， NL  进化 所有 小恶魔 。"
 
   },
+
+
 
   "Yohane:Backfoot": {
 
     "NAME": "退守",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "失去 !M! 点 堕天之力 。 NL 获得 !B! 点 格挡 。"
 
   },
+
+
+
+
 
   "Yohane:Blazing": {
 
@@ -106,6 +136,8 @@
 
   },
 
+
+
   "Yohane:City_Of_Sin": {
 
     "NAME": "罪业之都",
@@ -114,13 +146,19 @@
 
   },
 
+
+
   "Yohane:Culinary_Genius": {
 
     "NAME": "厨神",
 
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并治疗 !M! 点生命值 X 次。 NL  消耗 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并恢复 !M! 点生命值 X 次。 NL 消耗 。"
 
   },
+
+
+
+
 
   "Yohane:Curse_The_Heavens": {
 
@@ -130,13 +168,19 @@
 
   },
 
+
+
   "Yohane:Cursed_Strike": {
 
-    "NAME":  " 诅咒 打击",
+    "NAME":  "诅咒打击",
 
-    "DESCRIPTION": "造成 !D! 点伤害，你的抽牌堆中每有一张 诅咒 牌，获得 !M! 点 堕天之力 。"
+    "DESCRIPTION": "你的抽牌堆每有1张 诅咒 牌，造成 !D! 点伤害1次并获得 !M! 点 堕天之力 。"
 
   },
+
+
+
+
 
   "Yohane:Dark_Rest": {
 
@@ -146,37 +190,53 @@
 
   },
 
+
+
   "Yohane:Dark_Shield": {
 
     "NAME": "暗影之盾",
 
-    "DESCRIPTION": " 消耗 一半的 堕天之力 ， NL 并获得与之相同数值的 格挡 。"
+    "DESCRIPTION": "失去一半的 堕天之力 ， NL 并获得与之相同数值的 格挡 。"
 
   },
+
+
+
+
 
   "Yohane:Debut": {
 
     "NAME": "处女秀",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 给予所有敌人 !F! 层 罪印 。 NL 固有 。 NL  消耗 。"
+    "DESCRIPTION": "失去 !M! 点 堕天之力 。 NL 给予所有敌人 !F! 层 罪印 。 NL 固有 。 NL 消耗 。"
 
   },
+
+
+
+
 
   "Yohane:Defend_Grey": {
 
     "NAME": "防御",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 获得 !B! 点 格挡 。 NL"
+    "DESCRIPTION": "失去 !M! 点 堕天之力 。 获得 !B! 点 格挡 。 NL"
 
   },
+
+
 
   "Yohane:Descent": {
 
     "NAME":  "断罪",
 
-    "DESCRIPTION": " 消耗  !F! 点 堕天之力 。 NL 给予 !M! 点 罪印 。"
+    "DESCRIPTION": "失去 !F! 点 堕天之力 。 NL 给予 !M! 点 罪印 。"
 
   },
+
+
+
+
 
   "Yohane:Energetic_Performance": {
 
@@ -188,15 +248,19 @@
 
   },
 
+
+
   "Yohane:Energy_Change": {
 
     "NAME": "闇力转换",
 
-    "DESCRIPTION": " 消耗  4 点 堕天之力 。 获得 [E] 。",
-
-    "UPGRADE_DESCRIPTION": " 消耗  4 点 堕天之力 。 获得 [E] [E] 。"
+    "DESCRIPTION": "失去 !M! 点 堕天之力 。 获得 [E] 。"
 
   },
+
+
+
+
 
   "Yohane:Envious": {
 
@@ -206,13 +270,19 @@
 
   },
 
+
+
   "Yohane:Excitement": {
 
     "NAME":  "冲动",
 
-    "DESCRIPTION": "造成等同于你 堕天之力 一半的伤害。 NL  消耗  !M! 点 堕天之力 。"
+    "DESCRIPTION": "造成等同于你 堕天之力 一半的伤害。 NL 失去 !M! 点 堕天之力 。"
 
   },
+
+
+
+
 
   "Yohane:Fallen_Dragon_Phoenix_Hold": {
 
@@ -222,21 +292,31 @@
 
   },
 
+
+
   "Yohane:Gluttony": {
 
     "NAME":  "暴食",
 
-    "DESCRIPTION": " 消耗 所有手牌。 NL 每张 消耗 的手牌给予你 !M! 点 堕天之力 。"
+    "DESCRIPTION": " 消耗 所有手牌。 NL 每张被 消耗 的手牌给予你 !M! 点 堕天之力 。"
 
   },
+
+
+
+
 
   "Yohane:Go_All_Out": {
 
     "NAME": "背水阵",
 
-    "DESCRIPTION": " 消耗 所有非攻击牌，获得 !M! 点 堕天之力 ， NL 抽 4 张牌。"
+    "DESCRIPTION": " 消耗 所有非攻击牌，每张被 消耗 的牌获得 !M! 点堕天之力， NL 抽 4 张牌。"
 
   },
+
+
+
+
 
   "Yohane:Grace_Under_Fire": {
 
@@ -246,6 +326,8 @@
 
   },
 
+
+
   "Yohane:Grand_Entrance": {
 
     "NAME": "华丽登场",
@@ -254,21 +336,27 @@
 
   },
 
+
+
   "Yohane:Guilty_Kiss": {
 
     "NAME":  "Guilty Kiss",
 
-    "DESCRIPTION": "如果你仅使用 [E] ，给予 !M! 点易伤。 NL 如果使用更多，变为造成 !D! 点伤害 X 次。"
+    "DESCRIPTION": "如果你仅使用 [E] ，给予 !M! 点 易伤 。 NL 如果使用更多，卡牌效果变为造成 !D! 点伤害 X 次。"
 
   },
+
+
 
   "Yohane:Hakodate": {
 
     "NAME": "函馆",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每个  小恶魔  给你额外提供 !M! 点 堕天之力 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每个 小恶魔 给你额外提供 !M! 点 堕天之力 。"
 
   },
+
+
 
   "Yohane:Hell_Zone": {
 
@@ -280,13 +368,19 @@
 
   },
 
+
+
   "Yohane:Ice_Cream_Assault": {
 
     "NAME":  "冰霜震击",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 直到回合结束前对目标释放“缓慢” 。"
+    "DESCRIPTION": "失去 !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 直到回合结束前对目标释放“缓慢” 。"
 
   },
+
+
+
+
 
   "Yohane:Imagine_Breaker": {
 
@@ -296,29 +390,39 @@
 
   },
 
+
+
   "Yohane:Impressive_Display": {
 
     "NAME": "大显身手",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL抽 1 张牌。 NL 获得 !M! 点 堕天之力 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 1 张牌。 NL 获得 !M! 点 堕天之力 。"
 
   },
+
+
+
+
 
   "Yohane:Indulge": {
 
     "NAME": "放纵",
 
-    "DESCRIPTION": "本回合你的手牌能量 消耗 减少一点。 NL 下回合开始时能量为0。"
+    "DESCRIPTION": "本回合你的手牌费用需求减少一点。 NL 下回合开始时能量为0。"
 
   },
+
+
 
   "Yohane:Inspiration": {
 
     "NAME":  "灵光一闪",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 获得残影。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 获得 残影 。"
 
   },
+
+
 
   "Yohane:Introspection": {
 
@@ -328,6 +432,8 @@
 
   },
 
+
+
   "Yohane:Koi_Ni_Naritai": {
 
     "NAME": "恋于水族馆",
@@ -335,6 +441,8 @@
     "DESCRIPTION": "移除一名敌人的所有 罪印 。 NL 每层 罪印  进化 所有  小恶魔  一次。 NL  消耗 。"
 
   },
+
+
 
   "Yohane:Kowareyasuki": {
 
@@ -344,65 +452,83 @@
 
   },
 
+
+
   "Yohane:Little_Demon_Change": {
 
     "NAME":  "契约：易位",
 
-    "DESCRIPTION": "选择一名  小恶魔  。 NL 与你牌库中另一名交换。 NL  保留  进化 层数。"
+    "DESCRIPTION": "选择一名 小恶魔 。 NL 与你牌库中另一名交换。 NL  保留 进化 层数。"
 
   },
 
+
+
   "Yohane:Little_Demon_Chika": {
 
-    "NAME":  "契约： 千歌 ",
+    "NAME":  "契约：千歌",
 
     "DESCRIPTION": " 召唤  1 名 千歌 。 NL 当 千歌 在场时打出这张牌会 进化 她。"
 
   },
 
+
+
   "Yohane:Little_Demon_Hanamaru": {
 
-    "NAME":  "契约： 花丸 ",
+    "NAME":  "契约：花丸",
 
     "DESCRIPTION": " 召唤  1 名 花丸 。 NL 当 花丸 在场时打出这张牌会 进化 她。"
 
   },
 
+
+
   "Yohane:Little_Demon_Mari": {
 
-    "NAME":  "契约： 鞠莉 ",
+    "NAME":  "契约：鞠莉",
 
     "DESCRIPTION": " 召唤  1 名 鞠莉 。 NL 当 鞠莉 在场时打出这张牌会 进化 她。 NL  消耗 。"
 
   },
 
+
+
   "Yohane:Little_Demon_Lily": {
 
-    "NAME":  "契约： 梨梨 ",
+    "NAME":  "契约：梨梨",
 
     "DESCRIPTION": " 召唤  1 名 梨梨 。 NL 当 梨梨 在场时打出这张牌会 进化 她。"
 
   },
 
+
+
   "Yohane:Little_Demon_Recruit": {
 
     "NAME": "契约：招募",
 
-    "DESCRIPTION": "从抽牌堆中将含有 召唤 词缀的 !M! 张卡加入手牌。 NL  消耗 。",
+    "DESCRIPTION": "从抽牌堆中将含有 召唤 词缀的 !M! 张卡加入手牌。 NL 消耗。",
 
-    "UPGRADE_DESCRIPTION": "从抽牌堆中将含有 召唤 词缀的 !M! 张卡加入手牌。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "从抽牌堆中将含有 召唤 词缀的 !M! 张卡加入手牌。 NL 消耗。",
 
-    "EXTENDED_DESCRIPTION": ["我没有 召唤   小恶魔  ！"]
+    "EXTENDED_DESCRIPTION": ["抽牌堆中没有可召唤的小恶魔！"]
 
   },
 
+
+
+
+
   "Yohane:Little_Demon_Ruby": {
 
-    "NAME": "契约： 露比 ",
+    "NAME": "契约：露比",
 
     "DESCRIPTION": " 召唤  1 名 露比 。 NL 当 露比 在场时打出这张牌会 进化 她。"
 
   },
+
+
 
   "Yohane:Little_Demon_Support": {
 
@@ -412,6 +538,8 @@
 
   },
 
+
+
   "Yohane:LittleDemonFirst": {
 
     "NAME": "易位：右",
@@ -419,6 +547,8 @@
     "DESCRIPTION": "与右边的  小恶魔  交换。"
 
   },
+
+
 
   "Yohane:LittleDemonSecond": {
 
@@ -428,13 +558,17 @@
 
   },
 
+
+
   "Yohane:Livestream_Donation": {
 
     "NAME":  "强欲推流",
 
-    "DESCRIPTION": "获得 !F! 点 堕天之力 。 NL 你抽牌堆中每有 !M! 张牌，抽一张牌。"
+    "DESCRIPTION": "获得 !F! 点 堕天之力 。 NL 你的抽牌堆中每有 !M! 张牌，抽1张牌。"
 
   },
+
+
 
   "Yohane:Lust": {
 
@@ -444,13 +578,17 @@
 
   },
 
+
+
   "Yohane:Mijuku_Dreamer": {
 
     "NAME": "不成熟的Dreamer",
 
-    "DESCRIPTION": "每个  小恶魔  给与你 !M! 点 力量 。 NL  消耗 。"
+    "DESCRIPTION": "每个在场的 小恶魔 给予你 !M! 点 力量 。 NL  消耗 。"
 
   },
+
+
 
   "Yohane:Miracle_Wave": {
 
@@ -462,6 +600,8 @@
 
   },
 
+
+
   "Yohane:Misfortune": {
 
     "NAME":  "否极泰来",
@@ -469,6 +609,8 @@
     "DESCRIPTION": "自身获得 !M! 层易伤。 NL 获得 2 点 力量 。"
 
   },
+
+
 
   "Yohane:Modore": {
 
@@ -478,6 +620,8 @@
 
   },
 
+
+
   "Yohane:My_Mai_Tonight": {
 
     "NAME": "My舞Tonight",
@@ -486,21 +630,29 @@
 
   },
 
+
+
   "Yohane:Lailapse": {
 
     "NAME":  "莱拉普斯",
 
-    "DESCRIPTION": " 消耗  !F! 点 堕天之力 。 NL 给予 !M! 层易伤。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "失去 !F! 点 堕天之力 。 NL 给予 !M! 层 易伤 。 NL 获得 !B! 点 格挡 。"
 
   },
+
+
+
+
 
   "Yohane:One_Two": {
 
     "NAME": "预备，起",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每控制一个  小恶魔  额外造成一次 !D! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每控制一个 小恶魔 额外造成一次 !D! 点伤害。"
 
   },
+
+
 
   "Yohane:Perfection": {
 
@@ -510,23 +662,29 @@
 
   },
 
+
+
   "Yohane:Price_Of_Power": {
 
     "NAME": " 力量 的代价",
 
-    "DESCRIPTION": " 奥秘 。 NL 所有卡牌 消耗 减少1点。 NL 你每打出一张牌失去 !M! 点生命。"
+    "DESCRIPTION": " 奥秘 。 NL 所有卡牌耗能减少1点。 NL 你每打出一张牌失去 !M! 点生命。"
 
   },
 
+
+
   "Yohane:Prideful_Crash": {
 
-    "NAME":  " 傲慢 之灾",
+    "NAME":  "傲慢之灾",
 
     "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 将 1 张 傲慢 加入手牌。",
 
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 将 2 张 傲慢 加入手牌。"
 
   },
+
+
 
   "Yohane:Reckless_Greed": {
 
@@ -536,55 +694,73 @@
 
   },
 
+
+
   "Yohane:Retaliation": {
 
     "NAME": "报复",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你在本次战斗中受到过伤害，造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果你在本次战斗中受到过伤害，额外造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。"
 
   },
+
+
+
+
 
   "Yohane:Runaway_Umbrella": {
 
     "NAME":  "握不住的伞",
 
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 虚无。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点 堕天之力 。 NL 虚无 。"
 
   },
+
+
 
   "Yohane:Schwarz_Sechs": {
 
     "NAME": "Schwarz Sechs",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 你的下一张费用为 0 的牌会被打出两次。"
+    "DESCRIPTION": "失去 !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 你的下一张费用为 0 的牌会被打出两次。"
 
   },
+
+
+
+
 
   "Yohane:Scorn": {
 
     "NAME": "轻蔑",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 给予 !F! 层 虚弱 。"
+    "DESCRIPTION": " 消耗 !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 给予 !F! 层 易伤 。"
 
   },
+
+
 
   "Yohane:Shadow_Gate": {
 
     "NAME": "暗影之扉",
 
-    "DESCRIPTION": "抽 !M! 张牌，你每打出一张牌失去 5 点 堕天之力 。 NL  堕天之力 为 0 时移除此效果。",
+    "DESCRIPTION": "你每打出一张牌时，抽 !M! 张牌并失去 5 点 堕天之力 。 NL 堕天之力 为 0 时移除此效果。",
 
-    "UPGRADE_DESCRIPTION": "抽 !M! 张牌，你每打出一张牌失去 5 点 堕天之力 。 NL  堕天之力 为 0 时移除此效果。"
+    "UPGRADE_DESCRIPTION": "你每打出一张牌时，抽 !M! 张牌并失去 5 点 堕天之力 。 NL 堕天之力 为 0 时移除此效果。"
 
   },
+
+
 
   "Yohane:Sloth": {
 
     "NAME": "懒惰",
 
-    "DESCRIPTION": "如果你本回合打出过攻击牌则不能打出这张牌。 NL 恢复 !M! 点生命。 NL 自身获得缠绕。 NL  消耗 。"
+    "DESCRIPTION": "如果你本回合打出过攻击牌则不能打出这张牌。 NL 恢复 !M! 点生命。 NL 获得 缠身 。 NL 消耗 。"
 
   },
+
+
 
   "Yohane:Snow_Halation": {
 
@@ -596,13 +772,17 @@
 
   },
 
+
+
   "Yohane:Solitude": {
 
-    "NAME": "契约：献祭",
+    "NAME": "契约：解散",
 
-    "DESCRIPTION": "献祭所有  小恶魔  。 NL 每献祭一位  小恶魔  获得 !M!  堕天之力 。"
+    "DESCRIPTION": "解除所有  小恶魔 的召唤状态。 NL 每解散一位  小恶魔  获得 !M!  堕天之力 。"
 
   },
+
+
 
   "Yohane:Strawberry_Trapper": {
 
@@ -614,6 +794,8 @@
 
   },
 
+
+
   "Yohane:Soul_Peek": {
 
     "NAME":  "窥视灵魂",
@@ -622,13 +804,17 @@
 
   },
 
+
+
   "Yohane:Stealth_Mode": {
 
     "NAME":  "潜行模式",
 
-    "DESCRIPTION": " 奥秘 。 回合结束时，获得一层无实体并 消耗 你的抽牌堆和弃牌堆。 NL 如果均没有则 消耗 你的手牌。"
+    "DESCRIPTION": " 奥秘 。 回合结束时，获得一层 无实体 并 消耗 你的抽牌堆和弃牌堆。 NL 如果均没有则 消耗 你的手牌。"
 
   },
+
+
 
   "Yohane:Strike_Grey": {
 
@@ -638,6 +824,8 @@
 
   },
 
+
+
   "Yohane:Take_Flight": {
 
     "NAME": "起飞！",
@@ -646,29 +834,43 @@
 
   },
 
+
+
   "Yohane:Unstable_World": {
 
     "NAME":  "动荡世界",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 对所有敌人造成 !D! 点伤害。 NL 将这张牌的复制加入你的手牌。 NL  消耗 。"
+    "DESCRIPTION": "失去 !M! 点 堕天之力 。 NL 对所有敌人造成 !D! 点伤害。 NL 将这张牌的复制加入你的手牌。 NL 消耗 。"
 
   },
+
+
+
+
 
   "Yohane:Voodoo_Doll": {
 
     "NAME":  "巫毒娃娃",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 你打出的下一张攻击或技能牌会以一半的威力（向下取整）打出第二次。"
+    "DESCRIPTION": "失去 !M! 点 堕天之力 。 NL 你打出的下一张攻击或技能牌会以一半的威力（向下取整）打出第二次。"
 
   },
+
+
+
+
 
   "Yohane:Well_Laid_Ambush": {
 
     "NAME": "耐心的刺客",
 
-    "DESCRIPTION": " 消耗  !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL  保留 。"
+    "DESCRIPTION": "失去 !M! 点 堕天之力 。 NL 造成 !D! 点伤害。 NL 保留。"
 
   },
+
+
+
+
 
   "Yohane:Witch_Trick": {
 
@@ -678,6 +880,8 @@
 
   },
 
+
+
   "Yohane:Wrath": {
 
     "NAME": "暴怒",
@@ -686,12 +890,18 @@
 
   },
 
+
+
   "Yohane:Yousoro": {
 
     "NAME": "全速前进！",
 
-    "DESCRIPTION":  "本回合你不能再获得 格挡 。 NL 获得 [E]。 NL 抽 !F! 张牌。 NL  消耗 。"
+    "DESCRIPTION":  "本回合你不能再获得 格挡 。 NL 获得 [E] 。 NL 抽 !F! 张牌。 NL 消耗。"
 
   }
+
+
+
+
 
 }

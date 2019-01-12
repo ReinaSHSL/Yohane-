@@ -31,9 +31,6 @@ public class Yohane extends AbstractPlayerWithMinions {
     private static final String[] CHARDESC = uiStrings.TEXT;
 	public static final int ENERGY_PER_TURN = 3; // how much energy you get every turn
 	private static final Color GREY = CardHelper.getColor(131.0f, 156.0f, 165.0f);
-    public CustomCharSelectInfo getInfo() {
-        return (CustomCharSelectInfo) getLoadout ();
-    }
 
     public Yohane (String name) {
         super(name,YohaneEnum.FallenAngel, null, null, new SpriterAnimation("charassets/animations.scml"));
@@ -46,6 +43,9 @@ public class Yohane extends AbstractPlayerWithMinions {
 		YohaneMod.lds = new LittleDemonScreen();
 	}
 
+    public CustomCharSelectInfo getInfo() {
+        return (CustomCharSelectInfo) getLoadout ();
+    }
 
 	public ArrayList<String> getStartingDeck() {
 		ArrayList<String> retVal = new ArrayList<>();
@@ -153,7 +153,12 @@ public class Yohane extends AbstractPlayerWithMinions {
 
 	@Override
 	public String getSpireHeartText() {
-		return "NL You gather all your Fallen Energy...";
+        switch (Settings.language) {
+            case ZHS:
+                return "你汇聚起全身的堕天之力";
+            default:
+                return "NL You gather all your Fallen Energy...";
+        }
 	}
 
 	@Override

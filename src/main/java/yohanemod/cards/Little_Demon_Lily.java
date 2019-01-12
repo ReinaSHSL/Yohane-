@@ -24,7 +24,7 @@ public class Little_Demon_Lily extends CustomCard {
     public static final String IMG_PATH = "cards/Little_Demon_Lily.png";
     private static final int COST = 1;
     private static final int POOL = 1;
-    private static final CardRarity rarity = CardRarity.COMMON;
+    private static final CardRarity rarity = CardRarity.BASIC;
     private static final CardTarget target = CardTarget.SELF;
 
     public Little_Demon_Lily() {
