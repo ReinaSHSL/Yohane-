@@ -254,8 +254,9 @@
 
     "NAME": "闇力转换",
 
-    "DESCRIPTION": "失去 !M! 点 堕天之力 。 获得 [E] 。"
+    "DESCRIPTION": "失去 4 点 堕天之力 。 获得 [E] 。",
 
+    "UPGRADE_DESCRIPTION": "失去 4 点 堕天之力 。 获得 [E] [E] 。"
   },
 
 
