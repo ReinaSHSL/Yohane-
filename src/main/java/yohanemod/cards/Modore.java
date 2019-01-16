@@ -19,13 +19,12 @@ public class Modore extends CustomCard {
     public static final String IMG_PATH = "cards/Modore.png";
     private static final int DAMAGE_AMT = 3;
     private static final int COST = 2;
-    private static final int POOL = 1;
     private static final AbstractCard.CardRarity rarity = AbstractCard.CardRarity.UNCOMMON;
     private static final AbstractCard.CardTarget target = AbstractCard.CardTarget.ENEMY;
 
     public Modore() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION,
-                AbstractCard.CardType.SKILL, AbstractCardEnum.YOHANE_GREY,
+                AbstractCard.CardType.ATTACK, AbstractCardEnum.YOHANE_GREY,
                 rarity, target);
         this.damage = this.baseDamage = DAMAGE_AMT;
         this.exhaust = true;

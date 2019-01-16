@@ -2,6 +2,7 @@ package yohanemod.powers;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -24,8 +25,7 @@ public class FadingPlayerPower extends AbstractPower {
            this.type = PowerType.DEBUFF;
        }
     
-       public void updateDescription()
-       {
+       public void updateDescription() {
              if (this.amount == 1) {
                    this.description = DESCRIPTIONS[2];
                  } else {
@@ -41,7 +41,7 @@ public class FadingPlayerPower extends AbstractPower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        AbstractDungeon.actionManager.addToBottom(new com.megacrit.cardcrawl.actions.common.ReducePowerAction(this.owner, this.owner, FadingPlayerPower.POWER_ID, 1));
+        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, FadingPlayerPower.POWER_ID, 1));
         updateDescription();
     }
 }

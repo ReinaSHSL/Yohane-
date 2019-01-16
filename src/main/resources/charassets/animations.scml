@@ -20,7 +20,7 @@
             </mainline>
             <timeline id="0" name="yohane">
                 <key id="0" spin="0">
-                    <object folder="0" file="7" x="-168.275862" y="318.344828" angle="0" scale_x="0.38" scale_y="0.38"/>
+                    <object folder="0" file="7" x="-170.275862" y="342.344828" angle="0" scale_x="0.4" scale_y="0.4"/>
                 </key>
             </timeline>
         </animation>
