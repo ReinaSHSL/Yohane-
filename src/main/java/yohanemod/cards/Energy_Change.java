@@ -40,7 +40,7 @@ public class Energy_Change extends CustomCard {
         if (!AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID)) {
             retVal = false;
         }
-        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.magicNumber)) {
+        if ((AbstractDungeon.player.hasPower(FallenEnergy.POWER_ID) && AbstractDungeon.player.getPower(FallenEnergy.POWER_ID).amount < this.FALLEN_ENERGY)) {
             retVal = false;
         }
         return retVal;
@@ -48,7 +48,7 @@ public class Energy_Change extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount >= this.magicNumber) {
+        if (p.hasPower(FallenEnergy.POWER_ID) && p.getPower(FallenEnergy.POWER_ID).amount >= this.FALLEN_ENERGY) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FallenEnergy(p, 0), -FALLEN_ENERGY));
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(this.magicNumber));
         } else {
