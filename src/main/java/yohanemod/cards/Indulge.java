@@ -34,7 +34,7 @@ public class Indulge extends CustomCard {
         int energy = EnergyPanel.totalCount;
         for (final AbstractCard handCard : AbstractDungeon.player.hand.group) {
             if (handCard.costForTurn != 0) {
-                handCard.modifyCostForTurn(-1);
+                handCard.setCostForTurn(handCard.costForTurn - 1);
             }
         }
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, -energy), -energy));
