@@ -34,7 +34,7 @@ public class PriceOfPowerPower extends AbstractPower {
     public void onInitialApplication() {
         for (final AbstractCard handCard : AbstractDungeon.player.hand.group) {
             if (!this.affectedCards.contains(handCard) && handCard.costForTurn != 0) {
-                handCard.modifyCostForTurn(-1);
+                handCard.setCostForTurn(handCard.costForTurn - 1);
                 this.affectedCards.add(handCard);
             }
         }
@@ -44,7 +44,7 @@ public class PriceOfPowerPower extends AbstractPower {
     public void atStartOfTurnPostDraw() {
         for (final AbstractCard handCard : AbstractDungeon.player.hand.group) {
             if (!this.affectedCards.contains(handCard) && handCard.costForTurn != 0) {
-                handCard.modifyCostForTurn(-1);
+                handCard.setCostForTurn(handCard.costForTurn - 1);
                 this.affectedCards.add(handCard);
             }
         }
@@ -54,7 +54,7 @@ public class PriceOfPowerPower extends AbstractPower {
     public void duringTurn() {
         for (final AbstractCard handCard : AbstractDungeon.player.hand.group) {
             if (!this.affectedCards.contains(handCard) && handCard.costForTurn != 0) {
-                handCard.modifyCostForTurn(-1);
+                handCard.setCostForTurn(handCard.costForTurn - 1);
                 this.affectedCards.add(handCard);
             } else if (this.affectedCards.contains(handCard)) {
                 this.toRestoreCost.add(handCard);
@@ -66,7 +66,7 @@ public class PriceOfPowerPower extends AbstractPower {
                     cardToRestore.costForTurn++;
                 }
                 else {
-                    cardToRestore.modifyCostForTurn(1);
+                    cardToRestore.setCostForTurn(1);
                 }
                 this.affectedCards.remove(cardToRestore);
             }
@@ -78,7 +78,7 @@ public class PriceOfPowerPower extends AbstractPower {
     public void onDrawOrDiscard() {
         for (final AbstractCard handCard : AbstractDungeon.player.hand.group) {
             if (!this.affectedCards.contains(handCard) && handCard.costForTurn != 0) {
-                handCard.modifyCostForTurn(-1);
+                handCard.setCostForTurn(handCard.costForTurn - 1);
                 this.affectedCards.add(handCard);
             } else if (this.affectedCards.contains(handCard)) {
                 this.toRestoreCost.add(handCard);
@@ -90,7 +90,7 @@ public class PriceOfPowerPower extends AbstractPower {
                     cardToRestore.costForTurn++;
                 }
                 else {
-                    cardToRestore.modifyCostForTurn(1);
+                    cardToRestore.setCostForTurn(1);
                 }
                 this.affectedCards.remove(cardToRestore);
             }
@@ -114,7 +114,7 @@ public class PriceOfPowerPower extends AbstractPower {
                 cardToRestore.isCostModifiedForTurn = false;
             }
             else {
-                cardToRestore.modifyCostForTurn(1);
+                cardToRestore.setCostForTurn(1);
                 cardToRestore.isCostModifiedForTurn = false;
             }
             this.affectedCards.remove(cardToRestore);
